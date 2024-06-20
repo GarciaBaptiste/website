@@ -1,4 +1,12 @@
-:root {}
+:root {
+  --white: #FFF7EA;
+  --red: #EE1549;
+  --purple: #8118EA;
+}
+
+#root{
+  overflow: hidden;
+}
 
 html {
   font-size: 12px;
@@ -6,8 +14,13 @@ html {
 
 body {
   margin: 0;
+  background: black;
 }
 
 p {
+  margin: 0;
+}
+
+body {
   margin: 0;
 }
