@@ -1,5 +1,6 @@
 import './App.css'
 import styled from 'styled-components'
+import GlobalFonts from './fonts/fonts'
 
 const Container = styled.div`
   display: grid;
@@ -26,7 +27,7 @@ const Container = styled.div`
   }
 `
 
-const Card = styled.div`
+const CardWrapper = styled.div`
   border-radius: 25px;
   background: #FFF7EA;
   scroll-snap-align: start;
@@ -45,28 +46,54 @@ const Card = styled.div`
   }
 `
 
+const CardContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin: 3rem;
+  width: 100%;
+  height: 100%;
+`
+
+const PresentationCard = styled(CardWrapper)`
+  background: lightblue;
+
+  & > ${CardContainer} {
+    flex-direction: column;
+  }
+`
+
 function App() {
   return (
-    <Container>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </Container>
+    <>
+      <GlobalFonts />
+      <Container>
+        <PresentationCard>
+          <CardContainer>
+            <h1><u>Baptiste Garcia</u>,</h1>
+            <h2>Graphic Designer &<br />Creative Developper</h2>
+            <p>based in Paris.</p>
+          </CardContainer>
+        </PresentationCard>
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+        <CardWrapper />
+      </Container>
+    </>
   )
 }
 
