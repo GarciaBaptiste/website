@@ -6,15 +6,7 @@
 
 #root {
   height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-#root::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
 }
 
 * {
@@ -33,16 +25,10 @@ body {
 
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
 p {
-  font-size: 3rem;
   margin: 0;
-}
-
-h1,
-h2 {
-  font-weight: 600;
-}
-
-p {
-  font-weight: 300;
 }

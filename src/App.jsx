@@ -2,19 +2,82 @@ import './App.css'
 import styled from 'styled-components'
 import GlobalFonts from './fonts/fonts'
 
+const Header = styled.header`
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 2rem;
+  top: 0;
+  left: 0;
+  background: black;
+  color: var(--white);
+  padding: 0 3rem;
+  font-family: 'JetBrains';
+  font-size: 1rem;
+`
+
+const HeaderContent = styled.div`
+  flex: 1;
+  display: flex;
+  gap: 3rem;
+
+  & > a,
+  & > p {
+    color: var(--white);
+    line-height: 2rem;
+  }
+
+  & > a:hover {
+    color: lightblue;
+  }
+`
+
+const HeaderContentLeft = styled(HeaderContent)`
+`
+
+const HeaderContentRight = styled(HeaderContent)`
+  justify-content: end
+`
+
 const FixedMosaic = styled.section`
   position: fixed;
   width: 100%;
-  height: 100vh;
-  top: 0;
+  height: calc(100vh - 2rem);
+  top: 2rem;
   left: 0;
   pointer-events: none;
+
+  & h1,
+  & h2,
+  & p {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  & h1,
+  & h2 {
+    font-weight: 600;
+  }
+
+  & p {
+    font-weight: 300;
+  }
 `
 
 const ScrollMosaic = styled.section`
-  position: relative;
+  position: fixed;
   width: 100%;
+  height: calc(100vh - 2rem);
+  top: 2rem;
   display: grid;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (max-width: 3900px){
     grid-template-columns: repeat(6, 1fr);
@@ -34,24 +97,40 @@ const ScrollMosaic = styled.section`
   @media (max-width: 650px){
     grid-template-columns: repeat(1, 1fr);
   }
+
+  & h1,
+  & h2,
+  & p {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  & h1,
+  & h2 {
+    font-weight: 600;
+  }
+
+  & p {
+    font-weight: 300;
+  }
 `
 
 const CardWrapper = styled.div`
-  border-radius: 25px;
+  border-radius: 2rem;
   background: #FFF7EA;
   scroll-snap-align: start;
 
   @media (max-height: 2800px){
-    height: calc(100vh / 4);
+    height: calc((100vh - 2rem) / 4);
   }
   @media (max-height: 2100px){
-    height: calc(100vh / 3);
+    height: calc((100vh - 2rem) / 3);
   }
   @media (max-height: 1400px){
-    height: calc(100vh / 2);
+    height: calc((100vh - 2rem) / 2);
   }
   @media (max-height: 700px){
-    height: calc(100vh / 1);
+    height: calc((100vh - 2rem) / 1);
   }
 `
 
@@ -76,7 +155,7 @@ const TOCCard = styled(CardWrapper)`
   background: black;
   bottom: -1px;
   right: -1px;
-  border-radius: 25px 25px 0 25px;
+  border-radius: 2rem 2rem 0 2rem;
   
   @media (max-width: 3900px){
     width: calc(100% / 6 + 2px);
@@ -98,16 +177,16 @@ const TOCCard = styled(CardWrapper)`
   }
 
   @media (max-height: 2800px){
-    height: calc(100vh / 4 + 2px);
+    height: calc((100vh - 2rem) / 4 + 2px);
   }
   @media (max-height: 2100px){
-    height: calc(100vh / 3 + 2px);
+    height: calc((100vh - 2rem) / 3 + 2px);
   }
   @media (max-height: 1400px){
-    height: calc(100vh / 2 + 2px);
+    height: calc((100vh - 2rem) / 2 + 2px);
   }
   @media (max-height: 700px){
-    height: calc(100vh / 1 + 2px);
+    height: calc((100vh - 2rem) / 1 + 2px);
   }
 
   & > ${CardContainer} {
@@ -125,6 +204,16 @@ function App() {
   return (
     <>
       <GlobalFonts />
+      <Header>
+        <HeaderContentLeft>
+          <a href="#">baptistegarcia.com</a>
+        </HeaderContentLeft>
+        <HeaderContentRight>
+          <a href="#">hello@baptistegarcia.com</a>
+          <a href="#">06 34 57 45 77</a>
+          <p>PARIS</p>
+        </HeaderContentRight>
+      </Header>
       <ScrollMosaic>
         <PresentationCard>
           <CardContainer>
