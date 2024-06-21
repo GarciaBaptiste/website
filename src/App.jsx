@@ -2,11 +2,20 @@ import './App.css'
 import styled from 'styled-components'
 import GlobalFonts from './fonts/fonts'
 
-const Container = styled.div`
-  display: grid;
+const FixedMosaic = styled.section`
+  position: fixed;
+  width: 100%;
   height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+`
+
+const ScrollMosaic = styled.section`
+  position: relative;
+  width: 100%;
+  display: grid;
+
   @media (max-width: 3900px){
     grid-template-columns: repeat(6, 1fr);
   }
@@ -50,8 +59,8 @@ const CardContainer = styled.div`
   display: flex;
   gap: 1rem;
   margin: 3rem;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 6rem);
+  height: calc(100% - 6rem);
 `
 
 const PresentationCard = styled(CardWrapper)`
@@ -62,11 +71,61 @@ const PresentationCard = styled(CardWrapper)`
   }
 `
 
+const TOCCard = styled(CardWrapper)`
+  position: absolute;
+  background: black;
+  bottom: -1px;
+  right: -1px;
+  border-radius: 25px 25px 0 25px;
+  
+  @media (max-width: 3900px){
+    width: calc(100% / 6 + 2px);
+  }
+  @media (max-width: 3250px){
+    width: calc(100% / 5 + 2px);
+  }
+  @media (max-width: 2600px){
+    width: calc(100% / 4 + 2px);
+  }
+  @media (max-width: 1950px){
+    width: calc(100% / 3 + 2px);
+  }
+  @media (max-width: 1300px){
+    width: calc(100% / 2 + 2px);
+  }
+  @media (max-width: 650px){
+    width: calc(100% / 1 + 2px);
+  }
+
+  @media (max-height: 2800px){
+    height: calc(100vh / 4 + 2px);
+  }
+  @media (max-height: 2100px){
+    height: calc(100vh / 3 + 2px);
+  }
+  @media (max-height: 1400px){
+    height: calc(100vh / 2 + 2px);
+  }
+  @media (max-height: 700px){
+    height: calc(100vh / 1 + 2px);
+  }
+
+  & > ${CardContainer} {
+    gap: 0;
+    flex-direction: column;
+    color: var(--white);
+    & > h2 {
+      font-weight: 500;
+      text-align: right;
+    }
+  }
+`
+
 function App() {
   return (
     <>
       <GlobalFonts />
-      <Container>
+      <ScrollMosaic>
         <PresentationCard>
           <CardContainer>
             <h1><u>Baptiste Garcia</u>,</h1>
@@ -92,7 +151,24 @@ function App() {
         <CardWrapper />
         <CardWrapper />
         <CardWrapper />
-      </Container>
+        <FixedMosaic>
+          <TOCCard>
+            <CardContainer>
+              <h2><u>Logilab.fr</u></h2>
+              <h2><u>SemWeb.Pro</u></h2>
+              <h2><u>Logilab</u></h2>
+              <h2><u>CubicWeb.org</u></h2>
+              <h2><u>FranceArchives</u></h2>
+              <h2><u>Data-BnF</u></h2>
+              <h2><u>Napoleonica</u></h2>
+              <h2><u>LeBowVosgien</u></h2>
+              <h2><u>StretchTypo</u></h2>
+              <h2><u>WaterPoster</u></h2>
+              <h2><u>LePetitSalon</u></h2>
+            </CardContainer>
+          </TOCCard>
+        </FixedMosaic>
+      </ScrollMosaic>
     </>
   )
 }

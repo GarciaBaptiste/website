@@ -4,8 +4,21 @@
   --purple: #8118EA;
 }
 
-#root{
-  overflow: hidden;
+#root {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
