@@ -13,7 +13,7 @@ const Header = styled.header`
   color: var(--white);
   padding: 0 3rem;
   font-family: 'JetBrains';
-  font-size: 1rem;
+  font-size: var(--text-small);
 `
 
 const HeaderContent = styled.div`
@@ -32,8 +32,7 @@ const HeaderContent = styled.div`
   }
 `
 
-const HeaderContentLeft = styled(HeaderContent)`
-`
+const HeaderContentLeft = styled(HeaderContent)``
 
 const HeaderContentRight = styled(HeaderContent)`
   justify-content: end
@@ -46,22 +45,6 @@ const FixedMosaic = styled.section`
   top: 2rem;
   left: 0;
   pointer-events: none;
-
-  & h1,
-  & h2,
-  & p {
-    font-size: 3rem;
-    margin: 0;
-  }
-
-  & h1,
-  & h2 {
-    font-weight: 600;
-  }
-
-  & p {
-    font-weight: 300;
-  }
 `
 
 const ScrollMosaic = styled.section`
@@ -100,18 +83,22 @@ const ScrollMosaic = styled.section`
 
   & h1,
   & h2,
-  & p {
-    font-size: 3rem;
+  & h3,
+  & p,
+  & ul {
+    font-size: var(--text-basic);
     margin: 0;
   }
 
-  & h1,
-  & h2 {
-    font-weight: 600;
+  & p,
+  & ul {
+    font-weight: 300;
   }
 
-  & p {
-    font-weight: 300;
+  & ul {
+    padding: 0;
+    list-style: none;
+    color: var(--grey1);
   }
 `
 
@@ -136,7 +123,6 @@ const CardWrapper = styled.div`
 
 const CardContainer = styled.div`
   display: flex;
-  gap: 1rem;
   margin: 3rem;
   width: calc(100% - 6rem);
   height: calc(100% - 6rem);
@@ -194,10 +180,74 @@ const TOCCard = styled(CardWrapper)`
     flex-direction: column;
     color: var(--white);
     & > h2 {
-      font-weight: 500;
+      font-weight: 300;
       text-align: right;
+      letter-spacing: initial;
     }
   }
+`
+
+const ThumbnailProject = styled.div`
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+`
+
+const WrapperThumbnailProject1 = styled(ThumbnailProject)`
+  background: #CFEFBF;
+`
+
+const ThumbnailProject1 = () => {
+  return (
+    <WrapperThumbnailProject1>
+      <div style={{ position: "absolute", top: 0, left: "calc(50% - 1px)", height: "100%", width: "2px", background: "black" }} />
+      <p style={{ fontFamily: "JetBrains", fontSize: "var(--text-medium)", flex: 1, alignSelf: "center", textAlign: "center", background: "#CFEFBF", zIndex: 1, padding: "0.5rem 0" }}>09h00</p>
+    </WrapperThumbnailProject1>
+  )
+}
+
+const ProjectCard = styled(CardWrapper)`
+  & > ${CardContainer} {
+    flex-direction: column;
+  }
+`
+
+const TopCard = styled.div`
+  display: flex;
+  flex: 1;
+  gap: 3rem;
+`
+
+const ProjectCardTextWrapper = styled.div``
+
+const BottomCard = styled.div`
+  align-self: baseline;
+`
+
+const ProjectTypeTag = styled.div`
+  font-size: var(--text-medium);
+  padding: 0.5rem 1.5rem;
+  border: solid 1px;
+  border-radius: 2rem;
+  font-weight: 300;
+`
+
+const ClientTag = () => {
+  return (
+    <ProjectTypeTag style={{ borderColor: "var(--red)", color: "var(--red)" }}>client</ProjectTypeTag>
+  )
+}
+
+const PersoTag = () => {
+  return (
+    <ProjectTypeTag style={{ borderColor: "var(--purple)", color: "var(--purple)" }}>perso</ProjectTypeTag>
+  )
+}
+
+const LineBreak = styled.div`
+  height: 0.75rem;
 `
 
 function App() {
@@ -218,11 +268,34 @@ function App() {
         <PresentationCard>
           <CardContainer>
             <h1><u>Baptiste Garcia</u>,</h1>
+            <LineBreak />
             <h2>Graphic Designer &<br />Creative Developper</h2>
+            <LineBreak />
             <p>based in Paris.</p>
           </CardContainer>
         </PresentationCard>
-        <CardWrapper />
+        <ProjectCard>
+          <CardContainer>
+            <TopCard>
+              <ThumbnailProject1 />
+              <ProjectCardTextWrapper>
+                <h2><u>SemWeb.Pro</u></h2>
+                <LineBreak />
+                <h3>website</h3>
+                <p>design +<br />front-end</p>
+                <ul>
+                  <li>Timeline</li>
+                  <li>Figma</li>
+                  <li>React</li>
+                  <li>Styled-Components</li>
+                </ul>
+              </ProjectCardTextWrapper>
+            </TopCard>
+            <BottomCard>
+              <ClientTag />
+            </BottomCard>
+          </CardContainer>
+        </ProjectCard>
         <CardWrapper />
         <CardWrapper />
         <CardWrapper />

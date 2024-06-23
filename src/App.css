@@ -2,6 +2,21 @@
   --white: #FFF7EA;
   --red: #EE1549;
   --purple: #8118EA;
+  --grey1: #A8A8A8;
+
+  --text-basic: 2.75rem;
+  --text-medium: 1.75rem;
+  --text-small: 1rem;
+}
+
+::-moz-selection {
+  color: var(--white);
+  background: black;
+}
+
+::selection {
+  color: var(--white);
+  background: black;
 }
 
 #root {
@@ -21,6 +36,8 @@ body {
   margin: 0;
   background: black;
   font-family: "Inter";
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -31,4 +48,6 @@ h5,
 h6,
 p {
   margin: 0;
+  font-weight: 500;
+  letter-spacing: -1px;
 }
