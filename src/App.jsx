@@ -103,6 +103,7 @@ const ScrollMosaic = styled.section`
 `
 
 const CardWrapper = styled.div`
+  position: relative;
   border-radius: 2rem;
   background: #FFF7EA;
   scroll-snap-align: start;
@@ -121,8 +122,54 @@ const CardWrapper = styled.div`
   }
 `
 
+const CardBorder = styled.div`
+  position: absolute;
+  background: var(--white);
+`
+
+const BorderTop = styled(CardBorder)`
+  top: -1px;
+  left: 8rem;
+  height: 1px;
+  width: calc(100% - 16rem);
+`
+
+const BorderBottom = styled(CardBorder)`
+  bottom: -1px;
+  left: 8rem;
+  height: 1px;
+  width: calc(100% - 16rem);
+`
+
+const BorderLeft = styled(CardBorder)`
+  top: 8rem;
+  left: -1px;
+  height: calc(100% - 16rem);
+  width: 1px;
+`
+
+const BorderRight = styled(CardBorder)`
+  top: 8rem;
+  right: -1px;
+  height: calc(100% - 16rem);
+  width: 1px;
+`
+
+const Card = ({ children }) => {
+  return (
+    <CardWrapper style={{ border: "solid 1px black" }}>
+      <BorderTop />
+      <BorderBottom />
+      <BorderLeft />
+      <BorderRight />
+      {children}
+    </CardWrapper>
+  )
+}
+
 const CardContainer = styled.div`
   display: flex;
+  flex-direction: column;
   margin: 3rem;
   width: calc(100% - 6rem);
   height: calc(100% - 6rem);
@@ -208,7 +255,7 @@ const ThumbnailProject1 = () => {
   )
 }
 
-const ProjectCard = styled(CardWrapper)`
+const ProjectCard = styled(Card)`
   & > ${CardContainer} {
     flex-direction: column;
   }
