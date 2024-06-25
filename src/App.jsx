@@ -261,6 +261,7 @@ const ProjectTypeSTag = styled(ProjectTypeTag)`
   line-height: 2.2rem;
   position: absolute;
   top: 0.5rem;
+  margin: 0 0.75rem;
 `;
 
 const ClientTag = () => {
@@ -284,9 +285,11 @@ const PersoTag = () => {
 const ClientSTag = () => {
   return (
     <div>
-    <ProjectTypeSTag style={{ borderColor: "var(--red)", color: "var(--red)" }}>
-      c
-    </ProjectTypeSTag>
+      <ProjectTypeSTag
+        style={{ borderColor: "var(--red)", color: "var(--red)" }}
+      >
+        c
+      </ProjectTypeSTag>
     </div>
   );
 };
@@ -294,11 +297,11 @@ const ClientSTag = () => {
 const PersoSTag = () => {
   return (
     <div>
-    <ProjectTypeSTag
-      style={{ borderColor: "var(--purple)", color: "var(--purple)" }}
-    >
-      p
-    </ProjectTypeSTag>
+      <ProjectTypeSTag
+        style={{ borderColor: "var(--purple)", color: "var(--purple)" }}
+      >
+        p
+      </ProjectTypeSTag>
     </div>
   );
 };
@@ -313,6 +316,13 @@ const TOCCard = styled(CardWrapper)`
   bottom: -1px;
   right: -1px;
   border-radius: 2rem 2rem 0 2rem;
+  overflow-y: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (max-width: 3900px) {
     width: calc(100% / 6 + 2px);
@@ -348,13 +358,21 @@ const TOCCard = styled(CardWrapper)`
 
   & > ${CardContainer} {
     display: table;
-    border-spacing: 0.75rem 0;
+    height: unset;
     color: var(--white);
+    pointer-events: all;
   }
 `;
 
 const TOCLine = styled.a`
   display: table-row;
+  cursor: pointer;
+  &:hover {
+    & > h2,
+    & > h3 {
+      font-style: italic;
+    }
+  }
   & > h2 {
     font-weight: 300;
     text-align: right;
@@ -363,7 +381,7 @@ const TOCLine = styled.a`
   }
   & > div {
     display: table-cell;
-    width: 2.5rem;
+    width: 4rem;
     position: relative;
   }
   & > h3 {
