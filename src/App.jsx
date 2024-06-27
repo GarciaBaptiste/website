@@ -400,14 +400,15 @@ function App() {
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    gsap.set(cardsRef.current, { opacity: 0, scale: 0.8 });
+    gsap.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
 
     ScrollTrigger.batch(cardsRef.current, {
-      start: "top 60%",
+      start: "top bottom",
       onEnter: (batch) => {
         gsap.to(batch, {
           opacity: 1,
           scale: 1,
+          y: 0,
           duration: 0.3,
           ease: "power3.out",
           stagger: 0.1,
