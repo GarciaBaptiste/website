@@ -1,6 +1,13 @@
+import React, { forwardRef, useEffect, useRef } from "react";
+
 import "./App.css";
 import styled from "styled-components";
 import GlobalFonts from "./fonts/fonts";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Header = styled.header`
   position: fixed;
@@ -49,19 +56,17 @@ const FixedMosaic = styled.section`
 `;
 
 const ScrollMosaic = styled.section`
-  position: fixed;
-  width: 100%;
-  height: calc(100vh - 2rem);
+  position: absolute;
   top: 2rem;
+  width: 100%;
   display: grid;
-  overflow-y: auto;
   scroll-snap-type: y mandatory;
 
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  // -ms-overflow-style: none;
+  // scrollbar-width: none;
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
 
   @media (max-width: 3900px) {
     grid-template-columns: repeat(6, 1fr);
@@ -156,17 +161,17 @@ const BorderRight = styled(CardBorder)`
   width: 1px;
 `;
 
-const Card = ({ children }) => {
+const Card = forwardRef((props, ref) => {
   return (
-    <CardWrapper style={{ border: "solid 1px black" }}>
+    <CardWrapper ref={ref} style={{ border: "solid 1px black" }}>
       <BorderTop />
       <BorderBottom />
       <BorderLeft />
       <BorderRight />
-      {children}
+      {props.children}
     </CardWrapper>
   );
-};
+});
 
 const CardContainer = styled.div`
   display: flex;
@@ -392,6 +397,26 @@ const TOCLine = styled.a`
 `;
 
 function App() {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    gsap.set(cardsRef.current, { opacity: 0, scale: 0.8 });
+
+    ScrollTrigger.batch(cardsRef.current, {
+      start: "top 60%",
+      onEnter: (batch) => {
+        gsap.to(batch, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.3,
+          ease: "power3.out",
+          stagger: 0.1,
+        });
+      },
+      toggleActions: "play none none none",
+    });
+  }, []);
+
   return (
     <>
       <GlobalFonts />
@@ -420,7 +445,7 @@ function App() {
             <p>based in Paris.</p>
           </CardContainer>
         </PresentationCard>
-        <ProjectCard>
+        <Card ref={(el) => (cardsRef.current[0] = el)}>
           <CardContainer>
             <TopCard>
               <ThumbnailProject1 />
@@ -446,8 +471,8 @@ function App() {
               <ClientTag />
             </BottomCard>
           </CardContainer>
-        </ProjectCard>
-        <ProjectCard>
+        </Card>
+        <Card ref={(el) => (cardsRef.current[1] = el)}>
           <CardContainer>
             <TopCard>
               <ThumbnailProject1 />
@@ -473,8 +498,8 @@ function App() {
               <ClientTag />
             </BottomCard>
           </CardContainer>
-        </ProjectCard>
-        <ProjectCard>
+        </Card>
+        <Card ref={(el) => (cardsRef.current[2] = el)}>
           <CardContainer>
             <TopCard>
               <ThumbnailProject1 />
@@ -500,8 +525,8 @@ function App() {
               <ClientTag />
             </BottomCard>
           </CardContainer>
-        </ProjectCard>
-        <ProjectCard>
+        </Card>
+        <Card ref={(el) => (cardsRef.current[3] = el)}>
           <CardContainer>
             <TopCard>
               <ThumbnailProject1 />
@@ -527,8 +552,8 @@ function App() {
               <ClientTag />
             </BottomCard>
           </CardContainer>
-        </ProjectCard>
-        <ProjectCard>
+        </Card>
+        <Card ref={(el) => (cardsRef.current[4] = el)}>
           <CardContainer>
             <TopCard>
               <ThumbnailProject1 />
@@ -554,11 +579,115 @@ function App() {
               <ClientTag />
             </BottomCard>
           </CardContainer>
-        </ProjectCard>
-        <CardWrapper />
-        <CardWrapper />
-        <CardWrapper />
-        <CardWrapper />
+        </Card>
+        <Card ref={(el) => (cardsRef.current[5] = el)}>
+          <CardContainer>
+            <TopCard>
+              <ThumbnailProject1 />
+              <ProjectCardTextWrapper>
+                <h2>
+                  <u>SemWeb.Pro</u>
+                </h2>
+                <LineBreak />
+                <h3>website</h3>
+                <p>
+                  design +<br />
+                  front-end
+                </p>
+                <ul>
+                  <li>Timeline</li>
+                  <li>Figma</li>
+                  <li>React</li>
+                  <li>Styled-Components</li>
+                </ul>
+              </ProjectCardTextWrapper>
+            </TopCard>
+            <BottomCard>
+              <ClientTag />
+            </BottomCard>
+          </CardContainer>
+        </Card>
+        <Card ref={(el) => (cardsRef.current[6] = el)}>
+          <CardContainer>
+            <TopCard>
+              <ThumbnailProject1 />
+              <ProjectCardTextWrapper>
+                <h2>
+                  <u>SemWeb.Pro</u>
+                </h2>
+                <LineBreak />
+                <h3>website</h3>
+                <p>
+                  design +<br />
+                  front-end
+                </p>
+                <ul>
+                  <li>Timeline</li>
+                  <li>Figma</li>
+                  <li>React</li>
+                  <li>Styled-Components</li>
+                </ul>
+              </ProjectCardTextWrapper>
+            </TopCard>
+            <BottomCard>
+              <ClientTag />
+            </BottomCard>
+          </CardContainer>
+        </Card>
+        <Card ref={(el) => (cardsRef.current[7] = el)}>
+          <CardContainer>
+            <TopCard>
+              <ThumbnailProject1 />
+              <ProjectCardTextWrapper>
+                <h2>
+                  <u>SemWeb.Pro</u>
+                </h2>
+                <LineBreak />
+                <h3>website</h3>
+                <p>
+                  design +<br />
+                  front-end
+                </p>
+                <ul>
+                  <li>Timeline</li>
+                  <li>Figma</li>
+                  <li>React</li>
+                  <li>Styled-Components</li>
+                </ul>
+              </ProjectCardTextWrapper>
+            </TopCard>
+            <BottomCard>
+              <ClientTag />
+            </BottomCard>
+          </CardContainer>
+        </Card>
+        <Card ref={(el) => (cardsRef.current[8] = el)}>
+          <CardContainer>
+            <TopCard>
+              <ThumbnailProject1 />
+              <ProjectCardTextWrapper>
+                <h2>
+                  <u>SemWeb.Pro</u>
+                </h2>
+                <LineBreak />
+                <h3>website</h3>
+                <p>
+                  design +<br />
+                  front-end
+                </p>
+                <ul>
+                  <li>Timeline</li>
+                  <li>Figma</li>
+                  <li>React</li>
+                  <li>Styled-Components</li>
+                </ul>
+              </ProjectCardTextWrapper>
+            </TopCard>
+            <BottomCard>
+              <ClientTag />
+            </BottomCard>
+          </CardContainer>
+        </Card>
         <FixedMosaic>
           <TOCCard>
             <CardContainer>
