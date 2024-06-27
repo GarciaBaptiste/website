@@ -185,9 +185,15 @@ const CardContainer = styled.div`
   height: calc(100% - 6rem);
 `;
 
-const PresentationCard = styled(CardWrapper)`
+const GSAPCardWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background: lightblue;
+  border-radius: 2rem;
+`
 
+const PresentationCard = styled(CardWrapper)`
   & > ${CardContainer} {
     flex-direction: column;
   }
@@ -402,18 +408,27 @@ const TOCLine = styled.a`
 
 function App() {
   const cardsRef = useRef([]);
+  const prezRef = useRef()
+
+  const tl = gsap.timeline()
 
   useGSAP(() => {
-    gsap.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
+    tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
+
+    tl.fromTo(prezRef.current, {
+      width: "100vw", height: "calc(100vh - 2rem)", top: 0, left: 0
+    }, {
+      width: "100%", height: "100%", top: "unset", left: "unset", duration: 1.5, delay: 0.5, ease: "power3.inOut"
+    })
 
     ScrollTrigger.batch(cardsRef.current, {
       start: "top 75%",
       onEnter: (batch) => {
-        gsap.to(batch, {
+        tl.to(batch, {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.3,
+          duration: 0.4,
           ease: "power3.out",
           stagger: 0.1,
         });
@@ -437,6 +452,7 @@ function App() {
       </Header>
       <ScrollMosaic>
         <PresentationCard>
+          <GSAPCardWrapper ref={prezRef}>
           <CardContainer>
             <h1>
               <u>Baptiste Garcia</u>,
@@ -449,6 +465,7 @@ function App() {
             <LineBreak />
             <p>based in Paris.</p>
           </CardContainer>
+          </GSAPCardWrapper>
         </PresentationCard>
         <Card ref={(el) => (cardsRef.current[0] = el)}>
           <CardContainer>

@@ -19,11 +19,6 @@
   background: black;
 }
 
-#root {
-  /* height: 100vh;
-  overflow: hidden; */
-}
-
 * {
   box-sizing: border-box;
 }
@@ -32,6 +27,7 @@ html {
   font-size: 12px;
   scroll-snap-type: y mandatory;
   scroll-padding-top: 2rem;
+  overflow-x: hidden;
 }
 
 body {
