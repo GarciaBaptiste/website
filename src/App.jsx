@@ -1,10 +1,11 @@
-import React, { forwardRef, useEffect, useRef } from "react";
+import React, { forwardRef, useRef } from "react";
 
 import "./App.css";
 import styled from "styled-components";
 import GlobalFonts from "./fonts/fonts";
 
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -402,11 +403,11 @@ const TOCLine = styled.a`
 function App() {
   const cardsRef = useRef([]);
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
 
     ScrollTrigger.batch(cardsRef.current, {
-      start: "top bottom",
+      start: "top 75%",
       onEnter: (batch) => {
         gsap.to(batch, {
           opacity: 1,
