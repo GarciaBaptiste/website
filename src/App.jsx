@@ -21,6 +21,9 @@ const Header = styled.header`
   padding: 0 3rem;
   font-family: "JetBrains";
   font-size: var(--text-small);
+  z-index: 1;
+  border-bottom: solid 1px black;
+  box-sizing: content-box;
 `;
 
 const HeaderContent = styled.div`
