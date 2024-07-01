@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deployment:
     runs-on: self-hosted
-
     steps:
-      - uses: actions/checkout@v2
+      - name: deploy
+        run: npm run build
