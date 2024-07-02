@@ -179,8 +179,8 @@ const Card = forwardRef((props, ref) => {
 
 const CardContainer = styled.div`
   display: flex;
-  flex-direction: column;
   margin: 3rem;
+  gap: 3rem;
   width: calc(100% - 6rem);
   height: calc(100% - 6rem);
 `;
@@ -194,8 +194,9 @@ const GSAPCardWrapper = styled.div`
 `
 
 const PresentationCard = styled(CardWrapper)`
-  & > ${CardContainer} {
+  & ${CardContainer} {
     flex-direction: column;
+    gap: 0;
   }
 `;
 
@@ -248,16 +249,41 @@ const ProjectCard = styled(Card)`
   }
 `;
 
-const TopCard = styled.div`
+const GradientMask = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--white) 100%);
+  border-radius: 0 0 2rem 2rem;
+`
+
+const RightCard = ({children}) => {
+  return (
+    <RightCardWrapper>
+      {children}
+      <GradientMask />
+    </RightCardWrapper>
+  )
+}
+
+const RightCardWrapper = styled.div`
   display: flex;
   flex: 1;
   gap: 3rem;
+  height: calc(100% + 3rem);
+  overflow: hidden;
 `;
 
 const ProjectCardTextWrapper = styled.div``;
 
-const BottomCard = styled.div`
-  align-self: baseline;
+const LeftCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: start;
 `;
 
 const ProjectTypeTag = styled.div`
@@ -469,8 +495,11 @@ function App() {
         </PresentationCard>
         <Card ref={(el) => (cardsRef.current[0] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -488,16 +517,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[1] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -515,16 +544,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[2] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -542,16 +571,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[3] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -569,16 +598,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[4] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -596,16 +625,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[5] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -623,16 +652,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[6] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -650,16 +679,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[7] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -677,16 +706,16 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <Card ref={(el) => (cardsRef.current[8] = el)}>
           <CardContainer>
-            <TopCard>
+            <LeftCard>
               <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
                   <u>SemWeb.Pro</u>
@@ -704,10 +733,7 @@ function App() {
                   <li>Styled-Components</li>
                 </ul>
               </ProjectCardTextWrapper>
-            </TopCard>
-            <BottomCard>
-              <ClientTag />
-            </BottomCard>
+            </RightCard>
           </CardContainer>
         </Card>
         <FixedMosaic>
