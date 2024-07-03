@@ -1,5 +1,6 @@
 :root {
-  --white: #FFF7EA;
+  --black: #0F0F0F;
+  --white: #F4F1EC;
   --red: #EE1549;
   --purple: #8118EA;
   --grey1: #A8A8A8;
@@ -11,12 +12,12 @@
 
 ::-moz-selection {
   color: var(--white);
-  background: black;
+  background: var(--black);
 }
 
 ::selection {
   color: var(--white);
-  background: black;
+  background: var(--black);
 }
 
 * {
@@ -32,7 +33,7 @@ html {
 
 body {
   margin: 0;
-  background: black;
+  background: var(--black);
   font-family: "Inter";
   font-weight: 500;
   -webkit-font-smoothing: antialiased;

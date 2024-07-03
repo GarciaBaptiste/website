@@ -17,13 +17,13 @@ const Header = styled.header`
   height: 2rem;
   top: 0;
   left: 0;
-  background: black;
+  background: var(--black);
   color: var(--white);
   padding: 0 3rem;
   font-family: "JetBrains";
   font-size: var(--text-small);
   z-index: 1;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px var(--black);
   box-sizing: content-box;
 `;
 
@@ -167,7 +167,7 @@ const BorderRight = styled(CardBorder)`
 
 const Card = forwardRef((props, ref) => {
   return (
-    <CardWrapper ref={ref} style={{ border: "solid 1px black" }}>
+    <CardWrapper ref={ref} style={{ border: "solid 1px var(--black)" }}>
       <BorderTop />
       <BorderBottom />
       <BorderLeft />
@@ -222,7 +222,7 @@ const ThumbnailProject1 = () => {
           left: "calc(50% - 1px)",
           height: "100%",
           width: "2px",
-          background: "black",
+          background: "var(--black)",
         }}
       />
       <p
@@ -353,7 +353,7 @@ const LineBreak = styled.div`
 
 const TOCCard = styled(CardWrapper)`
   position: absolute;
-  background: black;
+  background: var(--black);
   bottom: -1px;
   right: -1px;
   border-radius: 2rem 2rem 0 2rem;
