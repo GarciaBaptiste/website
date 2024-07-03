@@ -114,8 +114,7 @@ const ScrollMosaic = styled.section`
 
 const CardWrapper = styled.div`
   position: relative;
-  border-radius: 2rem;
-  background: var(--white);
+  border-radius: 1.5rem;
   scroll-snap-align: start;
 
   @media (max-height: 2800px) {
@@ -132,46 +131,57 @@ const CardWrapper = styled.div`
   }
 `;
 
-const CardBorder = styled.div`
+const CardCorner = styled.div`
   position: absolute;
-  background: var(--white);
+  width: 6rem;
+  height: 6rem;
+  border-color: var(--black);
+  border-width: 1px;
 `;
 
-const BorderTop = styled(CardBorder)`
-  top: -1px;
-  left: 8rem;
-  height: 1px;
-  width: calc(100% - 16rem);
+const CornerTopLeft = styled(CardCorner)`
+  top: 0;
+  left: 0;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-bottom-style: none;
+  border-right-style: none;
 `;
 
-const BorderBottom = styled(CardBorder)`
-  bottom: -1px;
-  left: 8rem;
-  height: 1px;
-  width: calc(100% - 16rem);
+const CornerTopRight = styled(CardCorner)`
+  top: 0;
+  right: 0;
+  border-top-style: solid;
+  border-left-style: none;
+  border-bottom-style: none;
+  border-right-style: solid;
 `;
 
-const BorderLeft = styled(CardBorder)`
-  top: 8rem;
-  left: -1px;
-  height: calc(100% - 16rem);
-  width: 1px;
+const CornerBottomLeft = styled(CardCorner)`
+  bottom: 0;
+  left: 0;
+  border-top-style: none;
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-right-style: none;
 `;
 
-const BorderRight = styled(CardBorder)`
-  top: 8rem;
-  right: -1px;
-  height: calc(100% - 16rem);
-  width: 1px;
+const CornerBottomRight = styled(CardCorner)`
+  bottom: 0;
+  right: 0;
+  border-top-style: none;
+  border-left-style: none;
+  border-bottom-style: solid;
+  border-right-style: solid;
 `;
 
 const Card = forwardRef((props, ref) => {
   return (
-    <CardWrapper ref={ref} style={{ border: "solid 1px var(--black)" }}>
-      <BorderTop />
-      <BorderBottom />
-      <BorderLeft />
-      <BorderRight />
+    <CardWrapper ref={ref} {...props} >
+      <CornerTopLeft />
+      <CornerTopRight />
+      <CornerBottomLeft />
+      <CornerBottomRight />
       {props.children}
     </CardWrapper>
   );
@@ -189,21 +199,26 @@ const GSAPCardWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: lightblue;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
 `
 
-const PresentationCard = styled(CardWrapper)`
-  & ${CardContainer} {
-    flex-direction: column;
-    gap: 0;
-  }
+const PresentationCard = styled(Card)`
+  background: lightblue;
+`;
+
+const PresentationCardContainer = styled(CardContainer)`
+  flex-direction: column;
+  gap: 0;
+`
+
+const ProjectCard = styled(Card)`
+  background: var(--white);
 `;
 
 const ThumbnailProject = styled.div`
   width: 10rem;
   height: 10rem;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   position: relative;
   display: flex;
 `;
@@ -243,15 +258,9 @@ const ThumbnailProject1 = () => {
   );
 };
 
-const ProjectCard = styled(Card)`
-  & > ${CardContainer} {
-    flex-direction: column;
-  }
-`;
-
 const GradientMask = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 1px;
   left: 0;
   width: 100%;
   min-height: 5rem;
@@ -356,7 +365,7 @@ const TOCCard = styled(CardWrapper)`
   background: var(--black);
   bottom: -1px;
   right: -1px;
-  border-radius: 2rem 2rem 0 2rem;
+  border-radius: 1.5rem 1.5rem 0 1.5rem;
   overflow-y: auto;
 
   -ms-overflow-style: none;
@@ -472,7 +481,7 @@ function App() {
       <ScrollMosaic>
         <PresentationCard>
           <GSAPCardWrapper>
-          <CardContainer>
+          <PresentationCardContainer>
             <h1>
               <u>Baptiste Garcia</u>,
             </h1>
@@ -483,10 +492,10 @@ function App() {
             </h2>
             <LineBreak />
             <p>based in Paris.</p>
-          </CardContainer>
+          </PresentationCardContainer>
           </GSAPCardWrapper>
         </PresentationCard>
-        <Card ref={(el) => (cardsRef.current[0] = el)}>
+        <ProjectCard ref={(el) => (cardsRef.current[0] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -512,8 +521,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[1] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[1] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -539,8 +548,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[2] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[2] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -566,8 +575,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[3] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[3] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -593,8 +602,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[4] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[4] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -620,8 +629,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[5] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[5] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -647,8 +656,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[6] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[6] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -674,8 +683,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[7] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[7] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -701,8 +710,8 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
-        <Card ref={(el) => (cardsRef.current[8] = el)}>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[8] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
@@ -728,7 +737,7 @@ function App() {
               </ProjectCardTextWrapper>
             </RightCard>
           </CardContainer>
-        </Card>
+        </ProjectCard>
         <FixedMosaic>
           <TOCCard>
             <CardContainer>
