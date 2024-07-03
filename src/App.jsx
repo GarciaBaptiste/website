@@ -115,7 +115,7 @@ const ScrollMosaic = styled.section`
 const CardWrapper = styled.div`
   position: relative;
   border-radius: 2rem;
-  background: #fff7ea;
+  background: var(--white);
   scroll-snap-align: start;
 
   @media (max-height: 2800px) {
