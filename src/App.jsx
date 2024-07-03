@@ -300,7 +300,7 @@ const ThumbnailProject4 = () => {
 
 const GradientMask = styled.div`
   position: absolute;
-  bottom: 1px;
+  bottom: 0;
   left: 0;
   width: 100%;
   min-height: 5rem;
@@ -321,7 +321,7 @@ const RightCardWrapper = styled.div`
   position: relative;
   flex: 1;
   gap: 3rem;
-  height: calc(100% + 3rem);
+  height: calc(100% + 3rem - 1px);
   overflow: hidden;
 `;
 
