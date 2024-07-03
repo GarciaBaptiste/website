@@ -256,7 +256,6 @@ const GradientMask = styled.div`
   width: 100%;
   min-height: 5rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--white) 100%);
-  border-radius: 0 0 2rem 2rem;
 `
 
 const RightCard = ({children}) => {
@@ -270,6 +269,7 @@ const RightCard = ({children}) => {
 
 const RightCardWrapper = styled.div`
   display: flex;
+  position: relative;
   flex: 1;
   gap: 3rem;
   height: calc(100% + 3rem);
