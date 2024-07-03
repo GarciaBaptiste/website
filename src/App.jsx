@@ -258,6 +258,46 @@ const ThumbnailProject1 = () => {
   );
 };
 
+const WrapperThumbnailProject2 = styled(ThumbnailProject)`
+  background: #0400CE;
+`;
+
+const ThumbnailProject2 = () => {
+  return (
+    <WrapperThumbnailProject2>
+      <p style={{
+        color: "white",
+        fontSize: "2rem",
+        position: "absolute",
+        top: "1rem",
+        right: "1rem",
+      }}>
+        19
+      </p>
+    </WrapperThumbnailProject2>
+  )
+}
+
+const WrapperThumbnailProject3 = styled(ThumbnailProject)`
+  background: #FF8C19;
+`;
+
+const ThumbnailProject3 = () => {
+  return (
+    <WrapperThumbnailProject3 />
+  )
+}
+
+const WrapperThumbnailProject4 = styled(ThumbnailProject)`
+  background: #834531;
+`;
+
+const ThumbnailProject4 = () => {
+  return (
+    <WrapperThumbnailProject4 />
+  )
+}
+
 const GradientMask = styled.div`
   position: absolute;
   bottom: 1px;
@@ -525,25 +565,22 @@ function App() {
         <ProjectCard ref={(el) => (cardsRef.current[1] = el)}>
           <CardContainer>
             <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
+              <ThumbnailProject2 />
+              <PersoTag />
             </LeftCard>
             <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
-                  <u>SemWeb.Pro</u>
+                  <u>Logilab</u>
                 </h2>
                 <LineBreak />
-                <h3>website</h3>
+                <h3>calendar</h3>
                 <p>
-                  design +<br />
-                  front-end
+                  UX + UI
                 </p>
                 <ul>
-                  <li>Timeline</li>
                   <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
+                  <li>Prototype</li>
                 </ul>
               </ProjectCardTextWrapper>
             </RightCard>
@@ -552,13 +589,13 @@ function App() {
         <ProjectCard ref={(el) => (cardsRef.current[2] = el)}>
           <CardContainer>
             <LeftCard>
-              <ThumbnailProject1 />
+              <ThumbnailProject3 />
               <ClientTag />
             </LeftCard>
             <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
-                  <u>SemWeb.Pro</u>
+                  <u>Logilab.fr</u>
                 </h2>
                 <LineBreak />
                 <h3>website</h3>
@@ -567,7 +604,6 @@ function App() {
                   front-end
                 </p>
                 <ul>
-                  <li>Timeline</li>
                   <li>Figma</li>
                   <li>React</li>
                   <li>Styled-Components</li>
@@ -579,13 +615,13 @@ function App() {
         <ProjectCard ref={(el) => (cardsRef.current[3] = el)}>
           <CardContainer>
             <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
+              <ThumbnailProject4 />
+              <PersoTag />
             </LeftCard>
             <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
-                  <u>SemWeb.Pro</u>
+                  <u>CubicWeb.org</u>
                 </h2>
                 <LineBreak />
                 <h3>website</h3>
@@ -594,10 +630,11 @@ function App() {
                   front-end
                 </p>
                 <ul>
-                  <li>Timeline</li>
                   <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
+                  <li>Prototype</li>
+                  <li>POC</li>
+                  <li>React +</li>
+                  <li>Styled Components</li>
                 </ul>
               </ProjectCardTextWrapper>
             </RightCard>
@@ -606,13 +643,13 @@ function App() {
         <ProjectCard ref={(el) => (cardsRef.current[4] = el)}>
           <CardContainer>
             <LeftCard>
-              <ThumbnailProject1 />
+              <ThumbnailProject3 />
               <ClientTag />
             </LeftCard>
             <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
-                  <u>SemWeb.Pro</u>
+                  <u>Logilab.fr</u>
                 </h2>
                 <LineBreak />
                 <h3>website</h3>
@@ -621,7 +658,6 @@ function App() {
                   front-end
                 </p>
                 <ul>
-                  <li>Timeline</li>
                   <li>Figma</li>
                   <li>React</li>
                   <li>Styled-Components</li>
@@ -660,25 +696,22 @@ function App() {
         <ProjectCard ref={(el) => (cardsRef.current[6] = el)}>
           <CardContainer>
             <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
+              <ThumbnailProject2 />
+              <PersoTag />
             </LeftCard>
             <RightCard>
               <ProjectCardTextWrapper>
                 <h2>
-                  <u>SemWeb.Pro</u>
+                  <u>Logilab</u>
                 </h2>
                 <LineBreak />
-                <h3>website</h3>
+                <h3>calendar</h3>
                 <p>
-                  design +<br />
-                  front-end
+                  UX + UI
                 </p>
                 <ul>
-                  <li>Timeline</li>
                   <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
+                  <li>Prototype</li>
                 </ul>
               </ProjectCardTextWrapper>
             </RightCard>
@@ -712,6 +745,60 @@ function App() {
           </CardContainer>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[8] = el)}>
+          <CardContainer>
+            <LeftCard>
+              <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
+              <ProjectCardTextWrapper>
+                <h2>
+                  <u>SemWeb.Pro</u>
+                </h2>
+                <LineBreak />
+                <h3>website</h3>
+                <p>
+                  design +<br />
+                  front-end
+                </p>
+                <ul>
+                  <li>Timeline</li>
+                  <li>Figma</li>
+                  <li>React</li>
+                  <li>Styled-Components</li>
+                </ul>
+              </ProjectCardTextWrapper>
+            </RightCard>
+          </CardContainer>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[9] = el)}>
+          <CardContainer>
+            <LeftCard>
+              <ThumbnailProject1 />
+              <ClientTag />
+            </LeftCard>
+            <RightCard>
+              <ProjectCardTextWrapper>
+                <h2>
+                  <u>SemWeb.Pro</u>
+                </h2>
+                <LineBreak />
+                <h3>website</h3>
+                <p>
+                  design +<br />
+                  front-end
+                </p>
+                <ul>
+                  <li>Timeline</li>
+                  <li>Figma</li>
+                  <li>React</li>
+                  <li>Styled-Components</li>
+                </ul>
+              </ProjectCardTextWrapper>
+            </RightCard>
+          </CardContainer>
+        </ProjectCard>
+        <ProjectCard ref={(el) => (cardsRef.current[10] = el)}>
           <CardContainer>
             <LeftCard>
               <ThumbnailProject1 />
