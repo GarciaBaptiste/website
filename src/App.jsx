@@ -433,19 +433,12 @@ const TOCLine = styled.a`
 `;
 
 function App() {
-  const cardsRef = useRef([]);
-  const prezRef = useRef()
+  const cardsRef = useRef([])
 
   const tl = gsap.timeline()
 
   useGSAP(() => {
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
-
-    tl.fromTo(prezRef.current, {
-      width: "100vw", height: "calc(100vh - 2rem)", top: 0, left: 0
-    }, {
-      width: "100%", height: "100%", top: "unset", left: "unset", duration: 1.5, delay: 0.5, ease: "power3.inOut"
-    })
 
     ScrollTrigger.batch(cardsRef.current, {
       start: "top 75%",
@@ -478,7 +471,7 @@ function App() {
       </Header>
       <ScrollMosaic>
         <PresentationCard>
-          <GSAPCardWrapper ref={prezRef}>
+          <GSAPCardWrapper>
           <CardContainer>
             <h1>
               <u>Baptiste Garcia</u>,
