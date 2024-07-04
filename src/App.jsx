@@ -455,6 +455,7 @@ const TOCCard = styled(CardWrapper)`
     height: unset;
     color: var(--white);
     pointer-events: all;
+    min-width: 35rem;
   }
 `;
 
@@ -484,6 +485,15 @@ const TOCLine = styled.a`
     display: table-cell;
   }
 `;
+
+const TOCMask = styled.div`
+  position: absolute;
+  width: 3rem;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0), var(--black));
+  right: 0;
+  top: 0;
+`
 
 function App() {
   const cardsRef = useRef([])
@@ -910,6 +920,7 @@ function App() {
                 <h3>catalog</h3>
               </TOCLine>
             </CardContainer>
+            <TOCMask />
           </TOCCard>
         </FixedMosaic>
       </ScrollMosaic>
