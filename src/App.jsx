@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useRef, useEffect } from "react";
 
 import "./App.css";
 import styled from "styled-components";
@@ -518,6 +518,36 @@ function App() {
       toggleActions: "play none none none",
     });
   }, []);
+
+  useEffect(() => {
+    cardsRef.current.forEach(item => {
+      const handleMouseMove = (e) => {
+        const rect = item.getBoundingClientRect()
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+        const centerX = rect.width / 2
+        const centerY = rect.height / 2
+        const deltaX = x - centerX
+        const deltaY = y - centerY
+        const rotateX = (deltaY / centerY) * 20
+        const rotateY = -(deltaX  /centerX) * 20
+
+        gsap.to(item, {rotationX: rotateX, rotationY: rotateY, duration: 0.5})
+      }
+      
+      const handleMouseLeave = () => {
+        gsap.to(item, { rotationX: 0, rotationY: 0, duration: 0.5 });
+      }
+
+      item.addEventListener('mousemove', handleMouseMove)
+      item.addEventListener('mouseleave', handleMouseLeave)
+
+      return () => {
+        item.removeEventListener('mousemove', handleMouseMove)
+        item.removeEventListener('mouseleave', handleMouseLeave)
+      }
+    })
+  })
 
   return (
     <>
