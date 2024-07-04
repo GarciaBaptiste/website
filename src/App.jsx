@@ -414,6 +414,10 @@ const TOCCard = styled(CardWrapper)`
     display: none;
   }
 
+  @media (max-width: 650px) {
+    display: none;
+  }
+
   @media (max-width: 3900px) {
     width: calc(100% / 6 + 2px);
   }
