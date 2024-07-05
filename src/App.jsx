@@ -66,12 +66,6 @@ const ScrollMosaic = styled.section`
   display: grid;
   scroll-snap-type: y mandatory;
 
-  // -ms-overflow-style: none;
-  // scrollbar-width: none;
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
-
   @media (max-width: 3900px) {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -177,7 +171,7 @@ const CornerBottomRight = styled(CardCorner)`
 
 const Card = forwardRef((props, ref) => {
   return (
-    <CardWrapper ref={ref} {...props} >
+    <CardWrapper ref={ref} {...props}>
       <CornerTopLeft />
       <CornerTopRight />
       <CornerBottomLeft />
@@ -200,7 +194,7 @@ const GSAPCardWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 1.5rem;
-`
+`;
 
 const PresentationCard = styled(Card)`
   background: lightblue;
@@ -209,7 +203,7 @@ const PresentationCard = styled(Card)`
 const PresentationCardContainer = styled(CardContainer)`
   flex-direction: column;
   gap: 0;
-`
+`;
 
 const ProjectCard = styled(Card)`
   background: var(--white);
@@ -259,44 +253,42 @@ const ThumbnailProject1 = () => {
 };
 
 const WrapperThumbnailProject2 = styled(ThumbnailProject)`
-  background: #0400CE;
+  background: #0400ce;
 `;
 
 const ThumbnailProject2 = () => {
   return (
     <WrapperThumbnailProject2>
-      <p style={{
-        color: "white",
-        fontSize: "2rem",
-        position: "absolute",
-        top: "1rem",
-        right: "1rem",
-      }}>
+      <p
+        style={{
+          color: "white",
+          fontSize: "2rem",
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
+      >
         19
       </p>
     </WrapperThumbnailProject2>
-  )
-}
+  );
+};
 
 const WrapperThumbnailProject3 = styled(ThumbnailProject)`
-  background: #FF8C19;
+  background: #ff8c19;
 `;
 
 const ThumbnailProject3 = () => {
-  return (
-    <WrapperThumbnailProject3 />
-  )
-}
+  return <WrapperThumbnailProject3 />;
+};
 
 const WrapperThumbnailProject4 = styled(ThumbnailProject)`
   background: #834531;
 `;
 
 const ThumbnailProject4 = () => {
-  return (
-    <WrapperThumbnailProject4 />
-  )
-}
+  return <WrapperThumbnailProject4 />;
+};
 
 const GradientMask = styled.div`
   position: absolute;
@@ -304,17 +296,21 @@ const GradientMask = styled.div`
   left: 0;
   width: 100%;
   min-height: 5rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--white) 100%);
-`
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    var(--white) 100%
+  );
+`;
 
-const RightCard = ({children}) => {
+const RightCard = ({ children }) => {
   return (
     <RightCardWrapper>
       {children}
       <GradientMask />
     </RightCardWrapper>
-  )
-}
+  );
+};
 
 const RightCardWrapper = styled.div`
   display: flex;
@@ -490,15 +486,15 @@ const TOCMask = styled.div`
   position: absolute;
   width: 3rem;
   height: 100%;
-  background: linear-gradient(90deg, rgba(0,0,0,0), var(--black));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--black));
   right: 0;
   top: 0;
-`
+`;
 
 function App() {
-  const cardsRef = useRef([])
+  const cardsRef = useRef([]);
 
-  const tl = gsap.timeline()
+  const tl = gsap.timeline();
 
   useGSAP(() => {
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
@@ -520,34 +516,38 @@ function App() {
   }, []);
 
   useEffect(() => {
-    cardsRef.current.forEach(item => {
+    cardsRef.current.forEach((item) => {
       const handleMouseMove = (e) => {
-        const rect = item.getBoundingClientRect()
-        const x = e.clientX - rect.left
-        const y = e.clientY - rect.top
-        const centerX = rect.width / 2
-        const centerY = rect.height / 2
-        const deltaX = x - centerX
-        const deltaY = y - centerY
-        const rotateX = (deltaY / centerY) * 20
-        const rotateY = -(deltaX  /centerX) * 20
+        const rect = item.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const deltaX = x - centerX;
+        const deltaY = y - centerY;
+        const rotateX = (deltaY / centerY) * 20;
+        const rotateY = -(deltaX / centerX) * 20;
 
-        gsap.to(item, {rotationX: rotateX, rotationY: rotateY, duration: 0.5})
-      }
-      
+        gsap.to(item, {
+          rotationX: rotateX,
+          rotationY: rotateY,
+          duration: 0.5,
+        });
+      };
+
       const handleMouseLeave = () => {
         gsap.to(item, { rotationX: 0, rotationY: 0, duration: 0.5 });
-      }
+      };
 
-      item.addEventListener('mousemove', handleMouseMove)
-      item.addEventListener('mouseleave', handleMouseLeave)
+      item.addEventListener("mousemove", handleMouseMove);
+      item.addEventListener("mouseleave", handleMouseLeave);
 
       return () => {
-        item.removeEventListener('mousemove', handleMouseMove)
-        item.removeEventListener('mouseleave', handleMouseLeave)
-      }
-    })
-  })
+        item.removeEventListener("mousemove", handleMouseMove);
+        item.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    });
+  });
 
   return (
     <>
@@ -565,18 +565,18 @@ function App() {
       <ScrollMosaic>
         <PresentationCard>
           <GSAPCardWrapper>
-          <PresentationCardContainer>
-            <h1>
-              <u>Baptiste Garcia</u>,
-            </h1>
-            <LineBreak />
-            <h2>
-              Graphic Designer &<br />
-              Creative Developper
-            </h2>
-            <LineBreak />
-            <p>based in Paris.</p>
-          </PresentationCardContainer>
+            <PresentationCardContainer>
+              <h1>
+                <u>Baptiste Garcia</u>,
+              </h1>
+              <LineBreak />
+              <h2>
+                Graphic Designer &<br />
+                Creative Developper
+              </h2>
+              <LineBreak />
+              <p>based in Paris.</p>
+            </PresentationCardContainer>
           </GSAPCardWrapper>
         </PresentationCard>
         <ProjectCard ref={(el) => (cardsRef.current[0] = el)}>
@@ -619,9 +619,7 @@ function App() {
                 </h2>
                 <LineBreak />
                 <h3>calendar</h3>
-                <p>
-                  UX + UI
-                </p>
+                <p>UX + UI</p>
                 <ul>
                   <li>Figma</li>
                   <li>Prototype</li>
@@ -750,9 +748,7 @@ function App() {
                 </h2>
                 <LineBreak />
                 <h3>calendar</h3>
-                <p>
-                  UX + UI
-                </p>
+                <p>UX + UI</p>
                 <ul>
                   <li>Figma</li>
                   <li>Prototype</li>
