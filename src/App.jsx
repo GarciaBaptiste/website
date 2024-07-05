@@ -564,306 +564,326 @@ function App() {
       </Header>
       <ScrollMosaic>
         <PresentationCard>
-          <GSAPCardWrapper>
-            <PresentationCardContainer>
-              <h1>
-                <u>Baptiste Garcia</u>,
-              </h1>
-              <LineBreak />
-              <h2>
-                Graphic Designer &<br />
-                Creative Developper
-              </h2>
-              <LineBreak />
-              <p>based in Paris.</p>
-            </PresentationCardContainer>
-          </GSAPCardWrapper>
+          <PresentationCardContainer>
+            <h1>
+              <u>Baptiste Garcia</u>,
+            </h1>
+            <LineBreak />
+            <h2>
+              Graphic Designer &<br />
+              Creative Developper
+            </h2>
+            <LineBreak />
+            <p>based in Paris.</p>
+          </PresentationCardContainer>
         </PresentationCard>
         <ProjectCard ref={(el) => (cardsRef.current[0] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>SemWeb.Pro</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Timeline</li>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject1 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>SemWeb.Pro</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Timeline</li>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[1] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject2 />
-              <PersoTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>Logilab</u>
-                </h2>
-                <LineBreak />
-                <h3>calendar</h3>
-                <p>UX + UI</p>
-                <ul>
-                  <li>Figma</li>
-                  <li>Prototype</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject2 />
+                <PersoTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>Logilab</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>calendar</h3>
+                  <p>UX + UI</p>
+                  <ul>
+                    <li>Figma</li>
+                    <li>Prototype</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[2] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject3 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>Logilab.fr</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject3 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>Logilab.fr</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[3] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject4 />
-              <PersoTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>CubicWeb.org</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Figma</li>
-                  <li>Prototype</li>
-                  <li>POC</li>
-                  <li>React +</li>
-                  <li>Styled Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject4 />
+                <PersoTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>CubicWeb.org</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Figma</li>
+                    <li>Prototype</li>
+                    <li>POC</li>
+                    <li>React +</li>
+                    <li>Styled Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[4] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject3 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>Logilab.fr</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject3 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>Logilab.fr</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[5] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>SemWeb.Pro</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Timeline</li>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject1 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>SemWeb.Pro</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Timeline</li>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[6] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject2 />
-              <PersoTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>Logilab</u>
-                </h2>
-                <LineBreak />
-                <h3>calendar</h3>
-                <p>UX + UI</p>
-                <ul>
-                  <li>Figma</li>
-                  <li>Prototype</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject2 />
+                <PersoTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>Logilab</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>calendar</h3>
+                  <p>UX + UI</p>
+                  <ul>
+                    <li>Figma</li>
+                    <li>Prototype</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[7] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>SemWeb.Pro</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Timeline</li>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject1 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>SemWeb.Pro</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Timeline</li>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[8] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>SemWeb.Pro</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Timeline</li>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject1 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>SemWeb.Pro</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Timeline</li>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[9] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>SemWeb.Pro</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Timeline</li>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject1 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>SemWeb.Pro</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Timeline</li>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <ProjectCard ref={(el) => (cardsRef.current[10] = el)}>
-          <CardContainer>
-            <LeftCard>
-              <ThumbnailProject1 />
-              <ClientTag />
-            </LeftCard>
-            <RightCard>
-              <ProjectCardTextWrapper>
-                <h2>
-                  <u>SemWeb.Pro</u>
-                </h2>
-                <LineBreak />
-                <h3>website</h3>
-                <p>
-                  design +<br />
-                  front-end
-                </p>
-                <ul>
-                  <li>Timeline</li>
-                  <li>Figma</li>
-                  <li>React</li>
-                  <li>Styled-Components</li>
-                </ul>
-              </ProjectCardTextWrapper>
-            </RightCard>
-          </CardContainer>
+          <GSAPCardWrapper>
+            <CardContainer>
+              <LeftCard>
+                <ThumbnailProject1 />
+                <ClientTag />
+              </LeftCard>
+              <RightCard>
+                <ProjectCardTextWrapper>
+                  <h2>
+                    <u>SemWeb.Pro</u>
+                  </h2>
+                  <LineBreak />
+                  <h3>website</h3>
+                  <p>
+                    design +<br />
+                    front-end
+                  </p>
+                  <ul>
+                    <li>Timeline</li>
+                    <li>Figma</li>
+                    <li>React</li>
+                    <li>Styled-Components</li>
+                  </ul>
+                </ProjectCardTextWrapper>
+              </RightCard>
+            </CardContainer>
+          </GSAPCardWrapper>
         </ProjectCard>
         <FixedMosaic>
           <TOCCard>
