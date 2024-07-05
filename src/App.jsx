@@ -140,6 +140,7 @@ const CornerTopLeft = styled(CardCorner)`
   border-left-style: solid;
   border-bottom-style: none;
   border-right-style: none;
+  border-radius: calc(1.5rem - 2px) 0 0 0;
 `;
 
 const CornerTopRight = styled(CardCorner)`
@@ -149,6 +150,7 @@ const CornerTopRight = styled(CardCorner)`
   border-left-style: none;
   border-bottom-style: none;
   border-right-style: solid;
+  border-radius: 0 calc(1.5rem - 2px) 0 0;
 `;
 
 const CornerBottomLeft = styled(CardCorner)`
@@ -158,6 +160,7 @@ const CornerBottomLeft = styled(CardCorner)`
   border-left-style: solid;
   border-bottom-style: solid;
   border-right-style: none;
+  border-radius: 0 0 0 calc(1.5rem - 2px);
 `;
 
 const CornerBottomRight = styled(CardCorner)`
@@ -167,6 +170,7 @@ const CornerBottomRight = styled(CardCorner)`
   border-left-style: none;
   border-bottom-style: solid;
   border-right-style: solid;
+  border-radius: 0 0 calc(1.5rem - 2px) 0;
 `;
 
 const Card = forwardRef((props, ref) => {
