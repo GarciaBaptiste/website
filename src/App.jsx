@@ -106,7 +106,7 @@ const ScrollMosaic = styled.section`
   }
 `;
 
-const CardWrapper = styled.div`
+const Card = styled.div`
   position: relative;
   border-radius: 1.5rem;
   scroll-snap-align: start;
@@ -173,19 +173,19 @@ const CornerBottomRight = styled(CardCorner)`
   border-radius: 0 0 calc(1.5rem - 2px) 0;
 `;
 
-const Card = forwardRef((props, ref) => {
+const CardContainerWrapper = forwardRef((props, ref) => {
   return (
-    <CardWrapper ref={ref} {...props}>
+    <div ref={ref} {...props}>
       <CornerTopLeft />
       <CornerTopRight />
       <CornerBottomLeft />
       <CornerBottomRight />
       {props.children}
-    </CardWrapper>
-  );
+    </div>
+  )
 });
 
-const CardContainer = styled.div`
+const CardContainer = styled(CardContainerWrapper)`
   display: flex;
   margin: 3rem;
   gap: 3rem;
@@ -198,6 +198,7 @@ const GSAPCardWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 1.5rem;
+  background: var(--white);
 `;
 
 const PresentationCard = styled(Card)`
@@ -209,9 +210,7 @@ const PresentationCardContainer = styled(CardContainer)`
   gap: 0;
 `;
 
-const ProjectCard = styled(Card)`
-  background: var(--white);
-`;
+const ProjectCard = styled(Card)``;
 
 const ThumbnailProject = styled.div`
   width: 10rem;
@@ -400,7 +399,7 @@ const LineBreak = styled.div`
   height: 0.75rem;
 `;
 
-const TOCCard = styled(CardWrapper)`
+const TOCCard = styled(Card)`
   position: absolute;
   background: var(--black);
   bottom: -1px;
@@ -581,8 +580,8 @@ function App() {
             <p>based in Paris.</p>
           </PresentationCardContainer>
         </PresentationCard>
-        <ProjectCard ref={(el) => (cardsRef.current[0] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[0] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
@@ -610,8 +609,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[1] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[1] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject2 />
@@ -634,8 +633,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[2] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[2] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject3 />
@@ -662,8 +661,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[3] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[3] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject4 />
@@ -692,8 +691,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[4] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[4] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject3 />
@@ -720,8 +719,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[5] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[5] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
@@ -749,8 +748,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[6] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[6] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject2 />
@@ -773,8 +772,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[7] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[7] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
@@ -802,8 +801,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[8] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[8] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
@@ -831,8 +830,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[9] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[9] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
@@ -860,8 +859,8 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard ref={(el) => (cardsRef.current[10] = el)}>
-          <GSAPCardWrapper>
+        <ProjectCard>
+          <GSAPCardWrapper ref={(el) => (cardsRef.current[10] = el)}>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
