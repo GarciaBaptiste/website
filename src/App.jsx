@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useEffect } from "react";
+import React, { forwardRef, useRef, useEffect, useState } from "react";
 
 import "./App.css";
 import styled from "styled-components";
@@ -218,10 +218,32 @@ const ThumbnailProject = styled.div`
   border-radius: 1.5rem;
   position: relative;
   display: flex;
+
+  @media (max-width: 900px) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @media (max-width: 650px) {
+    width: 10rem;
+    height: 10rem;
+  }
 `;
 
 const WrapperThumbnailProject1 = styled(ThumbnailProject)`
   background: #cfefbf;
+
+  @media (max-width: 900px) {
+    p {
+      display: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+    p {
+      display: initial;
+    }
+  }
 `;
 
 const ThumbnailProject1 = () => {
@@ -257,6 +279,18 @@ const ThumbnailProject1 = () => {
 
 const WrapperThumbnailProject2 = styled(ThumbnailProject)`
   background: #0400ce;
+
+  @media (max-width: 900px) {
+    p {
+      display: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+    p {
+      display: initial;
+    }
+  }
 `;
 
 const ThumbnailProject2 = () => {
@@ -394,6 +428,38 @@ const PersoSTag = () => {
     </div>
   );
 };
+
+const ResponsiveClientTag = () => {
+  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650)
+  const handleResize = () => {
+    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.addEventListener('resize', handleResize)
+    }
+  }, [])
+
+  return isLargeTag ? <ClientTag /> : <ProjectTypeSTag style={{ borderColor: "var(--red)", color: "var(--red)", margin: 0, position: "relative" }}>c</ProjectTypeSTag>
+}
+
+const ResponsivePersoTag = () => {
+  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650)
+  const handleResize = () => {
+    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  return isLargeTag ? <PersoTag /> : <ProjectTypeSTag style={{ borderColor: "var(--purple)", color: "var(--purple)", margin: 0, position: "relative" }}>p</ProjectTypeSTag>
+}
 
 const LineBreak = styled.div`
   height: 0.75rem;
@@ -585,7 +651,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -614,7 +680,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject2 />
-                <PersoTag />
+                <ResponsivePersoTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -638,7 +704,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject3 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -666,7 +732,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject4 />
-                <PersoTag />
+                <ResponsivePersoTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -696,7 +762,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject3 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -724,7 +790,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -753,7 +819,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject2 />
-                <PersoTag />
+                <ResponsivePersoTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -777,7 +843,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -806,7 +872,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -835,7 +901,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
@@ -864,7 +930,7 @@ function App() {
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
-                <ClientTag />
+                <ResponsiveClientTag />
               </LeftCard>
               <RightCard>
                 <ProjectCardTextWrapper>
