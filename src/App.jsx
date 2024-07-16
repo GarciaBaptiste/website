@@ -64,7 +64,6 @@ const ScrollMosaic = styled.section`
   top: 2rem;
   width: 100%;
   display: grid;
-  scroll-snap-type: y mandatory;
 
   @media (max-width: 3900px) {
     grid-template-columns: repeat(6, 1fr);
@@ -111,6 +110,7 @@ const Card = styled.div`
   border-radius: 1.5rem;
   scroll-snap-align: start;
   transition: height .3s;
+  padding-top: 2rem;
 
   @media (max-height: 2800px) {
     height: calc((100dvh - 2rem) / 4);
@@ -203,7 +203,9 @@ const GSAPCardWrapper = styled.div`
 `;
 
 const PresentationCard = styled(Card)`
+  & ${GSAPCardWrapper} {
   background: lightblue;
+  }
 `;
 
 const PresentationCardContainer = styled(CardContainer)`
@@ -629,6 +631,7 @@ function App() {
       </Header>
       <ScrollMosaic>
         <PresentationCard>
+          <GSAPCardWrapper>
           <PresentationCardContainer>
             <h1>
               <u>Baptiste Garcia</u>,
@@ -641,6 +644,7 @@ function App() {
             <LineBreak />
             <p>based in Paris.</p>
           </PresentationCardContainer>
+          </GSAPCardWrapper>
         </PresentationCard>
         <ProjectCard>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[0] = el)}>

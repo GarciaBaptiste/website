@@ -27,7 +27,6 @@
 html {
   font-size: 12px;
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 2rem;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
