@@ -626,11 +626,6 @@ function App() {
         <HeaderContentLeft>
           <a href="#">baptistegarcia.com</a>
         </HeaderContentLeft>
-        <HeaderContentRight>
-          <a href="#">hello@baptistegarcia.com</a>
-          <a href="#">06 34 57 45 77</a>
-          <p>PARIS</p>
-        </HeaderContentRight>
       </Header>
       <ScrollMosaic>
         <PresentationCard>
