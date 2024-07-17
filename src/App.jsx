@@ -406,7 +406,6 @@ const ProjectTypeSTag = styled(ProjectTypeTag)`
   text-align: center;
   line-height: 2.2rem;
   position: absolute;
-  top: 0.5rem;
   margin: 0 0.75rem;
 `;
 
@@ -544,6 +543,10 @@ const TOCCard = styled(Card)`
     color: var(--white);
     pointer-events: all;
     min-width: 35rem;
+  }
+
+  & ${ProjectTypeSTag} {
+    top: 0.5rem;
   }
 `;
 
