@@ -124,6 +124,9 @@ const Card = styled.div`
   @media (max-height: 700px) {
     height: calc((100dvh - 2rem) / 1);
   }
+  @media (max-width: 450px) and (max-height: 800px) and (orientation: portrait) {
+    height: calc((100dvh - 2rem) / 1.5);
+  }
 `;
 
 const CardCorner = styled.div`
@@ -231,6 +234,11 @@ const ThumbnailProject = styled.div`
     width: 10rem;
     height: 10rem;
   }
+
+  @media (max-width: 450px) {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
 
 const WrapperThumbnailProject1 = styled(ThumbnailProject)`
@@ -245,6 +253,12 @@ const WrapperThumbnailProject1 = styled(ThumbnailProject)`
   @media (max-width: 650px) {
     p {
       display: initial;
+    }
+  }
+
+  @media (max-width: 450px) {
+    p {
+      display: none;
     }
   }
 `;
@@ -292,6 +306,12 @@ const WrapperThumbnailProject2 = styled(ThumbnailProject)`
   @media (max-width: 650px) {
     p {
       display: initial;
+    }
+  }
+
+  @media (max-width: 450px) {
+    p {
+      display: none;
     }
   }
 `;
@@ -433,9 +453,9 @@ const PersoSTag = () => {
 };
 
 const ResponsiveClientTag = () => {
-  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650)
+  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
   const handleResize = () => {
-    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650)
+    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
   }
 
   useEffect(() => {
@@ -449,9 +469,9 @@ const ResponsiveClientTag = () => {
 }
 
 const ResponsivePersoTag = () => {
-  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650)
+  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
   const handleResize = () => {
-    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650)
+    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
   }
 
   useEffect(() => {
