@@ -625,6 +625,45 @@ const TOCMask = styled.div`
   top: 0;
 `;
 
+const TopPageButtonWrapper = styled(ProjectTypeTag)`
+  bottom: ${props => (props.$show ? '3rem' : '-5rem')};
+  position: absolute;
+  right: 3rem;
+  cursor: pointer;
+  pointer-events: all;
+  color: var(--black);
+  border-color: var(--black);
+  background: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  box-shadow: 0 0 1rem var(--black);
+  transition: box-shadow .2s, bottom .3s;
+  &:hover {
+    box-shadow: 0 0 2rem var(--white);
+  }
+`
+
+const TopPageButton = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <TopPageButtonWrapper $show={showButton} onClick={scrollToTop}>haut de page</TopPageButtonWrapper>
+  )
+}
+
 function App() {
   const cardsRef = useRef([]);
 
@@ -1100,6 +1139,7 @@ function App() {
             </CardContainer>
             <TOCMask />
           </TOCCard>
+          <TopPageButton />
         </FixedMosaic>
       </ScrollMosaic>
     </>
