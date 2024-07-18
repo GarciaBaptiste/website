@@ -602,6 +602,7 @@ function App() {
           scale: 1,
           y: 0,
           duration: 0.4,
+          delay: 0.2,
           ease: "power3.out",
           stagger: 0.1,
         });
