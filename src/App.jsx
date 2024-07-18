@@ -207,7 +207,8 @@ const GSAPCardWrapper = styled.div`
 
 const PresentationCard = styled(Card)`
   & ${GSAPCardWrapper} {
-  background: lightblue;
+    background: var(--holographic);
+    background-size: 200%;
   }
 `;
 

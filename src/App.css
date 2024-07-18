@@ -8,6 +8,24 @@
   --text-basic: 2.75rem;
   --text-medium: 1.75rem;
   --text-small: 1rem;
+
+  --transparent: rgba(255, 255, 255, 0);
+  --color1: #92f2f2;
+  --color2: #d6cff1;
+  --color3: #c4f2e5;
+  --color4: #a8d0f0;
+  --color5: #c2dcf2;
+  --color6: #eed5f2;
+  --color7: #9cb9fc;
+
+  --holographic: radial-gradient(at 30% -5%, var(--color1), var(--color2), var(--transparent) 25%),
+    radial-gradient(at 50% 70%, var(--color3), var(--transparent) 30%),
+    radial-gradient(at 70% 0%, var(--color2), var(--transparent) 20%),
+    linear-gradient(75deg, var(--color1) 5%, var(--transparent), var(--color4), var(--transparent), var(--color6), var(--transparent), var(--color2), var(--transparent), var(--color3) 90%),
+    radial-gradient(at 30% 50%, var(--color1), var(--transparent) 30%),
+    radial-gradient(at 30% 50%, var(--color7), var(--transparent) 30%),
+    radial-gradient(at 100% 50%, var(--color1), var(--color5), var(--transparent) 50%),
+    linear-gradient(115deg, var(--color1) 5%, var(--color4) 10%, var(--color2), var(--color6) 20%, var(--color4), var(--color4) 30%, var(--color2), var(--color5) 40%, var(--color1), var(--color4) 70%);
 }
 
 ::-moz-selection {
