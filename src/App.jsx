@@ -109,7 +109,7 @@ const Card = styled.div`
   position: relative;
   border-radius: 1.5rem;
   scroll-snap-align: start;
-  transition: height .3s;
+  transition: height 0.3s;
   padding-top: 2rem;
 
   @media (max-height: 2800px) {
@@ -186,7 +186,7 @@ const CardContainerWrapper = forwardRef((props, ref) => {
       <CornerBottomRight />
       {props.children}
     </div>
-  )
+  );
 });
 
 const CardContainer = styled(CardContainerWrapper)`
@@ -453,36 +453,74 @@ const PersoSTag = () => {
 };
 
 const ResponsiveClientTag = () => {
-  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
+  const [isLargeTag, setIsLargeTag] = useState(
+    window.innerWidth >= 900 ||
+      (window.innerWidth <= 650 && window.innerWidth >= 450)
+  );
   const handleResize = () => {
-    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
-  }
+    setIsLargeTag(
+      window.innerWidth >= 900 ||
+        (window.innerWidth <= 650 && window.innerWidth >= 450)
+    );
+  };
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.addEventListener('resize', handleResize)
-    }
-  }, [])
+      window.addEventListener("resize", handleResize);
+    };
+  }, []);
 
-  return isLargeTag ? <ClientTag /> : <ProjectTypeSTag style={{ borderColor: "var(--red)", color: "var(--red)", margin: 0, position: "relative" }}>c</ProjectTypeSTag>
-}
+  return isLargeTag ? (
+    <ClientTag />
+  ) : (
+    <ProjectTypeSTag
+      style={{
+        borderColor: "var(--red)",
+        color: "var(--red)",
+        margin: 0,
+        position: "relative",
+      }}
+    >
+      c
+    </ProjectTypeSTag>
+  );
+};
 
 const ResponsivePersoTag = () => {
-  const [isLargeTag, setIsLargeTag] = useState(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
+  const [isLargeTag, setIsLargeTag] = useState(
+    window.innerWidth >= 900 ||
+      (window.innerWidth <= 650 && window.innerWidth >= 450)
+  );
   const handleResize = () => {
-    setIsLargeTag(window.innerWidth >= 900 || window.innerWidth <= 650 && window.innerWidth >= 450)
-  }
+    setIsLargeTag(
+      window.innerWidth >= 900 ||
+        (window.innerWidth <= 650 && window.innerWidth >= 450)
+    );
+  };
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-  return isLargeTag ? <PersoTag /> : <ProjectTypeSTag style={{ borderColor: "var(--purple)", color: "var(--purple)", margin: 0, position: "relative" }}>p</ProjectTypeSTag>
-}
+  return isLargeTag ? (
+    <PersoTag />
+  ) : (
+    <ProjectTypeSTag
+      style={{
+        borderColor: "var(--purple)",
+        color: "var(--purple)",
+        margin: 0,
+        position: "relative",
+      }}
+    >
+      p
+    </ProjectTypeSTag>
+  );
+};
 
 const LineBreak = styled.div`
   height: 0.75rem;
@@ -657,18 +695,18 @@ function App() {
       <ScrollMosaic>
         <PresentationCard>
           <GSAPCardWrapper>
-          <PresentationCardContainer>
-            <h1>
-              <u>Baptiste Garcia</u>,
-            </h1>
-            <LineBreak />
-            <h2>
-              Graphic Designer &<br />
-              Creative Developper
-            </h2>
-            <LineBreak />
-            <p>based in Paris.</p>
-          </PresentationCardContainer>
+            <PresentationCardContainer>
+              <h1>
+                <u>Baptiste Garcia</u>,
+              </h1>
+              <LineBreak />
+              <h2>
+                Graphic Designer &<br />
+                Creative Developper
+              </h2>
+              <LineBreak />
+              <p>based in Paris.</p>
+            </PresentationCardContainer>
           </GSAPCardWrapper>
         </PresentationCard>
         <ProjectCard>
