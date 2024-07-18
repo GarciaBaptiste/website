@@ -660,7 +660,7 @@ const TopPageButton = () => {
   };
 
   return (
-    <TopPageButtonWrapper $show={showButton} onClick={scrollToTop}>haut de page</TopPageButtonWrapper>
+    <TopPageButtonWrapper $show={showButton} onClick={scrollToTop} onTouchStart={scrollToTop}>haut de page</TopPageButtonWrapper>
   )
 }
 
