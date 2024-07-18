@@ -501,7 +501,7 @@ const TOCCard = styled(Card)`
     display: none;
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 650px), (max-width: 1300px) and (max-height: 700px) {
     display: none;
   }
 
