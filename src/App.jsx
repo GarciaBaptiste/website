@@ -662,7 +662,7 @@ const TopPageButton = () => {
     const scrollContainer = document.documentElement;
     scrollContainer.style.scrollSnapType = 'none';
 
-    window.scrollTo({ top: "-2rem", behavior: 'smooth' });
+    window.scrollTo({ top: 24, behavior: 'smooth' });
     
     setTimeout(() => {
       scrollContainer.style.scrollSnapType = '';
