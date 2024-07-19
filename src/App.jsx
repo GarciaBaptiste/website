@@ -625,9 +625,12 @@ const TOCMask = styled.div`
   top: 0;
 `;
 
-const TopPageButtonWrapper = styled(ProjectTypeTag)`
+const TopPageButtonWrapper = styled(ProjectTypeTag).attrs({
+  as: 'button'
+})`
   bottom: ${props => (props.$show ? '3rem' : '-5rem')};
   position: absolute;
+  z-index: 1000;
   right: 3rem;
   cursor: pointer;
   pointer-events: all;
@@ -656,7 +659,14 @@ const TopPageButton = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollContainer = document.documentElement;
+    scrollContainer.style.scrollSnapType = 'none';
+
+    window.scrollTo({ top: "-2rem", behavior: 'smooth' });
+    
+    setTimeout(() => {
+      scrollContainer.style.scrollSnapType = '';
+    }, 500);
   };
 
   return (
