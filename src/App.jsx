@@ -63,26 +63,6 @@ const ScrollMosaic = styled.section`
   position: absolute;
   top: 2rem;
   width: 100%;
-  display: grid;
-
-  @media (max-width: 3900px) {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  @media (max-width: 3250px) {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  @media (max-width: 2600px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @media (max-width: 1950px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media (max-width: 1300px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 650px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
 
   & h1,
   & h2,
@@ -111,6 +91,7 @@ const Card = styled.div`
   scroll-snap-align: start;
   transition: height 0.3s;
   padding-top: 2rem;
+  float: left;
 
   @media (max-height: 2800px) {
     height: calc((100dvh - 2rem) / 4);
@@ -126,6 +107,25 @@ const Card = styled.div`
   }
   @media (max-width: 450px) and (max-height: 800px) and (orientation: portrait) {
     height: calc((100dvh - 2rem) / 1.5);
+  }
+
+  @media (max-width: 3900px) {
+    width: calc(100% / 6);
+  }
+  @media (max-width: 3250px) {
+    width: calc(100% / 5);
+  }
+  @media (max-width: 2600px) {
+    width: calc(100% / 4);
+  }
+  @media (max-width: 1950px) {
+    width: calc(100% / 3);
+  }
+  @media (max-width: 1300px) {
+    width: calc(100% / 2);
+  }
+  @media (max-width: 650px) {
+    width: 100%;
   }
 `;
 
