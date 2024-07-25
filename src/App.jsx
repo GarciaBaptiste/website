@@ -646,6 +646,18 @@ const TopPageButtonWrapper = styled(ProjectTypeTag).attrs({
   }
 `
 
+const CloseButton = styled.button`
+position: fixed;
+top: 1rem;
+right: 1rem;
+z-index: 1001;
+background: var(--black);
+color: var(--white);
+border: none;
+padding: 0.5rem 1rem;
+cursor: pointer;
+`;
+
 const TopPageButton = () => {
   const [showButton, setShowButton] = useState(false);
 
@@ -676,9 +688,11 @@ const TopPageButton = () => {
 
 function App() {
   const cardsRef = useRef([]);
-  const tl = gsap.timeline();
+  const [fullscreenCard, setFullscreenCard] = useState(null)
+  const [initialCardStyles, setInitialCardStyles] = useState({})
 
   useGSAP(() => {
+    const tl = gsap.timeline();
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
 
     ScrollTrigger.batch(cardsRef.current, {
@@ -697,6 +711,74 @@ function App() {
       toggleActions: "play none none none",
     });
   }, []);
+
+  const handleCardClick = (index) => {
+    setFullscreenCard(index)
+    const card = cardsRef.current[index]
+    const cardRect = card.getBoundingClientRect()
+    setInitialCardStyles({
+      top: cardRect.top,
+      left: cardRect.left,
+      width: cardRect.width,
+      height: cardRect.height,
+    })
+
+    gsap.timeline()
+    .to(card, {
+      rotationY: 180,
+      duration: 0.5,
+      ease: "power3.inOut",
+    })
+    .to(card, {
+      position: "fixed",
+      top: cardRect.top,
+      left: cardRect.left,
+      width: cardRect.width,
+      height: cardRect.height,
+      zIndex: 1000,
+      duration: 0,
+    }, 0)
+    .to(card, {
+      top: "2rem",
+      left: 0,
+      width: "100vw",
+      height: "100dvh",
+      duration: 0.5,
+      ease: "power3.inOut",
+    }, "-=0.25")
+  }
+
+  const handleCloseFullscreen = () => {
+    if(fullscreenCard !== null) {
+      const card = cardsRef.current[fullscreenCard]
+
+      gsap.timeline()
+      .to(card, {
+        top: initialCardStyles.top,
+        left: initialCardStyles.left,
+        width: initialCardStyles.width,
+        height: initialCardStyles.height,
+        duration: 0.5,
+        ease: "power3.inOut",
+      })
+      .to(card, {
+        rotationY: 0,
+        duration: 0.5,
+        ease: "power3.inOut",
+      }, "-=0.25")
+      .to(card, {
+        position: "",
+        top: "",
+        left: "",
+        width: "",
+        height: "",
+        zIndex: "",
+        duration: 0,
+      })
+
+      setFullscreenCard(null)
+    }
+  }
 
   return (
     <>
@@ -723,7 +805,7 @@ function App() {
             </PresentationCardContainer>
           </GSAPCardWrapper>
         </PresentationCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(0)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[0] = el)}>
             <CardContainer>
               <LeftCard>
@@ -752,7 +834,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(1)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[1] = el)}>
             <CardContainer>
               <LeftCard>
@@ -776,7 +858,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(2)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[2] = el)}>
             <CardContainer>
               <LeftCard>
@@ -804,7 +886,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(3)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[3] = el)}>
             <CardContainer>
               <LeftCard>
@@ -834,7 +916,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(4)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[4] = el)}>
             <CardContainer>
               <LeftCard>
@@ -862,7 +944,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(5)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[5] = el)}>
             <CardContainer>
               <LeftCard>
@@ -891,7 +973,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(6)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[6] = el)}>
             <CardContainer>
               <LeftCard>
@@ -915,7 +997,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(7)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[7] = el)}>
             <CardContainer>
               <LeftCard>
@@ -944,7 +1026,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(8)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[8] = el)}>
             <CardContainer>
               <LeftCard>
@@ -973,7 +1055,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(9)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[9] = el)}>
             <CardContainer>
               <LeftCard>
@@ -1002,7 +1084,7 @@ function App() {
             </CardContainer>
           </GSAPCardWrapper>
         </ProjectCard>
-        <ProjectCard>
+        <ProjectCard onClick={() => handleCardClick(10)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[10] = el)}>
             <CardContainer>
               <LeftCard>
@@ -1117,6 +1199,9 @@ function App() {
           <TopPageButton />
         </FixedMosaic>
       </ScrollMosaic>
+      {fullscreenCard !== null && (
+        <CloseButton onClick={handleCloseFullscreen}>Close</CloseButton>
+      )}
     </>
   );
 }
