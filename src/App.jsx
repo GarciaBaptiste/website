@@ -11,139 +11,65 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {Header, TopPageButton, ScrollMosaic, FixedMosaic, CloseButton} from "./components/LayoutAssets"
 import {ProjectCard, PresentationCard, TOCCard} from "./components/Cards"
 
+import {Thumbnail as DefaultThumbnail, ProjectPage as DefaultProjectPage} from "./components/projects/DefaultProject"
+
 gsap.registerPlugin(ScrollTrigger);
 
-const ThumbnailProject = styled.div`
-  width: 10rem;
-  height: 10rem;
-  border-radius: 1.5rem;
-  position: relative;
-  display: flex;
+// const WrapperThumbnailProject2 = styled(ThumbnailProject)`
+//   background: #0400ce;
 
-  @media (max-width: 900px) {
-    width: 3rem;
-    height: 3rem;
-  }
+//   @media (max-width: 900px) {
+//     p {
+//       display: none;
+//     }
+//   }
 
-  @media (max-width: 650px) {
-    width: 10rem;
-    height: 10rem;
-  }
+//   @media (max-width: 650px) {
+//     p {
+//       display: initial;
+//     }
+//   }
 
-  @media (max-width: 450px) {
-    width: 3rem;
-    height: 3rem;
-  }
-`;
+//   @media (max-width: 450px) {
+//     p {
+//       display: none;
+//     }
+//   }
+// `;
 
-const WrapperThumbnailProject1 = styled(ThumbnailProject)`
-  background: #cfefbf;
+// const ThumbnailProject2 = () => {
+//   return (
+//     <WrapperThumbnailProject2>
+//       <p
+//         style={{
+//           color: "white",
+//           fontSize: "2rem",
+//           position: "absolute",
+//           top: "1rem",
+//           right: "1rem",
+//         }}
+//       >
+//         19
+//       </p>
+//     </WrapperThumbnailProject2>
+//   );
+// };
 
-  @media (max-width: 900px) {
-    p {
-      display: none;
-    }
-  }
+// const WrapperThumbnailProject3 = styled(ThumbnailProject)`
+//   background: #ff8c19;
+// `;
 
-  @media (max-width: 650px) {
-    p {
-      display: initial;
-    }
-  }
+// const ThumbnailProject3 = () => {
+//   return <WrapperThumbnailProject3 />;
+// };
 
-  @media (max-width: 450px) {
-    p {
-      display: none;
-    }
-  }
-`;
+// const WrapperThumbnailProject4 = styled(ThumbnailProject)`
+//   background: #834531;
+// `;
 
-const ThumbnailProject1 = () => {
-  return (
-    <WrapperThumbnailProject1>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: "calc(50% - 1px)",
-          height: "100%",
-          width: "2px",
-          background: "var(--black)",
-        }}
-      />
-      <p
-        style={{
-          fontFamily: "JetBrains",
-          fontSize: "var(--text-medium)",
-          flex: 1,
-          alignSelf: "center",
-          textAlign: "center",
-          background: "#CFEFBF",
-          zIndex: 1,
-          padding: "0.5rem 0",
-        }}
-      >
-        09h00
-      </p>
-    </WrapperThumbnailProject1>
-  );
-};
-
-const WrapperThumbnailProject2 = styled(ThumbnailProject)`
-  background: #0400ce;
-
-  @media (max-width: 900px) {
-    p {
-      display: none;
-    }
-  }
-
-  @media (max-width: 650px) {
-    p {
-      display: initial;
-    }
-  }
-
-  @media (max-width: 450px) {
-    p {
-      display: none;
-    }
-  }
-`;
-
-const ThumbnailProject2 = () => {
-  return (
-    <WrapperThumbnailProject2>
-      <p
-        style={{
-          color: "white",
-          fontSize: "2rem",
-          position: "absolute",
-          top: "1rem",
-          right: "1rem",
-        }}
-      >
-        19
-      </p>
-    </WrapperThumbnailProject2>
-  );
-};
-
-const WrapperThumbnailProject3 = styled(ThumbnailProject)`
-  background: #ff8c19;
-`;
-
-const ThumbnailProject3 = () => {
-  return <WrapperThumbnailProject3 />;
-};
-
-const WrapperThumbnailProject4 = styled(ThumbnailProject)`
-  background: #834531;
-`;
-
-const ThumbnailProject4 = () => {
-  return <WrapperThumbnailProject4 />;
-};
+// const ThumbnailProject4 = () => {
+//   return <WrapperThumbnailProject4 />;
+// };
 
 function App() {
   const cardsRef = useRef([]);
@@ -245,42 +171,48 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: ThumbnailProject1,
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
     },
     {
       title: "Logilab",
       subtitle: "calendar",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: ThumbnailProject2,
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
     },
     {
       title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: ThumbnailProject3,
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
     },
     {
       title: "CubicWeb.org",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: ThumbnailProject4,
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
     },
     {
       title: "Logilab.fr",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: ThumbnailProject1,
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
     },
     {
       title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: ThumbnailProject2,
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
     },
   ]
 

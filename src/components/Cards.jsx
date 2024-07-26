@@ -425,16 +425,13 @@ const TOCMask = styled.div`
 
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   const Thumbnail = projectData.thumbnail
+  const ProjectPage = projectData.projectpage
 
   return (
     <ProjectCardWrapper onClick={() => onClick(index)}>
       <GSAPCardWrapper ref={(el) => (cardsRef.current[index] = el)}>
         <VersoContainer>
-          <h3>Page projet</h3>
-          <br />
-          <p>Toto tati tata yoyo.</p>
-          <p>Lorem ipsum ça va bien ou quoi ?</p>
-          <p>Le projet est sur cette page.</p>
+          <ProjectPage />
         </VersoContainer>
         <CardContainer>
           <LeftCard>
