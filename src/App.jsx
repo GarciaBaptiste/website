@@ -197,12 +197,26 @@ const CardContainer = styled(CardContainerWrapper)`
   height: calc(100% - 6rem);
 `;
 
+const VersoContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  padding: 3rem;
+  transform: rotateY(180deg) translateZ(1px);
+  backface-visibility: hidden;
+  border-radius: 1.5rem;
+`
+
 const GSAPCardWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 1.5rem;
   background: var(--white);
+  transform-style: preserve-3d;
 `;
 
 const PresentationCard = styled(Card)`
@@ -807,6 +821,13 @@ function App() {
         </PresentationCard>
         <ProjectCard onClick={() => handleCardClick(0)}>
           <GSAPCardWrapper ref={(el) => (cardsRef.current[0] = el)}>
+            <VersoContainer>
+              <h3>Page projet</h3>
+              <br/>
+              <p>Toto tati tata yoyo.</p>
+              <p>Lorem ipsum ça va bien ou quoi ?</p>
+              <p>Le projet est sur cette page.</p>
+            </VersoContainer>
             <CardContainer>
               <LeftCard>
                 <ThumbnailProject1 />
