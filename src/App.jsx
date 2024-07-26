@@ -1,17 +1,25 @@
 import React, { useRef, useState } from "react";
 
 import "./App.css";
-import styled from "styled-components";
 import GlobalFonts from "./fonts/fonts";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import {Header, TopPageButton, ScrollMosaic, FixedMosaic, CloseButton} from "./components/LayoutAssets"
-import {ProjectCard, PresentationCard, TOCCard} from "./components/Cards"
+import {
+  Header,
+  TopPageButton,
+  ScrollMosaic,
+  FixedMosaic,
+  CloseButton,
+} from "./components/LayoutAssets";
+import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 
-import {Thumbnail as DefaultThumbnail, ProjectPage as DefaultProjectPage} from "./components/projects/DefaultProject"
+import {
+  Thumbnail as DefaultThumbnail,
+  ProjectPage as DefaultProjectPage,
+} from "./components/projects/DefaultProject";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,8 +81,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const cardsRef = useRef([]);
-  const [fullscreenCard, setFullscreenCard] = useState(null)
-  const [initialCardStyles, setInitialCardStyles] = useState({})
+  const [fullscreenCard, setFullscreenCard] = useState(null);
+  const [initialCardStyles, setInitialCardStyles] = useState({});
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -98,72 +106,86 @@ function App() {
   }, []);
 
   const handleCardClick = (index) => {
-    setFullscreenCard(index)
-    const card = cardsRef.current[index]
-    const cardRect = card.getBoundingClientRect()
+    setFullscreenCard(index);
+    const card = cardsRef.current[index];
+    const cardRect = card.getBoundingClientRect();
     setInitialCardStyles({
       top: cardRect.top,
       left: cardRect.left,
       width: cardRect.width,
       height: cardRect.height,
-    })
+    });
 
-    gsap.timeline()
-    .to(card, {
-      rotationY: 180,
-      duration: 0.5,
-      ease: "power3.inOut",
-    })
-    .to(card, {
-      position: "fixed",
-      top: cardRect.top,
-      left: cardRect.left,
-      width: cardRect.width,
-      height: cardRect.height,
-      zIndex: 1000,
-      duration: 0,
-    }, 0)
-    .to(card, {
-      top: "2rem",
-      left: 0,
-      width: "100vw",
-      height: "100vh",
-      duration: 0.5,
-      ease: "power3.inOut",
-    }, "-=0.25")
-  }
+    gsap
+      .timeline()
+      .to(card, {
+        rotationY: 180,
+        duration: 0.5,
+        ease: "power3.inOut",
+      })
+      .to(
+        card,
+        {
+          position: "fixed",
+          top: cardRect.top,
+          left: cardRect.left,
+          width: cardRect.width,
+          height: cardRect.height,
+          zIndex: 1000,
+          duration: 0,
+        },
+        0
+      )
+      .to(
+        card,
+        {
+          top: "2rem",
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          duration: 0.5,
+          ease: "power3.inOut",
+        },
+        "-=0.25"
+      );
+  };
 
   const handleCloseFullscreen = () => {
-    if(fullscreenCard !== null) {
-      const card = cardsRef.current[fullscreenCard]
+    if (fullscreenCard !== null) {
+      const card = cardsRef.current[fullscreenCard];
 
-      gsap.timeline()
-      .to(card, {
-        top: initialCardStyles.top,
-        left: initialCardStyles.left,
-        width: initialCardStyles.width,
-        height: initialCardStyles.height,
-        duration: 0.5,
-        ease: "power3.inOut",
-      })
-      .to(card, {
-        rotationY: 0,
-        duration: 0.5,
-        ease: "power3.inOut",
-      }, "-=0.25")
-      .to(card, {
-        position: "",
-        top: "",
-        left: "",
-        width: "",
-        height: "",
-        zIndex: "",
-        duration: 0,
-      })
+      gsap
+        .timeline()
+        .to(card, {
+          top: initialCardStyles.top,
+          left: initialCardStyles.left,
+          width: initialCardStyles.width,
+          height: initialCardStyles.height,
+          duration: 0.5,
+          ease: "power3.inOut",
+        })
+        .to(
+          card,
+          {
+            rotationY: 0,
+            duration: 0.5,
+            ease: "power3.inOut",
+          },
+          "-=0.25"
+        )
+        .to(card, {
+          position: "",
+          top: "",
+          left: "",
+          width: "",
+          height: "",
+          zIndex: "",
+          duration: 0,
+        });
 
-      setFullscreenCard(null)
+      setFullscreenCard(null);
     }
-  }
+  };
 
   const projectData = [
     {
@@ -214,7 +236,7 @@ function App() {
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
-  ]
+  ];
 
   return (
     <>
@@ -228,7 +250,8 @@ function App() {
             index={index}
             onClick={handleCardClick}
             cardsRef={cardsRef}
-            projectData={project} />
+            projectData={project}
+          />
         ))}
         <FixedMosaic>
           <TOCCard />

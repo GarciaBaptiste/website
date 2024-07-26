@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -150,7 +150,12 @@ const ProjectTypeSTag = styled(ProjectTypeTag)`
 
 const ClientTag = () => {
   return (
-    <ProjectTypeTag style={{ borderColor: "var(--red)", color: "var(--red)" }}>
+    <ProjectTypeTag
+      style={{
+        borderColor: "var(--red)",
+        color: "var(--red)",
+      }}
+    >
       client
     </ProjectTypeTag>
   );
@@ -159,7 +164,10 @@ const ClientTag = () => {
 const PersoTag = () => {
   return (
     <ProjectTypeTag
-      style={{ borderColor: "var(--purple)", color: "var(--purple)" }}
+      style={{
+        borderColor: "var(--purple)",
+        color: "var(--purple)",
+      }}
     >
       perso
     </ProjectTypeTag>
@@ -170,7 +178,10 @@ const ClientSTag = () => {
   return (
     <div>
       <ProjectTypeSTag
-        style={{ borderColor: "var(--red)", color: "var(--red)" }}
+        style={{
+          borderColor: "var(--red)",
+          color: "var(--red)",
+        }}
       >
         c
       </ProjectTypeSTag>
@@ -182,7 +193,10 @@ const PersoSTag = () => {
   return (
     <div>
       <ProjectTypeSTag
-        style={{ borderColor: "var(--purple)", color: "var(--purple)" }}
+        style={{
+          borderColor: "var(--purple)",
+          color: "var(--purple)",
+        }}
       >
         p
       </ProjectTypeSTag>
@@ -364,8 +378,8 @@ const TOCMask = styled.div`
 `;
 
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
-  const Thumbnail = projectData.thumbnail
-  const ProjectPage = projectData.projectpage
+  const Thumbnail = projectData.thumbnail;
+  const ProjectPage = projectData.projectpage;
 
   return (
     <ProjectCardWrapper onClick={() => onClick(index)}>

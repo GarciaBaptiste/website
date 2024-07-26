@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
 import { ThumbnailProject } from "../LayoutAssets";
@@ -62,5 +62,5 @@ export const ProjectPage = () => {
       <h3>Project Page</h3>
       <p>Test toto tati tatayoyo.</p>
     </div>
-  )
-}
+  );
+};

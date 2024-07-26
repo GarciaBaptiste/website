@@ -167,4 +167,3 @@ export const ThumbnailProject = styled.div`
     height: 3rem;
   }
 `;
-
