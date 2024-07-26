@@ -10,19 +10,19 @@ const Card = styled.div`
   float: left;
 
   @media (max-height: 2800px) {
-    height: calc((100dvh - 2rem) / 4);
+    height: calc((100vh - 2rem) / 4);
   }
   @media (max-height: 2100px) {
-    height: calc((100dvh - 2rem) / 3);
+    height: calc((100vh - 2rem) / 3);
   }
   @media (max-height: 1400px) {
-    height: calc((100dvh - 2rem) / 2);
+    height: calc((100vh - 2rem) / 2);
   }
   @media (max-height: 700px) {
-    height: calc((100dvh - 2rem) / 1);
+    height: calc((100vh - 2rem) / 1);
   }
   @media (max-width: 450px) and (max-height: 800px) and (orientation: portrait) {
-    height: calc((100dvh - 2rem) / 1.5);
+    height: calc((100vh - 2rem) / 1.5);
   }
 
   @media (max-width: 3900px) {
@@ -362,16 +362,16 @@ const TOCCardWrapper = styled(Card)`
   }
 
   @media (max-height: 2800px) {
-    height: calc((100dvh - 2rem) / 4 + 2px);
+    height: calc((100vh - 2rem) / 4 + 2px);
   }
   @media (max-height: 2100px) {
-    height: calc((100dvh - 2rem) / 3 + 2px);
+    height: calc((100vh - 2rem) / 3 + 2px);
   }
   @media (max-height: 1400px) {
-    height: calc((100dvh - 2rem) / 2 + 2px);
+    height: calc((100vh - 2rem) / 2 + 2px);
   }
   @media (max-height: 700px) {
-    height: calc((100dvh - 2rem) / 1 + 2px);
+    height: calc((100vh - 2rem) / 1 + 2px);
   }
 
   & > ${CardContainer} {

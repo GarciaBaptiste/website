@@ -54,7 +54,7 @@ const HeaderContentRight = styled(HeaderContent)`
 const FixedMosaic = styled.section`
   position: fixed;
   width: 100%;
-  height: calc(100dvh - 2rem);
+  height: calc(100vh - 2rem);
   top: 2rem;
   left: 0;
   pointer-events: none;
@@ -334,7 +334,7 @@ function App() {
       top: "2rem",
       left: 0,
       width: "100vw",
-      height: "100dvh",
+      height: "100vh",
       duration: 0.5,
       ease: "power3.inOut",
     }, "-=0.25")
