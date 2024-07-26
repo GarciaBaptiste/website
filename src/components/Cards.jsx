@@ -53,59 +53,7 @@ const CardCorner = styled.div`
   border-width: 1px;
 `;
 
-const CornerTopLeft = styled(CardCorner)`
-  top: 0;
-  left: 0;
-  border-top-style: solid;
-  border-left-style: solid;
-  border-bottom-style: none;
-  border-right-style: none;
-  border-radius: calc(1.5rem - 2px) 0 0 0;
-`;
-
-const CornerTopRight = styled(CardCorner)`
-  top: 0;
-  right: 0;
-  border-top-style: solid;
-  border-left-style: none;
-  border-bottom-style: none;
-  border-right-style: solid;
-  border-radius: 0 calc(1.5rem - 2px) 0 0;
-`;
-
-const CornerBottomLeft = styled(CardCorner)`
-  bottom: 0;
-  left: 0;
-  border-top-style: none;
-  border-left-style: solid;
-  border-bottom-style: solid;
-  border-right-style: none;
-  border-radius: 0 0 0 calc(1.5rem - 2px);
-`;
-
-const CornerBottomRight = styled(CardCorner)`
-  bottom: 0;
-  right: 0;
-  border-top-style: none;
-  border-left-style: none;
-  border-bottom-style: solid;
-  border-right-style: solid;
-  border-radius: 0 0 calc(1.5rem - 2px) 0;
-`;
-
-const CardContainerWrapper = forwardRef((props, ref) => {
-  return (
-    <div ref={ref} {...props}>
-      <CornerTopLeft />
-      <CornerTopRight />
-      <CornerBottomLeft />
-      <CornerBottomRight />
-      {props.children}
-    </div>
-  );
-});
-
-const CardContainer = styled(CardContainerWrapper)`
+const CardContainer = styled.div`
   display: flex;
   margin: 3rem;
   gap: 3rem;
