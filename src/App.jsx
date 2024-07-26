@@ -378,36 +378,42 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: ThumbnailProject1,
     },
     {
       title: "Logilab",
       subtitle: "calendar",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: ThumbnailProject2,
     },
     {
       title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: ThumbnailProject3,
     },
     {
       title: "CubicWeb.org",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: ThumbnailProject4,
     },
     {
       title: "Logilab.fr",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: ThumbnailProject1,
     },
     {
       title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: ThumbnailProject2,
     },
   ]
 

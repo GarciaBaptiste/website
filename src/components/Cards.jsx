@@ -424,6 +424,8 @@ const TOCMask = styled.div`
 `;
 
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
+  const Thumbnail = projectData.thumbnail
+
   return (
     <ProjectCardWrapper onClick={() => onClick(index)}>
       <GSAPCardWrapper ref={(el) => (cardsRef.current[index] = el)}>
@@ -436,7 +438,7 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
         </VersoContainer>
         <CardContainer>
           <LeftCard>
-            {/* <ThumbnailProject1 /> */}
+            <Thumbnail />
             <ResponsiveClientTag />
           </LeftCard>
           <RightCard>
