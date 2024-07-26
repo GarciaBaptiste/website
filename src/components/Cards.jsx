@@ -45,14 +45,6 @@ const Card = styled.div`
   }
 `;
 
-const CardCorner = styled.div`
-  position: absolute;
-  width: 6rem;
-  height: 6rem;
-  border-color: var(--black);
-  border-width: 1px;
-`;
-
 const CardContainer = styled.div`
   display: flex;
   margin: 3rem;
