@@ -64,7 +64,7 @@ const ProjectPageContainer = styled.div`
   border-radius: 1.5rem;
   display: flex;
   justify-content: center;
-  transition: top 0.3s;
+  transition: top 0.3s ease, height 0.3s ease;
 `;
 
 const GSAPCardWrapper = styled.div`
