@@ -58,9 +58,10 @@ export const Thumbnail = () => {
 
 export const ProjectPage = () => {
   return (
-    <div>
-      <h3>Project Page</h3>
-      <p>Test toto tati tatayoyo.</p>
-    </div>
+    <>
+      <div
+        style={{ width: "400px", height: "2000px", background: "orange" }}
+      ></div>
+    </>
   );
 };

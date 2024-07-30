@@ -53,17 +53,18 @@ const CardContainer = styled.div`
   height: calc(100% - 6rem);
 `;
 
-const VersoContainer = styled.div`
+const ProjectPageContainer = styled.div`
   position: absolute;
   width: 100%;
-  min-height: 100%;
-  top: 0;
+  height: 0;
+  overflow: hidden;
+  top: 100%;
   left: 0;
-  background: var(--white);
-  padding: 3rem;
-  transform: rotateY(180deg) translateZ(1px);
-  backface-visibility: hidden;
+  padding: 0 3rem;
   border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  transition: top 0.3s;
 `;
 
 const GSAPCardWrapper = styled.div`
@@ -75,6 +76,12 @@ const GSAPCardWrapper = styled.div`
   transform-style: preserve-3d;
   &.fullscreen {
     overflow-y: auto;
+    & > ${ProjectPageContainer} {
+      height: 100%;
+      overflow: auto;
+      top: 0;
+      padding: 3rem;
+    }
   }
 `;
 
@@ -387,9 +394,6 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   return (
     <ProjectCardWrapper onClick={() => onClick(index)}>
       <GSAPCardWrapper ref={(el) => (cardsRef.current[index] = el)}>
-        <VersoContainer>
-          <ProjectPage />
-        </VersoContainer>
         <CardContainer>
           <LeftCard>
             <Thumbnail />
@@ -411,6 +415,9 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             </ProjectCardTextWrapper>
           </RightCard>
         </CardContainer>
+        <ProjectPageContainer>
+          <ProjectPage />
+        </ProjectPageContainer>
       </GSAPCardWrapper>
     </ProjectCardWrapper>
   );
