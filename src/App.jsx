@@ -116,13 +116,10 @@ function App() {
       height: cardRect.height,
     });
 
+    document.documentElement.style.overflow = "hidden";
+
     gsap
       .timeline()
-      .to(card, {
-        rotationY: 180,
-        duration: 0.5,
-        ease: "power3.inOut",
-      })
       .to(
         card,
         {
@@ -136,23 +133,23 @@ function App() {
         },
         0
       )
-      .to(
-        card,
-        {
-          top: "2rem",
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          duration: 0.5,
-          ease: "power3.inOut",
+      .to(card, {
+        top: "2rem",
+        left: 0,
+        width: "100vw",
+        height: "calc(100vh - 2rem)",
+        duration: 0.5,
+        ease: "power3.inOut",
+        onComplete: () => {
+          card.classList.add("fullscreen");
         },
-        "-=0.25"
-      );
+      });
   };
 
   const handleCloseFullscreen = () => {
     if (fullscreenCard !== null) {
       const card = cardsRef.current[fullscreenCard];
+      card.classList.remove("fullscreen");
 
       gsap
         .timeline()
@@ -164,15 +161,6 @@ function App() {
           duration: 0.5,
           ease: "power3.inOut",
         })
-        .to(
-          card,
-          {
-            rotationY: 0,
-            duration: 0.5,
-            ease: "power3.inOut",
-          },
-          "-=0.25"
-        )
         .to(card, {
           position: "",
           top: "",
@@ -184,6 +172,7 @@ function App() {
         });
 
       setFullscreenCard(null);
+      document.documentElement.style.overflow = "";
     }
   };
 

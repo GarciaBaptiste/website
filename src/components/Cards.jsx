@@ -73,6 +73,9 @@ const GSAPCardWrapper = styled.div`
   border-radius: 1.5rem;
   background: var(--white);
   transform-style: preserve-3d;
+  &.fullscreen {
+    overflow-y: auto;
+  }
 `;
 
 const PresentationCardWrapper = styled(Card)`
