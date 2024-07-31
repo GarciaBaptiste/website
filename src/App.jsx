@@ -21,6 +21,11 @@ import {
   ProjectPage as DefaultProjectPage,
 } from "./components/projects/DefaultProject";
 
+import {
+  Thumbnail as ThumbBowVosgien,
+  ProjectPage as PageBowVosgien,
+} from "./components/projects/PP_bowvosgien";
+
 gsap.registerPlugin(ScrollTrigger);
 
 // const WrapperThumbnailProject2 = styled(ThumbnailProject)`
@@ -178,12 +183,12 @@ function App() {
 
   const projectData = [
     {
-      title: "SemWeb.Pro",
+      title: "Le Bow Vosgien",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: DefaultThumbnail,
-      projectpage: DefaultProjectPage,
+      keywords: ["real-time 3D", "Figma", "ThreeJS", "Storytelling"],
+      thumbnail: ThumbBowVosgien,
+      projectpage: PageBowVosgien,
     },
     {
       title: "Logilab",

@@ -60,11 +60,12 @@ const ProjectPageContainer = styled.div`
   overflow: hidden;
   top: 100%;
   left: 0;
+  opacity: 0;
   padding: 0 3rem;
   border-radius: 1.5rem;
   display: flex;
   justify-content: center;
-  transition: top 0.3s ease, height 0.3s ease;
+  transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
 `;
 
 const GSAPCardWrapper = styled.div`
@@ -81,6 +82,7 @@ const GSAPCardWrapper = styled.div`
       overflow: auto;
       top: 0;
       padding: 3rem;
+      opacity: 1;
     }
   }
 `;
