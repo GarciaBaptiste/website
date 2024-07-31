@@ -63,8 +63,6 @@ const ProjectPageContainer = styled.div`
   opacity: 0;
   padding: 0 3rem;
   border-radius: 1.5rem;
-  display: flex;
-  justify-content: center;
   transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
 `;
 
