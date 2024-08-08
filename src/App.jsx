@@ -139,10 +139,10 @@ function App() {
         0
       )
       .to(card, {
-        top: "2rem",
-        left: 0,
-        width: "100vw",
-        height: "calc(100vh - 2rem)",
+        top: "8px",
+        left: "8px",
+        width: "calc(100vw - 16px)",
+        height: "calc(100vh - 16px)",
         duration: 0.5,
         ease: "power3.inOut",
         onComplete: () => {
