@@ -3,45 +3,37 @@ import styled from "styled-components";
 
 const Card = styled.div`
   position: relative;
-  border-radius: 1.5rem;
+  margin: 4px;
+  border-radius: 1rem;
   scroll-snap-align: start;
   transition: height 0.3s;
-  padding-top: 2rem;
   float: left;
 
   @media (max-height: 2800px) {
-    height: calc((100vh - 2rem) / 4);
+    height: calc((100vh - 8px) / 4 - 8px);
   }
   @media (max-height: 2100px) {
-    height: calc((100vh - 2rem) / 3);
+    height: calc((100vh - 8px) / 3 - 8px);
   }
   @media (max-height: 1400px) {
-    height: calc((100vh - 2rem) / 2);
-  }
-  @media (max-height: 700px) {
-    height: calc((100vh - 2rem) / 1);
-  }
-  @media (max-width: 450px) and (max-height: 800px) and (orientation: portrait) {
-    height: calc((100vh - 2rem) / 1.5);
+    height: calc((100vh - 8px) / 2 - 8px);
   }
 
   @media (max-width: 3900px) {
-    width: calc(100% / 6);
+    width: calc(100% / 5 - 8px);
   }
   @media (max-width: 3250px) {
-    width: calc(100% / 5);
+    width: calc(100% / 4 - 8px);
   }
   @media (max-width: 2600px) {
-    width: calc(100% / 4);
+    width: calc(100% / 3 - 8px);
   }
   @media (max-width: 1950px) {
-    width: calc(100% / 3);
+    width: calc(100% / 2 - 8px);
   }
   @media (max-width: 1300px) {
-    width: calc(100% / 2);
-  }
-  @media (max-width: 650px) {
-    width: 100%;
+    width: calc(100% - 8px);
+    height: unset;
   }
 `;
 
@@ -51,6 +43,10 @@ const CardContainer = styled.div`
   gap: 3rem;
   width: calc(100% - 6rem);
   height: calc(100% - 6rem);
+
+  @media (max-width: 1300px) {
+    margin: 0;
+  }
 `;
 
 const ProjectPageContainer = styled.div`
@@ -62,7 +58,7 @@ const ProjectPageContainer = styled.div`
   left: 0;
   opacity: 0;
   padding: 0 3rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
 `;
 
@@ -70,7 +66,7 @@ const GSAPCardWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   background: var(--white);
   transform-style: preserve-3d;
   &.fullscreen {
@@ -82,6 +78,11 @@ const GSAPCardWrapper = styled.div`
       padding: 3rem;
       opacity: 1;
     }
+  }
+
+  @media (max-width: 1300px) {
+    position: relative;
+    padding: 3rem;
   }
 `;
 
@@ -110,6 +111,10 @@ const GradientMask = styled.div`
     rgba(255, 255, 255, 0) 0%,
     var(--white) 100%
   );
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
 `;
 
 const RightCard = ({ children }) => {
@@ -289,12 +294,13 @@ const LineBreak = styled.div`
 `;
 
 const TOCCardWrapper = styled(Card)`
-  position: absolute;
   background: var(--black);
-  bottom: -1px;
-  right: -1px;
-  border-radius: 1.5rem 1.5rem 0 1.5rem;
+  border-radius: 1rem;
   overflow-y: auto;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  margin: 4px;
+  flex: 1;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -306,39 +312,7 @@ const TOCCardWrapper = styled(Card)`
     display: none;
   }
 
-  @media (max-width: 3900px) {
-    width: calc(100% / 6 + 2px);
-  }
-  @media (max-width: 3250px) {
-    width: calc(100% / 5 + 2px);
-  }
-  @media (max-width: 2600px) {
-    width: calc(100% / 4 + 2px);
-  }
-  @media (max-width: 1950px) {
-    width: calc(100% / 3 + 2px);
-  }
-  @media (max-width: 1300px) {
-    width: calc(100% / 2 + 2px);
-  }
-  @media (max-width: 650px) {
-    width: calc(100% / 1 + 2px);
-  }
-
-  @media (max-height: 2800px) {
-    height: calc((100vh - 2rem) / 4 + 2px);
-  }
-  @media (max-height: 2100px) {
-    height: calc((100vh - 2rem) / 3 + 2px);
-  }
-  @media (max-height: 1400px) {
-    height: calc((100vh - 2rem) / 2 + 2px);
-  }
-  @media (max-height: 700px) {
-    height: calc((100vh - 2rem) / 1 + 2px);
-  }
-
-  & > ${CardContainer} {
+  & ${CardContainer} {
     display: table;
     height: unset;
     color: var(--white);

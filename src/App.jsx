@@ -94,7 +94,7 @@ function App() {
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
 
     ScrollTrigger.batch(cardsRef.current, {
-      start: "top 75%",
+      start: "top 95%",
       onEnter: (batch) => {
         tl.to(batch, {
           opacity: 1,
@@ -230,6 +230,54 @@ function App() {
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
+    {
+      title: "Le Bow Vosgien",
+      subtitle: "website",
+      description: "design + front-end",
+      keywords: ["real-time 3D", "Figma", "ThreeJS", "Storytelling"],
+      thumbnail: ThumbBowVosgien,
+      projectpage: PageBowVosgien,
+    },
+    {
+      title: "Logilab",
+      subtitle: "calendar",
+      description: "design + front-end",
+      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
+    },
+    {
+      title: "SemWeb.Pro",
+      subtitle: "website",
+      description: "design + front-end",
+      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
+    },
+    {
+      title: "CubicWeb.org",
+      subtitle: "website",
+      description: "design + front-end",
+      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
+    },
+    {
+      title: "Logilab.fr",
+      subtitle: "website",
+      description: "design + front-end",
+      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
+    },
+    {
+      title: "SemWeb.Pro",
+      subtitle: "website",
+      description: "design + front-end",
+      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
+    },
   ];
 
   return (
@@ -247,11 +295,11 @@ function App() {
             projectData={project}
           />
         ))}
-        <FixedMosaic>
-          <TOCCard />
-          <TopPageButton />
-        </FixedMosaic>
       </ScrollMosaic>
+      <FixedMosaic>
+        <TOCCard />
+        <TopPageButton />
+      </FixedMosaic>
       {fullscreenCard !== null && (
         <CloseButton onClick={handleCloseFullscreen}>Close</CloseButton>
       )}

@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
   position: fixed;
-  display: flex;
+  // display: flex;
+  display: none;
   width: 100vw;
   height: 2rem;
   top: 0;
@@ -79,7 +80,7 @@ export const TopPageButton = () => {
     const scrollContainer = document.documentElement;
     scrollContainer.style.scrollSnapType = "none";
 
-    window.scrollTo({ top: 24, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
     setTimeout(() => {
       scrollContainer.style.scrollSnapType = "";
@@ -111,36 +112,52 @@ export const CloseButton = styled.button`
 
 export const FixedMosaic = styled.section`
   position: fixed;
-  width: 100%;
-  height: calc(100vh - 2rem);
-  top: 2rem;
-  left: 0;
+  height: calc(100vh - 8px);
+  top: 4px;
+  right: 4px;
   pointer-events: none;
   z-index: 100;
+  display: flex;
+
+  @media (max-width: 3900px) {
+    width: calc((100% - 8px) / 6);
+  }
+  @media (max-width: 3250px) {
+    width: calc((100% - 8px) / 5);
+  }
+  @media (max-width: 2600px) {
+    width: calc((100% - 8px) / 4);
+  }
+  @media (max-width: 1950px) {
+    width: calc((100% - 8px) / 3);
+  }
+  @media (max-width: 1300px) {
+    width: calc((100% - 8px) / 2);
+  }
 `;
 
 export const ScrollMosaic = styled.section`
   position: absolute;
-  top: 2rem;
-  width: 100%;
+  top: 4px;
+  left: 4px;
 
-  & h1,
-  & h2,
-  & h3,
-  & p,
-  & ul {
-    font-size: var(--text-basic);
-    margin: 0;
+  @media (max-width: 3900px) {
+    width: calc((100% - 8px) / 6 * 5);
+  }
+  @media (max-width: 3250px) {
+    width: calc((100% - 8px) / 5 * 4);
+  }
+  @media (max-width: 2600px) {
+    width: calc((100% - 8px) / 4 * 3);
+  }
+  @media (max-width: 1950px) {
+    width: calc((100% - 8px) / 3 * 2);
+  }
+  @media (max-width: 1300px) {
+    width: calc((100% - 8px) / 2);
   }
 
-  & p,
   & ul {
-    font-weight: 300;
-  }
-
-  & ul {
-    padding: 0;
-    list-style: none;
     color: var(--grey1);
   }
 `;
@@ -148,7 +165,7 @@ export const ScrollMosaic = styled.section`
 export const ThumbnailProject = styled.div`
   width: 10rem;
   height: 10rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   position: relative;
   display: flex;
 
