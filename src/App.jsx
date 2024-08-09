@@ -283,7 +283,6 @@ function App() {
   return (
     <>
       <GlobalFonts />
-      <Header />
       <ScrollMosaic>
         <PresentationCard />
         {projectData.map((project, index) => (
@@ -297,6 +296,7 @@ function App() {
         ))}
       </ScrollMosaic>
       <FixedMosaic>
+        <Header />
         <TOCCard />
         <TopPageButton />
       </FixedMosaic>

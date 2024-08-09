@@ -3,48 +3,68 @@ import styled from "styled-components";
 import ArrowImg from "../assets/arrow.svg";
 
 const HeaderWrapper = styled.header`
-  position: fixed;
-  // display: flex;
-  display: none;
-  width: 100vw;
-  height: 2rem;
-  top: 0;
-  left: 0;
-  background: var(--black);
-  color: var(--white);
-  padding: 0 3rem;
+  display: flex;
+  margin: 4px;
+  background: var(--color7);
+  padding: 0.75rem 3rem;
   font-family: "JetBrains";
   font-size: var(--text-small);
-  z-index: 1;
-  border-bottom: solid 1px var(--black);
-  box-sizing: content-box;
+  border-radius: 1rem;
 `;
 
 const HeaderContent = styled.div`
   flex: 1;
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
 
   & > a,
   & > p {
-    color: var(--white);
-    line-height: 2rem;
+    color: var(--black);
+    line-height: 1.5rem;
   }
 
   & > a:hover {
     color: lightblue;
+    cursor: pointer;
   }
+`;
+
+const HeaderContentLeft = styled(HeaderContent)``;
+
+const HeaderContentRight = styled(HeaderContent)`
+  align-items: flex-end;
 `;
 
 export const Header = () => {
   return (
     <HeaderWrapper>
-      <HeaderContent>
+      <HeaderContentLeft>
         <a href="#">baptistegarcia.com</a>
-      </HeaderContent>
+      </HeaderContentLeft>
+      <HeaderContentRight>
+        <a href="#">instagram.com/baptistegarcia</a>
+        <a href="#">github.com/baptistegarcia</a>
+      </HeaderContentRight>
     </HeaderWrapper>
   );
 };
+
+const BasicButton = styled.button`
+  cursor: pointer;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  padding: 1rem 1rem 1rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  border-radius: 2rem;
+  pointer-events: all;
+  transition: background 0.2s;
+
+  &:hover {
+    background: white;
+  }
+`;
 
 const ButtonText = styled.p`
   color: var(--black);
@@ -61,22 +81,24 @@ const ArrowLeft = () => {
   return <img src={ArrowImg} style={{ transform: "rotate(-90deg)" }} />;
 };
 
-const TopPageButtonWrapper = styled.button`
+const TopPageButtonWrapper = styled(BasicButton)`
   bottom: ${(props) => (props.$show ? "3rem" : "-5rem")};
   position: absolute;
   z-index: 1000;
   right: 3rem;
-  cursor: pointer;
-  pointer-events: all;
-  color: var(--black);
-  border-color: var(--black);
-  background: var(--white);
-  text-decoration: underline;
-  text-decoration-thickness: from-font;
-  box-shadow: 0 0 1rem var(--black);
-  transition: box-shadow 0.2s, bottom 0.3s;
+  transition: bottom 0.3s;
+  background: none;
+
+  & > ${ButtonText} {
+    color: var(--white);
+  }
+
+  & > img {
+    filter: invert(1);
+  }
+
   &:hover {
-    box-shadow: 0 0 2rem var(--white);
+    background: grey;
   }
 `;
 
@@ -109,24 +131,17 @@ export const TopPageButton = () => {
       onClick={scrollToTop}
       onTouchStart={scrollToTop}
     >
-      haut de page
+      <ButtonText>Haut</ButtonText>
+      <ArrowUp />
     </TopPageButtonWrapper>
   );
 };
 
-export const CloseButtonWrapper = styled.button`
+export const CloseButtonWrapper = styled(BasicButton)`
   position: fixed;
   top: calc(3rem + 8px);
   right: calc(3rem + 8px);
   z-index: 1001;
-  color: var(--black);
-  border: none;
-  padding: 1rem 1rem 1rem 1.5rem;
-  cursor: pointer;
-  display: flex;
-  gap: 1rem;
-  border-radius: 2rem;
-  background: var(--white);
 
   &:hover {
     background: white;
@@ -150,6 +165,7 @@ export const FixedMosaic = styled.section`
   pointer-events: none;
   z-index: 100;
   display: flex;
+  flex-direction: column;
 
   @media (max-width: 3900px) {
     width: calc((100% - 8px) / 6);
