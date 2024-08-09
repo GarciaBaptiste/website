@@ -314,6 +314,7 @@ const TOCCardWrapper = styled(Card)`
   margin: 4px;
   padding: 3rem;
   flex: 1;
+  scroll-snap-align: none;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
