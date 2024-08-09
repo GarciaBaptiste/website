@@ -163,29 +163,27 @@ const LeftCard = styled.div`
 `;
 
 const ProjectTypeTag = styled.div`
-  font-size: var(--text-medium);
-  padding: 0.5rem 1.5rem;
-  border: solid 1px;
-  border-radius: 2rem;
+  font-family: "JetBrains";
+  font-size: var(--text-small);
+  color: var(--white);
+  padding: 0.25rem 0.5rem 0.1rem 0.5rem;
   font-weight: 300;
 `;
 
 const ProjectTypeSTag = styled(ProjectTypeTag)`
   padding: 0;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
   text-align: center;
-  line-height: 2.2rem;
   position: absolute;
-  margin: 0 0.75rem;
+  margin: 0.75rem;
 `;
 
 const ClientTag = () => {
   return (
     <ProjectTypeTag
       style={{
-        borderColor: "var(--red)",
-        color: "var(--red)",
+        background: "var(--red)",
       }}
     >
       client
@@ -197,8 +195,7 @@ const PersoTag = () => {
   return (
     <ProjectTypeTag
       style={{
-        borderColor: "var(--purple)",
-        color: "var(--purple)",
+        background: "var(--purple)",
       }}
     >
       perso
@@ -211,8 +208,7 @@ const ClientSTag = () => {
     <div>
       <ProjectTypeSTag
         style={{
-          borderColor: "var(--red)",
-          color: "var(--red)",
+          background: "var(--red)",
         }}
       >
         c
@@ -226,8 +222,7 @@ const PersoSTag = () => {
     <div>
       <ProjectTypeSTag
         style={{
-          borderColor: "var(--purple)",
-          color: "var(--purple)",
+          background: "var(--purple)",
         }}
       >
         p
@@ -317,6 +312,7 @@ const TOCCardWrapper = styled(Card)`
   width: calc(100% - 8px);
   height: calc(100% - 8px);
   margin: 4px;
+  padding: 3rem;
   flex: 1;
 
   -ms-overflow-style: none;
@@ -359,7 +355,7 @@ const TOCLine = styled.a`
   }
   & > div {
     display: table-cell;
-    width: 4rem;
+    width: 3rem;
     position: relative;
   }
   & > h3 {
