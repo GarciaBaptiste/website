@@ -11,13 +11,13 @@ const Card = styled.div`
   transition: height 0.3s;
   float: left;
 
-  @media (max-height: 2800px) {
+  @media (max-height: 2400px) {
     height: calc((100vh - 8px) / 4 - 8px);
   }
-  @media (max-height: 2100px) {
+  @media (max-height: 1700px) {
     height: calc((100vh - 8px) / 3 - 8px);
   }
-  @media (max-height: 1400px) {
+  @media (max-height: 1000px) {
     height: calc((100vh - 8px) / 2 - 8px);
   }
 
