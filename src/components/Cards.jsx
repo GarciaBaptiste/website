@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
+import QMarkImg from "../assets/questionmark.svg";
+
 const Card = styled.div`
   position: relative;
   margin: 4px;
@@ -39,10 +41,9 @@ const Card = styled.div`
 
 const CardContainer = styled.div`
   display: flex;
-  margin: 3rem;
   gap: 3rem;
-  width: calc(100% - 6rem);
-  height: calc(100% - 6rem);
+  width: 100%;
+  height: 100%;
 
   @media (max-width: 1300px) {
     margin: 0;
@@ -63,9 +64,10 @@ const ProjectPageContainer = styled.div`
 `;
 
 const GSAPCardWrapper = styled.div`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
+  padding: 3rem;
   border-radius: 1rem;
   background: var(--white);
   transform-style: preserve-3d;
@@ -79,11 +81,6 @@ const GSAPCardWrapper = styled.div`
       opacity: 1;
     }
   }
-
-  @media (max-width: 1300px) {
-    position: relative;
-    padding: 3rem;
-  }
 `;
 
 const PresentationCardWrapper = styled(Card)`
@@ -95,8 +92,29 @@ const PresentationCardWrapper = styled(Card)`
 
 const PresentationCardContainer = styled(CardContainer)`
   flex-direction: column;
-  gap: 0;
+  gap: 3rem;
 `;
+
+const PresentationTop = styled.div`
+  flex: 1;
+`;
+
+const PresentationBottom = styled.div`
+  display: flex;
+  justify-content: end;
+`;
+
+const About = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const AboutText = styled.p`
+  font-weight: normal;
+  font-size: 2rem;
+`;
+
+const QuestionMark = styled.img``;
 
 const ProjectCardWrapper = styled(Card)``;
 
@@ -141,7 +159,6 @@ const LeftCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
   align-items: start;
 `;
 
@@ -402,16 +419,24 @@ export const PresentationCard = () => {
     <PresentationCardWrapper>
       <GSAPCardWrapper>
         <PresentationCardContainer>
-          <h1>
-            <u>Baptiste Garcia</u>,
-          </h1>
-          <LineBreak />
-          <h2>
-            Graphic Designer &<br />
-            Creative Developper
-          </h2>
-          <LineBreak />
-          <p>based in Paris.</p>
+          <PresentationTop>
+            <h1>
+              <u>Baptiste Garcia</u>,
+            </h1>
+            <LineBreak />
+            <h2>
+              Graphic Designer &<br />
+              Creative Developper
+            </h2>
+            <LineBreak />
+            <p>based in Paris.</p>
+          </PresentationTop>
+          <PresentationBottom>
+            <About>
+              <AboutText>About</AboutText>
+              <QuestionMark src={QMarkImg} />
+            </About>
+          </PresentationBottom>
         </PresentationCardContainer>
       </GSAPCardWrapper>
     </PresentationCardWrapper>

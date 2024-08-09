@@ -58,7 +58,6 @@ const BasicButton = styled.button`
   display: flex;
   gap: 1rem;
   border-radius: 2rem;
-  pointer-events: all;
   transition: background 0.2s;
 
   &:hover {
@@ -162,7 +161,6 @@ export const FixedMosaic = styled.section`
   height: calc(100vh - 8px);
   top: 4px;
   right: 4px;
-  pointer-events: none;
   z-index: 100;
   display: flex;
   flex-direction: column;
