@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import ArrowImg from "../assets/arrow.svg";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -43,6 +44,21 @@ export const Header = () => {
       </HeaderContent>
     </HeaderWrapper>
   );
+};
+
+const ButtonText = styled.p`
+  color: var(--black);
+  font-size: 2rem;
+  line-height: 2rem;
+  text-decoration: underline;
+`;
+
+const ArrowUp = () => {
+  return <img src={ArrowImg} />;
+};
+
+const ArrowLeft = () => {
+  return <img src={ArrowImg} style={{ transform: "rotate(-90deg)" }} />;
 };
 
 const TopPageButtonWrapper = styled.button`
@@ -98,17 +114,33 @@ export const TopPageButton = () => {
   );
 };
 
-export const CloseButton = styled.button`
+export const CloseButtonWrapper = styled.button`
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: calc(3rem + 8px);
+  right: calc(3rem + 8px);
   z-index: 1001;
-  background: var(--black);
-  color: var(--white);
+  color: var(--black);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1.5rem;
   cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  border-radius: 2rem;
+  background: var(--white);
+
+  &:hover {
+    background: white;
+  }
 `;
+
+export const CloseButton = (props) => {
+  return (
+    <CloseButtonWrapper onClick={props.onClick}>
+      <ButtonText>Accueil</ButtonText>
+      <ArrowLeft />
+    </CloseButtonWrapper>
+  );
+};
 
 export const FixedMosaic = styled.section`
   position: fixed;

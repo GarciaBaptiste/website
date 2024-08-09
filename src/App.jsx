@@ -301,7 +301,7 @@ function App() {
         <TopPageButton />
       </FixedMosaic>
       {fullscreenCard !== null && (
-        <CloseButton onClick={handleCloseFullscreen}>Close</CloseButton>
+        <CloseButton onClick={handleCloseFullscreen} />
       )}
     </>
   );
