@@ -106,6 +106,7 @@ const TopPageButtonWrapper = styled(BasicButton)`
   right: 3rem;
   transition: bottom 0.3s;
   background: none;
+  pointer-events: all;
 
   & > ${ButtonText} {
     color: var(--white);
@@ -183,6 +184,7 @@ export const FixedMosaic = styled.section`
   z-index: 100;
   display: flex;
   flex-direction: column;
+  pointer-events: none;
 
   @media (max-width: 3900px) {
     width: calc((100% - 8px) / 6);
