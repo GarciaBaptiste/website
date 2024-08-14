@@ -68,11 +68,6 @@ const ProjectPageContainer = styled.div`
   padding: 0 3rem;
   border-radius: 1rem;
   transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
-
-  @media (max-width: 1300px) {
-    transition-property: height, position;
-    transition-delay: 1s;
-  }
 `;
 
 const GSAPCardWrapper = styled.div`
