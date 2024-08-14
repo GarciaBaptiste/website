@@ -38,6 +38,7 @@ const Card = styled.div`
   }
   @media (max-width: 650px) {
     width: calc(100% - 8px);
+    height: unset;
     padding-top: calc(5rem + 2px);
     &:not(:first-child) {
       margin-top: calc(-5rem + 2px);
