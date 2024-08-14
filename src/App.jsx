@@ -94,7 +94,7 @@ function App() {
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
 
     ScrollTrigger.batch(cardsRef.current, {
-      start: "top 95%",
+      start: "top 97%",
       onEnter: (batch) => {
         tl.to(batch, {
           opacity: 1,

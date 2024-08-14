@@ -10,6 +10,22 @@ const HeaderWrapper = styled.header`
   font-family: "JetBrains";
   font-size: var(--text-small);
   border-radius: 1rem;
+  z-index: 1;
+`;
+
+const HeaderMask = styled.div`
+  position: fixed;
+  background: white;
+  width: 100%;
+  height: 3rem;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+
+  @media (max-width: 1300px) {
+    display: unset;
+  }
 `;
 
 const HeaderContent = styled.div`
@@ -37,15 +53,18 @@ const HeaderContentRight = styled(HeaderContent)`
 
 export const Header = () => {
   return (
-    <HeaderWrapper>
-      <HeaderContentLeft>
-        <a href="#">baptistegarcia.com</a>
-      </HeaderContentLeft>
-      <HeaderContentRight>
-        <a href="#">instagram.com/baptistegarcia</a>
-        <a href="#">github.com/baptistegarcia</a>
-      </HeaderContentRight>
-    </HeaderWrapper>
+    <>
+      <HeaderMask />
+      <HeaderWrapper>
+        <HeaderContentLeft>
+          <a href="#">baptistegarcia.com</a>
+        </HeaderContentLeft>
+        <HeaderContentRight>
+          <a href="#">instagram.com/baptistegarcia</a>
+          <a href="#">github.com/baptistegarcia</a>
+        </HeaderContentRight>
+      </HeaderWrapper>
+    </>
   );
 };
 
@@ -180,6 +199,9 @@ export const FixedMosaic = styled.section`
   @media (max-width: 1300px) {
     width: calc((100% - 8px) / 2);
   }
+  @media (max-width: 650px) {
+    width: calc(100% - 8px);
+  }
 `;
 
 export const ScrollMosaic = styled.section`
@@ -201,6 +223,9 @@ export const ScrollMosaic = styled.section`
   }
   @media (max-width: 1300px) {
     width: calc((100% - 8px) / 2);
+  }
+  @media (max-width: 650px) {
+    width: calc(100% - 8px);
   }
 
   & ul {
