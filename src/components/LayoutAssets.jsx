@@ -199,9 +199,6 @@ export const FixedMosaic = styled.section`
     width: calc((100% - 8px) / 3);
   }
   @media (max-width: 1300px) {
-    width: calc((100% - 8px) / 2);
-  }
-  @media (max-width: 650px) {
     width: calc(100% - 8px);
   }
 `;
@@ -224,9 +221,6 @@ export const ScrollMosaic = styled.section`
     width: calc((100% - 8px) / 3 * 2);
   }
   @media (max-width: 1300px) {
-    width: calc((100% - 8px) / 2);
-  }
-  @media (max-width: 650px) {
     width: calc(100% - 8px);
   }
 

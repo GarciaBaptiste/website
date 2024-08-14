@@ -34,14 +34,22 @@ const Card = styled.div`
     width: calc(100% / 2 - 8px);
   }
   @media (max-width: 1300px) {
-    width: calc(100% - 8px);
+    padding-top: calc(5rem + 2px);
+    margin-top: calc(-5rem + 2px);
+    &:first-child,
+    &:nth-child(2) {
+      margin-top: 4px;
+    }
   }
   @media (max-width: 650px) {
     width: calc(100% - 8px);
     height: unset;
-    padding-top: calc(5rem + 2px);
-    &:not(:first-child) {
-      margin-top: calc(-5rem + 2px);
+    margin-top: calc(-5rem + 2px);
+    &:first-child {
+      margin-top: 4px;
+    }
+    &:nth-child(2) {
+    margin-top: calc(-5rem + 2px);
     }
   }
 `;
@@ -52,7 +60,7 @@ const CardContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 650px) {
     margin: 0;
     height: unset;
   }
@@ -91,6 +99,9 @@ const GSAPCardWrapper = styled.div`
         position: relative;
         height: unset;
       }
+    }
+    & > ${CardContainer} {
+      height: unset;
     }
   }
 `;
@@ -142,7 +153,7 @@ const GradientMask = styled.div`
     var(--white) 100%
   );
 
-  @media (max-width: 1300px) {
+  @media (max-width: 650px) {
     display: none;
   }
 `;
@@ -334,7 +345,7 @@ const TOCCardWrapper = styled(Card)`
     display: none;
   }
 
-  @media (max-width: 650px), (max-width: 1300px) and (max-height: 700px) {
+  @media (max-width: 1300px), (max-height: 700px) {
     display: none;
   }
 
