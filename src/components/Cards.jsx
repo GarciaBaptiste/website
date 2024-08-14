@@ -35,11 +35,9 @@ const Card = styled.div`
   }
   @media (max-width: 1300px) {
     width: calc(100% - 8px);
-    height: unset;
   }
   @media (max-width: 650px) {
     width: calc(100% - 8px);
-    height: unset;
     padding-top: calc(5rem + 2px);
     &:not(:first-child) {
       margin-top: calc(-5rem + 2px);
@@ -55,6 +53,7 @@ const CardContainer = styled.div`
 
   @media (max-width: 1300px) {
     margin: 0;
+    height: unset;
   }
 `;
 
@@ -69,6 +68,11 @@ const ProjectPageContainer = styled.div`
   padding: 0 3rem;
   border-radius: 1rem;
   transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+
+  @media (max-width: 1300px) {
+    transition-property: height, position;
+    transition-delay: 1s;
+  }
 `;
 
 const GSAPCardWrapper = styled.div`
@@ -87,6 +91,10 @@ const GSAPCardWrapper = styled.div`
       top: 0;
       padding: 3rem;
       opacity: 1;
+      @media (max-width: 1300px) {
+        position: relative;
+        height: unset;
+      }
     }
   }
 `;
