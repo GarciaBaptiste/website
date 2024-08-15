@@ -49,7 +49,7 @@ const Card = styled.div`
       margin-top: 4px;
     }
     &:nth-child(2) {
-    margin-top: calc(-5rem + 2px);
+      margin-top: calc(-5rem + 2px);
     }
   }
 `;
@@ -77,40 +77,6 @@ const ProjectPageContainer = styled.div`
   padding: 0 3rem;
   border-radius: 1rem;
   transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
-`;
-
-const GSAPCardWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 3rem;
-  border-radius: 1rem;
-  background: var(--white);
-  transform-style: preserve-3d;
-  &.fullscreen {
-    overflow-y: auto;
-    & > ${ProjectPageContainer} {
-      height: 100%;
-      overflow: auto;
-      top: 0;
-      padding: 3rem;
-      opacity: 1;
-      @media (max-width: 1300px) {
-        position: relative;
-        height: unset;
-      }
-    }
-    & > ${CardContainer} {
-      height: unset;
-    }
-  }
-`;
-
-const PresentationCardWrapper = styled(Card)`
-  & ${GSAPCardWrapper} {
-    background: var(--holographic);
-    background-size: 200%;
-  }
 `;
 
 const PresentationCardContainer = styled(CardContainer)`
@@ -147,6 +113,7 @@ const GradientMask = styled.div`
   left: 0;
   width: 100%;
   min-height: 5rem;
+  transition: opacity 0.5s;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
@@ -191,6 +158,7 @@ const ProjectTypeTag = styled.div`
   color: var(--white);
   padding: 0.25rem 0.5rem 0.1rem 0.5rem;
   font-weight: 300;
+  transition: opacity 0.5s;
 `;
 
 const ProjectTypeSTag = styled(ProjectTypeTag)`
@@ -396,6 +364,45 @@ const TOCMask = styled.div`
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--black));
   right: 0;
   top: 0;
+`;
+
+const GSAPCardWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  border-radius: 1rem;
+  background: var(--white);
+  transform-style: preserve-3d;
+  &.transition {
+    & > ${CardContainer} {
+      height: unset;
+    }
+    & ${GradientMask}, & ${ProjectTypeTag} {
+      opacity: 0;
+    }
+  }
+  &.fullscreen {
+    overflow-y: auto;
+    & > ${ProjectPageContainer} {
+      height: 100%;
+      overflow: auto;
+      top: 0;
+      padding: 3rem;
+      opacity: 1;
+      @media (max-width: 1300px) {
+        position: relative;
+        height: unset;
+      }
+    }
+  }
+`;
+
+const PresentationCardWrapper = styled(Card)`
+  & ${GSAPCardWrapper} {
+    background: var(--holographic);
+    background-size: 200%;
+  }
 `;
 
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {

@@ -88,7 +88,6 @@ function App() {
   const cardsRef = useRef([]);
   const [fullscreenCard, setFullscreenCard] = useState(null);
   const [initialCardStyles, setInitialCardStyles] = useState({});
-  const [initialWrapperStyles, setInitialWrapperStyles] = useState({});
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -116,23 +115,27 @@ function App() {
     const card = cardsRef.current[index];
     const cardRect = card.getBoundingClientRect();
     const wrapper = card.parentElement;
-    const wrapperRect = wrapper.getBoundingClientRect();
+    const wrapperHeight = wrapper.getBoundingClientRect().height;
+    const cardContainer = card.children[0];
+    const cardContainerHeight = cardContainer.getBoundingClientRect().height;
     setInitialCardStyles({
       top: cardRect.top,
       left: cardRect.left,
       width: cardRect.width,
       height: cardRect.height,
     });
-    setInitialWrapperStyles({
-      height: wrapperRect.height,
-    });
 
     document.documentElement.style.overflow = "hidden";
+    card.classList.add("transition");
 
     gsap
       .timeline()
+      .to(cardContainer, {
+        height: cardContainerHeight,
+        duration: 0,
+      })
       .to(wrapper, {
-        height: wrapperRect.height,
+        height: wrapperHeight,
         duration: 0,
       })
       .to(
@@ -165,6 +168,8 @@ function App() {
     if (fullscreenCard !== null) {
       const card = cardsRef.current[fullscreenCard];
       const wrapper = card.parentElement;
+      const cardContainer = card.children[0];
+      card.classList.remove("transition");
       card.classList.remove("fullscreen");
 
       gsap
@@ -187,6 +192,9 @@ function App() {
           duration: 0,
         })
         .to(wrapper, {
+          height: "",
+        })
+        .to(cardContainer, {
           height: "",
         });
 
