@@ -115,9 +115,9 @@ function App() {
     const card = cardsRef.current[index];
     const cardRect = card.getBoundingClientRect();
     const wrapper = card.parentElement;
-    const wrapperHeight = Math.floor(wrapper.getBoundingClientRect().height);
+    const wrapperHeight = wrapper.getBoundingClientRect().height;
     const cardContainer = card.children[0];
-    const cardContainerHeight = Math.floor(cardContainer.getBoundingClientRect().height);
+    const cardContainerHeight = cardContainer.getBoundingClientRect().height;
     setInitialCardStyles({
       top: cardRect.top,
       left: cardRect.left,
@@ -128,16 +128,21 @@ function App() {
     document.documentElement.style.overflow = "hidden";
     card.classList.add("transition");
 
-    gsap
-      .timeline()
-      .to(cardContainer, {
-        height: cardContainerHeight,
-        duration: 0,
-      })
-      .to(wrapper, {
+    const timeline = gsap.timeline();
+
+    timeline.to(cardContainer, {
+      height: cardContainerHeight,
+      duration: 0,
+    });
+
+    if (window.innerWidth < 650) {
+      timeline.to(wrapper, {
         height: wrapperHeight,
         duration: 0,
-      })
+      });
+    }
+
+    timeline
       .to(
         card,
         {
