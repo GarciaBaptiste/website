@@ -115,9 +115,9 @@ function App() {
     const card = cardsRef.current[index];
     const cardRect = card.getBoundingClientRect();
     const wrapper = card.parentElement;
-    const wrapperHeight = wrapper.getBoundingClientRect().height;
+    const wrapperHeight = Math.floor(wrapper.getBoundingClientRect().height);
     const cardContainer = card.children[0];
-    const cardContainerHeight = cardContainer.getBoundingClientRect().height;
+    const cardContainerHeight = Math.floor(cardContainer.getBoundingClientRect().height);
     setInitialCardStyles({
       top: cardRect.top,
       left: cardRect.left,
