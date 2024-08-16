@@ -11,14 +11,24 @@ const Card = styled.div`
   transition: height 0.3s;
   float: left;
 
-  @media (max-height: 2400px) {
+  @media (max-height: 2400px) and (min-width: 1300px) {
     height: calc((100vh - 8px) / 4 - 8px);
   }
-  @media (max-height: 1700px) {
+  @media (max-height: 1700px) and (min-width: 1300px) {
     height: calc((100vh - 8px) / 3 - 8px);
   }
-  @media (max-height: 1000px) {
+  @media (max-height: 1000px) and (min-width: 1300px) {
     height: calc((100vh - 8px) / 2 - 8px);
+  }
+
+  @media (max-height: 2400px) and (max-width: 1300px) {
+    height: calc((100vh + 14rem + 8px) / 4 - 8px);
+  }
+  @media (max-height: 1700px) and (max-width: 1300px) {
+    height: calc((100vh + 9rem + 8px) / 3 - 8px);
+  }
+  @media (max-height: 1000px) and (max-width: 1300px) {
+    height: calc((100vh + 4rem + 8px) / 2 - 8px);
   }
 
   @media (max-width: 3900px) {
