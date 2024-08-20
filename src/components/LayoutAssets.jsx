@@ -173,6 +173,7 @@ export const TopPageButton = () => {
       $show={showButton}
       onClick={scrollToTop}
       onTouchStart={scrollToTop}
+      className="noSelect"
     >
       <ButtonText>Haut</ButtonText>
       <ArrowUp />
