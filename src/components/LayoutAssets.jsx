@@ -82,6 +82,10 @@ const BasicButton = styled.button`
   &:hover {
     background: white;
   }
+
+  @media (max-width: 650px) {
+    padding: 1rem;
+  }
 `;
 
 const ButtonText = styled.p`
@@ -133,6 +137,12 @@ const TopPageButtonWrapper = styled(BasicButton)`
       background: white;
     }
   }
+
+  @media (max-width: 650px) {
+    & > ${ButtonText} {
+      display: none;
+    }
+  }
 `;
 
 export const TopPageButton = () => {
@@ -178,6 +188,12 @@ export const CloseButtonWrapper = styled(BasicButton)`
 
   &:hover {
     background: white;
+  }
+
+  @media (max-width: 650px) {
+    & > ${ButtonText} {
+      display: none;
+    }
   }
 `;
 
