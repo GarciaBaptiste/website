@@ -19,6 +19,9 @@ const Card = styled.div`
   @media (max-height: 1000px) and (min-width: 1300px) {
     height: calc((100vh - 8px) / 2 - 8px);
   }
+  @media (max-height: 550px) {
+    height: calc((100vh - 8px) - 8px);
+  }
 
   @media (max-height: 2400px) and (max-width: 1300px) {
     height: calc(((100vh - (5rem + 2px)) / 4) + 5rem - 8px);
@@ -90,7 +93,7 @@ const ProjectPageContainer = styled.div`
 
 const PresentationCardContainer = styled(CardContainer)`
   flex-direction: column;
-  gap: var(--margin);
+  gap: 0;
 `;
 
 const PresentationTop = styled.div`
