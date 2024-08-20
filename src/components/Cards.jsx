@@ -176,8 +176,6 @@ const ProjectTypeSTag = styled(ProjectTypeTag)`
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
-  position: absolute;
-  margin: 0.75rem;
 `;
 
 const ClientTag = () => {
@@ -251,20 +249,7 @@ const ResponsiveClientTag = () => {
     };
   }, []);
 
-  return isLargeTag ? (
-    <ClientTag />
-  ) : (
-    <ProjectTypeSTag
-      style={{
-        borderColor: "var(--red)",
-        color: "var(--red)",
-        margin: 0,
-        position: "relative",
-      }}
-    >
-      c
-    </ProjectTypeSTag>
-  );
+  return isLargeTag ? <ClientTag /> : <ClientSTag />;
 };
 
 const ResponsivePersoTag = () => {
@@ -286,20 +271,7 @@ const ResponsivePersoTag = () => {
     };
   }, []);
 
-  return isLargeTag ? (
-    <PersoTag />
-  ) : (
-    <ProjectTypeSTag
-      style={{
-        borderColor: "var(--purple)",
-        color: "var(--purple)",
-        margin: 0,
-        position: "relative",
-      }}
-    >
-      p
-    </ProjectTypeSTag>
-  );
+  return isLargeTag ? <PersoTag /> : <PersoSTag />;
 };
 
 const LineBreak = styled.div`
@@ -337,6 +309,8 @@ const TOCCardWrapper = styled(Card)`
 
   & ${ProjectTypeSTag} {
     top: 0.5rem;
+    position: absolute;
+    margin: 0.75rem;
   }
 `;
 
