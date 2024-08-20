@@ -294,7 +294,7 @@ const TOCCardWrapper = styled(Card)`
     display: none;
   }
 
-  @media (max-width: 1300px), (max-height: 700px) {
+  @media (max-width: 1300px) {
     display: none;
   }
 
