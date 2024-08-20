@@ -113,11 +113,25 @@ const TopPageButtonWrapper = styled(BasicButton)`
   }
 
   & > img {
-    filter: invert(1);
+    @media (min-width: 1301px) {
+      filter: invert(1);
+    }
   }
 
   &:hover {
     background: grey;
+  }
+
+  @media (max-width: 1300px) {
+    background: var(--white);
+
+    & > ${ButtonText} {
+      color: var(--black);
+    }
+
+    &:hover {
+      background: white;
+    }
   }
 `;
 
