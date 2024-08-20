@@ -238,6 +238,7 @@ export const ScrollMosaic = styled.section`
   position: absolute;
   top: 4px;
   left: 4px;
+  padding-bottom: 4px;
 
   @media (max-width: 3900px) {
     width: calc((100% - 8px) / 6 * 5);
