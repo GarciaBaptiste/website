@@ -394,10 +394,11 @@ const PresentationCardWrapper = styled(Card)`
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   const Thumbnail = projectData.thumbnail;
   const ProjectPage = projectData.projectpage;
+  const idx = index + 1;
 
   return (
-    <ProjectCardWrapper onClick={() => onClick(index)}>
-      <GSAPCardWrapper ref={(el) => (cardsRef.current[index] = el)}>
+    <ProjectCardWrapper onClick={() => onClick(idx)}>
+      <GSAPCardWrapper ref={(el) => (cardsRef.current[idx] = el)}>
         <CardContainer>
           <LeftCard>
             <Thumbnail />
@@ -427,10 +428,10 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   );
 };
 
-export const PresentationCard = () => {
+export const PresentationCard = ({ onClick, cardsRef }) => {
   return (
-    <PresentationCardWrapper>
-      <GSAPCardWrapper>
+    <PresentationCardWrapper onClick={() => onClick(0)}>
+      <GSAPCardWrapper ref={(el) => (cardsRef.current[0] = el)}>
         <PresentationCardContainer>
           <PresentationTop>
             <h1>

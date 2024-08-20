@@ -311,7 +311,7 @@ function App() {
     <>
       <GlobalFonts />
       <ScrollMosaic>
-        <PresentationCard />
+        <PresentationCard onClick={handleCardClick} cardsRef={cardsRef} />
         {projectData.map((project, index) => (
           <ProjectCard
             key={index}
