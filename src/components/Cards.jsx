@@ -66,7 +66,7 @@ const Card = styled.div`
 
 const CardContainer = styled.div`
   display: flex;
-  gap: 3rem;
+  gap: var(--margin);
   width: 100%;
   height: 100%;
 
@@ -84,14 +84,14 @@ const ProjectPageContainer = styled.div`
   top: 100%;
   left: 0;
   opacity: 0;
-  padding: 0 3rem;
+  padding: 0 var(--margin);
   border-radius: 1rem;
   transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
 `;
 
 const PresentationCardContainer = styled(CardContainer)`
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--margin);
 `;
 
 const PresentationTop = styled.div`
@@ -148,8 +148,8 @@ const RightCardWrapper = styled.div`
   display: flex;
   position: relative;
   flex: 1;
-  gap: 3rem;
-  height: calc(100% + 3rem - 1px);
+  gap: var(--margin);
+  height: calc(100% + var(--margin) - 1px);
   overflow: hidden;
 `;
 
@@ -313,7 +313,7 @@ const TOCCardWrapper = styled(Card)`
   width: calc(100% - 8px);
   height: calc(100% - 8px);
   margin: 4px;
-  padding: 3rem;
+  padding: var(--margin);
   flex: 1;
   scroll-snap-align: none;
 
@@ -357,7 +357,7 @@ const TOCLine = styled.a`
   }
   & > div {
     display: table-cell;
-    width: 3rem;
+    width: var(--margin);
     position: relative;
   }
   & > h3 {
@@ -369,7 +369,7 @@ const TOCLine = styled.a`
 
 const TOCMask = styled.div`
   position: absolute;
-  width: 3rem;
+  width: var(--margin);
   height: 100%;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--black));
   right: 0;
@@ -380,7 +380,7 @@ const GSAPCardWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding: var(--margin);
   border-radius: 1rem;
   background: var(--white);
   transform-style: preserve-3d;
@@ -398,7 +398,7 @@ const GSAPCardWrapper = styled.div`
       height: 100%;
       overflow: auto;
       top: 0;
-      padding: 3rem;
+      padding: var(--margin);
       opacity: 1;
       @media (max-width: 1300px) {
         position: relative;

@@ -6,7 +6,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   margin: 4px;
   background: var(--color7);
-  padding: 0.75rem 3rem;
+  padding: 0.75rem var(--margin);
   font-family: "JetBrains";
   font-size: var(--text-small);
   border-radius: 1rem;
@@ -17,7 +17,7 @@ const HeaderMask = styled.div`
   position: fixed;
   background: white;
   width: 100%;
-  height: 3rem;
+  height: var(--margin);
   top: 0;
   left: 0;
   z-index: 1;
@@ -104,10 +104,10 @@ const ArrowLeft = () => {
 };
 
 const TopPageButtonWrapper = styled(BasicButton)`
-  bottom: ${(props) => (props.$show ? "3rem" : "-5rem")};
+  bottom: ${(props) => (props.$show ? "var(--margin)" : "-5rem")};
   position: absolute;
   z-index: 1000;
-  right: 3rem;
+  right: var(--margin);
   transition: bottom 0.3s;
   background: none;
   pointer-events: all;
@@ -183,8 +183,8 @@ export const TopPageButton = () => {
 
 export const CloseButtonWrapper = styled(BasicButton)`
   position: fixed;
-  top: calc(3rem + 8px);
-  right: calc(3rem + 8px);
+  top: calc(var(--margin) + 8px);
+  right: calc(var(--margin) + 8px);
   z-index: 1001;
 
   &:hover {
@@ -270,15 +270,18 @@ export const ThumbnailProject = styled.div`
   @media (max-width: 900px) {
     width: 3rem;
     height: 3rem;
+    border-radius: 1.5rem;
   }
 
   @media (max-width: 650px) {
     width: 10rem;
     height: 10rem;
+    border-radius: 1rem;
   }
 
   @media (max-width: 450px) {
     width: 3rem;
     height: 3rem;
+    border-radius: 1.5rem;
   }
 `;

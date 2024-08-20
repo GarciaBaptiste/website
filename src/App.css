@@ -9,6 +9,8 @@
   --text-medium: 1.75rem;
   --text-small: 1rem;
 
+  --margin: 3rem;
+
   --transparent: rgba(255, 255, 255, 0);
   --color1: #92f2f2;
   --color2: #d6cff1;
@@ -26,6 +28,12 @@
     radial-gradient(at 30% 50%, var(--color7), var(--transparent) 30%),
     radial-gradient(at 100% 50%, var(--color1), var(--color5), var(--transparent) 50%),
     linear-gradient(115deg, var(--color1) 5%, var(--color4) 10%, var(--color2), var(--color6) 20%, var(--color4), var(--color4) 30%, var(--color2), var(--color5) 40%, var(--color1), var(--color4) 70%);
+}
+
+@media (max-width: 1300px) {
+  :root {
+    --margin: 2rem;
+  } 
 }
 
 ::-moz-selection {
@@ -107,4 +115,9 @@ ul {
 }
 .noSelect:focus {
   outline: none !important;
+}
+
+h1:first-child,
+h2:first-child {
+  margin-top: -0.25rem;
 }
