@@ -8,7 +8,6 @@ const Card = styled.div`
   margin: 4px;
   border-radius: 1rem;
   scroll-snap-align: start;
-  transition: height 0.3s;
   float: left;
 
   @media (max-height: 2400px) and (min-width: 1300px) {
@@ -22,13 +21,13 @@ const Card = styled.div`
   }
 
   @media (max-height: 2400px) and (max-width: 1300px) {
-    height: calc((100vh + 14rem + 8px) / 4 - 8px);
+    height: calc(((100vh - (5rem + 2px)) / 4) + 5rem - 8px);
   }
   @media (max-height: 1700px) and (max-width: 1300px) {
-    height: calc((100vh + 9rem + 8px) / 3 - 8px);
+    height: calc(((100vh - (5rem + 2px)) / 3) + 5rem - 9px);
   }
   @media (max-height: 1000px) and (max-width: 1300px) {
-    height: calc((100vh + 4rem + 8px) / 2 - 8px);
+    height: calc(((100vh - (5rem + 2px)) / 2) + 5rem - 10px);
   }
 
   @media (max-width: 3900px) {
