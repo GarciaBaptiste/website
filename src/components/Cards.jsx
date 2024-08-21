@@ -10,17 +10,17 @@ const Card = styled.div`
   scroll-snap-align: start;
   float: left;
 
-  @media (max-height: 2400px) and (min-width: 1300px) {
+  @media (max-height: 2400px) and (min-width: 1301px) {
     height: calc((100vh - 8px) / 4 - 8px);
   }
-  @media (max-height: 1700px) and (min-width: 1300px) {
+  @media (max-height: 1700px) and (min-width: 1301px) {
     height: calc((100vh - 8px) / 3 - 8px);
   }
-  @media (max-height: 1000px) and (min-width: 1300px) {
+  @media (max-height: 1000px) and (min-width: 1301px) {
     height: calc((100vh - 8px) / 2 - 8px);
   }
-  @media (max-height: 550px) {
-    height: calc((100vh - 8px) - 8px);
+  @media (max-height: 600px) and (min-width: 1301px) {
+    height: calc((100vh - 8px) / 1.5 - 8px);
   }
 
   @media (max-height: 2400px) and (max-width: 1300px) {
@@ -31,6 +31,12 @@ const Card = styled.div`
   }
   @media (max-height: 1000px) and (max-width: 1300px) {
     height: calc(((100vh - (5rem + 2px)) / 2) + 5rem - 10px);
+  }
+  @media (max-height: 600px) and (max-width: 1300px) {
+    height: calc((100vh - 8px) / 1.5 - 8px);
+  }
+  @media (max-height: 500px) and (max-width: 1300px) {
+    height: calc((100vh - 8px) - 8px);
   }
 
   @media (max-width: 3900px) {
