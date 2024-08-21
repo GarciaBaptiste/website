@@ -84,7 +84,7 @@ const CardContainer = styled.div`
   }
 `;
 
-const ProjectPageContainer = styled.div`
+const PageContainer = styled.div`
   position: absolute;
   width: 100%;
   height: 0;
@@ -109,6 +109,14 @@ const PresentationTop = styled.div`
 const PresentationBottom = styled.div`
   display: flex;
   justify-content: end;
+`;
+
+const PresentationPageContainer = styled.div`
+  opacity: 0;
+  transition: opacity 0.3s, height 0.3s;
+  height: 0;
+  max-width: 970px;
+  padding-bottom: var(--margin);
 `;
 
 const About = styled.div`
@@ -381,7 +389,7 @@ const GSAPCardWrapper = styled.div`
   }
   &.fullscreen {
     overflow-y: auto;
-    & > ${ProjectPageContainer} {
+    & > ${PageContainer} {
       height: 100%;
       overflow: auto;
       top: 0;
@@ -391,6 +399,10 @@ const GSAPCardWrapper = styled.div`
         position: relative;
         height: unset;
       }
+    }
+    & ${PresentationPageContainer} {
+      height: unset;
+      opacity: 1;
     }
   }
 `;
@@ -431,9 +443,9 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             </ProjectCardTextWrapper>
           </RightCard>
         </CardContainer>
-        <ProjectPageContainer>
+        <PageContainer>
           <ProjectPage />
-        </ProjectPageContainer>
+        </PageContainer>
       </GSAPCardWrapper>
     </ProjectCardWrapper>
   );
@@ -462,6 +474,27 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
               <QuestionMark src={QMarkImg} />
             </About>
           </PresentationBottom>
+          <PresentationPageContainer>
+            <div>
+              <p>
+                Passionate about design, my experiences have taught me to put
+                technique at the service of aesthetics, originality, and
+                ergonomics.
+              </p>
+              <LineBreak />
+              <p>
+                Today, I use my skills and expertise to serve a diverse range of
+                clients by crafting unique visual identities and implementing
+                softwares and websites.
+              </p>
+              <LineBreak />
+              <p>
+                Feel free to browse through all my projects here and on my
+                instagram, if you are interested in techniques, you can take a
+                look at my Github repositories.
+              </p>
+            </div>
+          </PresentationPageContainer>
         </PresentationCardContainer>
       </GSAPCardWrapper>
     </PresentationCardWrapper>
