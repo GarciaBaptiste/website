@@ -165,7 +165,7 @@ export const TopPageButton = () => {
 
     setTimeout(() => {
       scrollContainer.style.scrollSnapType = "";
-    }, 500);
+    }, 1000);
   };
 
   return (
