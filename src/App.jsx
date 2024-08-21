@@ -160,7 +160,7 @@ function App() {
         top: "8px",
         left: "8px",
         width: "calc(100vw - 16px)",
-        height: "calc(100vh - 16px)",
+        height: "calc(100dvh - 16px)",
         duration: 0.5,
         ease: "power3.inOut",
         onComplete: () => {
