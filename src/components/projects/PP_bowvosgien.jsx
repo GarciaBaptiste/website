@@ -70,17 +70,6 @@ export const ProjectPage = () => {
               width: "100%",
             }}
           />
-          <iframe
-            src="http://le-bow-vosgien.fr/"
-            style={{
-              border: "none",
-              position: "absolute",
-              height: "68vh",
-              width: "108.4vh",
-              top: "9.4vh",
-              left: "calc(50% - (108.4vh/2))",
-            }}
-          ></iframe>
         </div>
           <TextBloc>
             <p>Le projet consiste à développer un site web en 3D destiné à un scénographe, mettant en avant la puissance de la narration à travers le déplacement dans l'espace.</p>
