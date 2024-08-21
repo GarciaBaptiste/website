@@ -114,6 +114,8 @@ const PresentationBottom = styled.div`
 const About = styled.div`
   display: flex;
   gap: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s;
 `;
 
 const AboutText = styled.p`
@@ -371,6 +373,9 @@ const GSAPCardWrapper = styled.div`
       height: unset;
     }
     & ${GradientMask}, & ${ProjectTypeTag} {
+      opacity: 0;
+    }
+    & ${About} {
       opacity: 0;
     }
   }
