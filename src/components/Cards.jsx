@@ -113,10 +113,9 @@ const PresentationBottom = styled.div`
 
 const PresentationPageContainer = styled.div`
   opacity: 0;
-  transition: opacity 0.3s, height 0.3s;
+  transition: 0.3s;
   height: 0;
   max-width: 970px;
-  padding-bottom: var(--margin);
 `;
 
 const About = styled.div`
@@ -403,6 +402,7 @@ const GSAPCardWrapper = styled.div`
     & ${PresentationPageContainer} {
       height: unset;
       opacity: 1;
+      padding-bottom: var(--margin);
     }
   }
 `;
