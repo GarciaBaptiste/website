@@ -98,14 +98,20 @@ const PageContainer = styled.div`
 
 const PresentationCardContainer = styled(CardContainer)`
   flex-direction: column;
+  transition: gap 0.3s;
   gap: 0;
 `;
 
-const PresentationTop = styled.div`
+const PresentationCardSummary = styled.div`
+  display: flex;
+  align-items: flex-end;
+`;
+
+const PresentationLeft = styled.div`
   flex: 1;
 `;
 
-const PresentationBottom = styled.div`
+const PresentationRight = styled.div`
   display: flex;
   justify-content: end;
 `;
@@ -166,7 +172,10 @@ const AboutText = styled.p`
   font-size: 2rem;
 `;
 
-const QuestionMark = styled.img``;
+const QuestionMark = styled.img`
+  width: 32px;
+  height: 32px;
+`;
 
 const ProjectCardWrapper = styled(Card)``;
 
@@ -435,6 +444,9 @@ const GSAPCardWrapper = styled.div`
         height: unset;
       }
     }
+    & > ${PresentationCardContainer} {
+      gap: var(--margin);
+    }
     & ${PresentationPageContainer} {
       height: unset;
       opacity: 1;
@@ -494,24 +506,26 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
     <PresentationCardWrapper onClick={() => onClick(0)}>
       <GSAPCardWrapper ref={(el) => (cardsRef.current[0] = el)}>
         <PresentationCardContainer>
-          <PresentationTop>
-            <h1>
-              <u>Baptiste Garcia</u>,
-            </h1>
-            <LineBreak />
-            <h2>
-              Graphic Designer &<br />
-              Creative Developper
-            </h2>
-            <LineBreak />
-            <p>based in Paris.</p>
-          </PresentationTop>
-          <PresentationBottom>
-            <About>
-              <AboutText>About</AboutText>
-              <QuestionMark src={QMarkImg} />
-            </About>
-          </PresentationBottom>
+          <PresentationCardSummary>
+            <PresentationLeft>
+              <h1>
+                <u>Baptiste Garcia</u>,
+              </h1>
+              <LineBreak />
+              <h2>
+                Graphic Designer &<br />
+                Creative Developper
+              </h2>
+              <LineBreak />
+              <p>based in Paris.</p>
+            </PresentationLeft>
+            <PresentationRight>
+              <About>
+                <AboutText>About</AboutText>
+                <QuestionMark src={QMarkImg} />
+              </About>
+            </PresentationRight>
+          </PresentationCardSummary>
           <PresentationPageContainer>
             <PresentationFirstBloc>
               <p>
