@@ -115,7 +115,41 @@ const PresentationPageContainer = styled.div`
   opacity: 0;
   transition: 0.3s;
   height: 0;
+  display: flex;
+  gap: calc(var(--margin) * 1.5);
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+`;
+
+const PresentationFirstBloc = styled.div`
+  flex: 1;
   max-width: 970px;
+`;
+
+const PresentationSecondBloc = styled.div`
+  width: 350px;
+  display: flex;
+  gap: var(--margin);
+  flex-direction: column;
+
+  @media (max-width: 900px) {
+    flex-direction: row;
+    width: 100%;
+  }
+`;
+
+const SecondBlocFirstHalf = styled.div`
+  @media (max-width: 900px) {
+    flex: 1;
+  }
+`;
+
+const SecondBlocSecondHalf = styled.div`
+  @media (max-width: 900px) {
+    flex: 1;
+  }
 `;
 
 const About = styled.div`
@@ -475,7 +509,7 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
             </About>
           </PresentationBottom>
           <PresentationPageContainer>
-            <div>
+            <PresentationFirstBloc>
               <p>
                 Passionate about design, my experiences have taught me to put
                 technique at the service of aesthetics, originality, and
@@ -493,7 +527,23 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
                 instagram, if you are interested in techniques, you can take a
                 look at my Github repositories.
               </p>
-            </div>
+            </PresentationFirstBloc>
+            <PresentationSecondBloc>
+              <SecondBlocFirstHalf>
+                <h3>Expertise</h3>
+                <LineBreak />
+                <p>Art direction</p>
+                <p>Front-end (React, CSS)</p>
+                <p>WebGL</p>
+              </SecondBlocFirstHalf>
+              <SecondBlocSecondHalf>
+                <h3>Softwares</h3>
+                <LineBreak />
+                <p>Figma</p>
+                <p>Photoshop / Illustrator</p>
+                <p>Blender / Cycles</p>
+              </SecondBlocSecondHalf>
+            </PresentationSecondBloc>
           </PresentationPageContainer>
         </PresentationCardContainer>
       </GSAPCardWrapper>
