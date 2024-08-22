@@ -54,8 +54,7 @@ const Card = styled.div`
   @media (max-width: 1300px) {
     padding-top: calc(5rem + 2px);
     margin-top: calc(-5rem + 2px);
-    &:first-child,
-    &:nth-child(2) {
+    &:first-child {
       margin-top: 4px;
     }
   }
@@ -445,6 +444,8 @@ const GSAPCardWrapper = styled.div`
 `;
 
 const PresentationCardWrapper = styled(Card)`
+  width: calc(100% - 8px);
+  height: unset;
   & ${GSAPCardWrapper} {
     background: var(--holographic);
     background-size: 200%;
