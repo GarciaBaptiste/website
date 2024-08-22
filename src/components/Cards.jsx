@@ -138,6 +138,9 @@ const PresentationSecondBloc = styled.div`
     flex-direction: row;
     width: 100%;
   }
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 
 const SecondBlocFirstHalf = styled.div`
