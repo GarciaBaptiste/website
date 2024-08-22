@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./App.css";
 import GlobalFonts from "./fonts/fonts";
@@ -88,6 +88,10 @@ function App() {
   const cardsRef = useRef([]);
   const [fullscreenCard, setFullscreenCard] = useState(null);
   const [initialCardStyles, setInitialCardStyles] = useState({});
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [])
 
   useGSAP(() => {
     const tl = gsap.timeline();
