@@ -89,13 +89,6 @@ function App() {
   const [fullscreenCard, setFullscreenCard] = useState(null);
   const [initialCardStyles, setInitialCardStyles] = useState({});
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    return () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [])
-
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
