@@ -136,12 +136,10 @@ function App() {
       duration: 0,
     });
 
-    if (window.innerWidth < 650 || index === 0) {
-      timeline.to(wrapper, {
-        height: wrapperHeight,
-        duration: 0,
-      });
-    }
+    timeline.to(wrapper, {
+      height: wrapperHeight,
+      duration: 0,
+    });
 
     timeline
       .to(
