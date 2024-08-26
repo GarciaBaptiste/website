@@ -2,72 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ArrowImg from "../assets/arrow.svg";
 
-const HeaderWrapper = styled.header`
-  display: flex;
-  margin: 4px;
-  background: var(--color7);
-  padding: 0.75rem var(--margin);
-  font-family: "JetBrains";
-  font-size: var(--text-small);
-  border-radius: 1rem;
-  z-index: 1;
-`;
-
-const HeaderMask = styled.div`
-  position: fixed;
-  background: white;
-  width: 100%;
-  height: var(--margin);
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: none;
-
-  @media (max-width: 1300px) {
-    display: unset;
-  }
-`;
-
-const HeaderContent = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-
-  & > a,
-  & > p {
-    color: var(--black);
-    line-height: 1.5rem;
-  }
-
-  & > a:hover {
-    color: lightblue;
-    cursor: pointer;
-  }
-`;
-
-const HeaderContentLeft = styled(HeaderContent)``;
-
-const HeaderContentRight = styled(HeaderContent)`
-  align-items: flex-end;
-`;
-
-export const Header = () => {
-  return (
-    <>
-      <HeaderMask />
-      <HeaderWrapper>
-        <HeaderContentLeft>
-          <a href="#">baptistegarcia.com</a>
-        </HeaderContentLeft>
-        <HeaderContentRight>
-          <a href="#">instagram.com/baptistegarcia</a>
-          <a href="#">github.com/baptistegarcia</a>
-        </HeaderContentRight>
-      </HeaderWrapper>
-    </>
-  );
-};
-
 const BasicButton = styled.button`
   cursor: pointer;
   background: var(--white);
@@ -207,60 +141,6 @@ export const CloseButton = (props) => {
   );
 };
 
-export const FixedMosaic = styled.section`
-  position: fixed;
-  height: calc(100vh - 8px);
-  top: 4px;
-  right: 4px;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  pointer-events: none;
-
-  @media (max-width: 3900px) {
-    width: calc((100% - 8px) / 6);
-  }
-  @media (max-width: 3250px) {
-    width: calc((100% - 8px) / 5);
-  }
-  @media (max-width: 2600px) {
-    width: calc((100% - 8px) / 4);
-  }
-  @media (max-width: 1950px) {
-    width: calc((100% - 8px) / 3);
-  }
-  @media (max-width: 1300px) {
-    width: calc(100% - 8px);
-  }
-`;
-
-export const ScrollMosaic = styled.section`
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  padding-bottom: 4px;
-
-  @media (max-width: 3900px) {
-    width: calc((100% - 8px) / 6 * 5);
-  }
-  @media (max-width: 3250px) {
-    width: calc((100% - 8px) / 5 * 4);
-  }
-  @media (max-width: 2600px) {
-    width: calc((100% - 8px) / 4 * 3);
-  }
-  @media (max-width: 1950px) {
-    width: calc((100% - 8px) / 3 * 2);
-  }
-  @media (max-width: 1300px) {
-    width: calc(100% - 8px);
-  }
-
-  & ul {
-    color: var(--grey1);
-  }
-`;
-
 export const ThumbnailProject = styled.div`
   width: 10rem;
   height: 10rem;
@@ -285,4 +165,10 @@ export const ThumbnailProject = styled.div`
     height: 3rem;
     border-radius: 1.5rem;
   }
+`;
+
+export const MasonryWrapper = styled.section`
+  display: flex;
+  width: calc(100% - 8px);
+  margin: 0 4px;
 `;

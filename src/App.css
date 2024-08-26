@@ -51,20 +51,10 @@
 
 * {
   box-sizing: border-box;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }
 
 html {
   font-size: 12px;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 8px;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 

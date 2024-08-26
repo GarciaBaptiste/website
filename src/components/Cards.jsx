@@ -262,18 +262,11 @@ const TOCCardWrapper = styled(Card)`
   background: var(--black);
   border-radius: 1rem;
   overflow-y: auto;
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
+  height: calc(100vh - 8px);
   margin: 4px;
   padding: var(--margin);
-  flex: 1;
-  scroll-snap-align: none;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  position: sticky;
+  top: 8px;
 
   @media (max-width: 1300px) {
     display: none;
@@ -284,7 +277,6 @@ const TOCCardWrapper = styled(Card)`
     height: unset;
     color: var(--white);
     pointer-events: all;
-    min-width: 35rem;
   }
 
   & ${ProjectTypeSTag} {
@@ -308,6 +300,9 @@ const TOCLine = styled.a`
     text-align: right;
     letter-spacing: initial;
     display: table-cell;
+    & > u {
+      margin-right: 1rem;
+    }
   }
   & > div {
     display: table-cell;
@@ -371,8 +366,9 @@ const GSAPCardWrapper = styled.div`
 `;
 
 const PresentationCardWrapper = styled(Card)`
-  width: calc(100% - 8px);
+  width: calc(100% - 16px);
   height: unset;
+  margin: 8px 8px 4px 8px;
   & ${GSAPCardWrapper} {
     background: var(--holographic);
     background-size: 200%;
@@ -491,77 +487,66 @@ export const TOCCard = () => {
           <h2>
             <u>Logilab.fr</u>
           </h2>
-          <ClientSTag />
           <h3>website</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>SemWeb.Pro</u>
           </h2>
-          <PersoSTag />
           <h3>website</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>Logilab</u>
           </h2>
-          <ClientSTag />
           <h3>calendar</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>CubicWeb.org</u>
           </h2>
-          <ClientSTag />
           <h3>website</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>FranceArchives</u>
           </h2>
-          <PersoSTag />
           <h3>website</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>Data-BnF</u>
           </h2>
-          <PersoSTag />
           <h3>website</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>Napoleonica</u>
           </h2>
-          <ClientSTag />
           <h3>website</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>LeBowVosgien</u>
           </h2>
-          <PersoSTag />
           <h3>website</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>StretchTypo</u>
           </h2>
-          <ClientSTag />
           <h3>typo</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>WaterPoster</u>
           </h2>
-          <PersoSTag />
           <h3>video</h3>
         </TOCLine>
         <TOCLine>
           <h2>
             <u>LePetitSalon</u>
           </h2>
-          <PersoSTag />
           <h3>catalog</h3>
         </TOCLine>
       </CardContainer>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import "./App.css";
@@ -9,11 +9,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
-  Header,
   TopPageButton,
-  ScrollMosaic,
-  FixedMosaic,
   CloseButton,
+  MasonryWrapper,
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 
@@ -28,62 +26,6 @@ import {
 } from "./components/projects/PP_bowvosgien";
 
 gsap.registerPlugin(ScrollTrigger);
-
-// const WrapperThumbnailProject2 = styled(ThumbnailProject)`
-//   background: #0400ce;
-
-//   @media (max-width: 900px) {
-//     p {
-//       display: none;
-//     }
-//   }
-
-//   @media (max-width: 650px) {
-//     p {
-//       display: initial;
-//     }
-//   }
-
-//   @media (max-width: 450px) {
-//     p {
-//       display: none;
-//     }
-//   }
-// `;
-
-// const ThumbnailProject2 = () => {
-//   return (
-//     <WrapperThumbnailProject2>
-//       <p
-//         style={{
-//           color: "white",
-//           fontSize: "2rem",
-//           position: "absolute",
-//           top: "1rem",
-//           right: "1rem",
-//         }}
-//       >
-//         19
-//       </p>
-//     </WrapperThumbnailProject2>
-//   );
-// };
-
-// const WrapperThumbnailProject3 = styled(ThumbnailProject)`
-//   background: #ff8c19;
-// `;
-
-// const ThumbnailProject3 = () => {
-//   return <WrapperThumbnailProject3 />;
-// };
-
-// const WrapperThumbnailProject4 = styled(ThumbnailProject)`
-//   background: #834531;
-// `;
-
-// const ThumbnailProject4 = () => {
-//   return <WrapperThumbnailProject4 />;
-// };
 
 function App() {
   const cardsRef = useRef([]);
@@ -299,9 +241,12 @@ function App() {
   return (
     <>
       <GlobalFonts />
-      <ScrollMosaic>
-        <PresentationCard onClick={handleCardClick} cardsRef={cardsRef} />
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+      <PresentationCard onClick={handleCardClick} cardsRef={cardsRef} />
+      <MasonryWrapper>
+        <ResponsiveMasonry
+          style={{ flex: 1 }}
+          columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+        >
           <Masonry>
             {projectData.map((project, index) => (
               <ProjectCard
@@ -314,12 +259,8 @@ function App() {
             ))}
           </Masonry>
         </ResponsiveMasonry>
-      </ScrollMosaic>
-      <FixedMosaic>
-        <Header />
         <TOCCard />
-        <TopPageButton />
-      </FixedMosaic>
+      </MasonryWrapper>
       {fullscreenCard !== null && (
         <CloseButton onClick={handleCloseFullscreen} />
       )}
