@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import QMarkImg from "../assets/questionmark.svg";
+import { ThumbnailProject } from "./LayoutAssets";
 
 const Card = styled.div`
   position: relative;
@@ -15,6 +16,8 @@ const CardContainer = styled.div`
   gap: var(--margin);
   width: 100%;
   height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (max-width: 650px) {
     margin: 0;
@@ -48,6 +51,10 @@ const PresentationCardSummary = styled.div`
 
 const PresentationLeft = styled.div`
   flex: 1;
+  & > * {
+    display: inline;
+    font-size: var(--text-big);
+  }
 `;
 
 const PresentationRight = styled.div`
@@ -118,49 +125,21 @@ const QuestionMark = styled.img`
 
 const ProjectCardWrapper = styled(Card)``;
 
-const GradientMask = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  min-height: 5rem;
-  transition: opacity 0.5s;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    var(--white) 100%
-  );
-
-  @media (max-width: 650px) {
-    display: none;
+const BottomCard = styled.div`
+  & > * {
+    font-size: var(--text-medium);
   }
-`;
-
-const RightCard = ({ children }) => {
-  return (
-    <RightCardWrapper>
-      {children}
-      <GradientMask />
-    </RightCardWrapper>
-  );
-};
-
-const RightCardWrapper = styled.div`
-  display: flex;
-  position: relative;
-  flex: 1;
-  gap: var(--margin);
-  height: calc(100% + var(--margin) - 1px);
-  overflow: hidden;
 `;
 
 const ProjectCardTextWrapper = styled.div``;
 
-const LeftCard = styled.div`
+const TopCard = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
+  & h2 {
+    font-size: var(--text-basic);
+  }
 `;
 
 const ProjectTypeTag = styled.div`
@@ -357,13 +336,10 @@ const GSAPCardWrapper = styled.div`
   height: 100%;
   padding: var(--margin);
   border-radius: 1rem;
-  background: var(--white);
+  background: var(--grey3);
   transform-style: preserve-3d;
   &.transition {
-    & > ${CardContainer} {
-      height: unset;
-    }
-    & ${GradientMask}, & ${ProjectTypeTag} {
+    & ${ProjectTypeTag} {
       opacity: 0;
     }
     & ${About} {
@@ -401,6 +377,13 @@ const PresentationCardWrapper = styled(Card)`
     background: var(--holographic);
     background-size: 200%;
   }
+  & h1,
+  & h2,
+  & p,
+  & u {
+    color: var(--black);
+    font-weight: 500;
+  }
 `;
 
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
@@ -412,25 +395,19 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
     <ProjectCardWrapper onClick={() => onClick(idx)}>
       <GSAPCardWrapper ref={(el) => (cardsRef.current[idx] = el)}>
         <CardContainer>
-          <LeftCard>
-            <Thumbnail />
+          <TopCard>
+            <h2>
+              <u>{projectData.title}</u>
+            </h2>
             <ResponsiveClientTag />
-          </LeftCard>
-          <RightCard>
+          </TopCard>
+          <ThumbnailProject />
+          <BottomCard>
             <ProjectCardTextWrapper>
-              <h2>
-                <u>{projectData.title}</u>
-              </h2>
-              <LineBreak />
-              <h3>{projectData.subtitle}</h3>
               <p>{projectData.description}</p>
-              <ul>
-                {projectData.keywords.map((keyword, idx) => (
-                  <li key={idx}>{keyword}</li>
-                ))}
-              </ul>
+              <p style={{ color: "var(--grey1)" }}>{projectData.keywords}</p>
             </ProjectCardTextWrapper>
-          </RightCard>
+          </BottomCard>
         </CardContainer>
         <PageContainer>
           <ProjectPage />
@@ -448,14 +425,12 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
           <PresentationCardSummary>
             <PresentationLeft>
               <h1>
-                <u>Baptiste Garcia</u>,
+                <u>Baptiste Garcia</u>,{" "}
               </h1>
-              <LineBreak />
               <h2>
                 Graphic Designer &<br />
-                Creative Developper
+                Creative Developper{" "}
               </h2>
-              <LineBreak />
               <p>based in Paris.</p>
             </PresentationLeft>
             <PresentationRight>

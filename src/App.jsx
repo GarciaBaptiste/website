@@ -117,8 +117,6 @@ function App() {
     const cardRect = card.getBoundingClientRect();
     const wrapper = card.parentElement;
     const wrapperHeight = wrapper.getBoundingClientRect().height;
-    const cardContainer = card.children[0];
-    const cardContainerHeight = cardContainer.getBoundingClientRect().height;
     setInitialCardStyles({
       top: cardRect.top,
       left: cardRect.left,
@@ -130,11 +128,6 @@ function App() {
     card.classList.add("transition");
 
     const timeline = gsap.timeline();
-
-    timeline.to(cardContainer, {
-      height: cardContainerHeight,
-      duration: 0,
-    });
 
     timeline.to(wrapper, {
       height: wrapperHeight,
@@ -197,9 +190,6 @@ function App() {
         })
         .to(wrapper, {
           height: "",
-        })
-        .to(cardContainer, {
-          height: "",
         });
 
       setFullscreenCard(null);
@@ -209,98 +199,98 @@ function App() {
 
   const projectData = [
     {
-      title: "1 - Le Bow Vosgien",
+      title: "Le Bow Vosgien",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["real-time 3D", "Figma", "ThreeJS", "Storytelling"],
+      keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
       thumbnail: ThumbBowVosgien,
       projectpage: PageBowVosgien,
     },
     {
-      title: "2 - Logilab",
+      title: "Logilab",
       subtitle: "calendar",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React"],
+      keywords: "Timeline — Figma — React",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "3 - SemWeb.Pro",
+      title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components", "CSS"],
+      keywords: "Timeline — Figma — React + Styled-Components + CSS",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "4 - CubicWeb.org",
+      title: "CubicWeb.org",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Figma", "React", "Styled-Components"],
+      keywords: "Figma — React — Styled-Components",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "5 - Logilab.fr",
+      title: "Logilab.fr",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: "Timeline — Figma — React + Styled-Components",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "6 - SemWeb.Pro",
+      title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: "Timeline — Figma — React + Styled-Components",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "7 - Le Bow Vosgien",
+      title: "Le Bow Vosgien",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["real-time 3D", "Figma", "ThreeJS", "Storytelling"],
+      keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
       thumbnail: ThumbBowVosgien,
       projectpage: PageBowVosgien,
     },
     {
-      title: "8 - Logilab",
+      title: "Logilab",
       subtitle: "calendar",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: "Timeline — Figma — React + Styled-Components",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "9 - SemWeb.Pro",
+      title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: "Timeline — Figma — React + Styled-Components + CSS",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "10 - CubicWeb.org",
+      title: "CubicWeb.org",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: "Figma — React + Styled-Components + CSS",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "11 - Logilab.fr",
+      title: "Logilab.fr",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: "Figma — React + Styled-Components + CSS",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "12 - SemWeb.Pro",
+      title: "SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: "Figma — React + Styled-Components + CSS",
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
