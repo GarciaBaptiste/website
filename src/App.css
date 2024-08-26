@@ -4,12 +4,15 @@
   --red: #EE1549;
   --purple: #8118EA;
   --grey1: #A8A8A8;
+  --grey2: #3B3B3B;
+  --grey3: #1B1B1B;
 
-  --text-basic: 2.75rem;
+  --text-big: 2.5rem;
+  --text-basic: 2rem;
   --text-medium: 1.75rem;
   --text-small: 1rem;
 
-  --margin: 3rem;
+  --margin: 2rem;
 
   --transparent: rgba(255, 255, 255, 0);
   --color1: #92f2f2;
@@ -68,9 +71,9 @@ html {
 body {
   margin: 0;
   font-family: "Inter";
-  font-weight: 500;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  background: white;
+  background: var(--grey2);
 }
 
 h1,
@@ -81,8 +84,9 @@ h5,
 h6,
 p {
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -1px;
+  color: var(--white);
 }
 
 h1,
@@ -90,7 +94,7 @@ h2,
 h3,
 p,
 ul {
-  font-size: var(--text-basic);
+  font-size: var(--text-medium);
   margin: 0;
 }
 
