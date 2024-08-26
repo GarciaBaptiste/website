@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import "./App.css";
 import GlobalFonts from "./fonts/fonts";
@@ -135,12 +136,10 @@ function App() {
       duration: 0,
     });
 
-    if (window.innerWidth < 650 || index === 0) {
-      timeline.to(wrapper, {
-        height: wrapperHeight,
-        duration: 0,
-      });
-    }
+    timeline.to(wrapper, {
+      height: wrapperHeight,
+      duration: 0,
+    });
 
     timeline
       .to(
@@ -210,7 +209,7 @@ function App() {
 
   const projectData = [
     {
-      title: "Le Bow Vosgien",
+      title: "1 - Le Bow Vosgien",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["real-time 3D", "Figma", "ThreeJS", "Storytelling"],
@@ -218,15 +217,31 @@ function App() {
       projectpage: PageBowVosgien,
     },
     {
-      title: "Logilab",
+      title: "2 - Logilab",
       subtitle: "calendar",
       description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
+      keywords: ["Timeline", "Figma", "React"],
       thumbnail: DefaultThumbnail,
       projectpage: DefaultProjectPage,
     },
     {
-      title: "SemWeb.Pro",
+      title: "3 - SemWeb.Pro",
+      subtitle: "website",
+      description: "design + front-end",
+      keywords: ["Timeline", "Figma", "React", "Styled-Components", "CSS"],
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
+    },
+    {
+      title: "4 - CubicWeb.org",
+      subtitle: "website",
+      description: "design + front-end",
+      keywords: ["Figma", "React", "Styled-Components"],
+      thumbnail: DefaultThumbnail,
+      projectpage: DefaultProjectPage,
+    },
+    {
+      title: "5 - Logilab.fr",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
@@ -234,7 +249,7 @@ function App() {
       projectpage: DefaultProjectPage,
     },
     {
-      title: "CubicWeb.org",
+      title: "6 - SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
@@ -242,23 +257,7 @@ function App() {
       projectpage: DefaultProjectPage,
     },
     {
-      title: "Logilab.fr",
-      subtitle: "website",
-      description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: DefaultThumbnail,
-      projectpage: DefaultProjectPage,
-    },
-    {
-      title: "SemWeb.Pro",
-      subtitle: "website",
-      description: "design + front-end",
-      keywords: ["Timeline", "Figma", "React", "Styled-Components"],
-      thumbnail: DefaultThumbnail,
-      projectpage: DefaultProjectPage,
-    },
-    {
-      title: "Le Bow Vosgien",
+      title: "7 - Le Bow Vosgien",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["real-time 3D", "Figma", "ThreeJS", "Storytelling"],
@@ -266,7 +265,7 @@ function App() {
       projectpage: PageBowVosgien,
     },
     {
-      title: "Logilab",
+      title: "8 - Logilab",
       subtitle: "calendar",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
@@ -274,7 +273,7 @@ function App() {
       projectpage: DefaultProjectPage,
     },
     {
-      title: "SemWeb.Pro",
+      title: "9 - SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
@@ -282,7 +281,7 @@ function App() {
       projectpage: DefaultProjectPage,
     },
     {
-      title: "CubicWeb.org",
+      title: "10 - CubicWeb.org",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
@@ -290,7 +289,7 @@ function App() {
       projectpage: DefaultProjectPage,
     },
     {
-      title: "Logilab.fr",
+      title: "11 - Logilab.fr",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
@@ -298,7 +297,7 @@ function App() {
       projectpage: DefaultProjectPage,
     },
     {
-      title: "SemWeb.Pro",
+      title: "12 - SemWeb.Pro",
       subtitle: "website",
       description: "design + front-end",
       keywords: ["Timeline", "Figma", "React", "Styled-Components"],
@@ -312,15 +311,19 @@ function App() {
       <GlobalFonts />
       <ScrollMosaic>
         <PresentationCard onClick={handleCardClick} cardsRef={cardsRef} />
-        {projectData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            index={index}
-            onClick={handleCardClick}
-            cardsRef={cardsRef}
-            projectData={project}
-          />
-        ))}
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+          <Masonry>
+            {projectData.map((project, index) => (
+              <ProjectCard
+                key={index}
+                index={index}
+                onClick={handleCardClick}
+                cardsRef={cardsRef}
+                projectData={project}
+              />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
       </ScrollMosaic>
       <FixedMosaic>
         <Header />

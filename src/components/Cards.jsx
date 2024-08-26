@@ -7,68 +7,7 @@ const Card = styled.div`
   position: relative;
   margin: 4px;
   border-radius: 1rem;
-  scroll-snap-align: start;
   float: left;
-
-  @media (max-height: 2400px) and (min-width: 1301px) {
-    height: calc((100vh - 8px) / 4 - 8px);
-  }
-  @media (max-height: 1700px) and (min-width: 1301px) {
-    height: calc((100vh - 8px) / 3 - 8px);
-  }
-  @media (max-height: 1000px) and (min-width: 1301px) {
-    height: calc((100vh - 8px) / 2 - 8px);
-  }
-  @media (max-height: 600px) and (min-width: 1301px) {
-    height: calc((100vh - 8px) / 1.5 - 8px);
-  }
-
-  @media (max-height: 2400px) and (max-width: 1300px) {
-    height: calc(((100vh - (5rem + 2px)) / 4) + 5rem - 8px);
-  }
-  @media (max-height: 1700px) and (max-width: 1300px) {
-    height: calc(((100vh - (5rem + 2px)) / 3) + 5rem - 9px);
-  }
-  @media (max-height: 1000px) and (max-width: 1300px) {
-    height: calc(((100vh - (5rem + 2px)) / 2) + 5rem - 10px);
-  }
-  @media (max-height: 600px) and (max-width: 1300px) {
-    height: calc((100vh - 8px) / 1.5 - 8px);
-  }
-  @media (max-height: 500px) and (max-width: 1300px) {
-    height: calc((100vh - 8px) - 8px);
-  }
-
-  @media (max-width: 3900px) {
-    width: calc(100% / 5 - 8px);
-  }
-  @media (max-width: 3250px) {
-    width: calc(100% / 4 - 8px);
-  }
-  @media (max-width: 2600px) {
-    width: calc(100% / 3 - 8px);
-  }
-  @media (max-width: 1950px) {
-    width: calc(100% / 2 - 8px);
-  }
-  @media (max-width: 1300px) {
-    padding-top: calc(5rem + 2px);
-    margin-top: calc(-5rem + 2px);
-    &:first-child {
-      margin-top: 4px;
-    }
-  }
-  @media (max-width: 650px) {
-    width: calc(100% - 8px);
-    height: unset;
-    margin-top: calc(-5rem + 2px);
-    &:first-child {
-      margin-top: 4px;
-    }
-    &:nth-child(2) {
-      margin-top: calc(-5rem + 2px);
-    }
-  }
 `;
 
 const CardContainer = styled.div`
