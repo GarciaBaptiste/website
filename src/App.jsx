@@ -245,7 +245,7 @@ function App() {
       <MasonryWrapper>
         <ResponsiveMasonry
           style={{ flex: 1 }}
-          columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+          columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3, 1800: 4 }}
         >
           <Masonry>
             {projectData.map((project, index) => (

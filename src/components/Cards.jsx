@@ -262,7 +262,7 @@ const TOCCardWrapper = styled(Card)`
   background: var(--black);
   border-radius: 1rem;
   overflow-y: auto;
-  height: calc(100vh - 8px);
+  height: calc(100vh - 16px);
   margin: 4px;
   padding: var(--margin);
   position: sticky;
