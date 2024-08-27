@@ -171,4 +171,5 @@ export const MasonryWrapper = styled.section`
   display: flex;
   width: calc(100% - 8px);
   margin: 0 4px;
+  padding-bottom: 4px;
 `;
