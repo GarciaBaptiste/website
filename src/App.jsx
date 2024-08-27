@@ -37,7 +37,7 @@ function App() {
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
 
     ScrollTrigger.batch(cardsRef.current, {
-      start: "top 100%",
+      start: "top bottom",
       onEnter: (batch) => {
         tl.to(batch, {
           opacity: 1,
@@ -51,6 +51,8 @@ function App() {
       },
       toggleActions: "play none none none",
     });
+
+    ScrollTrigger.refresh();
   }, []);
 
   const handleCardClick = (index) => {
