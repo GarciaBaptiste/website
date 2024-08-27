@@ -259,7 +259,7 @@ function App() {
             ))}
           </Masonry>
         </ResponsiveMasonry>
-        <TOCCard />
+        <TOCCard cardsRef={cardsRef} />
       </MasonryWrapper>
       {fullscreenCard !== null && (
         <CloseButton onClick={handleCloseFullscreen} />

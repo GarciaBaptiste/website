@@ -258,18 +258,60 @@ const LineBreak = styled.div`
   height: 0.75rem;
 `;
 
-const TOCCardWrapper = styled(Card)`
-  background: var(--black);
+const GSAPCardWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: var(--margin);
   border-radius: 1rem;
-  overflow-y: auto;
+  background: var(--grey3);
+  transform-style: preserve-3d;
+  &.transition {
+    & ${ProjectTypeTag} {
+      opacity: 0;
+    }
+    & ${About} {
+      opacity: 0;
+    }
+  }
+  &.fullscreen {
+    overflow-y: auto;
+    & > ${PageContainer} {
+      height: 100%;
+      overflow: auto;
+      top: 0;
+      padding: var(--margin);
+      opacity: 1;
+      @media (max-width: 1300px) {
+        position: relative;
+        height: unset;
+      }
+    }
+    & > ${PresentationCardContainer} {
+      gap: var(--margin);
+    }
+    & ${PresentationPageContainer} {
+      height: unset;
+      opacity: 1;
+      padding-bottom: var(--margin);
+    }
+  }
+`;
+
+const TOCCardWrapper = styled(Card)`
+  border-radius: 1rem;
+  overflow: hidden;
   height: calc(100vh - 16px);
   margin: 4px;
-  padding: var(--margin);
   position: sticky;
   top: 8px;
 
   @media (max-width: 1300px) {
     display: none;
+  }
+
+  & ${GSAPCardWrapper} {
+    background: black;
   }
 
   & ${CardContainer} {
@@ -325,46 +367,6 @@ const TOCMask = styled.div`
   top: 0;
 `;
 
-const GSAPCardWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: var(--margin);
-  border-radius: 1rem;
-  background: var(--grey3);
-  transform-style: preserve-3d;
-  &.transition {
-    & ${ProjectTypeTag} {
-      opacity: 0;
-    }
-    & ${About} {
-      opacity: 0;
-    }
-  }
-  &.fullscreen {
-    overflow-y: auto;
-    & > ${PageContainer} {
-      height: 100%;
-      overflow: auto;
-      top: 0;
-      padding: var(--margin);
-      opacity: 1;
-      @media (max-width: 1300px) {
-        position: relative;
-        height: unset;
-      }
-    }
-    & > ${PresentationCardContainer} {
-      gap: var(--margin);
-    }
-    & ${PresentationPageContainer} {
-      height: unset;
-      opacity: 1;
-      padding-bottom: var(--margin);
-    }
-  }
-`;
-
 const PresentationCardWrapper = styled(Card)`
   width: calc(100% - 16px);
   height: unset;
@@ -385,7 +387,7 @@ const PresentationCardWrapper = styled(Card)`
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   const Thumbnail = projectData.thumbnail;
   const ProjectPage = projectData.projectpage;
-  const idx = index + 1;
+  const idx = index + 2;
 
   return (
     <ProjectCardWrapper onClick={() => onClick(idx)}>
@@ -479,78 +481,79 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
   );
 };
 
-export const TOCCard = () => {
+export const TOCCard = ({ cardsRef }) => {
   return (
     <TOCCardWrapper>
-      <CardContainer>
-        <TOCLine>
-          <h2>
-            <u>Logilab.fr</u>
-          </h2>
-          <h3>website</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>SemWeb.Pro</u>
-          </h2>
-          <h3>website</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>Logilab</u>
-          </h2>
-          <h3>calendar</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>CubicWeb.org</u>
-          </h2>
-          <h3>website</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>FranceArchives</u>
-          </h2>
-          <h3>website</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>Data-BnF</u>
-          </h2>
-          <h3>website</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>Napoleonica</u>
-          </h2>
-          <h3>website</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>LeBowVosgien</u>
-          </h2>
-          <h3>website</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>StretchTypo</u>
-          </h2>
-          <h3>typo</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>WaterPoster</u>
-          </h2>
-          <h3>video</h3>
-        </TOCLine>
-        <TOCLine>
-          <h2>
-            <u>LePetitSalon</u>
-          </h2>
-          <h3>catalog</h3>
-        </TOCLine>
-      </CardContainer>
-      <TOCMask />
+      <GSAPCardWrapper ref={(el) => (cardsRef.current[1] = el)}>
+        <CardContainer>
+          <TOCLine>
+            <h2>
+              <u>Logilab.fr</u>
+            </h2>
+            <h3>website</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>SemWeb.Pro</u>
+            </h2>
+            <h3>website</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>Logilab</u>
+            </h2>
+            <h3>calendar</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>CubicWeb.org</u>
+            </h2>
+            <h3>website</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>FranceArchives</u>
+            </h2>
+            <h3>website</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>Data-BnF</u>
+            </h2>
+            <h3>website</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>Napoleonica</u>
+            </h2>
+            <h3>website</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>LeBowVosgien</u>
+            </h2>
+            <h3>website</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>StretchTypo</u>
+            </h2>
+            <h3>typo</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>WaterPoster</u>
+            </h2>
+            <h3>video</h3>
+          </TOCLine>
+          <TOCLine>
+            <h2>
+              <u>LePetitSalon</u>
+            </h2>
+            <h3>catalog</h3>
+          </TOCLine>
+        </CardContainer>
+      </GSAPCardWrapper>
     </TOCCardWrapper>
   );
 };
