@@ -17,6 +17,8 @@ const CardContainer = styled.div`
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+  outline: solid 0px var(--grey2);
+  transition: outline 0.2s 0.3s;
 
   @media (max-width: 650px) {
     margin: 0;
@@ -274,6 +276,9 @@ const GSAPCardWrapper = styled.div`
     }
     & ${About} {
       opacity: 0;
+    }
+    & ${CardContainer} {
+      outline: solid 12px var(--grey2);
     }
   }
   &.fullscreen {
