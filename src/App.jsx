@@ -42,7 +42,7 @@ function App() {
   useEffect(() => {
     const body = document.body;
 
-    if (fullscreenCard) {
+    if (fullscreenCard !== null) {
       body.style.overflow = "hidden";
       body.style.paddingRight = `${scrollBarWidth}px`;
     } else {
