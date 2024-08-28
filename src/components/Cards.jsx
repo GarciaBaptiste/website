@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import QMarkImg from "../assets/questionmark.svg";
@@ -184,78 +184,6 @@ const PersoTag = () => {
   );
 };
 
-const ClientSTag = () => {
-  return (
-    <div>
-      <ProjectTypeSTag
-        style={{
-          background: "var(--red)",
-        }}
-      >
-        c
-      </ProjectTypeSTag>
-    </div>
-  );
-};
-
-const PersoSTag = () => {
-  return (
-    <div>
-      <ProjectTypeSTag
-        style={{
-          background: "var(--purple)",
-        }}
-      >
-        p
-      </ProjectTypeSTag>
-    </div>
-  );
-};
-
-const ResponsiveClientTag = () => {
-  const [isLargeTag, setIsLargeTag] = useState(
-    window.innerWidth >= 900 ||
-      (window.innerWidth <= 650 && window.innerWidth >= 450)
-  );
-  const handleResize = () => {
-    setIsLargeTag(
-      window.innerWidth >= 900 ||
-        (window.innerWidth <= 650 && window.innerWidth >= 450)
-    );
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.addEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return isLargeTag ? <ClientTag /> : <ClientSTag />;
-};
-
-const ResponsivePersoTag = () => {
-  const [isLargeTag, setIsLargeTag] = useState(
-    window.innerWidth >= 900 ||
-      (window.innerWidth <= 650 && window.innerWidth >= 450)
-  );
-  const handleResize = () => {
-    setIsLargeTag(
-      window.innerWidth >= 900 ||
-        (window.innerWidth <= 650 && window.innerWidth >= 450)
-    );
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return isLargeTag ? <PersoTag /> : <PersoSTag />;
-};
-
 const LineBreak = styled.div`
   height: 0.75rem;
 `;
@@ -399,7 +327,7 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             <h2>
               <u>{projectData.title}</u>
             </h2>
-            <ResponsiveClientTag />
+            <ClientTag />
           </TopCard>
           <ThumbnailProject />
           <BottomCard>
