@@ -19,11 +19,6 @@ const CardContainer = styled.div`
   justify-content: space-between;
   outline: solid 0px var(--grey2);
   transition: outline 0.2s 0.3s;
-
-  @media (max-width: 650px) {
-    margin: 0;
-    height: unset;
-  }
 `;
 
 const PageContainer = styled.div`
@@ -289,10 +284,6 @@ const GSAPCardWrapper = styled.div`
       top: 8px;
       padding: 8px;
       opacity: 1;
-      @media (max-width: 1300px) {
-        position: relative;
-        height: unset;
-      }
     }
     & > ${PresentationCardContainer} {
       gap: var(--margin);
