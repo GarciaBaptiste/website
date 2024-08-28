@@ -94,6 +94,7 @@ function App() {
       height: cardRect.height,
     });
 
+    document.documentElement.style.overflow = "hidden";
     card.classList.add("transition");
 
     const timeline = gsap.timeline();
@@ -165,6 +166,7 @@ function App() {
         });
 
       setFullscreenCard(null);
+      document.documentElement.style.overflow = "";
     }
   };
 
