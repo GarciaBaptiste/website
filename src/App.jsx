@@ -113,16 +113,18 @@ function App() {
           left: cardRect.left,
           width: cardRect.width,
           height: cardRect.height,
+          padding: 0,
           zIndex: 1000,
           duration: 0,
         },
         0
       )
       .to(card, {
-        top: "8px",
-        left: "8px",
-        width: "calc(100vw - 16px - " + scrollBarWidth + "px)",
-        height: "calc(100dvh - 16px)",
+        top: "0",
+        left: "0",
+        width: "100vw",
+        height: "100dvh",
+        padding: "8px " + (8 + scrollBarWidth) + "px 8px 8px",
         duration: 0.5,
         ease: "power3.inOut",
         onComplete: () => {
@@ -146,6 +148,7 @@ function App() {
           left: initialCardStyles.left,
           width: initialCardStyles.width,
           height: initialCardStyles.height,
+          padding: "0",
           duration: 0.5,
           ease: "power3.inOut",
         })

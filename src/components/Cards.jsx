@@ -7,7 +7,6 @@ import { ThumbnailProject } from "./LayoutAssets";
 const Card = styled.div`
   position: relative;
   margin: 4px;
-  border-radius: 1rem;
   float: left;
 `;
 
@@ -123,7 +122,13 @@ const QuestionMark = styled.img`
   height: 32px;
 `;
 
-const ProjectCardWrapper = styled(Card)``;
+const ProjectCardWrapper = styled(Card)`
+  & ${CardContainer} {
+    background: var(--grey3);
+    padding: var(--margin);
+    border-radius: 1rem;
+  }
+`;
 
 const BottomCard = styled.div`
   & > * {
@@ -262,9 +267,6 @@ const GSAPCardWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: var(--margin);
-  border-radius: 1rem;
-  background: var(--grey3);
   transform-style: preserve-3d;
   &.transition {
     & ${ProjectTypeTag} {
@@ -277,10 +279,10 @@ const GSAPCardWrapper = styled.div`
   &.fullscreen {
     overflow-y: auto;
     & > ${PageContainer} {
-      height: 100%;
+      height: calc(100% - 16px);
       overflow: auto;
-      top: 0;
-      padding: var(--margin);
+      top: 8px;
+      padding: 8px;
       opacity: 1;
       @media (max-width: 1300px) {
         position: relative;
@@ -319,6 +321,8 @@ const TOCCardWrapper = styled(Card)`
     height: unset;
     color: var(--white);
     pointer-events: all;
+    padding: var(--margin);
+    border-radius: 1rem;
   }
 
   & ${ProjectTypeSTag} {
@@ -371,9 +375,11 @@ const PresentationCardWrapper = styled(Card)`
   width: calc(100% - 16px);
   height: unset;
   margin: 8px 8px 4px 8px;
-  & ${GSAPCardWrapper} {
+  & ${CardContainer} {
     background: var(--holographic);
     background-size: 200%;
+    padding: var(--margin);
+    border-radius: 1rem;
   }
   & h1,
   & h2,
