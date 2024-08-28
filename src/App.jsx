@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import "./App.css";
@@ -31,6 +31,32 @@ function App() {
   const cardsRef = useRef([]);
   const [fullscreenCard, setFullscreenCard] = useState(null);
   const [initialCardStyles, setInitialCardStyles] = useState({});
+  const [scrollBarWidth, setScrollBarWidth] = useState(0);
+
+  useEffect(() => {
+    const scrollBarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    setScrollBarWidth(scrollBarWidth);
+  }, []);
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (fullscreenCard) {
+      body.style.overflow = "hidden";
+      body.style.paddingRight = `${scrollBarWidth}px`;
+    } else {
+      body.style.overflow = "";
+      body.style.paddingRight = "";
+    }
+
+    console.log(scrollBarWidth);
+
+    return () => {
+      body.style.overflow = "";
+      body.style.paddingRight = "";
+    };
+  }, [fullscreenCard, scrollBarWidth]);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -95,7 +121,7 @@ function App() {
       .to(card, {
         top: "8px",
         left: "8px",
-        width: "calc(100vw - 16px)",
+        width: "calc(100vw - 16px - " + scrollBarWidth + "px)",
         height: "calc(100dvh - 16px)",
         duration: 0.5,
         ease: "power3.inOut",
