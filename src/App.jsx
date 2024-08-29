@@ -82,62 +82,63 @@ function App() {
   }, []);
 
   const handleCardClick = (index) => {
-    setFullscreenCard(index);
-    const card = cardsRef.current[index];
-    const cardRect = card.getBoundingClientRect();
-    const wrapper = card.parentElement;
-    const wrapperHeight = wrapper.getBoundingClientRect().height;
-    setInitialCardStyles({
-      top: cardRect.top,
-      left: cardRect.left,
-      width: cardRect.width,
-      height: cardRect.height,
-    });
-
-    document.documentElement.style.overflow = "hidden";
-    card.classList.add("transition");
-
-    const timeline = gsap.timeline();
-
-    timeline.to(wrapper, {
-      height: wrapperHeight,
-      duration: 0,
-    });
-
-    timeline
-      .to(
-        card,
-        {
-          position: "fixed",
-          top: cardRect.top,
-          left: cardRect.left,
-          width: cardRect.width,
-          height: cardRect.height,
-          padding: 0,
-          zIndex: 1000,
-          duration: 0,
-        },
-        0
-      )
-      .to(card, {
-        top: "0",
-        left: "0",
-        width: "100vw",
-        height: "100dvh",
-        padding: "8px " + (8 + scrollBarWidth) + "px 8px 8px",
-        duration: 0.5,
-        ease: "power3.inOut",
-        onComplete: () => {
-          card.classList.add("fullscreen");
-        },
+    if (fullscreenCard === null) {
+      setFullscreenCard(index);
+      const card = cardsRef.current[index];
+      const cardRect = card.getBoundingClientRect();
+      const wrapper = card.parentElement;
+      const wrapperHeight = wrapper.getBoundingClientRect().height;
+      setInitialCardStyles({
+        top: cardRect.top,
+        left: cardRect.left,
+        width: cardRect.width,
+        height: cardRect.height,
       });
+
+      document.documentElement.style.overflow = "hidden";
+      card.classList.add("transition");
+
+      const timeline = gsap.timeline();
+
+      timeline.to(wrapper, {
+        height: wrapperHeight,
+        duration: 0,
+      });
+
+      timeline
+        .to(
+          card,
+          {
+            position: "fixed",
+            top: cardRect.top,
+            left: cardRect.left,
+            width: cardRect.width,
+            height: cardRect.height,
+            padding: 0,
+            zIndex: 1000,
+            duration: 0,
+          },
+          0
+        )
+        .to(card, {
+          top: "0",
+          left: "0",
+          width: "100vw",
+          height: "100dvh",
+          padding: "8px " + (8 + scrollBarWidth) + "px 8px 8px",
+          duration: 0.5,
+          ease: "power3.inOut",
+          onComplete: () => {
+            card.classList.add("fullscreen");
+          },
+        });
+    }
   };
 
   const handleCloseFullscreen = () => {
     if (fullscreenCard !== null) {
       const card = cardsRef.current[fullscreenCard];
       const wrapper = card.parentElement;
-      const cardContainer = card.children[0];
       card.classList.remove("transition");
       card.classList.remove("fullscreen");
 
