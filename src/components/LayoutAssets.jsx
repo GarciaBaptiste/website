@@ -173,7 +173,7 @@ export const ThumbnailImg = styled.img`
   object-fit: cover;
   transform-origin: center;
   transform: scale(1);
-  transition: transform 0.5s, opacity 0.3s 0.3s, filter 1s;
+  transition: transform 0.5s ease, opacity 0.3s 0.3s, filter 1s;
 `;
 
 export const MasonryWrapper = styled.section`
