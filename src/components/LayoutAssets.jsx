@@ -12,6 +12,7 @@ const BasicButton = styled.button`
   gap: 1rem;
   border-radius: 2rem;
   transition: background 0.2s;
+  pointer-events: all;
 
   &:hover {
     background: white;

@@ -96,6 +96,7 @@ function App() {
       });
 
       document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.pointerEvents = "none";
       card.classList.add("transition");
 
       const timeline = gsap.timeline();
@@ -168,6 +169,7 @@ function App() {
 
       setFullscreenCard(null);
       document.documentElement.style.overflow = "";
+      document.documentElement.style.pointerEvents = "";
     }
   };
 
