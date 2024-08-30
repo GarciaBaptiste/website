@@ -158,6 +158,7 @@ const ProjectTypeTag = styled.div`
   padding: 0.25rem 0.5rem 0.1rem 0.5rem;
   font-weight: 300;
   transition: opacity 0.5s;
+  border-radius: 4px;
 `;
 
 const ProjectTypeSTag = styled(ProjectTypeTag)`
