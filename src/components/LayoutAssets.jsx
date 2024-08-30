@@ -148,24 +148,6 @@ export const ThumbnailProject = styled.div`
   display: flex;
   margin: 0 var(--margin);
   overflow: hidden;
-
-  @media (max-width: 900px) {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1.5rem;
-  }
-
-  @media (max-width: 650px) {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 1rem;
-  }
-
-  @media (max-width: 450px) {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1.5rem;
-  }
 `;
 
 export const ThumbnailImg = styled.img`
