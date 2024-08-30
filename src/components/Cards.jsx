@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import QMarkImg from "../assets/questionmark.svg";
-import { ThumbnailProject } from "./LayoutAssets";
+import { ThumbnailProject, ThumbnailImg } from "./LayoutAssets";
 
 const Card = styled.div`
   position: relative;
@@ -120,6 +120,9 @@ const QuestionMark = styled.img`
 `;
 
 const ProjectCardWrapper = styled(Card)`
+  &:hover ${ThumbnailImg} {
+    transform: scale(1.1);
+  }
   & ${CardContainer} {
     gap: 0;
     background: var(--grey3);
@@ -207,6 +210,11 @@ const GSAPCardWrapper = styled.div`
     }
     & ${About} {
       opacity: 0;
+    }
+    & ${ThumbnailImg} {
+      transition: opacity 0.3s, filter 1s;
+      opacity: 0;
+      filter: blur(1rem);
     }
   }
   &.fullscreen {
@@ -335,7 +343,9 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             </h2>
             <ClientTag />
           </TopCard>
-          <ThumbnailProject />
+          <ThumbnailProject>
+            <ThumbnailImg src={Thumbnail} />
+          </ThumbnailProject>
           <BottomCard>
             <ProjectCardTextWrapper>
               <p>{projectData.description}</p>

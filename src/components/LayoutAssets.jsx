@@ -143,11 +143,11 @@ export const CloseButton = (props) => {
 };
 
 export const ThumbnailProject = styled.div`
-  width: 10rem;
-  height: 10rem;
   border-radius: 1rem;
   position: relative;
   display: flex;
+  margin: 0 var(--margin);
+  overflow: hidden;
 
   @media (max-width: 900px) {
     width: 3rem;
@@ -166,6 +166,14 @@ export const ThumbnailProject = styled.div`
     height: 3rem;
     border-radius: 1.5rem;
   }
+`;
+
+export const ThumbnailImg = styled.img`
+  width: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  transform: scale(1);
+  transition: transform 0.5s, opacity 0.3s 0.3s, filter 1s;
 `;
 
 export const MasonryWrapper = styled.section`

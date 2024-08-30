@@ -15,15 +15,9 @@ import {
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 
-import {
-  Thumbnail as DefaultThumbnail,
-  ProjectPage as DefaultProjectPage,
-} from "./components/projects/DefaultProject";
+import { ProjectPage as DefaultProjectPage } from "./components/projects/DefaultProject";
 
-import {
-  Thumbnail as ThumbBowVosgien,
-  ProjectPage as PageBowVosgien,
-} from "./components/projects/PP_bowvosgien";
+import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgien";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -177,7 +171,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
-      thumbnail: ThumbBowVosgien,
+      thumbnail: "../src/assets/mockup_macbook.png",
       projectpage: PageBowVosgien,
     },
     {
@@ -185,7 +179,7 @@ function App() {
       subtitle: "calendar",
       description: "design + front-end",
       keywords: "Timeline — Figma — React",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_imac.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -193,7 +187,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components + CSS",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_ipad.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -201,7 +195,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Figma — React — Styled-Components",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_macbook.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -209,7 +203,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_iphone.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -217,7 +211,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_ipad.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -225,7 +219,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
-      thumbnail: ThumbBowVosgien,
+      thumbnail: "../src/assets/mockup_imac.png",
       projectpage: PageBowVosgien,
     },
     {
@@ -233,7 +227,7 @@ function App() {
       subtitle: "calendar",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_iphone.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -241,7 +235,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components + CSS",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_macbook.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -249,7 +243,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Figma — React + Styled-Components + CSS",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_imac.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -257,7 +251,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Figma — React + Styled-Components + CSS",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_ipad.png",
       projectpage: DefaultProjectPage,
     },
     {
@@ -265,7 +259,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "Figma — React + Styled-Components + CSS",
-      thumbnail: DefaultThumbnail,
+      thumbnail: "../src/assets/mockup_macbook.png",
       projectpage: DefaultProjectPage,
     },
   ];
