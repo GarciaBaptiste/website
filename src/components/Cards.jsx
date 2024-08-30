@@ -121,13 +121,16 @@ const QuestionMark = styled.img`
 
 const ProjectCardWrapper = styled(Card)`
   & ${CardContainer} {
+    gap: 0;
     background: var(--grey3);
-    padding: var(--margin);
     border-radius: 1rem;
   }
 `;
 
 const BottomCard = styled.div`
+  padding: var(--margin);
+  background: var(--grey3);
+  border-radius: 0 0 1rem 1rem;
   & > * {
     font-size: var(--text-medium);
   }
@@ -139,6 +142,10 @@ const TopCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: var(--margin);
+  background: linear-gradient(var(--grey3), rgba(0, 0, 0, 0));
+  border-radius: 1rem 1rem 0 0;
+  z-index: 100;
   & h2 {
     font-size: var(--text-basic);
   }

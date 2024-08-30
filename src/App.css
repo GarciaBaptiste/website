@@ -115,3 +115,7 @@ h1:first-child,
 h2:first-child {
   margin-top: -0.25rem;
 }
+
+.foreground {
+  z-index: 10000;
+}
