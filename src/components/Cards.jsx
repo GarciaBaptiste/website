@@ -18,8 +18,6 @@ const CardContainer = styled.div`
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  outline: solid 0px var(--grey2);
-  transition: outline 0.2s 0.3s;
 `;
 
 const PageContainer = styled.div`
@@ -194,7 +192,6 @@ const GSAPCardWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
   background: var(--grey2);
   &.transition {
     & ${ProjectTypeTag} {

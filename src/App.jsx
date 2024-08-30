@@ -50,8 +50,6 @@ function App() {
       body.style.paddingRight = "";
     }
 
-    console.log(scrollBarWidth);
-
     return () => {
       body.style.overflow = "";
       body.style.paddingRight = "";
