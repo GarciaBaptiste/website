@@ -213,6 +213,7 @@ const GSAPCardWrapper = styled.div`
     }
     & ${ThumbnailImg} {
       transition: opacity 0.3s, filter 1s;
+      transform: scale(1.1);
       opacity: 0;
       filter: blur(1rem);
     }
