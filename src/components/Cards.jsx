@@ -195,6 +195,7 @@ const GSAPCardWrapper = styled.div`
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
+  background: var(--grey2);
   &.transition {
     & ${ProjectTypeTag} {
       opacity: 0;
@@ -202,14 +203,11 @@ const GSAPCardWrapper = styled.div`
     & ${About} {
       opacity: 0;
     }
-    & ${CardContainer} {
-      outline: solid 12px var(--grey2);
-    }
   }
   &.fullscreen {
     overflow-y: auto;
     & > ${PageContainer} {
-      height: calc(100% - 16px);
+      height: calc(100dvh - 16px);
       overflow: auto;
       top: 8px;
       padding: 8px;
