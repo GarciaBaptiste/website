@@ -8,6 +8,7 @@ const Card = styled.div`
   position: relative;
   margin: 4px;
   float: left;
+  cursor: pointer;
 `;
 
 const CardContainer = styled.div`
@@ -213,6 +214,7 @@ const GSAPCardWrapper = styled.div`
       top: 8px;
       padding: 8px;
       opacity: 1;
+      cursor: initial;
     }
     & > ${PresentationCardContainer} {
       gap: var(--margin);
