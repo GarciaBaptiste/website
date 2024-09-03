@@ -121,7 +121,8 @@ function App() {
           left: "0",
           width: "100vw",
           height: "100dvh",
-          padding: "8px " + (8 + scrollBarWidth) + "px 8px 8px",
+          padding:
+            "8px " + (8 + (index === 0 ? 0 : scrollBarWidth)) + "px 8px 8px",
           duration: 0.5,
           ease: "power3.inOut",
           onComplete: () => {

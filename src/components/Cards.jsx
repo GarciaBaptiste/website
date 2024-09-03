@@ -38,11 +38,15 @@ const PresentationCardContainer = styled(CardContainer)`
   flex-direction: column;
   transition: gap 0.3s;
   gap: 0;
+  pointer-events: all;
+  height: calc(100% - 16px);
+  scrollbar-width: none;
 `;
 
 const PresentationCardSummary = styled.div`
   display: flex;
   align-items: flex-end;
+  transition: padding-right 0.5s ease-in-out;
 `;
 
 const PresentationLeft = styled.div`
@@ -219,12 +223,14 @@ const GSAPCardWrapper = styled.div`
       opacity: 0;
       filter: blur(1rem);
     }
+    & ${PresentationCardSummary} {
+      padding-right: 17px;
+    }
   }
   &.fullscreen {
-    overflow-y: auto;
     & > ${PageContainer} {
       height: calc(100dvh - 18px);
-      overflow: auto;
+      overflow-y: auto;
       top: 9px;
       padding: 8px;
       opacity: 1;
@@ -232,6 +238,9 @@ const GSAPCardWrapper = styled.div`
     }
     & > ${PresentationCardContainer} {
       gap: var(--margin);
+      position: absolute;
+      overflow-y: auto;
+      width: calc(100% - 16px);
     }
     & ${PresentationPageContainer} {
       height: unset;
