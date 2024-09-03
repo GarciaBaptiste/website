@@ -146,7 +146,7 @@ export const ThumbnailProject = styled.div`
   border-radius: 1rem;
   position: relative;
   display: flex;
-  margin: 0 var(--margin);
+  margin: calc(-1 * var(--margin)) var(--margin);
   overflow: hidden;
 `;
 

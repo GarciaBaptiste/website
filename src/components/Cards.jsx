@@ -131,9 +131,9 @@ const ProjectCardWrapper = styled(Card)`
 `;
 
 const BottomCard = styled.div`
-  padding: var(--margin);
+  padding: calc(var(--margin) * 2) var(--margin) var(--margin) var(--margin);
   background: var(--grey3);
-  background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3));
+  background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3), var(--grey3));
   border-radius: 0 0 1rem 1rem;
   z-index: 100;
   & > * {
@@ -147,8 +147,8 @@ const TopCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--margin);
-  background: linear-gradient(var(--grey3), rgba(0, 0, 0, 0));
+  padding: var(--margin) var(--margin) calc(var(--margin) * 2) var(--margin);
+  background: linear-gradient(var(--grey3), var(--grey3), rgba(0, 0, 0, 0));
   border-radius: 1rem 1rem 0 0;
   z-index: 100;
   & h2 {
@@ -223,9 +223,9 @@ const GSAPCardWrapper = styled.div`
   &.fullscreen {
     overflow-y: auto;
     & > ${PageContainer} {
-      height: calc(100dvh - 16px);
+      height: calc(100dvh - 18px);
       overflow: auto;
-      top: 8px;
+      top: 9px;
       padding: 8px;
       opacity: 1;
       cursor: initial;
