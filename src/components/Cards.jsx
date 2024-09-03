@@ -135,9 +135,8 @@ const ProjectCardWrapper = styled(Card)`
 `;
 
 const BottomCard = styled.div`
-  padding: calc(var(--margin) * 2) var(--margin) var(--margin) var(--margin);
-  background: var(--grey3);
-  background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3), var(--grey3));
+  padding: calc(var(--margin) * 3) var(--margin) var(--margin) var(--margin);
+  background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3) 66%);
   border-radius: 0 0 1rem 1rem;
   z-index: 100;
   & > * {
@@ -151,8 +150,8 @@ const TopCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--margin) var(--margin) calc(var(--margin) * 2) var(--margin);
-  background: linear-gradient(var(--grey3), var(--grey3), rgba(0, 0, 0, 0));
+  padding: var(--margin) var(--margin) calc(var(--margin) * 3) var(--margin);
+  background: linear-gradient(var(--grey3) 33%, rgba(0, 0, 0, 0));
   border-radius: 1rem 1rem 0 0;
   z-index: 100;
   & h2 {
