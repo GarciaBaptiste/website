@@ -174,5 +174,5 @@ export const PageMask = styled.div`
   background: var(--grey2);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s 0.2s;
 `;

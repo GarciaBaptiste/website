@@ -67,6 +67,7 @@ html.fullscreen-page {
 html.fullscreen-page #page-mask {
   pointer-events: all;
   opacity: 1;
+  transition: opacity 0.3s;
 }
 
 body {
