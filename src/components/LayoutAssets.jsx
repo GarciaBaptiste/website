@@ -165,3 +165,14 @@ export const MasonryWrapper = styled.section`
   margin: 0 4px;
   padding-bottom: 4px;
 `;
+
+export const PageMask = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 1;
+  background: var(--grey2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+`;

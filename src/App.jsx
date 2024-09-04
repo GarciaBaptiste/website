@@ -12,6 +12,7 @@ import {
   TopPageButton,
   CloseButton,
   MasonryWrapper,
+  PageMask,
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 
@@ -90,8 +91,7 @@ function App() {
         height: cardRect.height,
       });
 
-      document.documentElement.style.overflow = "hidden";
-      document.documentElement.style.pointerEvents = "none";
+      document.documentElement.classList.add("fullscreen-page");
       card.classList.add("transition");
 
       const timeline = gsap.timeline();
@@ -164,8 +164,7 @@ function App() {
         });
 
       setFullscreenCard(null);
-      document.documentElement.style.overflow = "";
-      document.documentElement.style.pointerEvents = "";
+      document.documentElement.classList.remove("fullscreen-page");
     }
   };
 
@@ -271,6 +270,7 @@ function App() {
   return (
     <>
       <GlobalFonts />
+      <PageMask id="page-mask" />
       <PresentationCard onClick={handleCardClick} cardsRef={cardsRef} />
       <MasonryWrapper>
         <ResponsiveMasonry

@@ -58,6 +58,17 @@ html {
   scroll-behavior: smooth;
 }
 
+html.fullscreen-page {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  pointer-events: none;
+}
+
+html.fullscreen-page #page-mask {
+  pointer-events: all;
+  opacity: 1;
+}
+
 body {
   margin: 0;
   font-family: "Inter";
