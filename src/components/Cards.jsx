@@ -326,7 +326,7 @@ const PresentationCardWrapper = styled(Card)`
   margin: 8px 8px 4px 8px;
   & ${CardContainer} {
     background: var(--holographic);
-    background-size: 200%;
+    background-size: 100vw 100vh;
     padding: var(--margin);
     border-radius: 1rem;
   }
