@@ -130,6 +130,13 @@ function App() {
           },
         });
     }
+
+    ScrollTrigger.refresh();
+
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+      console.log("toto");
+    }, 1000);
   };
 
   const handleCloseFullscreen = () => {

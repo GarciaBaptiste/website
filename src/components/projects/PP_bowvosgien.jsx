@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SplitText from "../../assets/SplitText";
 
 import MockupMBAir from "../../assets/mockup_mbair.svg";
 
@@ -29,32 +30,28 @@ export const ProjectPage = () => {
           />
         </div>
         <TextBloc>
-          <p>
+          <SplitText>
             Le projet consiste à développer un site web en 3D destiné à un
             scénographe, mettant en avant la puissance de la narration à travers
             le déplacement dans l'espace.
-          </p>
-        </TextBloc>
-        <TextBloc>
-          <p>
+          </SplitText>
+          <SplitText>
             Ce site innovant permettra aux visiteurs d'explorer des
             scénographies immersives et interactives, où chaque mouvement
             dévoile de nouvelles perspectives et éléments narratifs.
-          </p>
-        </TextBloc>
-        <TextBloc>
-          <p>
+          </SplitText>
+          <SplitText>
             Le projet consiste à développer un site web en 3D destiné à un
             scénographe, mettant en avant la puissance de la narration à travers
             le déplacement dans l'espace.
-          </p>
+          </SplitText>
         </TextBloc>
         <TextBloc>
-          <p>
+          <SplitText>
             Ce site innovant permettra aux visiteurs d'explorer des
             scénographies immersives et interactives, où chaque mouvement
             dévoile de nouvelles perspectives et éléments narratifs.
-          </p>
+          </SplitText>
         </TextBloc>
         <div style={{ position: "relative", height: "90vh" }}>
           <img
@@ -69,18 +66,18 @@ export const ProjectPage = () => {
           />
         </div>
         <TextBloc>
-          <p>
+          <SplitText>
             Le projet consiste à développer un site web en 3D destiné à un
             scénographe, mettant en avant la puissance de la narration à travers
             le déplacement dans l'espace.
-          </p>
+          </SplitText>
         </TextBloc>
         <TextBloc>
-          <p>
+          <SplitText>
             Ce site innovant permettra aux visiteurs d'explorer des
             scénographies immersives et interactives, où chaque mouvement
             dévoile de nouvelles perspectives et éléments narratifs.
-          </p>
+          </SplitText>
         </TextBloc>
         <div style={{ position: "relative", height: "90vh" }}>
           <img
