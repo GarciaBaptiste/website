@@ -11,12 +11,16 @@ const TextBloc = styled.div`
   &:nth-last-child(1) {
     padding-bottom: 5rem;
   }
+  @media (max-width: 900px) {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 export const ProjectPage = () => {
   return (
     <>
-      <div style={{ width: "100%", paddingBottom: "5rem" }}>
+      <div style={{ width: "100%", padding: "0 2rem 5rem 2rem" }}>
         <div style={{ position: "relative", height: "90vh" }}>
           <img
             className="foreground"
