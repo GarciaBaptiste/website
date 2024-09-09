@@ -65,13 +65,13 @@ function App() {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.4,
-          delay: 0.2,
+          duration: 0.5,
           ease: "power3.out",
           stagger: 0.1,
         });
       },
       toggleActions: "play none none none",
+      markers: true,
     });
 
     ScrollTrigger.refresh();
