@@ -40,7 +40,7 @@ const ArrowLeft = () => {
 
 const TopPageButtonWrapper = styled(BasicButton)`
   bottom: ${(props) => (props.$show ? "var(--margin)" : "-5rem")};
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   right: var(--margin);
   transition: bottom 0.3s;

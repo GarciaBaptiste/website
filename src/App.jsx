@@ -71,7 +71,6 @@ function App() {
         });
       },
       toggleActions: "play none none none",
-      markers: true,
     });
 
     ScrollTrigger.refresh();
@@ -301,6 +300,7 @@ function App() {
       {fullscreenCard !== null && (
         <CloseButton onClick={handleCloseFullscreen} />
       )}
+      <TopPageButton />
     </>
   );
 }
