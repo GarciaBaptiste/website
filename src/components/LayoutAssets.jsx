@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ArrowImg from "../assets/arrow.svg";
 
-const BasicButton = styled.button`
+export const BasicButton = styled.button`
   cursor: pointer;
   background: var(--white);
   color: var(--black);
@@ -23,7 +23,7 @@ const BasicButton = styled.button`
   }
 `;
 
-const ButtonText = styled.p`
+export const ButtonText = styled.p`
   color: var(--black);
   font-size: 2rem;
   line-height: 2rem;
@@ -31,11 +31,35 @@ const ButtonText = styled.p`
 `;
 
 const ArrowUp = () => {
-  return <img src={ArrowImg} />;
+  return <img src={ArrowImg} style={{ width: "2rem", height: "2rem" }} />;
 };
 
 const ArrowLeft = () => {
-  return <img src={ArrowImg} style={{ transform: "rotate(-90deg)" }} />;
+  return (
+    <img
+      src={ArrowImg}
+      style={{ transform: "rotate(-90deg)", width: "2rem", height: "2rem" }}
+    />
+  );
+};
+
+export const ArrowRight = () => {
+  return (
+    <img
+      src={ArrowImg}
+      style={{ transform: "rotate(90deg)", width: "2rem", height: "2rem" }}
+    />
+  );
+};
+
+export const ArrowExternal = () => {
+  return (
+    <img
+      className="arrow-external"
+      src={ArrowImg}
+      style={{ transform: "rotate(90deg)", width: "2rem", height: "2rem" }}
+    />
+  );
 };
 
 const TopPageButtonWrapper = styled(BasicButton)`

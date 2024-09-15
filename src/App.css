@@ -91,6 +91,23 @@ p {
   color: var(--white);
 }
 
+a, a:visited {
+  color: var(--grey1);
+  text-decoration-thickness: from-font;
+}
+
+a:hover {
+  color: var(--white);
+}
+
+a:hover > .arrow-external {
+  filter: invert(1); 
+}
+
+.arrow-external {
+  filter: invert(.7);
+}
+
 h1,
 h2,
 h3,
@@ -130,4 +147,8 @@ h2:first-child {
 
 .foreground {
   z-index: 10000;
+}
+
+img {
+  width: 100%;
 }

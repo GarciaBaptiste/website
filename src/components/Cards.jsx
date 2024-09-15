@@ -31,7 +31,7 @@ const PageContainer = styled.div`
   padding: 0 var(--margin);
   border-radius: 1rem;
   pointer-events: all;
-  transition: top 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  transition: top 0.5s ease, height 0.5s ease, opacity 0.5s 0.15s ease;
 `;
 
 const PresentationCardContainer = styled(CardContainer)`
@@ -136,7 +136,7 @@ const ProjectCardWrapper = styled(Card)`
 
 const BottomCard = styled.div`
   padding: calc(var(--margin) * 3) var(--margin) var(--margin) var(--margin);
-  background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3) 66%);
+  // background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3) 66%);
   border-radius: 0 0 1rem 1rem;
   z-index: 100;
   & > * {
@@ -147,15 +147,17 @@ const BottomCard = styled.div`
 const ProjectCardTextWrapper = styled.div``;
 
 const TopCard = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--margin) var(--margin) calc(var(--margin) * 3) var(--margin);
-  background: linear-gradient(var(--grey3) 33%, rgba(0, 0, 0, 0));
+  // background: linear-gradient(var(--grey3) 33%, rgba(0, 0, 0, 0));
   border-radius: 1rem 1rem 0 0;
   z-index: 100;
   & h2 {
     font-size: var(--text-basic);
+    z-index: 1000;
   }
 `;
 
@@ -229,7 +231,6 @@ const GSAPCardWrapper = styled.div`
   &.fullscreen {
     & > ${PageContainer} {
       height: calc(100dvh - 18px);
-      overflow-y: auto;
       top: 9px;
       padding: 8px;
       opacity: 1;

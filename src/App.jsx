@@ -18,6 +18,7 @@ import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 
 import { ProjectPage as DefaultProjectPage } from "./components/projects/DefaultProject";
 import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgien";
+import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien3.jpg";
 import ThumbDefault1 from "./assets/mockup_macbook.png";
 import ThumbDefault2 from "./assets/mockup_iphone.png";
 import ThumbDefault3 from "./assets/mockup_imac.png";
@@ -180,7 +181,7 @@ function App() {
       subtitle: "website",
       description: "design + front-end",
       keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
-      thumbnail: ThumbDefault1,
+      thumbnail: ThumbLeBowVosgien,
       projectpage: PageBowVosgien,
     },
     {
