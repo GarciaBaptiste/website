@@ -111,6 +111,7 @@ const VisitSiteButton = (props) => {
 
 export const ProjectPage = () => {
   const containerRef = useRef(null);
+  console.log("toto")
 
   return (
     <ProjectPageWrapper ref={containerRef}>
