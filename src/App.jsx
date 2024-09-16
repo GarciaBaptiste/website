@@ -135,7 +135,6 @@ function App() {
 
     setTimeout(() => {
       ScrollTrigger.refresh();
-      console.log("toto");
     }, 1000);
   };
 

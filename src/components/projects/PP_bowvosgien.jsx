@@ -122,6 +122,7 @@ export const ProjectPage = () => {
         </ContainerLarge>
         <ContainerMedium>
           <FadeInElement scroller={containerRef}>
+            {console.log("tata")}
             <ProjectText>
               This carte blanche granted by Le Bow Vosgien, a scenographer with
               a unique profile offering various services related to the

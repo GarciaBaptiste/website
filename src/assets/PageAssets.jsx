@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const FadeInElement = ({ children, scroller }) => {
+  console.log("fadein")
   const elementRef = useRef(null);
 
   useGSAP(() => {
