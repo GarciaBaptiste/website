@@ -29,7 +29,6 @@ export const FadeInElement = ({ children, scroller }) => {
         });
       },
       toggleActions: "play none none none",
-      markers: true,
     });
 
     ScrollTrigger.refresh();
