@@ -111,7 +111,6 @@ const VisitSiteButton = (props) => {
 
 export const ProjectPage = () => {
   const containerRef = useRef(null);
-  console.log("toto")
 
   return (
     <ProjectPageWrapper ref={containerRef}>
@@ -123,7 +122,6 @@ export const ProjectPage = () => {
         </ContainerLarge>
         <ContainerMedium>
           <FadeInElement scroller={containerRef}>
-            {console.log("tata")}
             <ProjectText>
               This carte blanche granted by Le Bow Vosgien, a scenographer with
               a unique profile offering various services related to the

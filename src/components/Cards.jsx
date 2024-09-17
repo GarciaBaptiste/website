@@ -29,7 +29,6 @@ const PageContainer = styled.div`
   left: 0;
   opacity: 0;
   padding: 0 var(--margin);
-  border-radius: 1rem;
   pointer-events: all;
   transition: top 0.5s ease, height 0.5s ease, opacity 0.5s 0.15s ease;
 `;

@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const FadeInElement = ({ children, scroller }) => {
-  console.log("fadein");
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -36,12 +35,12 @@ export const FadeInElement = ({ children, scroller }) => {
   return <div ref={elementRef}>{children}</div>;
 };
 
-export const FullScreenElement = ({ children }) => {
+export const FullScreenElement = ({ children, scroller }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
     const element = elementRef.current;
-    const container = element.parentElement.parentElement.parentElement;
+    const customScroller = scroller.current;
     const tl = gsap.timeline();
     tl.set(element, {
       width: "calc(100% + 4rem)",
@@ -52,7 +51,7 @@ export const FullScreenElement = ({ children }) => {
 
     ScrollTrigger.batch(element, {
       trigger: element.parentElement,
-      scroller: container,
+      scroller: customScroller,
       start: "top 30%",
       onEnter: (batch) => {
         tl.to(batch, {
