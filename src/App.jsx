@@ -5,7 +5,6 @@ import "./App.css";
 import GlobalFonts from "./fonts/fonts";
 
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
@@ -55,7 +54,7 @@ function App() {
     };
   }, [fullscreenCard, scrollBarWidth]);
 
-  useGSAP(() => {
+  useEffect(() => {
     const tl = gsap.timeline();
     tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
 

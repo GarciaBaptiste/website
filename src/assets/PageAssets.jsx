@@ -1,15 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const FadeInElement = ({ children, scroller }) => {
-  console.log("fadein")
+  console.log("fadein");
   const elementRef = useRef(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     const element = elementRef.current;
     const customScroller = scroller.current;
     const tl = gsap.timeline();
@@ -40,7 +39,7 @@ export const FadeInElement = ({ children, scroller }) => {
 export const FullScreenElement = ({ children }) => {
   const elementRef = useRef(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     const element = elementRef.current;
     const container = element.parentElement.parentElement.parentElement;
     const tl = gsap.timeline();
