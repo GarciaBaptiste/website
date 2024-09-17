@@ -229,8 +229,8 @@ const GSAPCardWrapper = styled.div`
   }
   &.fullscreen {
     & > ${PageContainer} {
-      height: calc(100dvh - 18px);
-      top: 9px;
+      height: calc(100dvh - 8px);
+      top: 0px;
       padding: 8px;
       opacity: 1;
       cursor: initial;
@@ -240,11 +240,13 @@ const GSAPCardWrapper = styled.div`
       position: absolute;
       overflow-y: auto;
       width: calc(100% - 16px);
+      cursor: initial;
     }
     & ${PresentationPageContainer} {
       height: unset;
       opacity: 1;
       padding-bottom: var(--margin);
+      cursor: initial;
     }
   }
 `;
@@ -320,7 +322,7 @@ const TOCMask = styled.div`
   top: 0;
 `;
 
-const PresentationCardWrapper = styled(Card)`
+const PresentationCardWrapper = styled.div`
   width: calc(100% - 16px);
   height: unset;
   margin: 8px 8px 4px 8px;
@@ -329,6 +331,7 @@ const PresentationCardWrapper = styled(Card)`
     background-size: 100vw 100vh;
     padding: var(--margin);
     border-radius: 1rem;
+    cursor: pointer;
   }
   & h1,
   & h2,

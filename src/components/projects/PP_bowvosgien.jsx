@@ -14,8 +14,8 @@ const ProjectPageWrapper = styled.section`
   position: absolute;
   overflow-y: auto;
   width: calc(100% - 8px);
-  height: calc(100% + 16px);
-  top: -8px;
+  height: calc(100% - 8px);
+  top: 8px;
 `;
 
 const ProjectPageContent = styled.article`
