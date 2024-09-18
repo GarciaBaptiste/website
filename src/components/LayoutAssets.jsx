@@ -43,11 +43,11 @@ const ArrowLeft = () => {
   );
 };
 
-export const ArrowRight = () => {
+export const ArrowRightUp = () => {
   return (
     <img
       src={ArrowImg}
-      style={{ transform: "rotate(90deg)", width: "2rem", height: "2rem" }}
+      style={{ transform: "rotate(45deg)", width: "2rem", height: "2rem" }}
     />
   );
 };
@@ -57,7 +57,7 @@ export const ArrowExternal = () => {
     <img
       className="arrow-external"
       src={ArrowImg}
-      style={{ transform: "rotate(90deg)", width: "2rem", height: "2rem" }}
+      style={{ transform: "rotate(45deg)", width: "2rem", height: "2rem" }}
     />
   );
 };

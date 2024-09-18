@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { ButtonText, ArrowRight, ArrowExternal } from "../LayoutAssets";
+import { ButtonText, ArrowRightUp, ArrowExternal } from "../LayoutAssets";
 import {
   FadeInElement,
   FadeInElementAbsolute,
@@ -131,7 +131,7 @@ const VisitSiteButton = (props) => {
   return (
     <VisitSiteButtonWrapper href={props.href} target="_blank">
       <ButtonText style={{ fontWeight: "400" }}>Visit site</ButtonText>
-      <ArrowRight />
+      <ArrowRightUp />
     </VisitSiteButtonWrapper>
   );
 };
