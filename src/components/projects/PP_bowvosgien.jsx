@@ -1,14 +1,20 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import { ButtonText, ArrowRight, ArrowExternal } from "../LayoutAssets";
-import { FadeInElement, FullScreenElement } from "../../assets/PageAssets";
+import {
+  FadeInElement,
+  FadeInElementAbsolute,
+  FullScreenElement,
+} from "../../assets/PageAssets";
 
 import MockupMBAirImage from "../../assets/mockup_mbair.svg";
+import MockupIPhoneImage from "../../assets/mockup_iphone.svg";
 import Image1 from "../../assets/projects/le_bow_vosgien/render3cut2.png";
 import Image2 from "../../assets/projects/le_bow_vosgien/le_bow_vosgien_page_mba.png";
 import Image3 from "../../assets/projects/le_bow_vosgien/render2.png";
 import Image4 from "../../assets/projects/le_bow_vosgien/render5.png";
 import Image5 from "../../assets/projects/le_bow_vosgien/render9.png";
+import Image6 from "../../assets/projects/le_bow_vosgien/le_bow_vosgien_mobile_00.png";
 
 const ProjectPageWrapper = styled.section`
   position: absolute;
@@ -27,6 +33,7 @@ const ProjectPageContent = styled.article`
 `;
 
 const ContainerLarge = styled.div`
+  position: relative;
   grid-column: 1 / span 4;
 `;
 
@@ -76,6 +83,26 @@ const MockupMBAirScreen = styled.img`
   width: 77.8%;
   left: 11.1%;
   top: 5.5%;
+`;
+
+const MockUpIPhoneContainer = styled.div`
+  position: relative;
+  aspect-ratio: 396 / 802;
+  max-width: 396px;
+  margin: 0 5% 0 auto;
+  width: 22%;
+`;
+
+const MockupIPhone = styled.img`
+  width: 100%;
+  position: absolute;
+`;
+
+const MockupIPhoneScreen = styled.img`
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 2%;
 `;
 
 const VisitSiteButtonWrapper = styled.a`
@@ -137,6 +164,12 @@ export const ProjectPage = () => {
               <MockupMBAir src={MockupMBAirImage} />
             </MockUpMBAContainer>
           </FadeInElement>
+          <FadeInElementAbsolute scroller={containerRef}>
+            <MockUpIPhoneContainer style={{ gridColumn: "4 / span 1" }}>
+              <MockupIPhoneScreen src={Image6} />
+              <MockupIPhone src={MockupIPhoneImage} />
+            </MockUpIPhoneContainer>
+          </FadeInElementAbsolute>
         </ContainerLarge>
         <ContainerSmall>
           <FadeInElement scroller={containerRef}>
