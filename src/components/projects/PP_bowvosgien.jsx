@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ButtonText, ArrowRightUp, ArrowExternal } from "../LayoutAssets";
 import {
   FadeInElement,
+  FadeInElementDelay,
   FadeInElementAbsolute,
   FullScreenElement,
 } from "../../assets/PageAssets";
@@ -192,12 +193,12 @@ export const ProjectPage = () => {
             <FullScreenImage src={Image3} style={{ marginBottom: "-10px" }} />
           </FullScreenElement>
           <DoubleColumns>
-            <FadeInElement scroller={containerRef}>
+            <FadeInElementDelay scroller={containerRef}>
               <img src={Image4} />
-            </FadeInElement>
-            <FadeInElement scroller={containerRef}>
+            </FadeInElementDelay>
+            <FadeInElementDelay scroller={containerRef} delay={0.5}>
               <img src={Image5} />
-            </FadeInElement>
+            </FadeInElementDelay>
           </DoubleColumns>
         </ContainerLarge>
         <ContainerSmall style={{ display: "flex", justifyContent: "center" }}>

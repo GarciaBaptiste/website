@@ -32,6 +32,33 @@ export const FadeInElement = ({ children, scroller }) => {
   return <div ref={elementRef}>{children}</div>;
 };
 
+export const FadeInElementDelay = ({ children, scroller, delay = 0 }) => {
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    const customScroller = scroller.current;
+
+    gsap.fromTo(
+      element,
+      { opacity: 0, y: "5rem" },
+      {
+        opacity: 1,
+        y: 0,
+        delay,
+        scrollTrigger: {
+          trigger: element.parentElement,
+          scroller: customScroller,
+          start: "top 80%",
+          duration: 1,
+        },
+      }
+    );
+  }, [delay]);
+
+  return <div ref={elementRef}>{children}</div>;
+};
+
 const FadeInElementAbsoluteWrapper = styled.div`
   position: absolute;
   width: 100%;
@@ -79,7 +106,7 @@ export const FullScreenElement = ({ children, scroller }) => {
 
     gsap.fromTo(
       element,
-      { 
+      {
         marginLeft: "-2rem",
         marginRight: "-2rem",
         borderRadius: "0",
