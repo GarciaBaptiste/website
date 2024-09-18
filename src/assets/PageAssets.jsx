@@ -11,26 +11,22 @@ export const FadeInElement = ({ children, scroller }) => {
   useEffect(() => {
     const element = elementRef.current;
     const customScroller = scroller.current;
-    const tl = gsap.timeline();
-    tl.set(element, { opacity: 0, y: "5rem" });
 
-    ScrollTrigger.batch(element, {
-      trigger: element.parentElement,
-      scroller: customScroller,
-      start: "top 80%",
-      onEnter: (batch) => {
-        tl.to(batch, {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          stagger: 0.2,
-        });
-      },
-      toggleActions: "play none none none",
-    });
-
-    ScrollTrigger.refresh();
+    gsap.fromTo(
+      element,
+      { opacity: 0, y: "5rem" },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: element.parentElement,
+          scroller: customScroller,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 1,
+        },
+      }
+    );
   }, []);
 
   return <div ref={elementRef}>{children}</div>;
@@ -48,26 +44,23 @@ export const FadeInElementAbsolute = ({ children, scroller }) => {
   useEffect(() => {
     const element = elementRef.current;
     const customScroller = scroller.current;
-    const tl = gsap.timeline();
-    tl.set(element, { opacity: 0, y: "5rem" });
 
-    ScrollTrigger.batch(element, {
-      trigger: element.parentElement,
-      scroller: customScroller,
-      start: "top 80%",
-      onEnter: (batch) => {
-        tl.to(batch, {
-          opacity: 1,
-          y: 0,
+    gsap.fromTo(
+      element,
+      { opacity: 0, y: "5rem" },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: element.parentElement,
+          scroller: customScroller,
+          start: "top 30%",
           duration: 1,
           ease: "power3.out",
-          stagger: 0.2,
-        });
-      },
-      toggleActions: "play none none none",
-    });
-
-    ScrollTrigger.refresh();
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
   }, []);
 
   return (
@@ -83,29 +76,29 @@ export const FullScreenElement = ({ children, scroller }) => {
   useEffect(() => {
     const element = elementRef.current;
     const customScroller = scroller.current;
-    const tl = gsap.timeline();
-    tl.set(element, {
-      width: "calc(100% + 4rem)",
-      marginLeft: "-2rem",
-      borderRadius: "0",
-      overflow: "hidden",
-    });
 
-    ScrollTrigger.batch(element, {
-      trigger: element.parentElement,
-      scroller: customScroller,
-      start: "top 30%",
-      onEnter: (batch) => {
-        tl.to(batch, {
-          width: "100%",
-          marginLeft: "0",
-          borderRadius: "1rem",
+    gsap.fromTo(
+      element,
+      { 
+        marginLeft: "-2rem",
+        marginRight: "-2rem",
+        borderRadius: "0",
+        overflow: "hidden",
+      },
+      {
+        marginLeft: "0",
+        marginRight: "0",
+        borderRadius: "1rem",
+        scrollTrigger: {
+          trigger: element.parentElement,
+          scroller: customScroller,
+          start: "top 30%",
           duration: 2,
           ease: "power3.out",
-        });
-      },
-      toggleActions: "play none none none",
-    });
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
 
     ScrollTrigger.refresh();
   }, []);
