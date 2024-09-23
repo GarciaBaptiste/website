@@ -4,7 +4,8 @@ import { ButtonText, ArrowRightUp, ArrowExternal } from "../LayoutAssets";
 import {
   FadeInElement,
   FadeInElementDelay,
-  FadeInElementAbsolute,
+  FadeInMockUp,
+  FadeInMockUpAbsolute,
   FullScreenElement,
 } from "../../assets/PageAssets";
 
@@ -20,17 +21,26 @@ import Image6 from "../../assets/projects/le_bow_vosgien/le_bow_vosgien_mobile_0
 const ProjectPageWrapper = styled.section`
   position: absolute;
   overflow-y: auto;
+  overflow-x: hidden;
   width: calc(100% - 8px);
   height: calc(100% - 8px);
   top: 8px;
+  @media (max-width: 899px) {
+    width: calc(100% - 16px);
+    border-radius: 1rem;
+  }
 `;
 
 const ProjectPageContent = styled.article`
   width: 100%;
-  padding: 6rem calc(2rem + 8px) 5rem 2rem;
+  padding: 6rem calc(var(--margin) + 8px) 5rem var(--margin);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12rem 2rem;
+  gap: 12rem var(--margin);
+  @media (max-width: 899px) {
+    padding: 5rem var(--margin) 14rem var(--margin);
+    gap: 6rem var(--margin);
+  }
 `;
 
 const ContainerLarge = styled.div`
@@ -40,30 +50,53 @@ const ContainerLarge = styled.div`
 
 const ContainerMedium = styled.div`
   grid-column: 2 / span 3;
+  @media (max-width: 899px) {
+    grid-column: 1 / span 4;
+  }
 `;
 
 const ContainerSmall = styled.div`
   grid-column: 2 / span 2;
+  @media (max-width: 899px) {
+    grid-column: 1 / span 4;
+  }
 `;
 
 const ProjectText = styled.p`
   font-size: var(--text-big);
+  @media (max-width: 899px) {
+    font-size: var(--text-basic);
+  }
 `;
 
 const FullScreenImage = styled.img`
   width: 100%;
+
+  @media (max-width: 899px) {
+    width: unset;
+    height: 100%;
+  }
 `;
 
 const DoubleColumns = styled.div`
   display: grid;
-  margin-top: 2rem;
-  gap: 2rem;
+  margin-top: var(--margin);
+  gap: var(--margin);
   grid-template-columns: repeat(4, 1fr);
   & > div {
     grid-column: span 2;
+    @media (max-width: 899px) {
+      grid-column: span 4;
+    }
   }
   & img {
     border-radius: 1rem;
+  }
+  @media (max-width: 899px) {
+    margin-left: calc(-1 * var(--margin));
+    margin-right: calc(-1 * var(--margin));
+    margin-top: 8px;
+    gap: 8px;
   }
 `;
 
@@ -72,6 +105,9 @@ const MockUpMBAContainer = styled.div`
   aspect-ratio: 1132 / 650;
   max-width: 1132px;
   margin: 0 auto;
+  @media (max-width: 899px) {
+    flex: 1132px 0 0;
+  }
 `;
 
 const MockupMBAir = styled.img`
@@ -92,6 +128,10 @@ const MockUpIPhoneContainer = styled.div`
   max-width: 396px;
   margin: 0 5% 0 auto;
   width: 22%;
+  @media (max-width: 899px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `;
 
 const MockupIPhone = styled.img`
@@ -122,10 +162,6 @@ const VisitSiteButtonWrapper = styled.a`
   &:hover {
     background: white;
   }
-
-  @media (max-width: 650px) {
-    padding: 1rem;
-  }
 `;
 
 const VisitSiteButton = (props) => {
@@ -145,7 +181,7 @@ export const ProjectPage = () => {
       <ProjectPageContent>
         <ContainerLarge>
           <FullScreenElement scroller={containerRef}>
-            <FullScreenImage src={Image1} style={{ marginBottom: "-10px" }} />
+            <FullScreenImage src={Image1} style={{ marginBottom: "-3px" }} />
           </FullScreenElement>
         </ContainerLarge>
         <ContainerMedium>
@@ -159,18 +195,18 @@ export const ProjectPage = () => {
           </FadeInElement>
         </ContainerMedium>
         <ContainerLarge>
-          <FadeInElement scroller={containerRef}>
+          <FadeInMockUp scroller={containerRef}>
             <MockUpMBAContainer>
               <MockupMBAirScreen src={Image2} />
               <MockupMBAir src={MockupMBAirImage} />
             </MockUpMBAContainer>
-          </FadeInElement>
-          <FadeInElementAbsolute scroller={containerRef}>
+          </FadeInMockUp>
+          <FadeInMockUpAbsolute scroller={containerRef}>
             <MockUpIPhoneContainer style={{ gridColumn: "4 / span 1" }}>
               <MockupIPhoneScreen src={Image6} />
               <MockupIPhone src={MockupIPhoneImage} />
             </MockUpIPhoneContainer>
-          </FadeInElementAbsolute>
+          </FadeInMockUpAbsolute>
         </ContainerLarge>
         <ContainerSmall>
           <FadeInElement scroller={containerRef}>
@@ -190,14 +226,14 @@ export const ProjectPage = () => {
         </ContainerSmall>
         <ContainerLarge>
           <FullScreenElement scroller={containerRef}>
-            <FullScreenImage src={Image3} style={{ marginBottom: "-10px" }} />
+            <FullScreenImage src={Image3} style={{ marginBottom: "-3px" }} />
           </FullScreenElement>
           <DoubleColumns>
             <FadeInElementDelay scroller={containerRef}>
-              <img src={Image4} />
+              <img src={Image4} style={{ marginBottom: "-3px" }} />
             </FadeInElementDelay>
             <FadeInElementDelay scroller={containerRef} delay={0.5}>
-              <img src={Image5} />
+              <img src={Image5} style={{ marginBottom: "-3px" }} />
             </FadeInElementDelay>
           </DoubleColumns>
         </ContainerLarge>

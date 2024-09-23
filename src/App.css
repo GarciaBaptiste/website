@@ -33,9 +33,10 @@
     linear-gradient(115deg, var(--color1) 5%, var(--color4) 10%, var(--color2), var(--color6) 20%, var(--color4), var(--color4) 30%, var(--color2), var(--color5) 40%, var(--color1), var(--color4) 70%);
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 899px) {
   :root {
     --margin: 1.5rem;
+    --grey2: #000000;
   } 
 }
 

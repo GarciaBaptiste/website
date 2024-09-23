@@ -135,11 +135,13 @@ const ProjectCardWrapper = styled(Card)`
 
 const BottomCard = styled.div`
   padding: calc(var(--margin) * 3) var(--margin) var(--margin) var(--margin);
-  // background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3) 66%);
   border-radius: 0 0 1rem 1rem;
   z-index: 100;
   & > * {
     font-size: var(--text-medium);
+  }
+  @media (max-width: 899px) {
+    background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3) 80%);
   }
 `;
 
