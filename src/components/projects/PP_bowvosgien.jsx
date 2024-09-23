@@ -237,9 +237,9 @@ export const ProjectPage = () => {
             </FadeInElementDelay>
           </DoubleColumns>
         </ContainerLarge>
-        <ContainerSmall style={{ display: "flex", justifyContent: "center" }}>
+        <ContainerLarge style={{ display: "flex", justifyContent: "end" }}>
           <VisitSiteButton href="http://le-bow-vosgien.fr" />
-        </ContainerSmall>
+        </ContainerLarge>
       </ProjectPageContent>
     </ProjectPageWrapper>
   );
