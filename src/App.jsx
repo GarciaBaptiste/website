@@ -177,8 +177,8 @@ function App() {
     {
       title: "Le Bow Vosgien",
       subtitle: "website",
-      description: "design + front-end",
-      keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
+      description: "Art direction + Front-end",
+      keywords: "Realtime 3D — Immersive wandering — Blender — Three.JS",
       thumbnail: ThumbLeBowVosgien,
       projectpage: PageBowVosgien,
     },
