@@ -71,11 +71,15 @@ const PresentationPageContainer = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
   }
+
+  & p {
+    font-size: var(--text-basic);
+  }
 `;
 
 const PresentationFirstBloc = styled.div`
   flex: 1;
-  max-width: 970px;
+  max-width: 775px;
 `;
 
 const PresentationSecondBloc = styled.div`
@@ -337,10 +341,14 @@ const PresentationCardWrapper = styled.div`
   }
   & h1,
   & h2,
-  & p,
+  & h3,
   & u {
     color: var(--black);
     font-weight: 500;
+  }
+  & p {
+    color: var(--black);
+    font-weight: 400;
   }
 `;
 
