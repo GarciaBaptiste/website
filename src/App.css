@@ -152,4 +152,5 @@ h2:first-child {
 
 img {
   width: 100%;
+  margin-bottom: -3px;
 }
