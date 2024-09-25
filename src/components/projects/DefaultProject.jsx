@@ -1,10 +1,22 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useRef } from "react";
+import {
+  ProjectPageWrapper,
+  ProjectPageContent,
+  FullScreenImage,
+  TextMedium,
+  TextSmall,
+  DoubleColumns,
+  MockUpDouble,
+  VisitSiteButton,
+} from "../../assets/PageAssets";
 
 export const ProjectPage = () => {
+  const containerRef = useRef(null);
+
   return (
-    <>
-      <div></div>
-    </>
+    <ProjectPageWrapper ref={containerRef}>
+      <ProjectPageContent>
+      </ProjectPageContent>
+    </ProjectPageWrapper>
   );
 };
