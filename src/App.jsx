@@ -193,7 +193,7 @@ function App() {
     },
     {
       title: "SemWeb.Pro",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components + CSS",
       thumbnail: ThumbDefault4,
@@ -201,7 +201,7 @@ function App() {
     },
     {
       title: "CubicWeb.org",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Figma — React — Styled-Components",
       thumbnail: ThumbDefault1,
@@ -209,7 +209,7 @@ function App() {
     },
     {
       title: "Logilab.fr",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components",
       thumbnail: ThumbDefault2,
@@ -217,7 +217,7 @@ function App() {
     },
     {
       title: "SemWeb.Pro",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components",
       thumbnail: ThumbDefault4,
@@ -225,7 +225,7 @@ function App() {
     },
     {
       title: "Le Bow Vosgien",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
       thumbnail: ThumbDefault3,
@@ -233,7 +233,7 @@ function App() {
     },
     {
       title: "Logilab",
-      subtitle: "calendar",
+      type: "perso",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components",
       thumbnail: ThumbDefault2,
@@ -241,7 +241,7 @@ function App() {
     },
     {
       title: "SemWeb.Pro",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Timeline — Figma — React + Styled-Components + CSS",
       thumbnail: ThumbDefault1,
@@ -249,7 +249,7 @@ function App() {
     },
     {
       title: "CubicWeb.org",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Figma — React + Styled-Components + CSS",
       thumbnail: ThumbDefault3,
@@ -257,7 +257,7 @@ function App() {
     },
     {
       title: "Logilab.fr",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Figma — React + Styled-Components + CSS",
       thumbnail: ThumbDefault4,
@@ -265,7 +265,7 @@ function App() {
     },
     {
       title: "SemWeb.Pro",
-      subtitle: "website",
+      type: "perso",
       description: "design + front-end",
       keywords: "Figma — React + Styled-Components + CSS",
       thumbnail: ThumbDefault1,
