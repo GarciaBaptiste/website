@@ -177,7 +177,7 @@ function App() {
   const projectData = [
     {
       title: "Le Bow Vosgien",
-      subtitle: "website",
+      type: "client",
       description: "Art direction + Front-end",
       keywords: "Realtime 3D — Immersive wandering — Blender — Three.JS",
       thumbnail: ThumbLeBowVosgien,
@@ -185,7 +185,7 @@ function App() {
     },
     {
       title: "Logilab",
-      subtitle: "calendar",
+      type: "client",
       description: "design + front-end",
       keywords: "Timeline — Figma — React",
       thumbnail: ThumbLogilabFr,

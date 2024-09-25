@@ -365,7 +365,7 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             <h2>
               <u>{projectData.title}</u>
             </h2>
-            <ClientTag />
+            {projectData.type === "perso" ? <PersoTag /> : <ClientTag />}
           </TopCard>
           <ThumbnailProject>
             <ThumbnailImg src={Thumbnail} />
