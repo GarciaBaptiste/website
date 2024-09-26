@@ -59,6 +59,8 @@ const FadeInElementDelay = ({ children, scroller, delay = 0 }) => {
           scroller: customScroller,
           start: "top 80%",
           duration: 1,
+          ease: "power3.out",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -74,7 +76,7 @@ const FadeInElementAbsoluteWrapper = styled.div`
   @media (max-width: 899px) {
     position: relative;
     top: unset;
-    margin-top: -70vh;
+    margin-top: -670px;
   }
 `;
 
@@ -279,6 +281,8 @@ export const ProjectPageWrapper = styled.section`
 
 export const ProjectPageContent = styled.article`
   width: 100%;
+  margin: auto;
+  max-width: 1800px;
   padding: 6rem calc(var(--margin) + 8px) 5rem var(--margin);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -385,12 +389,14 @@ const MockUpMBAirScreen = styled.img`
 const MockUpIPhoneContainer = styled.div`
   position: relative;
   aspect-ratio: 396 / 802;
-  max-width: 396px;
-  margin: 0 5% 0 auto;
+  max-width: 300px;
+  margin: 0 auto 0 auto;
   width: 22%;
+  transform: translateX(150%);
   @media (max-width: 899px) {
     width: 100%;
     margin: 0 auto;
+    transform: unset;
   }
 `;
 
@@ -400,19 +406,6 @@ const MockUpIPhoneScreen = styled.img`
   left: 5%;
   top: 2%;
 `;
-
-export const MockUpMBAir = (src) => {
-  return (
-    <ContainerLarge>
-      <FadeInMockUp scroller={scroller}>
-        <MockUpMBAirContainer>
-          <MockUpMBAirScreen src={src} />
-          <MockUpFrame src={MockUpMBAirImage} />
-        </MockUpMBAirContainer>
-      </FadeInMockUp>
-    </ContainerLarge>
-  );
-};
 
 export const MockUpDouble = ({ scroller, screenMBAir, screenIPhone }) => {
   return (
