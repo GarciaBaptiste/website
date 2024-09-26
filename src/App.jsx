@@ -17,6 +17,7 @@ import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 
 import { ProjectPage as DefaultProjectPage } from "./components/projects/DefaultProject";
 import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgien";
+import { ProjectPage as PageLogilabFr } from "./components/projects/PP_logilabfr";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien5.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbDefault1 from "./assets/mockup_macbook.png";
@@ -189,7 +190,7 @@ function App() {
       description: "design + front-end",
       keywords: "Timeline — Figma — React",
       thumbnail: ThumbLogilabFr,
-      projectpage: DefaultProjectPage,
+      projectpage: PageLogilabFr,
     },
     {
       title: "SemWeb.Pro",
