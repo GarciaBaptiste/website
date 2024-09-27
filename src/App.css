@@ -90,6 +90,7 @@ p {
   font-weight: 400;
   letter-spacing: -1px;
   color: var(--white);
+  line-height: 125%;
 }
 
 a, a:visited {

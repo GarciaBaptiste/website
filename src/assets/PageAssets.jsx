@@ -27,7 +27,6 @@ const ProjectText = ({ children, scroller }) => {
           scroller: customScroller,
           start: "top 80%",
           end: "top 50%",
-          scrub: 1,
         },
       }
     );
@@ -76,7 +75,7 @@ const FadeInElementAbsoluteWrapper = styled.div`
   @media (max-width: 899px) {
     position: relative;
     top: unset;
-    margin-top: -670px;
+    margin-top: -640px;
   }
 `;
 
@@ -177,15 +176,25 @@ const FadeInMockUpAbsolute = ({ children, scroller }) => {
   );
 };
 
-export const FullScreenImage = ({ src, scroller }) => {
+export const FullScreenBackground = ({ children, scroller }) => {
   return (
     <ContainerLarge>
-      <FullScreenImageContainer src={src} scroller={scroller} />
+      <FullScreenContainer scroller={scroller}>{children}</FullScreenContainer>
     </ContainerLarge>
   );
 };
 
-const FullScreenImageContainer = ({ src, scroller }) => {
+export const FullScreenImage = ({ src, scroller }) => {
+  return (
+    <ContainerLarge>
+      <FullScreenContainer scroller={scroller}>
+        <FullScreenImageWrapper src={src} />
+      </FullScreenContainer>
+    </ContainerLarge>
+  );
+};
+
+const FullScreenContainer = ({ children, scroller }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -260,8 +269,8 @@ const FullScreenImageContainer = ({ src, scroller }) => {
   }, []);
 
   return (
-    <div ref={elementRef}>
-      <FullScreenImageWrapper src={src} />
+    <div ref={elementRef} style={{ background: "var(--white)" }}>
+      {children}
     </div>
   );
 };
@@ -298,6 +307,12 @@ const ContainerLarge = styled.div`
   grid-column: 1 / span 4;
 `;
 
+const ContainerLargeMockUpDouble = styled(ContainerLarge)`
+  @media (max-width: 899px) {
+    min-height: 650px;
+  }
+`;
+
 const ContainerMedium = styled.div`
   grid-column: 2 / span 3;
   @media (max-width: 899px) {
@@ -307,8 +322,11 @@ const ContainerMedium = styled.div`
 
 const ContainerSmall = styled.div`
   grid-column: 2 / span 2;
+  margin-top: ${(props) =>
+    props.$afterText ? "calc(-11rem + 8px)" : "var(--margin)"};
   @media (max-width: 899px) {
     grid-column: 1 / span 4;
+    margin-top: ${(props) => (props.$afterText ? "calc(-5rem - 4px)" : "8px")};
   }
 `;
 
@@ -386,6 +404,13 @@ const MockUpMBAirScreen = styled.img`
   top: 5.5%;
 `;
 
+const MockUpMBAirScreenVideo = styled.video`
+  position: absolute;
+  width: 77.8%;
+  left: 11.1%;
+  top: 5.5%;
+`;
+
 const MockUpIPhoneContainer = styled.div`
   position: relative;
   aspect-ratio: 396 / 802;
@@ -407,12 +432,27 @@ const MockUpIPhoneScreen = styled.img`
   top: 2%;
 `;
 
-export const MockUpDouble = ({ scroller, screenMBAir, screenIPhone }) => {
+export const MockUpDouble = ({
+  scroller,
+  screenMBAir,
+  screenIPhone,
+  mBAirVideo = false,
+}) => {
   return (
-    <ContainerLarge>
+    <ContainerLargeMockUpDouble>
       <FadeInMockUp scroller={scroller}>
         <MockUpMBAirContainer>
-          <MockUpMBAirScreen src={screenMBAir} />
+          {mBAirVideo ? (
+            <MockUpMBAirScreenVideo
+              src={screenMBAir}
+              autoPlay
+              loop
+              muted
+              playsInline
+            ></MockUpMBAirScreenVideo>
+          ) : (
+            <MockUpMBAirScreen src={screenMBAir} />
+          )}
           <MockUpFrame src={MockUpMBAirImage} />
         </MockUpMBAirContainer>
       </FadeInMockUp>
@@ -422,7 +462,7 @@ export const MockUpDouble = ({ scroller, screenMBAir, screenIPhone }) => {
           <MockUpFrame src={MockUpIPhoneImage} />
         </MockUpIPhoneContainer>
       </FadeInMockUpAbsolute>
-    </ContainerLarge>
+    </ContainerLargeMockUpDouble>
   );
 };
 
@@ -469,10 +509,18 @@ export const TextMedium = ({ children, scroller }) => {
   );
 };
 
-export const TextSmall = ({ children, scroller }) => {
+export const TextSmall = ({ children, scroller, style, $afterText }) => {
   return (
-    <ContainerSmall>
+    <ContainerSmall style={style} $afterText={$afterText}>
       <ProjectText scroller={scroller}>{children}</ProjectText>
     </ContainerSmall>
   );
 };
+
+export const Empty = styled.div`
+  height: 20rem;
+  grid-column: span 4;
+  @media (max-width: 899px) {
+    height: 10rem;
+  }
+`;
