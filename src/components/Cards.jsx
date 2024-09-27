@@ -73,13 +73,13 @@ const PresentationPageContainer = styled.div`
   }
 
   & p {
-    font-size: var(--text-basic);
+    font-size: var(--text-big);
   }
 `;
 
 const PresentationFirstBloc = styled.div`
   flex: 1;
-  max-width: 775px;
+  max-width: 1010px;
 `;
 
 const PresentationSecondBloc = styled.div`
