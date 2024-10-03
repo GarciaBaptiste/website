@@ -19,7 +19,7 @@ import { ProjectPage as DefaultProjectPage } from "./components/projects/Default
 import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgien";
 import { ProjectPage as PageLogilabFr } from "./components/projects/PP_logilabfr";
 import { ProjectPage as PageSwep } from "./components/projects/PP_swep";
-import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien5.jpg";
+import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
 import ThumbDefault1 from "./assets/mockup_macbook.png";
