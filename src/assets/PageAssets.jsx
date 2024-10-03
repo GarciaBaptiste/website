@@ -176,25 +176,37 @@ const FadeInMockUpAbsolute = ({ children, scroller }) => {
   );
 };
 
-export const FullScreenBackground = ({ children, scroller }) => {
+export const FullScreenBackground = ({
+  children,
+  scroller,
+  $isSquareOnMobile = false,
+}) => {
   return (
     <ContainerLarge>
-      <FullScreenContainer scroller={scroller}>{children}</FullScreenContainer>
+      <FullScreenContainer
+        scroller={scroller}
+        $isSquareOnMobile={$isSquareOnMobile}
+      >
+        {children}
+      </FullScreenContainer>
     </ContainerLarge>
   );
 };
 
-export const FullScreenImage = ({ src, scroller }) => {
+export const FullScreenImage = ({ src, scroller, $isSquareOnMobile }) => {
   return (
     <ContainerLarge>
-      <FullScreenContainer scroller={scroller}>
+      <FullScreenContainer
+        scroller={scroller}
+        $isSquareOnMobile={$isSquareOnMobile}
+      >
         <FullScreenImageWrapper src={src} />
       </FullScreenContainer>
     </ContainerLarge>
   );
 };
 
-const FullScreenContainer = ({ children, scroller }) => {
+const FullScreenContainer = ({ children, scroller, $isSquareOnMobile }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -240,7 +252,7 @@ const FullScreenContainer = ({ children, scroller }) => {
               marginLeft: "calc(-1 * var(--margin)",
               marginRight: "calc(-1 * var(--margin)",
               borderRadius: "1rem",
-              aspectRatio: "1/1",
+              aspectRatio: $isSquareOnMobile ? "1/1" : "initial",
               display: "flex",
               justifyContent: "center",
               opacity: 0,
@@ -353,14 +365,22 @@ const DoubleColumnsWrapper = styled.div`
     props.$afterImage ? "calc(-11rem + 8px)" : "var(--margin)"};
   gap: var(--margin);
   grid-template-columns: repeat(4, 1fr);
-  & > div {
-    grid-column: span 2;
+  & > div:nth-child(1) {
+    grid-column: ${(props) => (props.$centered ? "2 / span 1" : "1 / span 2")};
     @media (max-width: 899px) {
       grid-column: span 4;
     }
   }
-  & img {
+  & > div:nth-child(2) {
+    grid-column: ${(props) => (props.$centered ? "3 / span 1" : "3 / span 2")};
+    @media (max-width: 899px) {
+      grid-column: span 4;
+    }
+  }
+  & img,
+  & video {
     border-radius: 1rem;
+    width: 100%;
   }
   @media (max-width: 899px) {
     margin-left: calc(-1 * var(--margin));
@@ -370,9 +390,14 @@ const DoubleColumnsWrapper = styled.div`
   }
 `;
 
-export const DoubleColumns = ({ children, scroller, $afterImage }) => {
+export const DoubleColumns = ({
+  children,
+  scroller,
+  $afterImage = false,
+  $centered = false,
+}) => {
   return (
-    <DoubleColumnsWrapper $afterImage={$afterImage}>
+    <DoubleColumnsWrapper $afterImage={$afterImage} $centered={$centered}>
       {children.map((element, index) => (
         <FadeInElementDelay key={index} scroller={scroller} delay={0.5 * index}>
           {element}

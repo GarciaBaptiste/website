@@ -23,6 +23,10 @@ const CustomDoubleImageContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: var(--margin);
 
+  @media (max-width: 750px) {
+    padding: var(--margin);
+  }
+
   & > img {
     margin: 18rem 0;
 
@@ -31,12 +35,22 @@ const CustomDoubleImageContainer = styled.div`
       grid-column: 2 / span 2;
     }
 
+    @media (max-width: 750px) {
+      margin: 0;
+      grid-column: 1 / span 4;
+    }
+
     &:first-child {
       grid-column: 2;
 
       @media (max-width: 899px) {
         grid-column: 2 / span 2;
         align-self: end;
+      }
+
+      @media (max-width: 750px) {
+        margin: 0;
+        grid-column: 1 / span 4;
       }
     }
   }

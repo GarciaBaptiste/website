@@ -24,7 +24,11 @@ export const ProjectPage = () => {
   return (
     <ProjectPageWrapper ref={containerRef}>
       <ProjectPageContent>
-        <FullScreenImage scroller={containerRef} src={Image1} />
+        <FullScreenImage
+          scroller={containerRef}
+          src={Image1}
+          $isSquareOnMobile={true}
+        />
         <TextMedium scroller={containerRef}>
           This carte blanche granted by Le Bow Vosgien, a scenographer with a
           unique profile offering various services related to the performing
@@ -48,7 +52,11 @@ export const ProjectPage = () => {
           (UI/UX design), called upon all of our shared skills in 3D, interface
           design, as well as front-end development.
         </TextSmall>
-        <FullScreenImage src={Image3} scroller={containerRef} />
+        <FullScreenImage
+          src={Image3}
+          scroller={containerRef}
+          $isSquareOnMobile={true}
+        />
         <DoubleColumns scroller={containerRef} $afterImage={true}>
           <img src={Image4} />
           <img src={Image5} />

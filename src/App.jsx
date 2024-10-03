@@ -18,8 +18,10 @@ import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 import { ProjectPage as DefaultProjectPage } from "./components/projects/DefaultProject";
 import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgien";
 import { ProjectPage as PageLogilabFr } from "./components/projects/PP_logilabfr";
+import { ProjectPage as PageSwep } from "./components/projects/PP_swep";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien5.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
+import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
 import ThumbDefault1 from "./assets/mockup_macbook.png";
 import ThumbDefault2 from "./assets/mockup_iphone.png";
 import ThumbDefault3 from "./assets/mockup_imac.png";
@@ -194,11 +196,11 @@ function App() {
     },
     {
       title: "SemWeb.Pro",
-      type: "perso",
-      description: "design + front-end",
+      type: "client",
+      description: "art direction + front-end",
       keywords: "Timeline — Figma — React + Styled-Components + CSS",
-      thumbnail: ThumbDefault4,
-      projectpage: DefaultProjectPage,
+      thumbnail: ThumbSwep,
+      projectpage: PageSwep,
     },
     {
       title: "CubicWeb.org",
