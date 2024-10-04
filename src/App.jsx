@@ -22,6 +22,7 @@ import { ProjectPage as PageSwep } from "./components/projects/PP_swep";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
+import ThumbCubicWeb from "./assets/projects/cubicweb/mockup_cubicweb.jpg";
 import ThumbDefault1 from "./assets/mockup_macbook.png";
 import ThumbDefault2 from "./assets/mockup_iphone.png";
 import ThumbDefault3 from "./assets/mockup_imac.png";
@@ -204,10 +205,10 @@ function App() {
     },
     {
       title: "CubicWeb.org",
-      type: "perso",
-      description: "design + front-end",
+      type: "client",
+      description: "art direction + front-end",
       keywords: "Figma — React — Styled-Components",
-      thumbnail: ThumbDefault1,
+      thumbnail: ThumbCubicWeb,
       projectpage: DefaultProjectPage,
     },
     {
