@@ -107,7 +107,9 @@ const FadeInMockUp = ({ children, scroller }) => {
                 scroller: customScroller,
                 start: "top 80%",
                 end: "top 50%",
-                scrub: 1,
+                duration: 1,
+                ease: "power3.out",
+                toggleActions: "play none none reverse",
               },
             }
           );
@@ -130,7 +132,9 @@ const FadeInMockUp = ({ children, scroller }) => {
                 scroller: customScroller,
                 start: "top 80%",
                 end: "top 50%",
-                scrub: 1,
+                duration: 1,
+                ease: "power3.out",
+                toggleActions: "play none none reverse",
               },
             }
           );
