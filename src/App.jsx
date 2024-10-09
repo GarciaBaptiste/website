@@ -20,6 +20,8 @@ import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgi
 import { ProjectPage as PageLogilabFr } from "./components/projects/PP_logilabfr";
 import { ProjectPage as PageSwep } from "./components/projects/PP_swep";
 import { ProjectPage as PageCubicWebOrg } from "./components/projects/PP_cubicweborg";
+import { ProjectPage as PageFranceArchives } from "./components/projects/PP_francearchives";
+import { ProjectPage as PageNapoleonica } from "./components/projects/PP_napoleonica";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
@@ -213,20 +215,20 @@ function App() {
       projectpage: PageCubicWebOrg,
     },
     {
-      title: "Logilab.fr",
-      type: "perso",
-      description: "design + front-end",
-      keywords: "Timeline — Figma — React + Styled-Components",
+      title: "France Archives",
+      type: "client",
+      description: "UX — UI",
+      keywords: "Figma — ergonomics — design system — archive",
       thumbnail: ThumbDefault2,
-      projectpage: DefaultProjectPage,
+      projectpage: PageFranceArchives,
     },
     {
-      title: "SemWeb.Pro",
-      type: "perso",
-      description: "design + front-end",
-      keywords: "Timeline — Figma — React + Styled-Components",
+      title: "Napoleonica",
+      type: "client",
+      description: "art direction + front-end",
+      keywords: "font — black & white — minimalism — archive",
       thumbnail: ThumbDefault4,
-      projectpage: DefaultProjectPage,
+      projectpage: PageNapoleonica,
     },
     {
       title: "Le Bow Vosgien",

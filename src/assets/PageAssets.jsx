@@ -197,14 +197,23 @@ export const FullScreenBackground = ({
   );
 };
 
-export const FullScreenImage = ({ src, scroller, $isSquareOnMobile }) => {
+export const FullScreenImage = ({
+  src,
+  scroller,
+  $isSquareOnMobile,
+  $isSrcVideo,
+}) => {
   return (
     <ContainerLarge>
       <FullScreenContainer
         scroller={scroller}
         $isSquareOnMobile={$isSquareOnMobile}
       >
-        <FullScreenImageWrapper src={src} />
+        {$isSrcVideo ? (
+          <FullScreenVideoWrapper src={src} autoPlay loop muted playsInline />
+        ) : (
+          <FullScreenImageWrapper src={src} />
+        )}
       </FullScreenContainer>
     </ContainerLarge>
   );
@@ -362,6 +371,37 @@ const FullScreenImageWrapper = styled.img`
   }
 `;
 
+const FullScreenVideoWrapper = styled.video`
+  width: 100%;
+  margin-bottom: -3px;
+`;
+
+const SimpleColumnWrapper = styled.div`
+  grid-column: span 4;
+  display: grid;
+  margin-top: ${(props) =>
+    props.$afterImage ? "calc(-11rem + 8px)" : "var(--margin)"};
+  gap: var(--margin);
+  grid-template-columns: repeat(4, 1fr);
+  & > div {
+    grid-column: ${(props) => (props.$centered ? "2 / span 2" : "1 / span 2")};
+    @media (max-width: 899px) {
+      grid-column: span 4;
+    }
+  }
+  & img,
+  & video {
+    border-radius: 1rem;
+    width: 100%;
+  }
+  @media (max-width: 899px) {
+    margin-left: calc(-1 * var(--margin));
+    margin-right: calc(-1 * var(--margin));
+    margin-top: ${(props) => (props.$afterImage ? "calc(-5rem - 4px)" : "8px")};
+    gap: 8px;
+  }
+`;
+
 const DoubleColumnsWrapper = styled.div`
   grid-column: span 4;
   display: grid;
@@ -393,6 +433,19 @@ const DoubleColumnsWrapper = styled.div`
     gap: 8px;
   }
 `;
+
+export const SimpleColumn = ({
+  children,
+  scroller,
+  $afterImage = false,
+  $centered = false,
+}) => {
+  return (
+    <SimpleColumnWrapper $afterImage={$afterImage} $centered={$centered}>
+      <FadeInElementDelay scroller={scroller}>{children}</FadeInElementDelay>
+    </SimpleColumnWrapper>
+  );
+};
 
 export const DoubleColumns = ({
   children,
@@ -460,6 +513,29 @@ const MockUpIPhoneScreen = styled.img`
   left: 5%;
   top: 2%;
 `;
+
+export const MockUpMBAir = ({ scroller, screenMBAir, mBAirVideo = false }) => {
+  return (
+    <ContainerLarge>
+      <FadeInMockUp scroller={scroller}>
+        <MockUpMBAirContainer>
+          {mBAirVideo ? (
+            <MockUpMBAirScreenVideo
+              src={screenMBAir}
+              autoPlay
+              loop
+              muted
+              playsInline
+            ></MockUpMBAirScreenVideo>
+          ) : (
+            <MockUpMBAirScreen src={screenMBAir} />
+          )}
+          <MockUpFrame src={MockUpMBAirImage} />
+        </MockUpMBAirContainer>
+      </FadeInMockUp>
+    </ContainerLarge>
+  );
+};
 
 export const MockUpDouble = ({
   scroller,
