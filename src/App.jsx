@@ -22,10 +22,13 @@ import { ProjectPage as PageSwep } from "./components/projects/PP_swep";
 import { ProjectPage as PageCubicWebOrg } from "./components/projects/PP_cubicweborg";
 import { ProjectPage as PageFranceArchives } from "./components/projects/PP_francearchives";
 import { ProjectPage as PageNapoleonica } from "./components/projects/PP_napoleonica";
-import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/mockup_le_bow_vosgien.jpg";
+import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
 import ThumbCubicWeb from "./assets/projects/cubicweb/mockup_cubicweb.jpg";
+import ThumbFranceArchives from "./assets/projects/francearchives/francearchives_mockup.png";
+import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.jpg";
+
 import ThumbDefault1 from "./assets/mockup_macbook.png";
 import ThumbDefault2 from "./assets/mockup_iphone.png";
 import ThumbDefault3 from "./assets/mockup_imac.png";
@@ -219,7 +222,7 @@ function App() {
       type: "client",
       description: "UX — UI",
       keywords: "Figma — ergonomics — design system — archive",
-      thumbnail: ThumbDefault2,
+      thumbnail: ThumbFranceArchives,
       projectpage: PageFranceArchives,
     },
     {
@@ -227,7 +230,7 @@ function App() {
       type: "client",
       description: "art direction + front-end",
       keywords: "font — black & white — minimalism — archive",
-      thumbnail: ThumbDefault4,
+      thumbnail: ThumbNapoleonica,
       projectpage: PageNapoleonica,
     },
     {
