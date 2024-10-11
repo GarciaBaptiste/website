@@ -28,6 +28,7 @@ import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
 import ThumbCubicWeb from "./assets/projects/cubicweb/mockup_cubicweb.jpg";
 import ThumbFranceArchives from "./assets/projects/francearchives/francearchives_mockup.png";
 import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.jpg";
+import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup.jpg";
 
 import ThumbDefault1 from "./assets/mockup_macbook.png";
 import ThumbDefault2 from "./assets/mockup_iphone.png";
@@ -234,11 +235,11 @@ function App() {
       projectpage: PageNapoleonica,
     },
     {
-      title: "Le Bow Vosgien",
-      type: "perso",
+      title: "Logilab business cards",
+      type: "client",
       description: "design + front-end",
       keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
-      thumbnail: ThumbDefault3,
+      thumbnail: ThumbLogilabBusinesscards,
       projectpage: PageBowVosgien,
     },
     {
