@@ -22,6 +22,7 @@ import { ProjectPage as PageSwep } from "./components/projects/PP_swep";
 import { ProjectPage as PageCubicWebOrg } from "./components/projects/PP_cubicweborg";
 import { ProjectPage as PageFranceArchives } from "./components/projects/PP_francearchives";
 import { ProjectPage as PageNapoleonica } from "./components/projects/PP_napoleonica";
+import { ProjectPage as PageLogilabBusinesscards } from "./components/projects/PP_logilabbusinesscards";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
@@ -240,7 +241,7 @@ function App() {
       description: "design + front-end",
       keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
       thumbnail: ThumbLogilabBusinesscards,
-      projectpage: PageBowVosgien,
+      projectpage: PageLogilabBusinesscards,
     },
     {
       title: "Logilab",

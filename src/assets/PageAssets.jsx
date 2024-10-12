@@ -202,12 +202,14 @@ export const FullScreenImage = ({
   scroller,
   $isSquareOnMobile,
   $isSrcVideo,
+  $keepRatio,
 }) => {
   return (
     <ContainerLarge>
       <FullScreenContainer
         scroller={scroller}
         $isSquareOnMobile={$isSquareOnMobile}
+        $keepRatio={$keepRatio}
       >
         {$isSrcVideo ? (
           <FullScreenVideoWrapper src={src} autoPlay loop muted playsInline />
@@ -219,7 +221,7 @@ export const FullScreenImage = ({
   );
 };
 
-const FullScreenContainer = ({ children, scroller, $isSquareOnMobile }) => {
+const FullScreenContainer = ({ children, scroller, $isSquareOnMobile, $keepRatio }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -265,7 +267,7 @@ const FullScreenContainer = ({ children, scroller, $isSquareOnMobile }) => {
               marginLeft: "calc(-1 * var(--margin)",
               marginRight: "calc(-1 * var(--margin)",
               borderRadius: "1rem",
-              aspectRatio: $isSquareOnMobile ? "1/1" : "initial",
+              aspectRatio: $isSquareOnMobile ? "1/1" : ($keepRatio ? $keepRatio : "initial"),
               display: "flex",
               justifyContent: "center",
               opacity: 0,
