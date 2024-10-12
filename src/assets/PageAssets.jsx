@@ -221,7 +221,12 @@ export const FullScreenImage = ({
   );
 };
 
-const FullScreenContainer = ({ children, scroller, $isSquareOnMobile, $keepRatio }) => {
+const FullScreenContainer = ({
+  children,
+  scroller,
+  $isSquareOnMobile,
+  $keepRatio,
+}) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -267,7 +272,11 @@ const FullScreenContainer = ({ children, scroller, $isSquareOnMobile, $keepRatio
               marginLeft: "calc(-1 * var(--margin)",
               marginRight: "calc(-1 * var(--margin)",
               borderRadius: "1rem",
-              aspectRatio: $isSquareOnMobile ? "1/1" : ($keepRatio ? $keepRatio : "initial"),
+              aspectRatio: $isSquareOnMobile
+                ? "1/1"
+                : $keepRatio
+                ? $keepRatio
+                : "initial",
               display: "flex",
               justifyContent: "center",
               opacity: 0,
@@ -374,8 +383,10 @@ const FullScreenImageWrapper = styled.img`
 `;
 
 const FullScreenVideoWrapper = styled.video`
-  width: 100%;
   margin-bottom: -3px;
+  @media (min-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const SimpleColumnWrapper = styled.div`

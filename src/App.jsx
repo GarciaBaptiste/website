@@ -238,8 +238,7 @@ function App() {
     {
       title: "Logilab business cards",
       type: "client",
-      description: "design + front-end",
-      keywords: "real-time 3D — Figma — ThreeJS — Storytelling",
+      description: "graphic design — print",
       thumbnail: ThumbLogilabBusinesscards,
       projectpage: PageLogilabBusinesscards,
     },

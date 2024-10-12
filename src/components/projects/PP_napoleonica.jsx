@@ -26,6 +26,7 @@ export const ProjectPage = () => {
           scroller={containerRef}
           src={Video1}
           $isSrcVideo={true}
+          $isSquareOnMobile={true}
         />
         <TextSmall scroller={containerRef}>
           Creation of a new interface and complete restyling of the Napoleonica
