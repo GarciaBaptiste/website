@@ -42,7 +42,11 @@ export const ProjectPage = () => {
           carried out before creating the first graphic mockups for all page
           types and content categories on the site.
         </TextMedium>
-        <MockUpMBAir scroller={containerRef} screenMBAir={Image3} />
+        <MockUpMBAir
+          scroller={containerRef}
+          screenMBAir={Image3}
+          $scrollOverflow={true}
+        />
         <TextSmall scroller={containerRef}>
           During the process, the project, like all websites under the
           “République Française” brand, was redirected to align with the arrival

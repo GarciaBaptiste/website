@@ -79,7 +79,7 @@ const FadeInElementAbsoluteWrapper = styled.div`
   }
 `;
 
-const FadeInMockUp = ({ children, scroller }) => {
+const FadeInMockUp = ({ children, scroller, $scrollOverflow }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -120,7 +120,8 @@ const FadeInMockUp = ({ children, scroller }) => {
               marginLeft: "calc(-1 * var(--margin))",
               marginRight: "calc(-1 * var(--margin))",
               display: "flex",
-              justifyContent: "center",
+              justifyContent: $scrollOverflow ? "unset" : "center",
+              overflowX: $scrollOverflow ? "auto" : "hidden",
               opacity: 0,
               y: "5rem",
             },
@@ -527,10 +528,15 @@ const MockUpIPhoneScreen = styled.img`
   top: 2%;
 `;
 
-export const MockUpMBAir = ({ scroller, screenMBAir, mBAirVideo = false }) => {
+export const MockUpMBAir = ({
+  scroller,
+  screenMBAir,
+  mBAirVideo = false,
+  $scrollOverflow = false,
+}) => {
   return (
     <ContainerLarge>
-      <FadeInMockUp scroller={scroller}>
+      <FadeInMockUp scroller={scroller} $scrollOverflow={$scrollOverflow}>
         <MockUpMBAirContainer>
           {mBAirVideo ? (
             <MockUpMBAirScreenVideo

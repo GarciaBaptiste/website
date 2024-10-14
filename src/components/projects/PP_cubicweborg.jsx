@@ -41,7 +41,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image2}
-          $isSquareOnMobile={true}
+          $keepRatio={"1990 / 780"}
         />
         <TextMedium scroller={containerRef}>
           The project also involves redesigning the technical blog associated

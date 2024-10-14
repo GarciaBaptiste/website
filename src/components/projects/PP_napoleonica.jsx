@@ -46,7 +46,11 @@ export const ProjectPage = () => {
           These choices require meticulous precision in layout, aligning with
           the archival rigor of the researchers.
         </TextSmall>
-        <MockUpMBAir scroller={containerRef} screenMBAir={Image1} />
+        <MockUpMBAir
+          scroller={containerRef}
+          screenMBAir={Image1}
+          $scrollOverflow={true}
+        />
         <TextSmall scroller={containerRef}>
           A two-panel layout — one for navigation tools through the collections
           and the other for browsing the user-selected items — clarifies
