@@ -272,7 +272,6 @@ const FullScreenContainer = ({
             {
               marginLeft: "calc(-1 * var(--margin))",
               marginRight: "calc(-1 * var(--margin))",
-              borderRadius: "1rem",
               aspectRatio: $isSquareOnMobile
                 ? "1/1"
                 : $keepRatio
@@ -405,7 +404,9 @@ const SimpleColumnWrapper = styled.div`
   }
   & img,
   & video {
-    border-radius: 1rem;
+    @media (min-width: 900px) {
+      border-radius: 1rem;
+    }
     width: 100%;
   }
   @media (max-width: 899px) {
@@ -437,7 +438,9 @@ const DoubleColumnsWrapper = styled.div`
   }
   & img,
   & video {
-    border-radius: 1rem;
+    @media (min-width: 900px) {
+      border-radius: 1rem;
+    }
     width: 100%;
   }
   @media (max-width: 899px) {
