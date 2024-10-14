@@ -117,8 +117,8 @@ const FadeInMockUp = ({ children, scroller }) => {
           gsap.fromTo(
             element,
             {
-              marginLeft: "calc(-1 * var(--margin)",
-              marginRight: "calc(-1 * var(--margin)",
+              marginLeft: "calc(-1 * var(--margin))",
+              marginRight: "calc(-1 * var(--margin))",
               display: "flex",
               justifyContent: "center",
               opacity: 0,
@@ -269,8 +269,8 @@ const FullScreenContainer = ({
           gsap.fromTo(
             element,
             {
-              marginLeft: "calc(-1 * var(--margin)",
-              marginRight: "calc(-1 * var(--margin)",
+              marginLeft: "calc(-1 * var(--margin))",
+              marginRight: "calc(-1 * var(--margin))",
               borderRadius: "1rem",
               aspectRatio: $isSquareOnMobile
                 ? "1/1"
