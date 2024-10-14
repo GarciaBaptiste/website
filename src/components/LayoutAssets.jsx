@@ -65,7 +65,7 @@ export const ArrowExternal = () => {
 const TopPageButtonWrapper = styled(BasicButton)`
   bottom: ${(props) => (props.$show ? "var(--margin)" : "-5rem")};
   position: fixed;
-  z-index: 1000;
+  z-index: 100;
   right: var(--margin);
   transition: bottom 0.3s;
   background: none;
