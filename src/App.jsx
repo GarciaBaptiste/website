@@ -15,7 +15,6 @@ import {
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard, TOCCard } from "./components/Cards";
 
-import { ProjectPage as DefaultProjectPage } from "./components/projects/DefaultProject";
 import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgien";
 import { ProjectPage as PageLogilabFr } from "./components/projects/PP_logilabfr";
 import { ProjectPage as PageSwep } from "./components/projects/PP_swep";
@@ -30,11 +29,6 @@ import ThumbCubicWeb from "./assets/projects/cubicweb/mockup_cubicweb.jpg";
 import ThumbFranceArchives from "./assets/projects/francearchives/francearchives_mockup.png";
 import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.jpg";
 import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup.jpg";
-
-import ThumbDefault1 from "./assets/mockup_macbook.png";
-import ThumbDefault2 from "./assets/mockup_iphone.png";
-import ThumbDefault3 from "./assets/mockup_imac.png";
-import ThumbDefault4 from "./assets/mockup_ipad.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -241,46 +235,6 @@ function App() {
       description: "graphic design — print",
       thumbnail: ThumbLogilabBusinesscards,
       projectpage: PageLogilabBusinesscards,
-    },
-    {
-      title: "Logilab",
-      type: "perso",
-      description: "design + front-end",
-      keywords: "Timeline — Figma — React + Styled-Components",
-      thumbnail: ThumbDefault2,
-      projectpage: DefaultProjectPage,
-    },
-    {
-      title: "SemWeb.Pro",
-      type: "perso",
-      description: "design + front-end",
-      keywords: "Timeline — Figma — React + Styled-Components + CSS",
-      thumbnail: ThumbDefault1,
-      projectpage: DefaultProjectPage,
-    },
-    {
-      title: "CubicWeb.org",
-      type: "perso",
-      description: "design + front-end",
-      keywords: "Figma — React + Styled-Components + CSS",
-      thumbnail: ThumbDefault3,
-      projectpage: DefaultProjectPage,
-    },
-    {
-      title: "Logilab.fr",
-      type: "perso",
-      description: "design + front-end",
-      keywords: "Figma — React + Styled-Components + CSS",
-      thumbnail: ThumbDefault4,
-      projectpage: DefaultProjectPage,
-    },
-    {
-      title: "SemWeb.Pro",
-      type: "perso",
-      description: "design + front-end",
-      keywords: "Figma — React + Styled-Components + CSS",
-      thumbnail: ThumbDefault1,
-      projectpage: DefaultProjectPage,
     },
   ];
 
