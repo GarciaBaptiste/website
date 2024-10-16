@@ -22,6 +22,7 @@ import { ProjectPage as PageCubicWebOrg } from "./components/projects/PP_cubicwe
 import { ProjectPage as PageFranceArchives } from "./components/projects/PP_francearchives";
 import { ProjectPage as PageNapoleonica } from "./components/projects/PP_napoleonica";
 import { ProjectPage as PageLogilabBusinesscards } from "./components/projects/PP_logilabbusinesscards";
+import { ProjectPage as PageStretch } from "./components/projects/PP_stretch";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
@@ -29,6 +30,7 @@ import ThumbCubicWeb from "./assets/projects/cubicweb/mockup_cubicweb.jpg";
 import ThumbFranceArchives from "./assets/projects/francearchives/francearchives_mockup.png";
 import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.jpg";
 import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup.jpg";
+import ThumbStretch from "./assets/projects/stretch/vinyl_mockup1.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -235,6 +237,13 @@ function App() {
       description: "graphic design — print",
       thumbnail: ThumbLogilabBusinesscards,
       projectpage: PageLogilabBusinesscards,
+    },
+    {
+      title: "Stretch",
+      type: "perso",
+      description: "graphic design — font",
+      thumbnail: ThumbStretch,
+      projectpage: PageStretch,
     },
   ];
 
