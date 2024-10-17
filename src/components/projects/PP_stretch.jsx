@@ -19,6 +19,9 @@ import Image2 from "../../assets/projects/stretch/image2.png";
 import Image3 from "../../assets/projects/stretch/vinyl_mockup1.jpg";
 import Image4 from "../../assets/projects/stretch/vinyl1.png";
 import Image5 from "../../assets/projects/stretch/vinyl2.png";
+import Image6 from "../../assets/projects/stretch/html.png";
+import Image7 from "../../assets/projects/stretch/carnet_typo.jpg";
+import Image8 from "../../assets/projects/stretch/figma_typo.png";
 
 export const ProjectPage = () => {
   const [iframeSize, setIframeSize] = useState({ width: "50%", height: "50%" });
@@ -60,6 +63,34 @@ export const ProjectPage = () => {
           However, this method doesn’t automatically stretch the chosen word or
           text to fill the entire width of a page or container.
         </TextSmall>
+        <SmallBackground scroller={containerRef}>
+          <img src={Image6} />
+        </SmallBackground>
+        <TextSmall scroller={containerRef}>
+          Using basic CSS principles like flexboxes, grids, and mix-blend modes,
+          I began to consider the various challenges I would need to solve to
+          create this typeface. For example, how to stretch a curve without
+          distorting the design in an unsightly way? How to create an angled
+          line that maintains the same width regardless of inclination? All of
+          this using only HTML blocks and CSS properties.
+        </TextSmall>
+        <FullScreenImage
+          src={Image7}
+          scroller={containerRef}
+          $isSquareOnMobile={true}
+        />
+        <FullScreenImage
+          src={Image8}
+          scroller={containerRef}
+          $isSquareOnMobile={true}
+          $afterImage={true}
+        />
+        <TextSmall scroller={containerRef}>
+          These constraints shaped the stylistic direction of the font design,
+          replacing angled lines with curves, for example. (It’s possible to
+          create curves, including strokes with varying thickness, that stretch
+          without distortion—but not angled lines).
+        </TextSmall>
         <SmallBackground
           scroller={containerRef}
           ratio={"1/1"}
@@ -76,20 +107,6 @@ export const ProjectPage = () => {
             style={{ margin: "auto", pointerEvents: "none" }}
           />
         </SmallBackground>
-        <TextSmall scroller={containerRef}>
-          Using basic CSS principles like flexboxes, grids, and mix-blend modes,
-          I began to consider the various challenges I would need to solve to
-          create this typeface. For example, how to stretch a curve without
-          distorting the design in an unsightly way? How to create an angled
-          line that maintains the same width regardless of inclination? All of
-          this using only HTML blocks and CSS properties.
-        </TextSmall>
-        <TextSmall scroller={containerRef}>
-          These constraints shaped the stylistic direction of the font design,
-          replacing angled lines with curves, for example. (It’s possible to
-          create curves, including strokes with varying thickness, that stretch
-          without distortion—but not angled lines).
-        </TextSmall>
         <Empty />
       </ProjectPageContent>
     </ProjectPageWrapper>

@@ -229,9 +229,10 @@ export const FullScreenImage = ({
   $isSquareOnMobile,
   $isSrcVideo,
   $keepRatio,
+  $afterImage,
 }) => {
   return (
-    <ContainerLarge>
+    <ContainerLarge $afterImage={$afterImage}>
       <FullScreenContainer
         scroller={scroller}
         $isSquareOnMobile={$isSquareOnMobile}
@@ -366,6 +367,12 @@ export const ProjectPageContent = styled.article`
 const ContainerLarge = styled.div`
   position: relative;
   grid-column: 1 / span 4;
+  margin-top: ${(props) =>
+    props.$afterImage ? "-10rem" : "unset"};
+    @media(max-width:899px){
+  margin-top: ${(props) =>
+    props.$afterImage ? "-5rem" : "unset"};
+    }
 `;
 
 const ContainerLargeMockUpDouble = styled(ContainerLarge)`
@@ -388,6 +395,11 @@ const ContainerSmall = styled.div`
   @media (max-width: 899px) {
     grid-column: 1 / span 4;
     margin-top: ${(props) => (props.$afterText ? "calc(-5rem - 4px)" : "8px")};
+  }
+  & img,
+  & video {
+    border-radius: 1rem;
+    width: 100%;
   }
 `;
 
