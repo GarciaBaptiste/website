@@ -32,9 +32,9 @@ export const ProjectPage = () => {
         <FullScreenImage
           src={Image3}
           scroller={containerRef}
-          // $isSquareOnMobile={true}
+          $isSquareOnMobile={true}
         />
-        <DoubleColumns scroller={containerRef} $centered={true}>
+        <DoubleColumns scroller={containerRef} $centered={true} $afterImage={true}>
           <img src={Image4} />
           <img src={Image5} />
         </DoubleColumns>
@@ -44,7 +44,7 @@ export const ProjectPage = () => {
           modifying a variable in either CSS or JS to create effects on a
           webpage or web application.
         </TextSmall>
-        <TextSmall scroller={containerRef}>
+        <TextSmall scroller={containerRef} $afterText={true}>
           However, this method doesn’t automatically stretch the chosen word or
           text to fill the entire width of a page or container.
         </TextSmall>
