@@ -73,7 +73,7 @@ html.fullscreen-page #page-mask {
 
 body {
   margin: 0;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   background: var(--grey2);
