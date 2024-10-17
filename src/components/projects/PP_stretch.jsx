@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
   FullScreenBackground,
+  SmallBackground,
   TextMedium,
   TextSmall,
   DoubleColumns,
@@ -20,10 +21,17 @@ import Image4 from "../../assets/projects/stretch/vinyl1.png";
 import Image5 from "../../assets/projects/stretch/vinyl2.png";
 
 export const ProjectPage = () => {
+  const [iframeSize, setIframeSize] = useState({ width: "50%", height: "50%" });
   const containerRef = useRef(null);
 
+  const handleMouseMove = (e) => {
+    const newWidth = `${(e.clientX / window.innerWidth) * 65 + 35}%`;
+    const newHeight = `${(e.clientY / window.innerHeight) * 65 + 35}%`;
+    setIframeSize({ width: newWidth, height: newHeight });
+  };
+
   return (
-    <ProjectPageWrapper ref={containerRef}>
+    <ProjectPageWrapper ref={containerRef} onMouseMove={handleMouseMove}>
       <ProjectPageContent>
         <DoubleColumns scroller={containerRef}>
           <img src={Image1} />
@@ -34,7 +42,11 @@ export const ProjectPage = () => {
           scroller={containerRef}
           $isSquareOnMobile={true}
         />
-        <DoubleColumns scroller={containerRef} $centered={true} $afterImage={true}>
+        <DoubleColumns
+          scroller={containerRef}
+          $centered={true}
+          $afterImage={true}
+        >
           <img src={Image4} />
           <img src={Image5} />
         </DoubleColumns>
@@ -48,6 +60,22 @@ export const ProjectPage = () => {
           However, this method doesn’t automatically stretch the chosen word or
           text to fill the entire width of a page or container.
         </TextSmall>
+        <SmallBackground
+          scroller={containerRef}
+          ratio={"1/1"}
+          style={{
+            background: "white",
+            overflow: "hidden",
+            borderRadius: "1rem",
+          }}
+        >
+          <iframe
+            src="http://baptistegarcia.com/stretch/index.html"
+            width={iframeSize.width}
+            height={iframeSize.height}
+            style={{ margin: "auto", pointerEvents: "none" }}
+          />
+        </SmallBackground>
         <TextSmall scroller={containerRef}>
           Using basic CSS principles like flexboxes, grids, and mix-blend modes,
           I began to consider the various challenges I would need to solve to

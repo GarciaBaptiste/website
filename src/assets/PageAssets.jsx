@@ -39,7 +39,7 @@ const ProjectText = ({ children, scroller }) => {
   );
 };
 
-const FadeInElementDelay = ({ children, scroller, delay = 0 }) => {
+const FadeInElementDelay = ({ children, scroller, delay = 0, style }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -65,7 +65,11 @@ const FadeInElementDelay = ({ children, scroller, delay = 0 }) => {
     );
   }, [delay]);
 
-  return <div ref={elementRef}>{children}</div>;
+  return (
+    <div style={style} ref={elementRef}>
+      {children}
+    </div>
+  );
 };
 
 const FadeInElementAbsoluteWrapper = styled.div`
@@ -195,6 +199,27 @@ export const FullScreenBackground = ({
         {children}
       </FullScreenContainer>
     </ContainerLarge>
+  );
+};
+
+export const MediumBackground = ({ children, ratio, scroller }) => {
+  return (
+    <ContainerMedium style={{ aspectRatio: ratio ? ratio : "" }}>
+      <FadeInElementDelay scroller={scroller}>{children}</FadeInElementDelay>
+    </ContainerMedium>
+  );
+};
+
+export const SmallBackground = ({ children, ratio, scroller, style }) => {
+  return (
+    <ContainerSmall style={{ aspectRatio: ratio ? ratio : "", ...style }}>
+      <FadeInElementDelay
+        style={{ width: "100%", height: "100%", display: "flex" }}
+        scroller={scroller}
+      >
+        {children}
+      </FadeInElementDelay>
+    </ContainerSmall>
   );
 };
 
