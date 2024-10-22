@@ -27,7 +27,6 @@ export const ButtonText = styled.p`
   color: var(--black);
   font-size: 2rem;
   line-height: 2rem;
-  text-decoration: underline;
 `;
 
 const ArrowUp = () => {

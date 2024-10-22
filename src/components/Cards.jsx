@@ -355,16 +355,14 @@ const PresentationCardWrapper = styled.div`
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   const Thumbnail = projectData.thumbnail;
   const ProjectPage = projectData.projectpage;
-  const idx = index + 2;
+  const idx = index + 1;
 
   return (
     <ProjectCardWrapper onClick={() => onClick(idx)}>
       <GSAPCardWrapper ref={(el) => (cardsRef.current[idx] = el)}>
         <CardContainer>
           <TopCard>
-            <h2>
-              <u>{projectData.title}</u>
-            </h2>
+            <h2>{projectData.title}</h2>
             {projectData.type === "perso" ? <PersoTag /> : <ClientTag />}
           </TopCard>
           <ThumbnailProject>
@@ -392,9 +390,7 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
         <PresentationCardContainer>
           <PresentationCardSummary>
             <PresentationLeft>
-              <h1>
-                <u>Baptiste Garcia</u>,{" "}
-              </h1>
+              <h1>Baptiste Garcia, </h1>
               <h2>
                 Graphic Designer &<br />
                 Creative Developper{" "}
@@ -448,82 +444,5 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
         </PresentationCardContainer>
       </GSAPCardWrapper>
     </PresentationCardWrapper>
-  );
-};
-
-export const TOCCard = ({ cardsRef }) => {
-  return (
-    <TOCCardWrapper>
-      <GSAPCardWrapper ref={(el) => (cardsRef.current[1] = el)}>
-        <CardContainer>
-          <TOCLine>
-            <h2>
-              <u>Logilab.fr</u>
-            </h2>
-            <h3>website</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>SemWeb.Pro</u>
-            </h2>
-            <h3>website</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>Logilab</u>
-            </h2>
-            <h3>calendar</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>CubicWeb.org</u>
-            </h2>
-            <h3>website</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>FranceArchives</u>
-            </h2>
-            <h3>website</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>Data-BnF</u>
-            </h2>
-            <h3>website</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>Napoleonica</u>
-            </h2>
-            <h3>website</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>LeBowVosgien</u>
-            </h2>
-            <h3>website</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>StretchTypo</u>
-            </h2>
-            <h3>typo</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>WaterPoster</u>
-            </h2>
-            <h3>video</h3>
-          </TOCLine>
-          <TOCLine>
-            <h2>
-              <u>LePetitSalon</u>
-            </h2>
-            <h3>catalog</h3>
-          </TOCLine>
-        </CardContainer>
-      </GSAPCardWrapper>
-    </TOCCardWrapper>
   );
 };

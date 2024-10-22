@@ -88,7 +88,7 @@ h6,
 p {
   margin: 0;
   font-weight: 400;
-  letter-spacing: -1px;
+  letter-spacing: -.5px;
   color: var(--white);
   line-height: 125%;
 }
