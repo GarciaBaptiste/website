@@ -5,10 +5,8 @@ import {
   FullScreenImage,
   TextMedium,
   TextSmall,
-  DoubleColumns,
   MockUpMBAir,
   VisitSiteButton,
-  Empty,
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/francearchives/francearchives_hero.png";

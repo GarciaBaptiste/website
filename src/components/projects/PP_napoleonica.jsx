@@ -3,12 +3,9 @@ import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
-  TextMedium,
   TextSmall,
   SimpleColumn,
-  DoubleColumns,
   MockUpMBAir,
-  MockUpDouble,
   VisitSiteButton,
 } from "../../assets/PageAssets";
 

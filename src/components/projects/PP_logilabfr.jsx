@@ -3,13 +3,9 @@ import styled from "styled-components";
 import {
   ProjectPageWrapper,
   ProjectPageContent,
-  FullScreenImage,
   FullScreenBackground,
-  TextMedium,
   TextSmall,
-  DoubleColumns,
   MockUpDouble,
-  VisitSiteButton,
   Empty,
 } from "../../assets/PageAssets";
 

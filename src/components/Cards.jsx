@@ -176,13 +176,6 @@ const ProjectTypeTag = styled.div`
   border-radius: 4px;
 `;
 
-const ProjectTypeSTag = styled(ProjectTypeTag)`
-  padding: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  text-align: center;
-`;
-
 const ClientTag = () => {
   return (
     <ProjectTypeTag
@@ -255,77 +248,6 @@ const GSAPCardWrapper = styled.div`
       cursor: initial;
     }
   }
-`;
-
-const TOCCardWrapper = styled(Card)`
-  border-radius: 1rem;
-  overflow: hidden;
-  height: calc(100vh - 16px);
-  margin: 4px;
-  position: sticky;
-  top: 8px;
-
-  @media (max-width: 1300px) {
-    display: none;
-  }
-
-  & ${GSAPCardWrapper} {
-    background: black;
-  }
-
-  & ${CardContainer} {
-    display: table;
-    height: unset;
-    color: var(--white);
-    pointer-events: all;
-    padding: var(--margin);
-    border-radius: 1rem;
-  }
-
-  & ${ProjectTypeSTag} {
-    top: 0.5rem;
-    position: absolute;
-    margin: 0.75rem;
-  }
-`;
-
-const TOCLine = styled.a`
-  display: table-row;
-  cursor: pointer;
-  &:hover {
-    & > h2,
-    & > h3 {
-      font-style: italic;
-    }
-  }
-  & > h2 {
-    font-weight: 300;
-    text-align: right;
-    letter-spacing: initial;
-    display: table-cell;
-    & > u {
-      margin-right: 1rem;
-    }
-  }
-  & > div {
-    display: table-cell;
-    width: var(--margin);
-    position: relative;
-  }
-  & > h3 {
-    font-weight: 300;
-    letter-spacing: initial;
-    display: table-cell;
-  }
-`;
-
-const TOCMask = styled.div`
-  position: absolute;
-  width: var(--margin);
-  height: 100%;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--black));
-  right: 0;
-  top: 0;
 `;
 
 const PresentationCardWrapper = styled.div`

@@ -4,10 +4,6 @@ import {
   ProjectPageContent,
   FullScreenImage,
   TextMedium,
-  TextSmall,
-  DoubleColumns,
-  MockUpDouble,
-  VisitSiteButton,
   Empty,
 } from "../../assets/PageAssets";
 

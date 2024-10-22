@@ -1,16 +1,11 @@
 import React, { useRef, useState } from "react";
-import styled from "styled-components";
 import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
-  FullScreenBackground,
   SmallBackground,
-  TextMedium,
   TextSmall,
   DoubleColumns,
-  MockUpDouble,
-  VisitSiteButton,
   Empty,
 } from "../../assets/PageAssets";
 
