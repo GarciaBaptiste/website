@@ -31,6 +31,7 @@ import ThumbFranceArchives from "./assets/projects/francearchives/francearchives
 import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.jpg";
 import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup.jpg";
 import ThumbStretch from "./assets/projects/stretch/vinyl_mockup1.jpg";
+import ThumbGameOfLife from "./assets/projects/game_of_life/game_of_life_mockup.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -243,6 +244,13 @@ function App() {
       type: "perso",
       description: "graphic design — font",
       thumbnail: ThumbStretch,
+      projectpage: PageStretch,
+    },
+    {
+      title: "Stretch",
+      type: "perso",
+      description: "graphic design — experiment",
+      thumbnail: ThumbGameOfLife,
       projectpage: PageStretch,
     },
   ];
