@@ -31,7 +31,7 @@ import ThumbFranceArchives from "./assets/projects/francearchives/francearchives
 import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.jpg";
 import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup.jpg";
 import ThumbStretch from "./assets/projects/stretch/vinyl_mockup1.jpg";
-import ThumbGameOfLife from "./assets/projects/game_of_life/game_of_life_mockup.jpg";
+import ThumbGameOfLife from "./assets/projects/game_of_life/game_of_life_mockup4.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
