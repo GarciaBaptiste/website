@@ -1,15 +1,10 @@
 import React, { useRef } from "react";
-import { ArrowExternal } from "../LayoutAssets";
 import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
-  TextMedium,
   TextSmall,
   SmallBackground,
-  DoubleColumns,
-  MockUpDouble,
-  VisitSiteButton,
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/game_of_life/game_of_life_screen.png";
@@ -46,7 +41,11 @@ export const ProjectPage = () => {
           <br />— If a cell has fewer than two or more than three live
           neighbors, it will be dead in the next step.
         </TextSmall>
-        <FullScreenImage scroller={containerRef} src={Image2} $keepRatio={"1744/768"}/>
+        <FullScreenImage
+          scroller={containerRef}
+          src={Image2}
+          $keepRatio={"1744/768"}
+        />
         <TextSmall scroller={containerRef}>
           I came across this “zero-player game” during my research for my thesis
           and set myself the challenge of developing my own version of the Game
