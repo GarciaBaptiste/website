@@ -14,10 +14,6 @@ import {
 
 import Image1 from "../../assets/projects/game_of_life/game_of_life_screen.png";
 import Image2 from "../../assets/projects/game_of_life/game_of_life_explanation.png";
-import Image3 from "../../assets/projects/le_bow_vosgien/render2.png";
-import Image4 from "../../assets/projects/le_bow_vosgien/render5.png";
-import Image5 from "../../assets/projects/le_bow_vosgien/render9.png";
-import Image6 from "../../assets/projects/le_bow_vosgien/le_bow_vosgien_mobile_00.png";
 
 export const ProjectPage = () => {
   const containerRef = useRef(null);
@@ -50,7 +46,7 @@ export const ProjectPage = () => {
           <br />— If a cell has fewer than two or more than three live
           neighbors, it will be dead in the next step.
         </TextSmall>
-        <FullScreenImage scroller={containerRef} src={Image2} />
+        <FullScreenImage scroller={containerRef} src={Image2} $keepRatio={"1744/768"}/>
         <TextSmall scroller={containerRef}>
           I came across this “zero-player game” during my research for my thesis
           and set myself the challenge of developing my own version of the Game
