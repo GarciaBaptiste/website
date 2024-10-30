@@ -23,6 +23,7 @@ import { ProjectPage as PageFranceArchives } from "./components/projects/PP_fran
 import { ProjectPage as PageNapoleonica } from "./components/projects/PP_napoleonica";
 import { ProjectPage as PageLogilabBusinesscards } from "./components/projects/PP_logilabbusinesscards";
 import { ProjectPage as PageStretch } from "./components/projects/PP_stretch";
+import { ProjectPage as PageGameOfLife } from "./components/projects/PP_gameoflife";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
@@ -247,11 +248,11 @@ function App() {
       projectpage: PageStretch,
     },
     {
-      title: "Stretch",
+      title: "Conway's Game of Life",
       type: "perso",
-      description: "graphic design — experiment",
+      description: "experiment",
       thumbnail: ThumbGameOfLife,
-      projectpage: PageStretch,
+      projectpage: PageGameOfLife,
     },
   ];
 
