@@ -33,6 +33,7 @@ import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.j
 import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup.jpg";
 import ThumbStretch from "./assets/projects/stretch/vinyl_mockup1.jpg";
 import ThumbGameOfLife from "./assets/projects/game_of_life/game_of_life_mockup4.jpg";
+import ThumbHyperreel from "./assets/projects/hyperreel/hyperreel_mockup.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -252,6 +253,14 @@ function App() {
       type: "perso",
       description: "experiment",
       thumbnail: ThumbGameOfLife,
+      projectpage: PageGameOfLife,
+    },
+    {
+      title: "Hyperréel",
+      type: "perso",
+      description: "poster — experiment",
+      keywords: "3D render — water physics",
+      thumbnail: ThumbHyperreel,
       projectpage: PageGameOfLife,
     },
   ];
