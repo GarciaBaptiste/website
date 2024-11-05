@@ -14,13 +14,15 @@ import {
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/hyperreel/fluid_poster_01_img_10.jpg";
-import Image2 from "../../assets/projects/hyperreel/fluid_poster_01_img_09.jpg";
+import Image2 from "../../assets/projects/hyperreel/cap.jpeg";
 import Image3 from "../../assets/projects/hyperreel/mag.png";
 import Video1 from "../../assets/projects/hyperreel/simulation.mp4";
 
 const CaptionText = styled.p`
+  font-size: var(--text-big);
   @media (max-width: 899px) {
     padding: var(--margin);
+    font-size: var(--text-basic);
   }
 `;
 
@@ -55,7 +57,7 @@ export const ProjectPage = () => {
           striving for photorealism by imitating real physical and optical
           phenomena.
         </TextSmall>
-        <DoubleColumns scroller={containerRef} $centered={true}>
+        <DoubleColumns scroller={containerRef} $offset={true}>
           <video src={Video1} autoPlay loop muted playsInline />
           <CaptionText>
             This simulation of the real world within a virtual world is depicted

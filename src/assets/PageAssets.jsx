@@ -486,6 +486,22 @@ const DoubleColumnsWrapper = styled.div`
   }
 `;
 
+const OffsetDoubleColumnsWrapper = styled(DoubleColumnsWrapper)`
+  grid-template-columns: repeat(8, 1fr);
+  & > div:nth-child(1) {
+    grid-column: 2 / span 2;
+    @media (max-width: 899px) {
+      grid-column: span 8;
+    }
+  }
+  & > div:nth-child(2) {
+    grid-column: 4 / span 4;
+    @media (max-width: 899px) {
+      grid-column: span 8;
+    }
+  }
+`;
+
 export const SimpleColumn = ({
   children,
   scroller,
@@ -504,15 +520,18 @@ export const DoubleColumns = ({
   scroller,
   $afterImage = false,
   $centered = false,
+  $offset = false,
 }) => {
+  const Wrapper = $offset ? OffsetDoubleColumnsWrapper : DoubleColumnsWrapper;
+
   return (
-    <DoubleColumnsWrapper $afterImage={$afterImage} $centered={$centered}>
+    <Wrapper $afterImage={$afterImage} $centered={$centered}>
       {children.map((element, index) => (
         <FadeInElementDelay key={index} scroller={scroller} delay={0.5 * index}>
           {element}
         </FadeInElementDelay>
       ))}
-    </DoubleColumnsWrapper>
+    </Wrapper>
   );
 };
 

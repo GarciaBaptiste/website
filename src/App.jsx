@@ -260,7 +260,7 @@ function App() {
       title: "Hyperréel",
       type: "perso",
       description: "poster — experiment",
-      keywords: "3D render — water physics",
+      keywords: "3D render — water physics — Blender (Cycles)",
       thumbnail: ThumbHyperreel,
       projectpage: PageHyperreel,
     },
