@@ -189,9 +189,11 @@ export const FullScreenBackground = ({
   children,
   scroller,
   $isSquareOnMobile = false,
+  style,
+  ratio = "initial",
 }) => {
   return (
-    <ContainerLarge>
+    <ContainerLarge style={{ aspectRatio: ratio ? ratio : "", ...style }}>
       <FullScreenContainer
         scroller={scroller}
         $isSquareOnMobile={$isSquareOnMobile}

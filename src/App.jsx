@@ -25,6 +25,7 @@ import { ProjectPage as PageLogilabBusinesscards } from "./components/projects/P
 import { ProjectPage as PageStretch } from "./components/projects/PP_stretch";
 import { ProjectPage as PageGameOfLife } from "./components/projects/PP_gameoflife";
 import { ProjectPage as PageHyperreel } from "./components/projects/PP_hyperreel";
+import { ProjectPage as PageBookTales } from "./components/projects/PP_booktales";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
@@ -263,6 +264,14 @@ function App() {
       keywords: "3D render — water physics — Blender (Cycles)",
       thumbnail: ThumbHyperreel,
       projectpage: PageHyperreel,
+    },
+    {
+      title: "Book Tales",
+      type: "perso",
+      description: "publishing — web-to-print",
+      keywords: "exhibition catalog — procedural layout — JS",
+      thumbnail: ThumbHyperreel,
+      projectpage: PageBookTales,
     },
   ];
 
