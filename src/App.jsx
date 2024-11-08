@@ -70,19 +70,19 @@ function App() {
   }, [fullscreenCard, scrollBarWidth]);
 
   const runAnimations = () => {
-    gsap.set(cardsRef.current, {opacity: 0, y: "6rem", scale: 0.9});
+    gsap.set(cardsRef.current, {opacity: 0, y: "5rem", scale: 0.9});
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: cardsRef.current[0],
-        start: "top 80%",
+        start: "top 90%",
         toggleActions: "play none none none",
         once: true,
       },
     });
 
     timeline.fromTo(
-      cardsRef.current.filter(card => card && card.getBoundingClientRect().top < window.innerHeight * 0.8),
-      { opacity: 0, y: "6rem", scale: 0.9 },
+      cardsRef.current.filter(card => card && card.getBoundingClientRect().top < window.innerHeight * 0.9),
+      { opacity: 0, y: "5rem", scale: 0.9 },
       {
         opacity: 1,
         y: 0,
@@ -94,10 +94,10 @@ function App() {
     );
 
     cardsRef.current.forEach((card) => {
-      if (card.getBoundingClientRect().top >= window.innerHeight * 0.8) {
+      if (card.getBoundingClientRect().top >= window.innerHeight * 0.9) {
         ScrollTrigger.create({
           trigger: card,
-          start: "top 80%",
+          start: "top 90%",
           onEnter: () => {
             gsap.to(card, {
               opacity: 1,
