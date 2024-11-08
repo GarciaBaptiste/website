@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import "./App.css";
@@ -69,29 +69,37 @@ function App() {
     };
   }, [fullscreenCard, scrollBarWidth]);
 
-  useEffect(() => {
-    cardsRef.current.forEach((card) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, scale: 0.9, y: "6rem" },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none none",
-            immediateRender: true,
-            once: true,
-          },
-        }
-      );
-    });
+  useLayoutEffect(() => {
+    const runAnimations = () => {
+      cardsRef.current.forEach((card, index) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, scale: 0.9, y: "6rem" },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "power3.out",
+            delay: index * 0.1,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
 
-    ScrollTrigger.refresh();
+      ScrollTrigger.refresh();
+    };
+
+    if (document.readyState === "complete") {
+      runAnimations();
+    } else {
+      window.addEventListener("load", runAnimations);
+      return () => window.removeEventListener("load", runAnimations);
+    }
   }, []);
 
   const handleCardClick = (index) => {

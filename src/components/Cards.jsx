@@ -209,6 +209,8 @@ const GSAPCardWrapper = styled.div`
   width: 100%;
   height: 100%;
   background: var(--grey2);
+  opacity: 0;
+  transform: scale(0.9), translateY(6rem);
   &.transition {
     & ${ProjectTypeTag} {
       opacity: 0;
