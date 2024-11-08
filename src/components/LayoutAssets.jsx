@@ -7,7 +7,7 @@ export const BasicButton = styled.button`
   background: var(--white);
   color: var(--black);
   border: none;
-  padding: 1rem 1rem 1rem 1.5rem;
+  padding: 1rem;
   display: flex;
   gap: 1rem;
   border-radius: 2rem;
@@ -17,16 +17,13 @@ export const BasicButton = styled.button`
   &:hover {
     background: white;
   }
-
-  @media (max-width: 650px) {
-    padding: 1rem;
-  }
 `;
 
 export const ButtonText = styled.p`
   color: var(--black);
   font-size: 2rem;
   line-height: 2rem;
+  padding-left: 0.5rem;
 `;
 
 const ArrowUp = () => {
@@ -67,36 +64,18 @@ const TopPageButtonWrapper = styled(BasicButton)`
   z-index: 100;
   right: var(--margin);
   transition: bottom 0.3s;
-  background: none;
+  background: var(--white);
   pointer-events: all;
 
   & > ${ButtonText} {
-    color: var(--white);
-  }
-
-  & > img {
-    @media (min-width: 1301px) {
-      filter: invert(1);
-    }
+    color: var(--black);
   }
 
   &:hover {
-    background: grey;
+    background: white;
   }
 
-  @media (max-width: 1300px) {
-    background: var(--white);
-
-    & > ${ButtonText} {
-      color: var(--black);
-    }
-
-    &:hover {
-      background: white;
-    }
-  }
-
-  @media (max-width: 650px) {
+  @media (max-width: 899px) {
     & > ${ButtonText} {
       display: none;
     }
