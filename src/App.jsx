@@ -70,22 +70,25 @@ function App() {
   }, [fullscreenCard, scrollBarWidth]);
 
   useEffect(() => {
-    const tl = gsap.timeline();
-    tl.set(cardsRef.current, { opacity: 0, scale: 0.9, y: "6rem" });
-
-    ScrollTrigger.batch(cardsRef.current, {
-      start: "top 80%",
-      onEnter: (batch) => {
-        tl.to(batch, {
+    cardsRef.current.forEach((card) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, scale: 0.9, y: "6rem" },
+        {
           opacity: 1,
           scale: 1,
           y: 0,
           duration: 0.5,
           ease: "power3.out",
-          stagger: 0.1,
-        });
-      },
-      toggleActions: "play none none none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            immediateRender: true,
+            once: true,
+          },
+        }
+      );
     });
 
     ScrollTrigger.refresh();
