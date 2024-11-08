@@ -69,31 +69,53 @@ function App() {
     };
   }, [fullscreenCard, scrollBarWidth]);
 
+  const runAnimations = () => {
+    gsap.set(cardsRef.current, {opacity: 0, y: "6rem", scale: 0.9});
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: cardsRef.current[0],
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true,
+      },
+    });
+
+    timeline.fromTo(
+      cardsRef.current.filter(card => card && card.getBoundingClientRect().top < window.innerHeight * 0.8),
+      { opacity: 0, y: "6rem", scale: 0.9 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.5,
+        ease: "power3.out",
+        stagger: 0.1,
+      }
+    );
+
+    cardsRef.current.forEach((card) => {
+      if (card.getBoundingClientRect().top >= window.innerHeight * 0.8) {
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 80%",
+          onEnter: () => {
+            gsap.to(card, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.5,
+              ease: "power3.out",
+            });
+          },
+          once: true,
+        });
+      }
+    });
+
+    ScrollTrigger.refresh();
+  };
+
   useLayoutEffect(() => {
-    const runAnimations = () => {
-      cardsRef.current.forEach((card, index) => {
-        gsap.fromTo(
-          card,
-          { opacity: 0, scale: 0.9, y: "6rem" },
-          {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "power3.out",
-            delay: index * 0.1,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-
-      ScrollTrigger.refresh();
-    };
-
     if (document.readyState === "complete") {
       runAnimations();
     } else {
