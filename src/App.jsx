@@ -184,10 +184,12 @@ function App() {
         });
 
       setFullscreenCard(null);
-      card.children[1].firstElementChild.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      if (card.children[1]) {
+        card.children[1].firstElementChild.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
       document.documentElement.classList.remove("fullscreen-page");
     }
   };
