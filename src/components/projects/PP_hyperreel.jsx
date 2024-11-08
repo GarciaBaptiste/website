@@ -39,7 +39,7 @@ export const ProjectPage = () => {
         />
         <TextSmall scroller={containerRef}>
           An unreal poster within a real poster, an improbable{" "}
-          <i>mise en scène</i> of this
+          <i>mise en scène</i> of this{" "}
           <i>mise en abyme</i>, a virtual "photograph" of reality dissolving,
           refracted in the ripples of water.
         </TextSmall>
