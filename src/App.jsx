@@ -36,6 +36,7 @@ import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/l
 import ThumbStretch from "./assets/projects/stretch/vinyl_mockup1.jpg";
 import ThumbGameOfLife from "./assets/projects/game_of_life/game_of_life_mockup4.jpg";
 import ThumbHyperreel from "./assets/projects/hyperreel/hyperreel_mockup.jpg";
+import ThumbBookTales from "./assets/projects/book_tales/book_tales_mockup.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -270,7 +271,7 @@ function App() {
       type: "perso",
       description: "publishing — web-to-print",
       keywords: "exhibition catalog — procedural layout — JS",
-      thumbnail: ThumbHyperreel,
+      thumbnail: ThumbBookTales,
       projectpage: PageBookTales,
     },
   ];
