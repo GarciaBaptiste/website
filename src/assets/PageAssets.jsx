@@ -26,7 +26,8 @@ const ProjectText = ({ children, scroller }) => {
           trigger: element.parentElement,
           scroller: customScroller,
           start: "top 80%",
-          end: "top 50%",
+          duration: 1,
+          toggleActions: "play none none reverse",
         },
       }
     );
