@@ -61,7 +61,7 @@ export const ProjectPage = () => {
           digital medium, so the idea of a layout that takes advantage of the
           digital format naturally emerged.
         </TextSmall>
-        <DoubleColumns scroller={containerRef}>
+        <DoubleColumns scroller={containerRef} $centered={true} >
           <img src={Image1} />
           <img src={Image2} />
         </DoubleColumns>
