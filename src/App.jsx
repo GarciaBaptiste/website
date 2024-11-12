@@ -133,7 +133,7 @@ function App() {
 
     const debounceResize = () => {
       clearTimeout(window.resizeTimeout);
-      window.resizeTimeout = setTimeout(handleResize, 250); // Delay to avoid excessive calls
+      window.resizeTimeout = setTimeout(handleResize, 250);
     };
 
     window.addEventListener("resize", debounceResize);
