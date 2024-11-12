@@ -702,9 +702,9 @@ export const TextSmall = ({ children, scroller, style, $afterText }) => {
 };
 
 export const Empty = styled.div`
-  height: 20rem;
+  height: 8rem;
   grid-column: span 4;
   @media (max-width: 899px) {
-    height: 10rem;
+    height: 0rem;
   }
 `;

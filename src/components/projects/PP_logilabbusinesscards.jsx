@@ -4,7 +4,6 @@ import {
   ProjectPageContent,
   FullScreenImage,
   TextSmall,
-  Empty,
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/logilab_businesscards/businesscard_logilab_frame1.png";
@@ -49,7 +48,6 @@ export const ProjectPage = () => {
           scroller={containerRef}
           $keepRatio={"1920 / 1080"}
         />
-        <Empty />
       </ProjectPageContent>
     </ProjectPageWrapper>
   );

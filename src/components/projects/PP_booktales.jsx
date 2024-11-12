@@ -7,7 +7,6 @@ import {
   FullScreenBackground,
   TextSmall,
   DoubleColumns,
-  Empty,
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/book_tales/expo1.png";
@@ -57,7 +56,7 @@ export const ProjectPage = () => {
           digital medium, so the idea of a layout that takes advantage of the
           digital format naturally emerged.
         </TextSmall>
-        <DoubleColumns scroller={containerRef} $centered={true} >
+        <DoubleColumns scroller={containerRef} $centered={true}>
           <img src={Image1} />
           <img src={Image2} />
         </DoubleColumns>
@@ -66,13 +65,21 @@ export const ProjectPage = () => {
           allows the text to be randomly generated, while still following a few
           simple rules.
         </TextSmall>
-        <FullScreenImage scroller={containerRef} src={Image3} $isSquareOnMobile={true} />
+        <FullScreenImage
+          scroller={containerRef}
+          src={Image3}
+          $isSquareOnMobile={true}
+        />
         <TextSmall scroller={containerRef}>
           This tool enabled me to generate several layout versions, five of
           which were selected and integrated into one of five uniquely designed
           covers, created manually rather than procedurally.
         </TextSmall>
-        <FullScreenImage scroller={containerRef} src={Image4} $isSquareOnMobile={true} />
+        <FullScreenImage
+          scroller={containerRef}
+          src={Image4}
+          $isSquareOnMobile={true}
+        />
         <CustomFullScreenBackground
           scroller={containerRef}
           style={{
@@ -83,7 +90,6 @@ export const ProjectPage = () => {
         >
           <CustomIFrame src="http://baptistegarcia.com/book_tales/" />
         </CustomFullScreenBackground>
-        <Empty />
       </ProjectPageContent>
     </ProjectPageWrapper>
   );

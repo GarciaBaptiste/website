@@ -6,7 +6,6 @@ import {
   SmallBackground,
   TextSmall,
   DoubleColumns,
-  Empty,
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/stretch/image1.png";
@@ -102,7 +101,6 @@ export const ProjectPage = () => {
             style={{ margin: "auto", pointerEvents: "none" }}
           />
         </SmallBackground>
-        <Empty />
       </ProjectPageContent>
     </ProjectPageWrapper>
   );
