@@ -211,6 +211,10 @@ function App() {
     }
 
     ScrollTrigger.refresh();
+
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
   };
 
   const handleCloseFullscreen = () => {
