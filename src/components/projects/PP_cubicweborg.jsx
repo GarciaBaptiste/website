@@ -3,7 +3,6 @@ import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
-  TextMedium,
   TextSmall,
   MockUpDouble,
   VisitSiteButton,
@@ -43,12 +42,12 @@ export const ProjectPage = () => {
           src={Image2}
           $keepRatio={"1990 / 780"}
         />
-        <TextMedium scroller={containerRef}>
+        <TextSmall scroller={containerRef}>
           The project also involves redesigning the technical blog associated
           with the framework, reusing elements from the main site —&nbsp;such as
           the color palette, typography, and layout template&nbsp;— to maintain
           coherence between the two sites.
-        </TextMedium>
+        </TextSmall>
         <VisitSiteButton href="https://www.cubicweb.org/" />
       </ProjectPageContent>
     </ProjectPageWrapper>

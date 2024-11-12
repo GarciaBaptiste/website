@@ -3,7 +3,6 @@ import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
-  TextMedium,
   TextSmall,
   MockUpMBAir,
   VisitSiteButton,
@@ -24,22 +23,22 @@ export const ProjectPage = () => {
           src={Image1}
           $isSquareOnMobile={true}
         />
-        <TextMedium scroller={containerRef}>
+        <TextSmall scroller={containerRef}>
           Extensive editorial, ergonomic, and visual overhaul of the France
           Archives archival research platform. This project included conducting
           UX workshops with both the public and professionals to address the
           needs of all users.
-        </TextMedium>
+        </TextSmall>
         <FullScreenImage
           scroller={containerRef}
           src={Image2}
           $isSquareOnMobile={true}
         />
-        <TextMedium scroller={containerRef}>
+        <TextSmall scroller={containerRef}>
           A thorough process of refining and consolidating ideas was then
           carried out before creating the first graphic mockups for all page
           types and content categories on the site.
-        </TextMedium>
+        </TextSmall>
         <MockUpMBAir
           scroller={containerRef}
           screenMBAir={Image3}

@@ -3,7 +3,7 @@ import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
-  TextMedium,
+  TextSmall,
   Empty,
 } from "../../assets/PageAssets";
 
@@ -20,13 +20,13 @@ export const ProjectPage = () => {
   return (
     <ProjectPageWrapper ref={containerRef}>
       <ProjectPageContent>
-        <TextMedium scroller={containerRef}>
+        <TextSmall scroller={containerRef}>
           Complete creative freedom for designing business cards for Logilab, a
           company offering services (development and training) focused on the
           semantic web. Several creative directions were explored and presented
           to the client, allowing them to select the most relevant approach
           before printing.
-        </TextMedium>
+        </TextSmall>
         <FullScreenImage
           src={Image1}
           scroller={containerRef}

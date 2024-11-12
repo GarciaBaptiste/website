@@ -4,7 +4,6 @@ import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
-  TextMedium,
   TextSmall,
   DoubleColumns,
   MockUpDouble,
@@ -29,12 +28,12 @@ export const ProjectPage = () => {
           src={Image1}
           $isSquareOnMobile={true}
         />
-        <TextMedium scroller={containerRef}>
+        <TextSmall scroller={containerRef}>
           This carte blanche granted by Le Bow Vosgien, a scenographer with a
           unique profile offering various services related to the performing
           arts, materialized into a virtual and narrative stroll that showcases
           the story of the young craftsman and his work.
-        </TextMedium>
+        </TextSmall>
         <MockUpDouble
           scroller={containerRef}
           screenMBAir={Image2}
