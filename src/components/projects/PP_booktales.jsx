@@ -1,16 +1,12 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { ArrowExternal } from "../LayoutAssets";
 import {
   ProjectPageWrapper,
   ProjectPageContent,
   FullScreenImage,
   FullScreenBackground,
-  TextMedium,
   TextSmall,
   DoubleColumns,
-  MockUpDouble,
-  VisitSiteButton,
   Empty,
 } from "../../assets/PageAssets";
 
