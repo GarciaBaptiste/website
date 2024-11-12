@@ -45,6 +45,7 @@ function App() {
   const [fullscreenCard, setFullscreenCard] = useState(null);
   const [initialCardStyles, setInitialCardStyles] = useState({});
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
+  const breakpoints = [350, 750, 1100, 1800];
 
   useEffect(() => {
     const scrollBarWidth =
@@ -126,20 +127,32 @@ function App() {
   }, []);
 
   useEffect(() => {
+    let resizeTimeout;
+    let currentBreakpointIndex = breakpoints.findIndex(
+      (breakpoint) => window.innerWidth <= breakpoint
+    );
+
     const handleResize = () => {
-      ScrollTrigger.refresh();
-      runAnimations();
+      const newBreakpointIndex = breakpoints.findIndex(
+        (breakpoint) => window.innerWidth <= breakpoint
+      );
+
+      if (newBreakpointIndex !== currentBreakpointIndex) {
+        currentBreakpointIndex = newBreakpointIndex;
+        ScrollTrigger.refresh();
+        runAnimations();
+      }
     };
 
     const debounceResize = () => {
-      clearTimeout(window.resizeTimeout);
-      window.resizeTimeout = setTimeout(handleResize, 250);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(handleResize, 250);
     };
 
     window.addEventListener("resize", debounceResize);
     return () => {
       window.removeEventListener("resize", debounceResize);
-      clearTimeout(window.resizeTimeout);
+      clearTimeout(resizeTimeout);
     };
   }, []);
 
@@ -198,10 +211,6 @@ function App() {
     }
 
     ScrollTrigger.refresh();
-
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 1000);
   };
 
   const handleCloseFullscreen = () => {
