@@ -70,18 +70,20 @@ function App() {
   }, [fullscreenCard, scrollBarWidth]);
 
   const runAnimations = () => {
-    gsap.set(cardsRef.current, {opacity: 0, y: "5rem", scale: 0.9});
+    gsap.set(cardsRef.current, { opacity: 0, y: "5rem", scale: 0.9 });
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: cardsRef.current[0],
         start: "top 90%",
         toggleActions: "play none none none",
-        once: true,
       },
     });
 
     timeline.fromTo(
-      cardsRef.current.filter(card => card && card.getBoundingClientRect().top < window.innerHeight * 0.9),
+      cardsRef.current.filter(
+        (card) =>
+          card && card.getBoundingClientRect().top < window.innerHeight * 0.9
+      ),
       { opacity: 0, y: "5rem", scale: 0.9 },
       {
         opacity: 1,
@@ -107,7 +109,6 @@ function App() {
               ease: "power3.out",
             });
           },
-          once: true,
         });
       }
     });
@@ -122,6 +123,24 @@ function App() {
       window.addEventListener("load", runAnimations);
       return () => window.removeEventListener("load", runAnimations);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+      runAnimations();
+    };
+
+    const debounceResize = () => {
+      clearTimeout(window.resizeTimeout);
+      window.resizeTimeout = setTimeout(handleResize, 250); // Delay to avoid excessive calls
+    };
+
+    window.addEventListener("resize", debounceResize);
+    return () => {
+      window.removeEventListener("resize", debounceResize);
+      clearTimeout(window.resizeTimeout);
+    };
   }, []);
 
   const handleCardClick = (index) => {
