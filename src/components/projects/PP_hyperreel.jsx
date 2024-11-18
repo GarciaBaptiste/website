@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { ArrowExternal } from "../LayoutAssets";
+import { ArrowExternal, LazyVideo } from "../LayoutAssets";
 import {
   ProjectPageWrapper,
   ProjectPageContent,
@@ -11,8 +11,11 @@ import {
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/hyperreel/fluid_poster_01_img_10.jpg";
+import Image1PH from "../../assets/projects/hyperreel/fluid_poster_01_img_10_placeholder.jpg";
 import Image2 from "../../assets/projects/hyperreel/cap.jpeg";
+import Image2PH from "../../assets/projects/hyperreel/cap_placeholder.jpeg";
 import Image3 from "../../assets/projects/hyperreel/mag.png";
+import Image3PH from "../../assets/projects/hyperreel/mag_placeholder.png";
 import Video1 from "../../assets/projects/hyperreel/simulation.mp4";
 
 const CaptionText = styled.p`
@@ -32,17 +35,18 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image1}
+          srcPH={Image1PH}
           $keepRatio={"1744/1133"}
         />
         <TextSmall scroller={containerRef}>
           An unreal poster within a real poster, an improbable{" "}
-          <i>mise en scène</i> of this{" "}
-          <i>mise en abyme</i>, a virtual "photograph" of reality dissolving,
-          refracted in the ripples of water.
+          <i>mise en scène</i> of this <i>mise en abyme</i>, a virtual
+          "photograph" of reality dissolving, refracted in the ripples of water.
         </TextSmall>
         <FullScreenImage
           scroller={containerRef}
           src={Image2}
+          srcPH={Image2PH}
           $keepRatio={"1744/981"}
         />
         <TextSmall scroller={containerRef}>
@@ -55,7 +59,7 @@ export const ProjectPage = () => {
           phenomena.
         </TextSmall>
         <DoubleColumns scroller={containerRef} $offset={true}>
-          <video src={Video1} autoPlay loop muted playsInline />
+          <LazyVideo src={Video1} autoPlay loop muted playsInline />
           <CaptionText>
             This simulation of the real world within a virtual world is depicted
             through a stunning effect rendered in 3D software (Blender), which
@@ -66,6 +70,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image3}
+          srcPH={Image3PH}
           $keepRatio={"1538/1067"}
         />
         <TextSmall

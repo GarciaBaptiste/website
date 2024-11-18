@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import QMarkImg from "../assets/questionmark.svg";
-import { ThumbnailProject, ThumbnailImg } from "./LayoutAssets";
+import {
+  ThumbnailProject,
+  LowQualityImg,
+  ThumbnailImg,
+} from "./LayoutAssets";
 
 const Card = styled.div`
   position: relative;
@@ -278,6 +282,8 @@ const PresentationCardWrapper = styled.div`
 
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   const Thumbnail = projectData.thumbnail;
+  const ThumbnailPlaceholder =
+    projectData.thumbnail_placeholder ?? projectData.thumbnail;
   const ProjectPage = projectData.projectpage;
   const idx = index + 1;
 
@@ -290,7 +296,9 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             {projectData.type === "perso" ? <PersoTag /> : <ClientTag />}
           </TopCard>
           <ThumbnailProject>
-            <ThumbnailImg src={Thumbnail} />
+            <LowQualityImg lowQualitySrc={ThumbnailPlaceholder} highQualitySrc={Thumbnail}>
+              <ThumbnailImg />
+            </LowQualityImg>
           </ThumbnailProject>
           <BottomCard>
             <ProjectCardTextWrapper>

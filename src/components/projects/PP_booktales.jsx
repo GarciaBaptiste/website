@@ -8,11 +8,16 @@ import {
   TextSmall,
   DoubleColumns,
 } from "../../assets/PageAssets";
+import { LowQualityImg } from "../../components/LayoutAssets";
 
 import Image1 from "../../assets/projects/book_tales/expo1.png";
+import Image1PH from "../../assets/projects/book_tales/expo1_placeholder.png";
 import Image2 from "../../assets/projects/book_tales/expo2.png";
+import Image2PH from "../../assets/projects/book_tales/expo2_placeholder.png";
 import Image3 from "../../assets/projects/book_tales/capture_mep.png";
+import Image3PH from "../../assets/projects/book_tales/capture_mep_placeholder.png";
 import Image4 from "../../assets/projects/book_tales/capture_couv.png";
+import Image4PH from "../../assets/projects/book_tales/capture_couv_placeholder.png";
 
 const CustomIFrame = styled.iframe`
   aspect-ratio: 1920/1080;
@@ -57,8 +62,12 @@ export const ProjectPage = () => {
           digital format naturally emerged.
         </TextSmall>
         <DoubleColumns scroller={containerRef} $centered={true}>
-          <img src={Image1} />
-          <img src={Image2} />
+          <LowQualityImg lowQualitySrc={Image1PH} highQualitySrc={Image1}>
+            <img />
+          </LowQualityImg>
+          <LowQualityImg lowQualitySrc={Image2PH} highQualitySrc={Image2}>
+            <img />
+          </LowQualityImg>
         </DoubleColumns>
         <TextSmall scroller={containerRef}>
           I set out to develop a tool where a precisely designed layout grid
@@ -68,6 +77,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image3}
+          srcPH={Image3PH}
           $isSquareOnMobile={true}
         />
         <TextSmall scroller={containerRef}>
@@ -78,6 +88,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image4}
+          srcPH={Image4PH}
           $isSquareOnMobile={true}
         />
         <CustomFullScreenBackground

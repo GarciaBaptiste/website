@@ -8,7 +8,9 @@ import {
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/game_of_life/game_of_life_screen.png";
+import Image1PH from "../../assets/projects/game_of_life/game_of_life_screen_placeholder.png";
 import Image2 from "../../assets/projects/game_of_life/game_of_life_explanation.png";
+import Image2PH from "../../assets/projects/game_of_life/game_of_life_explanation_placeholder.png";
 
 export const ProjectPage = () => {
   const containerRef = useRef(null);
@@ -19,6 +21,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image1}
+          srcPH={Image1PH}
           $isSquareOnMobile={true}
         />
         <TextSmall scroller={containerRef}>
@@ -44,6 +47,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image2}
+          srcPH={Image2PH}
           $keepRatio={"1744/768"}
         />
         <TextSmall scroller={containerRef}>

@@ -1,9 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { ButtonText, ArrowRightUp } from "../components/LayoutAssets";
+import {
+  ButtonText,
+  ArrowRightUp,
+  LowQualityImg,
+} from "../components/LayoutAssets";
 import MockUpMBAirImage from "../assets/mockup_mbair.svg";
 import MockUpIPhoneImage from "../assets/mockup_iphone.svg";
 
@@ -228,6 +232,7 @@ export const SmallBackground = ({ children, ratio, scroller, style }) => {
 
 export const FullScreenImage = ({
   src,
+  srcPH = src,
   scroller,
   $isSquareOnMobile,
   $isSrcVideo,
@@ -243,6 +248,10 @@ export const FullScreenImage = ({
       >
         {$isSrcVideo ? (
           <FullScreenVideoWrapper src={src} autoPlay loop muted playsInline />
+        ) : srcPH !== src ? (
+          <LowQualityImg lowQualitySrc={srcPH} highQualitySrc={src}>
+            <FullScreenImageWrapper />
+          </LowQualityImg>
         ) : (
           <FullScreenImageWrapper src={src} />
         )}
@@ -567,6 +576,40 @@ const MockUpMBAirScreenVideo = styled.video`
   top: 5.5%;
 `;
 
+const LazyMockUpMBAirScreenVideo = ({ src, ...props }) => {
+  const videoRef = useRef();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsLoaded(true);
+          observer.unobserve(videoRef.current);
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) observer.unobserve(videoRef.current);
+    };
+  }, []);
+
+  return (
+    <MockUpMBAirScreenVideo
+      ref={videoRef}
+      src={isLoaded ? src : undefined}
+      preload="metadata"
+      {...props}
+    />
+  );
+};
+
 const MockUpIPhoneContainer = styled.div`
   position: relative;
   aspect-ratio: 396 / 802;
@@ -591,6 +634,7 @@ const MockUpIPhoneScreen = styled.img`
 export const MockUpMBAir = ({
   scroller,
   screenMBAir,
+  screenMBAirPH = screenMBAir,
   mBAirVideo = false,
   $scrollOverflow = false,
 }) => {
@@ -606,8 +650,7 @@ export const MockUpMBAir = ({
               muted
               playsInline
             ></MockUpMBAirScreenVideo>
-          ) : (
-            <MockUpMBAirScreen src={screenMBAir} />
+          ) : ( screenMBAirPH !== screenMBAir ? <LowQualityImg lowQualitySrc={screenMBAirPH} highQualitySrc={screenMBAir} ><MockUpMBAirScreen /></LowQualityImg> : <MockUpMBAirScreen src={screenMBAir} />
           )}
           <MockUpFrame src={MockUpMBAirImage} />
         </MockUpMBAirContainer>
@@ -619,7 +662,9 @@ export const MockUpMBAir = ({
 export const MockUpDouble = ({
   scroller,
   screenMBAir,
+  screenMBAirPH = screenMBAir,
   screenIPhone,
+  screenIPhonePH = screenIPhone,
   mBAirVideo = false,
 }) => {
   return (
@@ -627,13 +672,20 @@ export const MockUpDouble = ({
       <FadeInMockUp scroller={scroller}>
         <MockUpMBAirContainer>
           {mBAirVideo ? (
-            <MockUpMBAirScreenVideo
+            <LazyMockUpMBAirScreenVideo
               src={screenMBAir}
               autoPlay
               loop
               muted
               playsInline
-            ></MockUpMBAirScreenVideo>
+            />
+          ) : screenMBAirPH !== screenMBAir ? (
+            <LowQualityImg
+              lowQualitySrc={screenMBAirPH}
+              highQualitySrc={screenMBAir}
+            >
+              <MockUpMBAirScreen />
+            </LowQualityImg>
           ) : (
             <MockUpMBAirScreen src={screenMBAir} />
           )}
@@ -642,7 +694,17 @@ export const MockUpDouble = ({
       </FadeInMockUp>
       <FadeInMockUpAbsolute scroller={scroller}>
         <MockUpIPhoneContainer style={{ gridColumn: "4 / span 1" }}>
-          <MockUpIPhoneScreen src={screenIPhone} />
+          {screenIPhonePH !== screenIPhone ? (
+            <LowQualityImg
+              lowQualitySrc={screenIPhonePH}
+              highQualitySrc={screenIPhone}
+            >
+              <MockUpIPhoneScreen />
+            </LowQualityImg>
+          ) : (
+            <MockUpIPhoneScreen src={screenIPhone} />
+          )}
+
           <MockUpFrame src={MockUpIPhoneImage} />
         </MockUpIPhoneContainer>
       </FadeInMockUpAbsolute>

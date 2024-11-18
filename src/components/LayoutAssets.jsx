@@ -1,6 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useContext, cloneElement } from "react";
+import { HighQualityContext } from "./HighQualityContext";
 import styled from "styled-components";
 import ArrowImg from "../assets/arrow.svg";
+
+export const LazyVideo = ({ src, ...props }) => {
+  const videoRef = useRef();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsLoaded(true);
+          observer.unobserve(videoRef.current);
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) observer.unobserve(videoRef.current);
+    };
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={isLoaded ? src : undefined}
+      preload="metadata"
+      {...props}
+    />
+  );
+};
+
+export const LowQualityImg = ({ lowQualitySrc, highQualitySrc, children }) => {
+  const readyForHighQuality = useContext(HighQualityContext);
+  const [src, setSrc] = useState(lowQualitySrc);
+  const [isHighQualityLoaded, setIsHighQualityLoaded] = useState(false);
+
+  useEffect(() => {
+    if (readyForHighQuality) {
+      const img = new Image();
+      img.src = highQualitySrc;
+      img.onload = () => {
+        setIsHighQualityLoaded(true);
+        setSrc(highQualitySrc);
+      };
+    }
+  }, [readyForHighQuality, highQualitySrc]);
+
+  return cloneElement(children, {
+    src,
+    style: { filter: isHighQualityLoaded ? "none" : "blur(3px)" },
+  });
+};
 
 export const BasicButton = styled.button`
   cursor: pointer;
@@ -158,7 +215,7 @@ export const ThumbnailImg = styled.img`
   object-fit: cover;
   transform-origin: center;
   transform: scale(1);
-  transition: transform 0.5s ease, opacity 0.3s 0.3s, filter 1s;
+  transition: transform 0.5s ease, opacity 0.3s 0.3s, filter 2s;
 `;
 
 export const MasonryWrapper = styled.section`

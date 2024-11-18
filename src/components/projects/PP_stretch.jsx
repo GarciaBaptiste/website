@@ -7,15 +7,24 @@ import {
   TextSmall,
   DoubleColumns,
 } from "../../assets/PageAssets";
+import { LowQualityImg } from "../../components/LayoutAssets";
 
 import Image1 from "../../assets/projects/stretch/image1.png";
+import Image1PH from "../../assets/projects/stretch/image1_placeholder.png";
 import Image2 from "../../assets/projects/stretch/image2.png";
+import Image2PH from "../../assets/projects/stretch/image2_placeholder.png";
 import Image3 from "../../assets/projects/stretch/vinyl_mockup1.jpg";
+import Image3PH from "../../assets/projects/stretch/vinyl_mockup1_placeholder.jpg";
 import Image4 from "../../assets/projects/stretch/vinyl1.png";
+import Image4PH from "../../assets/projects/stretch/vinyl1_placeholder.png";
 import Image5 from "../../assets/projects/stretch/vinyl2.png";
+import Image5PH from "../../assets/projects/stretch/vinyl2_placeholder.png";
 import Image6 from "../../assets/projects/stretch/html.png";
+import Image6PH from "../../assets/projects/stretch/html_placeholder.png";
 import Image7 from "../../assets/projects/stretch/carnet_typo.jpg";
+import Image7PH from "../../assets/projects/stretch/carnet_typo_placeholder.jpg";
 import Image8 from "../../assets/projects/stretch/figma_typo.png";
+import Image8PH from "../../assets/projects/stretch/figma_typo_placeholder.png";
 
 export const ProjectPage = () => {
   const [iframeSize, setIframeSize] = useState({ width: "50%", height: "50%" });
@@ -31,11 +40,16 @@ export const ProjectPage = () => {
     <ProjectPageWrapper ref={containerRef} onMouseMove={handleMouseMove}>
       <ProjectPageContent>
         <DoubleColumns scroller={containerRef}>
-          <img src={Image1} />
-          <img src={Image2} />
+          <LowQualityImg lowQualitySrc={Image1PH} highQualitySrc={Image1}>
+            <img />
+          </LowQualityImg>
+          <LowQualityImg lowQualitySrc={Image2PH} highQualitySrc={Image2}>
+            <img />
+          </LowQualityImg>
         </DoubleColumns>
         <FullScreenImage
           src={Image3}
+          srcPH={Image3PH}
           scroller={containerRef}
           $isSquareOnMobile={true}
         />
@@ -44,8 +58,12 @@ export const ProjectPage = () => {
           $centered={true}
           $afterImage={true}
         >
-          <img src={Image4} />
-          <img src={Image5} />
+          <LowQualityImg lowQualitySrc={Image4PH} highQualitySrc={Image4}>
+            <img />
+          </LowQualityImg>
+          <LowQualityImg lowQualitySrc={Image5PH} highQualitySrc={Image5}>
+            <img />
+          </LowQualityImg>
         </DoubleColumns>
         <TextSmall scroller={containerRef}>
           The idea of creating a stretchable typeface came to me while studying
@@ -58,7 +76,9 @@ export const ProjectPage = () => {
           text to fill the entire width of a page or container.
         </TextSmall>
         <SmallBackground scroller={containerRef}>
-          <img src={Image6} />
+          <LowQualityImg lowQualitySrc={Image6PH} highQualitySrc={Image6}>
+            <img />
+          </LowQualityImg>
         </SmallBackground>
         <TextSmall scroller={containerRef}>
           Using basic CSS principles like flexboxes, grids, and mix-blend modes,
@@ -70,11 +90,13 @@ export const ProjectPage = () => {
         </TextSmall>
         <FullScreenImage
           src={Image7}
+          srcPH={Image7PH}
           scroller={containerRef}
           $isSquareOnMobile={true}
         />
         <FullScreenImage
           src={Image8}
+          srcPH={Image8PH}
           scroller={containerRef}
           $isSquareOnMobile={true}
           $afterImage={true}

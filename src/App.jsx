@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { HighQualityProvider } from "./components/HighQualityContext";
 
 import "./App.css";
 import GlobalFonts from "./fonts/fonts";
@@ -27,16 +28,27 @@ import { ProjectPage as PageGameOfLife } from "./components/projects/PP_gameofli
 import { ProjectPage as PageHyperreel } from "./components/projects/PP_hyperreel";
 import { ProjectPage as PageBookTales } from "./components/projects/PP_booktales";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup.jpg";
+import ThumbLeBowVosgienPH from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup_placeholder.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
+import ThumbLogilabFrPH from "./assets/projects/logilab_fr/mockup_logilab_fr_placeholder.jpg";
 import ThumbSwep from "./assets/projects/swep/mockup_swep.jpg";
+import ThumbSwepPH from "./assets/projects/swep/mockup_swep_placeholder.jpg";
 import ThumbCubicWeb from "./assets/projects/cubicweb/mockup_cubicweb.jpg";
+import ThumbCubicWebPH from "./assets/projects/cubicweb/mockup_cubicweb_placeholder.jpg";
 import ThumbFranceArchives from "./assets/projects/francearchives/francearchives_mockup.png";
+import ThumbFranceArchivesPH from "./assets/projects/francearchives/francearchives_mockup_placeholder.png";
 import ThumbNapoleonica from "./assets/projects/napoleonica/napoleonica_mockup.jpg";
+import ThumbNapoleonicaPH from "./assets/projects/napoleonica/napoleonica_mockup_placeholder.jpg";
 import ThumbLogilabBusinesscards from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup.jpg";
+import ThumbLogilabBusinesscardsPH from "./assets/projects/logilab_businesscards/logilab_businesscards_mockup_placeholder.jpg";
 import ThumbStretch from "./assets/projects/stretch/vinyl_mockup1.jpg";
+import ThumbStretchPH from "./assets/projects/stretch/vinyl_mockup1_placeholder.jpg";
 import ThumbGameOfLife from "./assets/projects/game_of_life/game_of_life_mockup4.jpg";
+import ThumbGameOfLifePH from "./assets/projects/game_of_life/game_of_life_mockup4_placeholder.jpg";
 import ThumbHyperreel from "./assets/projects/hyperreel/hyperreel_mockup.jpg";
+import ThumbHyperreelPH from "./assets/projects/hyperreel/hyperreel_mockup_placeholder.jpg";
 import ThumbBookTales from "./assets/projects/book_tales/book_tales_mockup.jpg";
+import ThumbBookTalesPH from "./assets/projects/book_tales/book_tales_mockup_placeholder.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +57,7 @@ function App() {
   const [fullscreenCard, setFullscreenCard] = useState(null);
   const [initialCardStyles, setInitialCardStyles] = useState({});
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
+  const [readyForHighQuality, setReadyForHighQuality] = useState(false);
   const breakpoints = [350, 750, 1100, 1800];
 
   useEffect(() => {
@@ -118,11 +131,16 @@ function App() {
   };
 
   useLayoutEffect(() => {
-    if (document.readyState === "complete") {
+    const handleLoad = () => {
+      setReadyForHighQuality(true);
       runAnimations();
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
     } else {
-      window.addEventListener("load", runAnimations);
-      return () => window.removeEventListener("load", runAnimations);
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
     }
   }, []);
 
@@ -266,6 +284,7 @@ function App() {
       description: "art direction + front-end",
       keywords: "realtime 3D — immersive wandering — Blender — Three.JS",
       thumbnail: ThumbLeBowVosgien,
+      thumbnail_placeholder: ThumbLeBowVosgienPH,
       projectpage: PageBowVosgien,
     },
     {
@@ -274,6 +293,7 @@ function App() {
       description: "art direction + front-end",
       keywords: "Timeline — Figma — React + Styled-Components + CSS",
       thumbnail: ThumbSwep,
+      thumbnail_placeholder: ThumbSwepPH,
       projectpage: PageSwep,
     },
     {
@@ -282,6 +302,7 @@ function App() {
       description: "poster — experiment",
       keywords: "3D render — water physics — Blender (Cycles)",
       thumbnail: ThumbHyperreel,
+      thumbnail_placeholder: ThumbHyperreelPH,
       projectpage: PageHyperreel,
     },
     {
@@ -290,6 +311,7 @@ function App() {
       description: "art direction + front-end",
       keywords: "Figma — React — Styled-Components",
       thumbnail: ThumbCubicWeb,
+      thumbnail_placeholder: ThumbCubicWebPH,
       projectpage: PageCubicWebOrg,
     },
     {
@@ -298,6 +320,7 @@ function App() {
       description: "publishing — web-to-print",
       keywords: "exhibition catalog — procedural layout — JS",
       thumbnail: ThumbBookTales,
+      thumbnail_placeholder: ThumbBookTalesPH,
       projectpage: PageBookTales,
     },
     {
@@ -306,6 +329,7 @@ function App() {
       description: "art direction + front-end",
       keywords: "font — black & white — minimalism — archive",
       thumbnail: ThumbNapoleonica,
+      thumbnail_placeholder: ThumbNapoleonicaPH,
       projectpage: PageNapoleonica,
     },
     {
@@ -313,6 +337,7 @@ function App() {
       type: "client",
       description: "graphic design — print",
       thumbnail: ThumbLogilabBusinesscards,
+      thumbnail_placeholder: ThumbLogilabBusinesscardsPH,
       projectpage: PageLogilabBusinesscards,
     },
     {
@@ -321,6 +346,7 @@ function App() {
       description: "art direction + Figma prototype",
       keywords: "ergonomics — proof of concept — visual indentity",
       thumbnail: ThumbLogilabFr,
+      thumbnail_placeholder: ThumbLogilabFrPH,
       projectpage: PageLogilabFr,
     },
     {
@@ -328,6 +354,7 @@ function App() {
       type: "perso",
       description: "experiment",
       thumbnail: ThumbGameOfLife,
+      thumbnail_placeholder: ThumbGameOfLifePH,
       projectpage: PageGameOfLife,
     },
     {
@@ -336,6 +363,7 @@ function App() {
       description: "UX — UI",
       keywords: "Figma — ergonomics — design system — archive",
       thumbnail: ThumbFranceArchives,
+      thumbnail_placeholder: ThumbFranceArchivesPH,
       projectpage: PageFranceArchives,
     },
     {
@@ -343,12 +371,13 @@ function App() {
       type: "perso",
       description: "graphic design — font",
       thumbnail: ThumbStretch,
+      thumbnail_placeholder: ThumbStretchPH,
       projectpage: PageStretch,
     },
   ];
 
   return (
-    <>
+    <HighQualityProvider value={readyForHighQuality}>
       <GlobalFonts />
       <PageMask id="page-mask" />
       <PresentationCard onClick={handleCardClick} cardsRef={cardsRef} />
@@ -374,7 +403,7 @@ function App() {
         <CloseButton onClick={handleCloseFullscreen} />
       )}
       <TopPageButton />
-    </>
+    </HighQualityProvider>
   );
 }
 

@@ -9,8 +9,11 @@ import {
 } from "../../assets/PageAssets";
 
 import Image1 from "../../assets/projects/francearchives/francearchives_hero.png";
+import Image1PH from "../../assets/projects/francearchives/francearchives_hero_placeholder.png";
 import Image2 from "../../assets/projects/francearchives/francearchives_frames.png";
+import Image2PH from "../../assets/projects/francearchives/francearchives_frames_placeholder.png";
 import Image3 from "../../assets/projects/francearchives/francearchives_homepage_1920x1200.png";
+import Image3PH from "../../assets/projects/francearchives/francearchives_homepage_1920x1200_placeholder.png";
 
 export const ProjectPage = () => {
   const containerRef = useRef(null);
@@ -21,6 +24,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image1}
+          srcPH={Image1PH}
           $isSquareOnMobile={true}
         />
         <TextSmall scroller={containerRef}>
@@ -32,6 +36,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image2}
+          srcPH={Image2PH}
           $isSquareOnMobile={true}
         />
         <TextSmall scroller={containerRef}>
@@ -42,6 +47,7 @@ export const ProjectPage = () => {
         <MockUpMBAir
           scroller={containerRef}
           screenMBAir={Image3}
+          screenMBAirPH={Image3PH}
           $scrollOverflow={true}
         />
         <TextSmall scroller={containerRef}>

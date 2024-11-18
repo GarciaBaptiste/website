@@ -9,9 +9,11 @@ import {
   MockUpDouble,
   Empty,
 } from "../../assets/PageAssets";
+import { LazyVideo } from "../../components/LayoutAssets";
 
 import Image0 from "../../assets/projects/swep/swep_prez.svg";
 import Image1 from "../../assets/projects/swep/swep_mobile.png";
+import Image1PH from "../../assets/projects/swep/swep_mobile_placeholder.png";
 import Image2 from "../../assets/projects/swep/swep_logo_old.png";
 import Image3 from "../../assets/projects/swep/swep_logo_new.svg";
 import Video1 from "../../assets/projects/swep/swep_demo.mp4";
@@ -55,6 +57,7 @@ export const ProjectPage = () => {
           mBAirVideo={true}
           screenMBAir={Video1}
           screenIPhone={Image1}
+          screenIPhonePH={Image1PH}
         />
         <TextSmall scroller={containerRef}>
           The navigation was designed around a vertical timeline, allowing users
@@ -78,8 +81,8 @@ export const ProjectPage = () => {
           environment with limited iconography available.
         </TextSmall>
         <DoubleColumns scroller={containerRef} $centered={true}>
-          <video src={Video2} autoPlay loop muted playsInline />
-          <video src={Video3} autoPlay loop muted playsInline />
+          <LazyVideo src={Video2} autoPlay loop muted playsInline />
+          <LazyVideo src={Video3} autoPlay loop muted playsInline />
         </DoubleColumns>
         <TextSmall scroller={containerRef}>
           The site is reusable for all future editions and offers access to

@@ -8,6 +8,7 @@ import {
   MockUpMBAir,
   VisitSiteButton,
 } from "../../assets/PageAssets";
+import { LazyVideo } from "../../components/LayoutAssets";
 
 import Video1 from "../../assets/projects/napoleonica/napoleonica_demo_accueil.mp4";
 import Video2 from "../../assets/projects/napoleonica/napoleonica_demo_fonts.mp4";
@@ -31,7 +32,7 @@ export const ProjectPage = () => {
           collections.
         </TextSmall>
         <SimpleColumn scroller={containerRef} $centered={true}>
-          <video src={Video2} autoPlay loop muted playsInline />
+          <LazyVideo src={Video2} autoPlay loop muted playsInline />
         </SimpleColumn>
         <TextSmall
           scroller={containerRef}

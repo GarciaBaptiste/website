@@ -9,8 +9,11 @@ import {
 } from "../../assets/PageAssets";
 
 import Image0 from "../../assets/projects/cubicweb/cubicweb_screen_1440x900.png";
+import Image0PH from "../../assets/projects/cubicweb/cubicweb_screen_1440x900_placeholder.png";
 import Image1 from "../../assets/projects/cubicweb/cubicweb_screen_iphone.png";
+import Image1PH from "../../assets/projects/cubicweb/cubicweb_screen_iphone_placeholder.png";
 import Image2 from "../../assets/projects/cubicweb/cubicweb_frames.png";
+import Image2PH from "../../assets/projects/cubicweb/cubicweb_frames_placeholder.png";
 
 export const ProjectPage = () => {
   const containerRef = useRef(null);
@@ -26,7 +29,9 @@ export const ProjectPage = () => {
         <MockUpDouble
           scroller={containerRef}
           screenMBAir={Image0}
+          screenMBAirPH={Image0PH}
           screenIPhone={Image1}
+          screenIPhonePH={Image1PH}
         />
         <TextSmall scroller={containerRef}>
           Graphic elements, such as colors and hexagonal patterns, reference the
@@ -40,6 +45,7 @@ export const ProjectPage = () => {
         <FullScreenImage
           scroller={containerRef}
           src={Image2}
+          srcPH={Image2PH}
           $keepRatio={"1990 / 780"}
         />
         <TextSmall scroller={containerRef}>

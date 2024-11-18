@@ -12,6 +12,7 @@ import {
 import Image1 from "../../assets/projects/logilab_fr/logilab_fr_image1.svg";
 import Image2 from "../../assets/projects/logilab_fr/logilab_fr_image2.svg";
 import Image3 from "../../assets/projects/logilab_fr/logilab_fr_mobile.png";
+import Image3PH from "../../assets/projects/logilab_fr/logilab_fr_mobile_placeholder.png";
 import Video1 from "../../assets/projects/logilab_fr/demo.mp4";
 
 const CustomDoubleImageContainer = styled.div`
@@ -79,6 +80,7 @@ export const ProjectPage = () => {
           mBAirVideo={true}
           screenMBAir={Video1}
           screenIPhone={Image3}
+          screenIPhonePH={Image3PH}
         />
         <TextSmall scroller={containerRef}>
           Each section is distinguished by its color scheme while maintaining a
