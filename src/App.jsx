@@ -13,6 +13,7 @@ import {
   CloseButton,
   MasonryWrapper,
   PageMask,
+  Loader,
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard } from "./components/Cards";
 
@@ -411,6 +412,7 @@ function App() {
           scrollBarWidth={scrollBarWidth}
         />
       )}
+      {readyForHighQuality ? "" : <Loader />}
       <TopPageButton />
     </HighQualityProvider>
   );
