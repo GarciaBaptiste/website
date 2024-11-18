@@ -366,7 +366,7 @@ export const ProjectPageContent = styled.article`
   width: 100%;
   margin: auto;
   max-width: 1800px;
-  padding: 6rem var(--margin) 5rem var(--margin);
+  padding: 6rem calc(var(--margin) + 8px) 5rem var(--margin);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12rem var(--margin);
@@ -650,7 +650,15 @@ export const MockUpMBAir = ({
               muted
               playsInline
             ></MockUpMBAirScreenVideo>
-          ) : ( screenMBAirPH !== screenMBAir ? <LowQualityImg lowQualitySrc={screenMBAirPH} highQualitySrc={screenMBAir} ><MockUpMBAirScreen /></LowQualityImg> : <MockUpMBAirScreen src={screenMBAir} />
+          ) : screenMBAirPH !== screenMBAir ? (
+            <LowQualityImg
+              lowQualitySrc={screenMBAirPH}
+              highQualitySrc={screenMBAir}
+            >
+              <MockUpMBAirScreen />
+            </LowQualityImg>
+          ) : (
+            <MockUpMBAirScreen src={screenMBAir} />
           )}
           <MockUpFrame src={MockUpMBAirImage} />
         </MockUpMBAirContainer>

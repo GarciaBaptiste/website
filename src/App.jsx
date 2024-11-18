@@ -61,12 +61,6 @@ function App() {
   const breakpoints = [350, 750, 1100, 1800];
 
   useEffect(() => {
-    const scrollBarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
-    setScrollBarWidth(scrollBarWidth);
-  }, []);
-
-  useEffect(() => {
     const body = document.body;
 
     if (fullscreenCard !== null) {
@@ -84,6 +78,13 @@ function App() {
   }, [fullscreenCard, scrollBarWidth]);
 
   const runAnimations = () => {
+    const calculateScrollBarWidth = () => {
+      const scrollBarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      setScrollBarWidth(scrollBarWidth);
+      console.log(scrollBarWidth);
+    };
+
     gsap.set(cardsRef.current, { opacity: 0, y: "5rem", scale: 0.9 });
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -128,6 +129,8 @@ function App() {
     });
 
     ScrollTrigger.refresh();
+
+    calculateScrollBarWidth();
   };
 
   useLayoutEffect(() => {
@@ -197,6 +200,9 @@ function App() {
         height: wrapperHeight,
         duration: 0,
       });
+
+      console.log(index);
+      console.log(scrollBarWidth);
 
       timeline
         .to(
@@ -400,7 +406,10 @@ function App() {
         </ResponsiveMasonry>
       </MasonryWrapper>
       {fullscreenCard !== null && (
-        <CloseButton onClick={handleCloseFullscreen} />
+        <CloseButton
+          onClick={handleCloseFullscreen}
+          scrollBarWidth={scrollBarWidth}
+        />
       )}
       <TopPageButton />
     </HighQualityProvider>

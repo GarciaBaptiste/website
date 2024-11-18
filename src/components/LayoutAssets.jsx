@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useRef, useContext, cloneElement } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useContext,
+  cloneElement,
+} from "react";
 import { HighQualityContext } from "./HighQualityContext";
 import styled from "styled-components";
 import ArrowImg from "../assets/arrow.svg";
@@ -178,7 +184,7 @@ export const TopPageButton = () => {
 export const CloseButtonWrapper = styled(BasicButton)`
   position: fixed;
   top: calc(var(--margin) + 8px);
-  right: calc(var(--margin) + 8px);
+  right: calc(var(--margin) + ${(props) => props.scrollBarWidth}px);
   z-index: 1001;
 
   &:hover {
@@ -194,7 +200,10 @@ export const CloseButtonWrapper = styled(BasicButton)`
 
 export const CloseButton = (props) => {
   return (
-    <CloseButtonWrapper onClick={props.onClick}>
+    <CloseButtonWrapper
+      onClick={props.onClick}
+      scrollBarWidth={props.scrollBarWidth}
+    >
       <ButtonText>Accueil</ButtonText>
       <ArrowLeft />
     </CloseButtonWrapper>
