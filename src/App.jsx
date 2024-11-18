@@ -83,7 +83,6 @@ function App() {
       const scrollBarWidth =
         window.innerWidth - document.documentElement.clientWidth;
       setScrollBarWidth(scrollBarWidth);
-      console.log(scrollBarWidth);
     };
 
     gsap.set(cardsRef.current, { opacity: 0, y: "5rem", scale: 0.9 });
@@ -201,9 +200,6 @@ function App() {
         height: wrapperHeight,
         duration: 0,
       });
-
-      console.log(index);
-      console.log(scrollBarWidth);
 
       timeline
         .to(
