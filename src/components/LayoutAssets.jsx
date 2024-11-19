@@ -185,7 +185,7 @@ export const TopPageButton = () => {
 export const CloseButtonWrapper = styled(BasicButton)`
   position: fixed;
   top: calc(var(--margin) + 8px);
-  right: calc(var(--margin) + ${(props) => props.scrollBarWidth}px);
+  right: calc(var(--margin) + ${(props) => props.$scrollBarWidth}px);
   z-index: 1001;
 
   &:hover {
@@ -203,7 +203,7 @@ export const CloseButton = (props) => {
   return (
     <CloseButtonWrapper
       onClick={props.onClick}
-      scrollBarWidth={props.scrollBarWidth}
+      $scrollBarWidth={props.$scrollBarWidth}
     >
       <ButtonText>Back</ButtonText>
       <ArrowLeft />
@@ -256,3 +256,7 @@ const SmileyFaceWrapper = styled.img`
 export const SmileyFace = () => {
   return <SmileyFaceWrapper src={Smiley} />;
 };
+
+export const EmptyNegativeSpace = styled.div`
+  margin: -5rem 0;
+`;

@@ -56,7 +56,7 @@ function App() {
   const cardsRef = useRef([]);
   const [fullscreenCard, setFullscreenCard] = useState(null);
   const [initialCardStyles, setInitialCardStyles] = useState({});
-  const [scrollBarWidth, setScrollBarWidth] = useState(0);
+  const [$scrollBarWidth, setScrollBarWidth] = useState(0);
   const [readyForHighQuality, setReadyForHighQuality] = useState(false);
   const breakpoints = [350, 750, 1100, 1800];
 
@@ -65,7 +65,7 @@ function App() {
 
     if (fullscreenCard !== null) {
       body.style.overflow = "hidden";
-      body.style.paddingRight = `${scrollBarWidth}px`;
+      body.style.paddingRight = `${$scrollBarWidth}px`;
     } else {
       body.style.overflow = "";
       body.style.paddingRight = "";
@@ -75,13 +75,13 @@ function App() {
       body.style.overflow = "";
       body.style.paddingRight = "";
     };
-  }, [fullscreenCard, scrollBarWidth]);
+  }, [fullscreenCard, $scrollBarWidth]);
 
   const runAnimations = () => {
     const calculateScrollBarWidth = () => {
-      const scrollBarWidth =
+      const $scrollBarWidth =
         window.innerWidth - document.documentElement.clientWidth;
-      setScrollBarWidth(scrollBarWidth);
+      setScrollBarWidth($scrollBarWidth);
     };
 
     gsap.set(cardsRef.current, { opacity: 0, y: "5rem", scale: 0.9 });
@@ -229,7 +229,7 @@ function App() {
           width: "100vw",
           height: "100dvh",
           padding:
-            "8px " + (8 + (index === 0 ? 0 : scrollBarWidth)) + "px 8px 8px",
+            "8px " + (8 + (index === 0 ? 0 : $scrollBarWidth)) + "px 8px 8px",
           duration: 0.5,
           ease: "power3.inOut",
           onComplete: () => {
@@ -288,6 +288,12 @@ function App() {
   };
 
   const projectData = [
+    {
+      title: "Available for hire",
+      type: "info",
+      description:
+        "I am currently available for hire, whether freelance or full-time employment. Feel free to get in touch!",
+    },
     {
       title: "Le Bow Vosgien",
       type: "client",
@@ -413,7 +419,7 @@ function App() {
       {fullscreenCard !== null && (
         <CloseButton
           onClick={handleCloseFullscreen}
-          scrollBarWidth={scrollBarWidth}
+          $scrollBarWidth={$scrollBarWidth}
         />
       )}
       <TopPageButton />

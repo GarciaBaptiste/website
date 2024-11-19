@@ -7,13 +7,14 @@ import {
   LowQualityImg,
   ThumbnailImg,
   SmileyFace,
+  EmptyNegativeSpace,
 } from "./LayoutAssets";
 
 const Card = styled.div`
   position: relative;
   margin: 4px;
   float: left;
-  cursor: pointer;
+  cursor: ${(props) => (props.$projectPage ? "pointer" : "initial")};
 `;
 
 const CardContainer = styled.div`
@@ -137,8 +138,14 @@ const ProjectCardWrapper = styled(Card)`
   }
   & ${CardContainer} {
     gap: 0;
-    background: var(--grey3);
+    background: ${(props) =>
+      props.$projectPage ? "var(--grey3)" : "var(--white)"};
     border-radius: 1rem;
+    & p,
+    & h2 {
+      color: ${(props) =>
+        props.$projectPage ? "var(--white)" : "var(--black)"};
+    }
   }
 `;
 
@@ -193,6 +200,19 @@ const ClientTag = () => {
   );
 };
 
+const InfoTag = () => {
+  return (
+    <ProjectTypeTag
+      style={{
+        background: "var(--green)",
+        color: "var(--black)",
+      }}
+    >
+      info
+    </ProjectTypeTag>
+  );
+};
+
 const PersoTag = () => {
   return (
     <ProjectTypeTag
@@ -215,7 +235,7 @@ const GSAPCardWrapper = styled.div`
   height: 100%;
   background: var(--grey2);
   opacity: 0;
-  transform: scale(0.9), translateY(6rem);
+  transform: scale(0.9) translateY(6rem);
   &.transition {
     & ${ProjectTypeTag} {
       opacity: 0;
@@ -282,28 +302,40 @@ const PresentationCardWrapper = styled.div`
 `;
 
 export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
-  const Thumbnail = projectData.thumbnail;
-  const ThumbnailPlaceholder =
-    projectData.thumbnail_placeholder ?? projectData.thumbnail;
-  const ProjectPage = projectData.projectpage;
+  const Thumbnail = projectData.thumbnail || undefined;
+  const ThumbnailPlaceholder = projectData.thumbnail_placeholder || undefined;
+  const ProjectPage = projectData.projectpage || undefined;
   const idx = index + 1;
 
   return (
-    <ProjectCardWrapper onClick={() => onClick(idx)}>
+    <ProjectCardWrapper
+      onClick={ProjectPage ? () => onClick(idx) : undefined}
+      $projectPage={ProjectPage}
+    >
       <GSAPCardWrapper ref={(el) => (cardsRef.current[idx] = el)}>
         <CardContainer>
           <TopCard>
             <h2>{projectData.title}</h2>
-            {projectData.type === "personal" ? <PersoTag /> : <ClientTag />}
+            {projectData.type === "personal" ? (
+              <PersoTag />
+            ) : projectData.type === "client" ? (
+              <ClientTag />
+            ) : (
+              <InfoTag />
+            )}
           </TopCard>
-          <ThumbnailProject>
-            <LowQualityImg
-              lowQualitySrc={ThumbnailPlaceholder}
-              highQualitySrc={Thumbnail}
-            >
-              <ThumbnailImg />
-            </LowQualityImg>
-          </ThumbnailProject>
+          {Thumbnail ? (
+            <ThumbnailProject>
+              <LowQualityImg
+                lowQualitySrc={ThumbnailPlaceholder}
+                highQualitySrc={Thumbnail}
+              >
+                <ThumbnailImg />
+              </LowQualityImg>
+            </ThumbnailProject>
+          ) : (
+            <EmptyNegativeSpace />
+          )}
           <BottomCard>
             <ProjectCardTextWrapper>
               <p>{projectData.description}</p>
@@ -311,9 +343,13 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             </ProjectCardTextWrapper>
           </BottomCard>
         </CardContainer>
-        <PageContainer>
-          <ProjectPage />
-        </PageContainer>
+        {ProjectPage ? (
+          <PageContainer>
+            <ProjectPage />
+          </PageContainer>
+        ) : (
+          ""
+        )}
       </GSAPCardWrapper>
     </ProjectCardWrapper>
   );
