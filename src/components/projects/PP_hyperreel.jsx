@@ -77,7 +77,11 @@ export const ProjectPage = () => {
           scroller={containerRef}
           style={{ textAlign: "center", marginTop: "calc(var(--margin) * -2)" }}
         >
-          Published in Ravisius Textor magazine.
+          Published in <i>Approche C</i> magazine (
+          <a href="https://presses.t-o-m-b-o-l-o.eu/" target="_blank">
+            tombolo presses <ArrowExternal />
+          </a>
+          ).
         </TextSmall>
         <Empty />
       </ProjectPageContent>
