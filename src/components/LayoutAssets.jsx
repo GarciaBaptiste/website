@@ -8,6 +8,7 @@ import React, {
 import { HighQualityContext } from "./HighQualityContext";
 import styled from "styled-components";
 import ArrowImg from "../assets/arrow.svg";
+import Smiley from "../assets/smiley.svg";
 
 export const LazyVideo = ({ src, ...props }) => {
   const videoRef = useRef();
@@ -244,3 +245,14 @@ export const PageMask = styled.div`
   pointer-events: none;
   transition: opacity 0.3s 0.2s;
 `;
+
+const SmileyFaceWrapper = styled.img`
+  display: inline;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+`;
+
+export const SmileyFace = () => {
+  return <SmileyFaceWrapper src={Smiley} />;
+};

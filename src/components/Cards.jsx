@@ -6,6 +6,7 @@ import {
   ThumbnailProject,
   LowQualityImg,
   ThumbnailImg,
+  SmileyFace,
 } from "./LayoutAssets";
 
 const Card = styled.div`
@@ -296,7 +297,10 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
             {projectData.type === "perso" ? <PersoTag /> : <ClientTag />}
           </TopCard>
           <ThumbnailProject>
-            <LowQualityImg lowQualitySrc={ThumbnailPlaceholder} highQualitySrc={Thumbnail}>
+            <LowQualityImg
+              lowQualitySrc={ThumbnailPlaceholder}
+              highQualitySrc={Thumbnail}
+            >
               <ThumbnailImg />
             </LowQualityImg>
           </ThumbnailProject>
@@ -378,3 +382,27 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
     </PresentationCardWrapper>
   );
 };
+
+export const FooterCard = () => {
+  return (
+    <FooterCardWrapper>
+      <p>See you soon!</p>
+      <SmileyFace />
+    </FooterCardWrapper>
+  );
+};
+
+const FooterCardWrapper = styled.footer`
+  width: calc(100% - var(--margin) * 2);
+  height: 4rem;
+  margin: 0 var(--margin) var(--margin) var(--margin);
+  background: var(--white);
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+
+  & * {
+    color: var(--black);
+    font-weight: 400;
+    display: inline;
+  }
+`;

@@ -14,7 +14,7 @@ import {
   MasonryWrapper,
   PageMask,
 } from "./components/LayoutAssets";
-import { ProjectCard, PresentationCard } from "./components/Cards";
+import { ProjectCard, PresentationCard, FooterCard } from "./components/Cards";
 
 import { ProjectPage as PageBowVosgien } from "./components/projects/PP_bowvosgien";
 import { ProjectPage as PageLogilabFr } from "./components/projects/PP_logilabfr";
@@ -409,6 +409,7 @@ function App() {
           </Masonry>
         </ResponsiveMasonry>
       </MasonryWrapper>
+      <FooterCard />
       {fullscreenCard !== null && (
         <CloseButton
           onClick={handleCloseFullscreen}
