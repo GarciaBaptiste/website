@@ -125,6 +125,9 @@ const About = styled.div`
 const AboutText = styled.p`
   font-weight: normal;
   font-size: 2rem;
+  @media (max-width: 670px) {
+    display: none;
+  }
 `;
 
 const QuestionMark = styled.img`
@@ -253,7 +256,9 @@ const GSAPCardWrapper = styled.div`
       filter: blur(1rem);
     }
     & ${PresentationCardSummary} {
-      padding-right: 17px;
+      @media (min-width: 899px) {
+        padding-right: 17px;
+      }
     }
   }
   &.fullscreen {
