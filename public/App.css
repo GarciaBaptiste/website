@@ -37,7 +37,17 @@
   :root {
     --margin: 1.5rem;
     --grey2: #000000;
-  } 
+  }
+  #preloader {
+    justify-content: end;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 899px) {
+  #preloader {
+    justify-content: center;
+  }
 }
 
 ::-moz-selection {
@@ -175,7 +185,6 @@ iframe {
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   z-index: 99999;
   pointer-events: none;
 }
