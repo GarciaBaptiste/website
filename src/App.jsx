@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { HighQualityProvider } from "./components/HighQualityContext";
 
-import "./App.css";
+import "../public/App.css";
 import GlobalFonts from "./fonts/fonts";
 
 import gsap from "gsap";
@@ -13,7 +13,6 @@ import {
   CloseButton,
   MasonryWrapper,
   PageMask,
-  Loader,
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard } from "./components/Cards";
 
@@ -135,6 +134,14 @@ function App() {
 
   useLayoutEffect(() => {
     const handleLoad = () => {
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+        preloader.style.opacity = "0";
+        preloader.style.top = "-3rem";
+        setTimeout(() => {
+          preloader.remove();
+        }, 300);
+      }
       setReadyForHighQuality(true);
       runAnimations();
     };
@@ -408,7 +415,6 @@ function App() {
           scrollBarWidth={scrollBarWidth}
         />
       )}
-      {readyForHighQuality ? "" : <Loader />}
       <TopPageButton />
     </HighQualityProvider>
   );

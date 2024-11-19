@@ -165,3 +165,23 @@ iframe {
   50% {opacity: 0.25;}
   100% {opacity: 1;}
 }
+
+#preloader {
+  transition: .3s ease-in-out;
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+#preloader-content {
+  text-align: center;
+  animation: pulse 2s;
+  animation-iteration-count: infinite;
+}

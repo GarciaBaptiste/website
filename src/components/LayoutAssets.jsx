@@ -244,19 +244,3 @@ export const PageMask = styled.div`
   pointer-events: none;
   transition: opacity 0.3s 0.2s;
 `;
-
-export const Loader = styled.div`
-  font-family: "JetBrains", monospace;
-  font-size: var(--text-small);
-  color: var(--white);
-  position: fixed;
-  width: 100vw;
-  top: 50dvh;
-  text-align: center;
-  z-index: 99999;
-  animation: pulse 2s;
-  animation-iteration-count: infinite;
-  &::before {
-    content: "loading…";
-  }
-`;
