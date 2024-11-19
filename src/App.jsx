@@ -415,7 +415,7 @@ function App() {
           </Masonry>
         </ResponsiveMasonry>
       </MasonryWrapper>
-      <FooterCard />
+      {readyForHighQuality ? <FooterCard /> : ""}
       {fullscreenCard !== null && (
         <CloseButton
           onClick={handleCloseFullscreen}
