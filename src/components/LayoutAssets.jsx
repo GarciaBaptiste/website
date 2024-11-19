@@ -158,22 +158,11 @@ export const TopPageButton = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    const scrollContainer = document.documentElement;
-    scrollContainer.style.scrollSnapType = "none";
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    setTimeout(() => {
-      scrollContainer.style.scrollSnapType = "";
-    }, 1200);
-  };
-
   return (
     <TopPageButtonWrapper
       $show={showButton}
-      onClick={scrollToTop}
-      onTouchStart={scrollToTop}
+      onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" })}}
+      onTouchStart={() => {window.scrollTo({ top: 0, behavior: "smooth" })}}
       className="noSelect"
     >
       <ButtonText>Top</ButtonText>

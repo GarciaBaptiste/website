@@ -452,7 +452,14 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
 
 export const FooterCard = () => {
   return (
-    <FooterCardWrapper>
+    <FooterCardWrapper
+      onClick={() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
+      onTouchStart={() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
+    >
       <p>See you soon!</p>
       <SmileyFace />
     </FooterCardWrapper>
@@ -466,6 +473,7 @@ const FooterCardWrapper = styled.footer`
   background: var(--white);
   border-radius: 2rem;
   padding: 1rem 2rem;
+  cursor: pointer;
 
   & * {
     color: var(--black);
