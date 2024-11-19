@@ -239,6 +239,8 @@ export const PageMask = styled.div`
   position: fixed;
   width: 100vw;
   height: 100dvh;
+  top: 0;
+  left: 0;
   z-index: 1;
   background: var(--grey2);
   opacity: 0;
