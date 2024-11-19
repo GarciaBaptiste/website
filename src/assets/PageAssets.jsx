@@ -741,7 +741,7 @@ const VisitSiteButtonWrapper = styled.a`
 const VisitSiteButtonContainer = (props) => {
   return (
     <VisitSiteButtonWrapper href={props.href} target="_blank">
-      <ButtonText style={{ fontWeight: "400" }}>Visit site</ButtonText>
+      <ButtonText style={{ fontWeight: "400" }}>Visit website</ButtonText>
       <ArrowRightUp />
     </VisitSiteButtonWrapper>
   );

@@ -200,7 +200,7 @@ const PersoTag = () => {
         background: "var(--purple)",
       }}
     >
-      perso
+      personal
     </ProjectTypeTag>
   );
 };
@@ -294,7 +294,7 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
         <CardContainer>
           <TopCard>
             <h2>{projectData.title}</h2>
-            {projectData.type === "perso" ? <PersoTag /> : <ClientTag />}
+            {projectData.type === "personal" ? <PersoTag /> : <ClientTag />}
           </TopCard>
           <ThumbnailProject>
             <LowQualityImg

@@ -308,7 +308,7 @@ function App() {
     },
     {
       title: "Hyperréel",
-      type: "perso",
+      type: "personal",
       description: "poster — experiment",
       keywords: "3D render — water physics — Blender (Cycles)",
       thumbnail: ThumbHyperreel,
@@ -326,7 +326,7 @@ function App() {
     },
     {
       title: "Book Tales",
-      type: "perso",
+      type: "personal",
       description: "publishing — web-to-print",
       keywords: "exhibition catalog — procedural layout — JS",
       thumbnail: ThumbBookTales,
@@ -361,7 +361,7 @@ function App() {
     },
     {
       title: "Conway's Game of Life",
-      type: "perso",
+      type: "personal",
       description: "experiment",
       thumbnail: ThumbGameOfLife,
       thumbnail_placeholder: ThumbGameOfLifePH,
@@ -378,7 +378,7 @@ function App() {
     },
     {
       title: "Stretch",
-      type: "perso",
+      type: "personal",
       description: "graphic design — font",
       thumbnail: ThumbStretch,
       thumbnail_placeholder: ThumbStretchPH,

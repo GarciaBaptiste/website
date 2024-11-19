@@ -176,7 +176,7 @@ export const TopPageButton = () => {
       onTouchStart={scrollToTop}
       className="noSelect"
     >
-      <ButtonText>Haut</ButtonText>
+      <ButtonText>Top</ButtonText>
       <ArrowUp />
     </TopPageButtonWrapper>
   );
@@ -205,7 +205,7 @@ export const CloseButton = (props) => {
       onClick={props.onClick}
       scrollBarWidth={props.scrollBarWidth}
     >
-      <ButtonText>Accueil</ButtonText>
+      <ButtonText>Back</ButtonText>
       <ArrowLeft />
     </CloseButtonWrapper>
   );
