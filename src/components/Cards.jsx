@@ -8,6 +8,7 @@ import {
   ThumbnailImg,
   SmileyFace,
   EmptyNegativeSpace,
+  ArrowExternal,
 } from "./LayoutAssets";
 
 const Card = styled.div`
@@ -86,6 +87,22 @@ const PresentationPageContainer = styled.div`
 const PresentationFirstBloc = styled.div`
   flex: 1;
   max-width: 1010px;
+
+  & a {
+    color: var(--grey2);
+  }
+
+  & a:hover {
+    color: var(--grey1);
+  }
+
+  & a:hover > .arrow-external {
+    filter: invert(0.7);
+  }
+
+  & .arrow-external {
+    filter: invert(0.2);
+  }
 `;
 
 const PresentationSecondBloc = styled.div`
@@ -399,9 +416,15 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
               </p>
               <LineBreak />
               <p>
-                Feel free to browse through all my projects here and on my
-                instagram, if you are interested in techniques, you can take a
-                look at my Github repositories.
+                Feel free to browse through all my projects here and on my{" "}
+                <a href="https://instagram.com/bapt.garcia" target="_blank">
+                  Instagram <ArrowExternal />
+                </a>
+                , if you are interested in techniques, you can take a look at my{" "}
+                <a href="https://github.com/GarciaBaptiste" target="_blank">
+                  Github repositories <ArrowExternal />
+                </a>
+                .
               </p>
             </PresentationFirstBloc>
             <PresentationSecondBloc>

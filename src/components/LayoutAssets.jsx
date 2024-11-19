@@ -112,12 +112,12 @@ export const ArrowRightUp = () => {
   );
 };
 
-export const ArrowExternal = () => {
+export const ArrowExternal = ({style}) => {
   return (
     <img
       className="arrow-external"
       src={ArrowImg}
-      style={{ transform: "rotate(45deg)", width: "2rem", height: "2rem" }}
+      style={{ transform: "rotate(45deg)", width: "2rem", height: "2rem", ...style }}
     />
   );
 };
