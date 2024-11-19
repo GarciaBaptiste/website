@@ -157,7 +157,10 @@ const BottomCard = styled.div`
     font-size: var(--text-medium);
   }
   @media (max-width: 899px) {
-    background: linear-gradient(rgba(0, 0, 0, 0), var(--grey3) 80%);
+    background: linear-gradient(
+      rgba(0, 0, 0, 0),
+      ${(props) => (props.$projectPage ? "var(--grey3)" : "transparent")} 80%
+    );
   }
 `;
 
@@ -336,7 +339,7 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
           ) : (
             <EmptyNegativeSpace />
           )}
-          <BottomCard>
+          <BottomCard $projectPage={ProjectPage}>
             <ProjectCardTextWrapper>
               <p>{projectData.description}</p>
               <p style={{ color: "var(--grey1)" }}>{projectData.keywords}</p>

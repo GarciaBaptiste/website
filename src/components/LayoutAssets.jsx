@@ -259,4 +259,7 @@ export const SmileyFace = () => {
 
 export const EmptyNegativeSpace = styled.div`
   margin: -5rem 0;
+  @media (max-width: 899px) {
+    margin: -4rem 0;
+  }
 `;
