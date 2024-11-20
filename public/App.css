@@ -52,13 +52,13 @@
 }
 
 ::-moz-selection {
-  color: var(--white);
-  background: var(--black);
+  color: var(--black);
+  background: var(--grey1);
 }
 
 ::selection {
-  color: var(--white);
-  background: var(--black);
+  color: var(--black);
+  background: var(--grey1);
 }
 
 * {
