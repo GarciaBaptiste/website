@@ -45,7 +45,7 @@ const PresentationCardContainer = styled(CardContainer)`
   transition: gap 0.3s;
   gap: 0;
   pointer-events: all;
-  height: calc(100% - 16px);
+  // height: calc(100% - 16px);
   scrollbar-width: none;
 `;
 
@@ -179,7 +179,8 @@ const BottomCard = styled.div`
   @media (max-width: 899px) {
     background: linear-gradient(
       rgba(0, 0, 0, 0),
-      ${(props) => (props.$projectPage ? "var(--grey3)" : "transparent")} 80%
+      ${(props) => (props.$projectPage ? "var(--grey3)" : "rgba(0, 0, 0, 0)")}
+        80%
     );
   }
 `;
@@ -272,11 +273,6 @@ const GSAPCardWrapper = styled.div`
       opacity: 0;
       filter: blur(1rem);
     }
-    & ${PresentationCardSummary} {
-      @media (min-width: 899px) {
-        padding-right: 17px;
-      }
-    }
   }
   &.fullscreen {
     & > ${PageContainer} {
@@ -288,9 +284,9 @@ const GSAPCardWrapper = styled.div`
     }
     & > ${PresentationCardContainer} {
       gap: var(--margin);
-      position: absolute;
+      // position: absolute;
       overflow-y: auto;
-      width: calc(100% - 16px);
+      // width: calc(100% - 16px);
       cursor: initial;
     }
     & ${PresentationPageContainer} {

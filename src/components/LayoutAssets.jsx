@@ -112,12 +112,17 @@ export const ArrowRightUp = () => {
   );
 };
 
-export const ArrowExternal = ({style}) => {
+export const ArrowExternal = ({ style }) => {
   return (
     <img
       className="arrow-external"
       src={ArrowImg}
-      style={{ transform: "rotate(45deg)", width: "2rem", height: "2rem", ...style }}
+      style={{
+        transform: "rotate(45deg)",
+        width: "2rem",
+        height: "2rem",
+        ...style,
+      }}
     />
   );
 };
@@ -161,8 +166,12 @@ export const TopPageButton = () => {
   return (
     <TopPageButtonWrapper
       $show={showButton}
-      onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" })}}
-      onTouchStart={() => {window.scrollTo({ top: 0, behavior: "smooth" })}}
+      onClick={() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
+      onTouchStart={() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
       className="noSelect"
     >
       <ButtonText>Top</ButtonText>
@@ -173,8 +182,8 @@ export const TopPageButton = () => {
 
 export const CloseButtonWrapper = styled(BasicButton)`
   position: fixed;
-  top: calc(var(--margin) + 8px);
-  right: calc(var(--margin) + ${(props) => props.$scrollBarWidth}px);
+  top: calc(var(--margin) - 1rem + 8px);
+  right: calc(var(--margin) + 8px + ${(props) => props.$scrollBarWidth}px);
   z-index: 1001;
 
   &:hover {
@@ -185,6 +194,10 @@ export const CloseButtonWrapper = styled(BasicButton)`
     & > ${ButtonText} {
       display: none;
     }
+  }
+
+  @media (max-width: 899px) {
+    right: calc(var(--margin) - 1rem + 8px);
   }
 `;
 
