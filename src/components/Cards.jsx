@@ -70,8 +70,8 @@ const PresentationRight = styled.div`
 
 const PresentationPageContainer = styled.div`
   opacity: 0;
-  transition: 0.3s;
-  height: 0;
+  transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
+  max-height: 0;
   display: flex;
   gap: calc(var(--margin) * 1.5);
 
@@ -284,16 +284,17 @@ const GSAPCardWrapper = styled.div`
     }
     & > ${PresentationCardContainer} {
       gap: var(--margin);
-      // position: absolute;
       overflow-y: auto;
-      // width: calc(100% - 16px);
       cursor: initial;
     }
     & ${PresentationPageContainer} {
-      height: unset;
+      transition: opacity 0.3s ease-out, max-height 0.5s ease-out;
+      max-height: 100%;
       opacity: 1;
-      padding-bottom: var(--margin);
       cursor: initial;
+      @media (max-width: 899px) {
+        max-height: 150%;
+      }
     }
   }
 `;
