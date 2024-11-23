@@ -129,7 +129,6 @@ export const ArrowExternal = ({ style }) => {
 };
 
 const TopPageButtonWrapper = styled(BasicButton)`
-  ${(props) => console.log(props.$fullscreenCard)}
   bottom: ${(props) =>
     props.$show ? "calc(var(--margin) - 1rem + 8px)" : "-5rem"};
   right: ${(props) =>
