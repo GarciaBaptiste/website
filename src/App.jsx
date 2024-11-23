@@ -421,7 +421,10 @@ function App() {
           $scrollBarWidth={$scrollBarWidth}
         />
       )}
-      <TopPageButton />
+      <TopPageButton
+        $fullscreenCard={fullscreenCard}
+        $scrollBarWidth={$scrollBarWidth}
+      />
     </HighQualityProvider>
   );
 }

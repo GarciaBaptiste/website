@@ -128,10 +128,15 @@ export const ArrowExternal = ({ style }) => {
 };
 
 const TopPageButtonWrapper = styled(BasicButton)`
-  bottom: ${(props) => (props.$show ? "var(--margin)" : "-5rem")};
+  ${(props) => console.log(props.$fullscreenCard)}
+  bottom: ${(props) =>
+    props.$show ? "calc(var(--margin) - 1rem + 8px)" : "-5rem"};
+  right: ${(props) =>
+    props.$fullscreenCard
+      ? "calc(var(--margin) + 8px + " + props.$scrollBarWidth + "px)"
+      : "calc(var(--margin) + 8px)"};
   position: fixed;
   z-index: 100;
-  right: var(--margin);
   transition: bottom 0.3s;
   background: var(--white);
   pointer-events: all;
@@ -148,10 +153,11 @@ const TopPageButtonWrapper = styled(BasicButton)`
     & > ${ButtonText} {
       display: none;
     }
+    right: calc(var(--margin) - 1rem + 8px);
   }
 `;
 
-export const TopPageButton = () => {
+export const TopPageButton = (props) => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -173,6 +179,8 @@ export const TopPageButton = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
       className="noSelect"
+      $fullscreenCard={props.$fullscreenCard}
+      $scrollBarWidth={props.$scrollBarWidth}
     >
       <ButtonText>Top</ButtonText>
       <ArrowUp />
