@@ -288,12 +288,13 @@ const GSAPCardWrapper = styled.div`
       cursor: initial;
     }
     & ${PresentationPageContainer} {
-      transition: opacity 0.3s ease-out, max-height 0.5s ease-out;
+      transition: opacity 0.3s ease-out, max-height 0.8s ease-out;
       max-height: 100%;
       opacity: 1;
       cursor: initial;
       @media (max-width: 899px) {
-        max-height: 150%;
+        transition: opacity 0.3s ease-out, max-height 1.2s ease-out;
+        max-height: 250%;
       }
     }
   }
