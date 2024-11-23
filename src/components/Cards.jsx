@@ -463,9 +463,10 @@ export const FooterCard = () => {
 };
 
 const FooterCardWrapper = styled.footer`
-  width: calc(100% - var(--margin) * 2);
+  width: calc(100% - ((var(--margin) + 8px) * 2));
   height: 4rem;
-  margin: 0 var(--margin) var(--margin) var(--margin);
+  margin: 0 calc(var(--margin) + 8px) calc(var(--margin) - 1rem + 8px)
+    calc(var(--margin) + 8px);
   background: var(--white);
   border-radius: 2rem;
   padding: 1rem 2rem;
@@ -475,5 +476,11 @@ const FooterCardWrapper = styled.footer`
     color: var(--black);
     font-weight: 400;
     display: inline;
+  }
+
+  @media (max-width: 899px) {
+    width: calc(100% - ((var(--margin) - 1rem + 8px) * 2));
+    margin: 0 calc(var(--margin) - 1rem + 8px) calc(var(--margin) - 1rem + 8px)
+      calc(var(--margin) - 1rem + 8px);
   }
 `;

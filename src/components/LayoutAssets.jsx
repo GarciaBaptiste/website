@@ -67,6 +67,7 @@ export const LowQualityImg = ({ lowQualitySrc, highQualitySrc, children }) => {
 };
 
 export const BasicButton = styled.button`
+  height: 4rem;
   cursor: pointer;
   background: var(--white);
   color: var(--black);
