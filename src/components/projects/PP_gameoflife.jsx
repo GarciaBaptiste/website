@@ -60,7 +60,7 @@ export const ProjectPage = () => {
           ratio="10/6"
           style={{ background: "white", borderRadius: "1rem" }}
         >
-          <iframe src="http://baptistegarcia.com/game_of_life" width="100%" />
+          <iframe src="https://baptistegarcia.com/game_of_life" width="100%" />
         </SmallBackground>
         <TextSmall scroller={containerRef}>
           In the <i>Game of Life</i>, various structures can emerge over time —

@@ -49,7 +49,7 @@ export const ProjectPage = () => {
             overflow: "hidden",
           }}
         >
-          <CustomIFrame src="http://baptistegarcia.com/book_tales_cover/" />
+          <CustomIFrame src="https://baptistegarcia.com/book_tales_cover/" />
         </CustomFullScreenBackground>
         <TextSmall scroller={containerRef}>
           One of my professors at the Beaux-Arts once asked me to design and
@@ -99,7 +99,7 @@ export const ProjectPage = () => {
             overflow: "hidden",
           }}
         >
-          <CustomIFrame src="http://baptistegarcia.com/book_tales/" />
+          <CustomIFrame src="https://baptistegarcia.com/book_tales/" />
         </CustomFullScreenBackground>
       </ProjectPageContent>
     </ProjectPageWrapper>

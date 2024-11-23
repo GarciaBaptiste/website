@@ -117,7 +117,7 @@ export const ProjectPage = () => {
           }}
         >
           <iframe
-            src="http://baptistegarcia.com/stretch/index.html"
+            src="https://baptistegarcia.com/stretch/index.html"
             width={iframeSize.width}
             height={iframeSize.height}
             style={{ margin: "auto", pointerEvents: "none" }}
