@@ -445,7 +445,7 @@ function App() {
         $fullscreenCard={fullscreenCard}
         $scrollBarWidth={$scrollBarWidth}
       />
-      <Modal show={isModalOpen} onClose={toggleModal}>
+      <Modal $show={isModalOpen} onClose={toggleModal}>
         <ContactForm />
       </Modal>
     </HighQualityProvider>

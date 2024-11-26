@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { HighQualityContext } from "./HighQualityContext";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import ArrowImg from "../assets/arrow.svg";
 import Smiley from "../assets/smiley.svg";
 import MailImg from "../assets/mail.svg";
@@ -279,6 +279,24 @@ export const EmptyNegativeSpace = styled.div`
   }
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
 const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -286,11 +304,30 @@ const ModalBackdrop = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  display: ${({ show }) => (show ? "flex" : "none")};
+  display: flex;
   z-index: 99999;
   padding: 8px;
   justify-content: center;
   align-items: baseline;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0.3s;
+
+  ${({ $show }) =>
+    $show &&
+    css`
+      animation: ${fadeIn} 0.3s forwards;
+      opacity: 1;
+      visibility: visible;
+      transition: none;
+    `}
+
+  ${({ $show }) =>
+    !$show &&
+    css`
+      animation: ${fadeOut} 0.3s forwards;
+    `}
 `;
 
 const ModalContent = styled.div`
@@ -334,9 +371,9 @@ const ModalCloseButton = styled.button`
   }
 `;
 
-export const Modal = ({ show, onClose, children }) => {
+export const Modal = ({ $show, onClose, children }) => {
   return (
-    <ModalBackdrop show={show} onClick={onClose} id="modal-container">
+    <ModalBackdrop $show={$show} onClick={onClose} id="modal-container">
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <ModalCloseButton onClick={onClose}>
           <img src={CloseImg} />
