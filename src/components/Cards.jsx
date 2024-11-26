@@ -9,6 +9,7 @@ import {
   SmileyFace,
   EmptyNegativeSpace,
   ArrowExternal,
+  ContactButton,
 } from "./LayoutAssets";
 
 const Card = styled.div`
@@ -361,7 +362,10 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
           )}
           <BottomCard $projectPage={ProjectPage}>
             <ProjectCardTextWrapper>
-              <p>{projectData.description}</p>
+              <p>
+                {projectData.description}
+                {projectData.customContent}
+              </p>
               <p style={{ color: "var(--grey1)" }}>{projectData.keywords}</p>
             </ProjectCardTextWrapper>
           </BottomCard>
@@ -378,7 +382,7 @@ export const ProjectCard = ({ index, onClick, cardsRef, projectData }) => {
   );
 };
 
-export const PresentationCard = ({ onClick, cardsRef }) => {
+export const PresentationCard = ({ onClick, cardsRef, toggleModal }) => {
   return (
     <PresentationCardWrapper onClick={() => onClick(0)}>
       <GSAPCardWrapper ref={(el) => (cardsRef.current[0] = el)}>
@@ -424,6 +428,10 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
                 </a>
                 .
               </p>
+              <p>
+                You can also contact me by{" "}
+                <ContactButton onClick={toggleModal}>Email</ContactButton>.
+              </p>
             </PresentationFirstBloc>
             <PresentationSecondBloc>
               <SecondBlocFirstHalf>
@@ -448,7 +456,7 @@ export const PresentationCard = ({ onClick, cardsRef }) => {
   );
 };
 
-export const FooterCard = () => {
+export const FooterCard = ({ toggleModal }) => {
   return (
     <FooterCardWrapper
       onClick={() => {
@@ -458,8 +466,15 @@ export const FooterCard = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
-      <p>See you soon!</p>
+      <p>See you soon!&nbsp;&nbsp;&nbsp;</p>
       <SmileyFace />
+      <p>/&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <ContactButton
+        onClick={toggleModal}
+        style={{ fontSize: "var(--text-medium)" }}
+      >
+        Email
+      </ContactButton>
     </FooterCardWrapper>
   );
 };

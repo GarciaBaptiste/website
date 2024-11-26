@@ -13,6 +13,9 @@ import {
   CloseButton,
   MasonryWrapper,
   PageMask,
+  Modal,
+  ContactForm,
+  ContactButton,
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard, FooterCard } from "./components/Cards";
 
@@ -59,6 +62,7 @@ function App() {
   const [$scrollBarWidth, setScrollBarWidth] = useState(0);
   const [readyForHighQuality, setReadyForHighQuality] = useState(false);
   const breakpoints = [350, 750, 1100, 1800];
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const body = document.body;
@@ -286,12 +290,23 @@ function App() {
     }
   };
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   const projectData = [
     {
       title: "Available for hire",
       type: "info",
       description:
-        "I am currently available for hire, whether freelance or full-time employment. Feel free to get in touch!",
+        "I am currently available for hire, whether freelance or full-time employment.",
+      customContent: (
+        <span>
+          <br />
+          Feel free to{" "}
+          <ContactButton onClick={toggleModal}>get in touch</ContactButton>!
+        </span>
+      ),
     },
     {
       title: "Le Bow Vosgien",
@@ -395,7 +410,11 @@ function App() {
     <HighQualityProvider value={readyForHighQuality}>
       <GlobalFonts />
       <PageMask id="page-mask" />
-      <PresentationCard onClick={handleCardClick} cardsRef={cardsRef} />
+      <PresentationCard
+        onClick={handleCardClick}
+        cardsRef={cardsRef}
+        toggleModal={toggleModal}
+      />
       <MasonryWrapper>
         <ResponsiveMasonry
           style={{ flex: 1 }}
@@ -414,7 +433,7 @@ function App() {
           </Masonry>
         </ResponsiveMasonry>
       </MasonryWrapper>
-      {readyForHighQuality ? <FooterCard /> : ""}
+      {readyForHighQuality ? <FooterCard toggleModal={toggleModal} /> : ""}
       {fullscreenCard !== null && (
         <CloseButton
           onClick={handleCloseFullscreen}
@@ -425,6 +444,9 @@ function App() {
         $fullscreenCard={fullscreenCard}
         $scrollBarWidth={$scrollBarWidth}
       />
+      <Modal show={isModalOpen} onClose={toggleModal}>
+        <ContactForm />
+      </Modal>
     </HighQualityProvider>
   );
 }
