@@ -290,7 +290,8 @@ function App() {
     }
   };
 
-  const toggleModal = () => {
+  const toggleModal = (e) => {
+    e.stopPropagation();
     setIsModalOpen(!isModalOpen);
   };
 
