@@ -43,16 +43,10 @@
     --margin: 1.5rem;
     --grey2: #000000;
   }
-  #preloader {
-    justify-content: end;
-    padding-bottom: 3rem;
-  }
 }
 
-@media (min-width: 899px) {
-  #preloader {
-    justify-content: center;
-  }
+#preloader {
+  justify-content: center;
 }
 
 ::-moz-selection {
@@ -200,6 +194,7 @@ iframe {
 
 #preloader-content {
   text-align: center;
-  animation: pulse 2s;
+  animation: pulse 3s;
   animation-iteration-count: infinite;
+  font-size: var(--text-big);
 }
