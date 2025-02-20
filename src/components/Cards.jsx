@@ -161,7 +161,7 @@ const ProjectCardWrapper = styled(Card)`
     gap: 0;
     background: ${(props) =>
       props.$projectPage ? "var(--grey3)" : "var(--white)"};
-    border-radius: 1rem;
+    border-radius: 2rem;
     & p,
     & h2 {
       color: ${(props) =>
@@ -309,7 +309,7 @@ const PresentationCardWrapper = styled.div`
     background: var(--holographic);
     background-size: 100vw 100vh;
     padding: var(--margin);
-    border-radius: 1rem;
+    border-radius: 2rem;
     cursor: pointer;
   }
   & h1,

@@ -193,7 +193,7 @@ export const TopPageButton = (props) => {
 
 export const CloseButtonWrapper = styled(BasicButton)`
   position: fixed;
-  top: calc(var(--margin) - 1rem + 8px);
+  top: calc(var(--margin) + 8px);
   right: calc(var(--margin) + 8px + ${(props) => props.$scrollBarWidth}px);
   z-index: 1001;
 
@@ -208,6 +208,7 @@ export const CloseButtonWrapper = styled(BasicButton)`
   }
 
   @media (max-width: 899px) {
+    top: calc(var(--margin) - 1rem + 8px);
     right: calc(var(--margin) - 1rem + 8px);
   }
 `;
