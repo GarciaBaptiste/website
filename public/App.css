@@ -46,7 +46,7 @@
 }
 
 #preloader {
-  justify-content: center;
+  justify-content: top;
 }
 
 ::-moz-selection {
@@ -196,8 +196,9 @@ iframe {
   font-family: sans-serif;
   font-weight: 300;
   letter-spacing: initial;
-  text-align: center;
+  text-align: left;
   animation: pulse 3s;
   animation-iteration-count: infinite;
   font-size: var(--text-big);
+  margin: calc(8px + var(--margin));
 }
