@@ -30,6 +30,7 @@ import { ProjectPage as PageStretch } from "./components/projects/PP_stretch";
 import { ProjectPage as PageGameOfLife } from "./components/projects/PP_gameoflife";
 import { ProjectPage as PageHyperreel } from "./components/projects/PP_hyperreel";
 import { ProjectPage as PageBookTales } from "./components/projects/PP_booktales";
+import { ProjectPage as PageCalendrier } from "./components/projects/PP_calendrier";
 import ThumbLeBowVosgien from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup.jpg";
 import ThumbLeBowVosgienPH from "./assets/projects/le_bow_vosgien/le_bow_vosgien_mockup_placeholder.jpg";
 import ThumbLogilabFr from "./assets/projects/logilab_fr/mockup_logilab_fr.jpg";
@@ -52,6 +53,8 @@ import ThumbHyperreel from "./assets/projects/hyperreel/hyperreel_mockup.jpg";
 import ThumbHyperreelPH from "./assets/projects/hyperreel/hyperreel_mockup_placeholder.jpg";
 import ThumbBookTales from "./assets/projects/book_tales/book_tales_mockup.jpg";
 import ThumbBookTalesPH from "./assets/projects/book_tales/book_tales_mockup_placeholder.jpg";
+import ThumbCalendrier from "./assets/projects/calendrier/calendrier_mockup.jpg";
+import ThumbCalendrierPH from "./assets/projects/calendrier/calendrier_mockup_placeholder.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -326,6 +329,15 @@ function App() {
       thumbnail: ThumbSwep,
       thumbnail_placeholder: ThumbSwepPH,
       projectpage: PageSwep,
+    },
+    {
+      title: "Calendrier",
+      type: "client",
+      description: "UX — UI",
+      keywords: "Figma — ergonomics — prototype",
+      thumbnail: ThumbCalendrier,
+      thumbnail_placeholder: ThumbCalendrierPH,
+      projectpage: PageCalendrier,
     },
     {
       title: "Hyperréel",
