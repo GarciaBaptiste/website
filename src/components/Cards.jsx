@@ -26,6 +26,27 @@ const CardContainer = styled.div`
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+
+  & .contact-info a,
+  & .contact-info a:visited {
+    color: var(--grey2);
+    white-space: nowrap;
+  }
+
+  & .contact-info a:hover {
+    color: var(--grey1);
+  }
+
+  & .contact-info a > .arrow-external,
+  & .contact-info a:visited > .arrow-external {
+    filter: invert(0.3);
+    width: 1.5rem !important;
+    height: 1.75rem !important;
+  }
+
+  & .contact-info a:hover > .arrow-external {
+    filter: invert(0.7);
+  }
 `;
 
 const PageContainer = styled.div`
@@ -89,7 +110,7 @@ const PresentationFirstBloc = styled.div`
   flex: 1;
   max-width: 1010px;
 
-  & a {
+  & a, & a:visited {
     color: var(--grey2);
   }
 
@@ -430,7 +451,7 @@ export const PresentationCard = ({ onClick, cardsRef, toggleModal }) => {
               </p>
               <p>
                 You can also contact me by{" "}
-                <ContactButton onClick={toggleModal}>Email</ContactButton>.
+                <ContactButton onClick={toggleModal}>Email</ContactButton> or via <a href="https://www.malt.fr/profile/baptistegarcia1" target="_blank">Malt <ArrowExternal /></a>.
               </p>
             </PresentationFirstBloc>
             <PresentationSecondBloc>
@@ -474,7 +495,7 @@ export const FooterCard = ({ toggleModal }) => {
         style={{ fontSize: "var(--text-medium)" }}
       >
         Email
-      </ContactButton>
+      </ContactButton>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.malt.fr/profile/baptistegarcia1" target="blank">Malt</a>
     </FooterCardWrapper>
   );
 };
@@ -493,6 +514,19 @@ const FooterCardWrapper = styled.footer`
     color: var(--black);
     font-weight: 400;
     display: inline;
+  }
+  
+  & a {
+    color: var(--grey2);
+    background: none;
+    font-size: var(--text-medium);
+    font-weight: 400;
+    font-family: inherit;
+    letter-spacing: inherit;
+  }
+
+  & a:hover {
+    color: var(--grey1);
   }
 
   @media (max-width: 899px) {

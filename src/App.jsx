@@ -16,6 +16,7 @@ import {
   Modal,
   ContactForm,
   ContactButton,
+  ArrowExternal,
 } from "./components/LayoutAssets";
 import { ProjectCard, PresentationCard, FooterCard } from "./components/Cards";
 
@@ -305,10 +306,10 @@ function App() {
       description:
         "I am currently available for hire, whether freelance or full-time employment.",
       customContent: (
-        <span>
+        <span class="contact-info">
           <br />
           Feel free to{" "}
-          <ContactButton onClick={toggleModal}>get in touch</ContactButton>!
+          <ContactButton onClick={toggleModal}>get in touch</ContactButton>! I'm also on <a href="https://www.malt.fr/profile/baptistegarcia1" target="blank">Malt <ArrowExternal /></a>.
         </span>
       ),
     },
