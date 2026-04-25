@@ -92,6 +92,8 @@ function App() {
       setScrollBarWidth($scrollBarWidth)
     }
 
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+
     gsap.set(cardsRef.current, { opacity: 0, y: '5rem', scale: 0.9 })
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -157,10 +159,14 @@ function App() {
     if (document.readyState === 'complete') {
       handleLoad()
     } else {
-      const timeout = setTimeout(handleLoad, 5000)
-      window.addEventListener('load', handleLoad)
+      let timeout = setTimeout(handleLoad, 5000)
+      const handleLoadOnce = () => {
+        clearTimeout(timeout)
+        handleLoad()
+      }
+      window.addEventListener('load', handleLoadOnce)
       return () => {
-        window.removeEventListener('load', handleLoad)
+        window.removeEventListener('load', handleLoadOnce)
         clearTimeout(timeout)
       }
     }
