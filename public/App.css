@@ -179,6 +179,18 @@ iframe {
   100% {opacity: 1;}
 }
 
+@keyframes holographic-flow {
+  0%   { background-position: 15% 30%; }
+  11%  { background-position: 80% 10%; }
+  23%  { background-position: 55% 85%; }
+  37%  { background-position: 10% 55%; }
+  52%  { background-position: 90% 25%; }
+  64%  { background-position: 40% 75%; }
+  78%  { background-position: 70% 40%; }
+  89%  { background-position: 25% 90%; }
+  100% { background-position: 15% 30%; }
+}
+
 #preloader {
   transition: .3s ease-in-out;
   position: fixed;
