@@ -92,11 +92,14 @@ function App() {
       setScrollBarWidth($scrollBarWidth)
     }
 
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+    ScrollTrigger.getAll()
+      .filter((t) => t.vars.id === 'card-animation')
+      .forEach((t) => t.kill())
 
     gsap.set(cardsRef.current, { opacity: 0, y: '5rem', scale: 0.9 })
     const timeline = gsap.timeline({
       scrollTrigger: {
+        id: 'card-animation',
         trigger: cardsRef.current[0],
         start: 'top 90%',
         toggleActions: 'play none none none',
@@ -122,6 +125,7 @@ function App() {
     cardsRef.current.forEach((card) => {
       if (card.getBoundingClientRect().top >= window.innerHeight * 0.9) {
         ScrollTrigger.create({
+          id: 'card-animation',
           trigger: card,
           start: 'top 90%',
           onEnter: () => {
