@@ -328,7 +328,8 @@ const PresentationCardWrapper = styled.div`
   margin: 8px 8px 4px 8px;
   & ${CardContainer} {
     background: var(--holographic);
-    background-size: 100vw 100vh;
+    background-size: 300% 300%;
+    animation: holographic-flow 35s ease-in-out infinite;
     padding: var(--margin);
     border-radius: 2rem;
     cursor: pointer;
