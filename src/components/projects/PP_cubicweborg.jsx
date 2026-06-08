@@ -14,6 +14,8 @@ import Image1 from "../../assets/projects/cubicweb/cubicweb_screen_iphone.png";
 import Image1PH from "../../assets/projects/cubicweb/cubicweb_screen_iphone_placeholder.png";
 import Image2 from "../../assets/projects/cubicweb/cubicweb_frames.png";
 import Image2PH from "../../assets/projects/cubicweb/cubicweb_frames_placeholder.png";
+import Image3 from "../../assets/projects/cubicweb/cubicweb_frames2.png";
+import Image3PH from "../../assets/projects/cubicweb/cubicweb_frames2_placeholder.png";
 
 export const ProjectPage = () => {
   const containerRef = useRef(null);
@@ -42,6 +44,12 @@ export const ProjectPage = () => {
           homepage, using small, segmented sections to make the project
           appealing despite its technical complexity.
         </TextSmall>
+        <FullScreenImage
+          scroller={containerRef}
+          src={Image3}
+          srcPH={Image3PH}
+          $keepRatio={"1990 / 780"}
+        />
         <FullScreenImage
           scroller={containerRef}
           src={Image2}
