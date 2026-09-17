@@ -19,6 +19,7 @@ import {
   ArrowExternal,
 } from './components/LayoutAssets'
 import { ProjectCard, PresentationCard, FooterCard } from './components/Cards'
+import { trackEvent } from './analytics'
 
 import { ProjectPage as PageBowVosgien } from './components/projects/PP_bowvosgien'
 import { ProjectPage as PageLogilabFr } from './components/projects/PP_logilabfr'
@@ -201,6 +202,10 @@ function App() {
 
   const handleCardClick = (index) => {
     if (fullscreenCard === null) {
+      const project = projectData[index]
+      if (project && project.type !== 'info') {
+        trackEvent('Project', 'View', project.title)
+      }
       setFullscreenCard(index)
       const card = cardsRef.current[index]
       const cardRect = card.getBoundingClientRect()
@@ -316,7 +321,14 @@ function App() {
         <span class="contact-info">
           <br />
           Feel free to{' '}
-          <ContactButton onClick={toggleModal}>get in touch</ContactButton>! I'm
+          <ContactButton
+            onClick={(e) => {
+              trackEvent('Contact', 'Click', 'Email button')
+              toggleModal(e)
+            }}
+          >
+            get in touch
+          </ContactButton>! I'm
           also on{' '}
           <a href="https://www.malt.fr/profile/baptistegarcia1" target="blank">
             Malt <ArrowExternal />

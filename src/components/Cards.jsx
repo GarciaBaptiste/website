@@ -11,6 +11,7 @@ import {
   ArrowExternal,
   ContactButton,
 } from "./LayoutAssets";
+import { trackEvent } from "../analytics";
 
 const Card = styled.div`
   position: relative;
@@ -452,7 +453,14 @@ export const PresentationCard = ({ onClick, cardsRef, toggleModal }) => {
               </p>
               <p>
                 You can also contact me by{" "}
-                <ContactButton onClick={toggleModal}>Email</ContactButton> or via <a href="https://www.malt.fr/profile/baptistegarcia1" target="_blank">Malt <ArrowExternal /></a>.
+                <ContactButton
+                  onClick={(e) => {
+                    trackEvent("Contact", "Click", "Email button");
+                    toggleModal(e);
+                  }}
+                >
+                  Email
+                </ContactButton> or via <a href="https://www.malt.fr/profile/baptistegarcia1" target="_blank">Malt <ArrowExternal /></a>.
               </p>
             </PresentationFirstBloc>
             <PresentationSecondBloc>
@@ -492,7 +500,10 @@ export const FooterCard = ({ toggleModal }) => {
       <SmileyFace />
       <p>/&nbsp;&nbsp;&nbsp;&nbsp;</p>
       <ContactButton
-        onClick={toggleModal}
+        onClick={(e) => {
+          trackEvent("Contact", "Click", "Email button");
+          toggleModal(e);
+        }}
         style={{ fontSize: "var(--text-medium)" }}
       >
         Email
