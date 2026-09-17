@@ -1,4 +1,4 @@
-const MATOMO_URL = 'https://stats.baptistegarcia.com/'
+const MATOMO_URL = 'https://matomo.baptistegarcia.com/'
 const SITE_ID = 1
 
 export function initMatomo() {
